@@ -46,11 +46,15 @@ Clone this repo and navigate to the `app` directory. This will be the directory 
 
 While in the `app` directory, create a `.env` file. This will be the file that will contain your Microsoft Graph API credentials. You will need to create this file, and then fill it with your Microsoft Graph API credentials. You can find this on the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/docs/concepts/overview).
 
+You will have to configure the `/.keys` folder to store your private key and certificate. This is where the Node.js app will store the private key and certificate. You will need to fill it with your private key and certificate.
+
+You will have to configure the `/bin/www` file to point to the correct file key and certs. The default names of the files is `client-key.pem` and `client-cert.pem`. You will need to fill it in with your private key and certificate. The default port is `4443`.
+
 Your Microsoft Graph API credentials
 
         OAUTH_CLIENT_ID=<your client id>
         OAUTH_CLIENT_SECRET='<your client secret>'
-        OAUTH_REDIRECT_URI=http://localhost:8080/auth/callback
+        OAUTH_REDIRECT_URI=http://localhost:4443/auth/callback
         OAUTH_SCOPES='user.read,calendars.readwrite,mailboxsettings.read'
         OAUTH_AUTHORITY=https://login.microsoftonline.com/common/
 
