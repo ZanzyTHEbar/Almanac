@@ -1,4 +1,4 @@
-# Microsoft_Calendar_Epaper_Display
+# Microsoft Calendar Epaper Display
 
 [![GitHub issues](https://img.shields.io/github/issues/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/issues) [![GitHub forks](https://img.shields.io/github/forks/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/network) [![GitHub stars](https://img.shields.io/github/stars/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/stargazers) [![GitHub license](https://img.shields.io/github/license/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/blob/main/LICENSE)
 
