@@ -11,12 +11,15 @@
         "msal",
         "MSAL",
         "newevent",
+        "newhostname",
+        "picalendar",
         "Raspberrypi",
         "readwrite",
         "resave",
         "signin",
         "signout",
         "Tindie",
+        "Wakeon",
         "Waveshare",
         "xgpx"
     ]
