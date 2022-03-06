@@ -46,55 +46,55 @@ Clone this repo and navigate to the `app` directory. This will be the directory 
 
 While in the `app` directory, create a `.env` file. This will be the file that will contain your Microsoft Graph API credentials. You will need to create this file, and then fill it with your Microsoft Graph API credentials. You can find this on the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/docs/concepts/overview).
 
-                ```txt
-                #Microsoft Graph API credentials
-                OAUTH_CLIENT_ID=<your client id>
-                OAUTH_CLIENT_SECRET='<your client secret>'
-                OAUTH_REDIRECT_URI=http://localhost:8080/auth/callback
-                OAUTH_SCOPES='user.read,calendars.readwrite,mailboxsettings.read'
-                OAUTH_AUTHORITY=https://login.microsoftonline.com/common/
-                ```
-                ```txt
-                #OPTIONAL: Not required for this project, but if you want to use Azure Media Services, you will need to create a storage account and configure the following
-                #Azure Storage credentials
-                AZURE_STORAGE_ACCOUNT=<your storage account name>
-                AZURE_STORAGE_ACCESS_KEY=<your storage account access key>
-                ```
-                ```txt
-                #OPTIONAL: Not required for this project, but if you want to use DLNA Media Server, you will need to create a storage account and configure the following
-                #DLNA Media Server credentials
-                DLNA_MEDIA_SERVER_HOST=<your DLNA Media Server host>
-                DLNA_MEDIA_SERVER_PORT=<your DLNA Media Server port>
-                DLNA_MEDIA_SERVER_USERNAME=<your DLNA Media Server username>
-                DLNA_MEDIA_SERVER_PASSWORD=<your DLNA Media Server password>
-                ```
+        ```txt
+        #Microsoft Graph API credentials
+        OAUTH_CLIENT_ID=<your client id>
+        OAUTH_CLIENT_SECRET='<your client secret>'
+        OAUTH_REDIRECT_URI=http://localhost:8080/auth/callback
+        OAUTH_SCOPES='user.read,calendars.readwrite,mailboxsettings.read'
+        OAUTH_AUTHORITY=https://login.microsoftonline.com/common/
+        ```
+        ```txt
+        #OPTIONAL: Not required for this project, but if you want to use Azure Media Services, you will need to create a storage account and configure the following
+        #Azure Storage credentials
+        AZURE_STORAGE_ACCOUNT=<your storage account name>
+        AZURE_STORAGE_ACCESS_KEY=<your storage account access key>
+        ```
+        ```txt
+        #OPTIONAL: Not required for this project, but if you want to use DLNA Media Server, you will need to create a storage account and configure the following
+        #DLNA Media Server credentials
+        DLNA_MEDIA_SERVER_HOST=<your DLNA Media Server host>
+        DLNA_MEDIA_SERVER_PORT=<your DLNA Media Server port>
+        DLNA_MEDIA_SERVER_USERNAME=<your DLNA Media Server username>
+        DLNA_MEDIA_SERVER_PASSWORD=<your DLNA Media Server password>
+        ```
 
 Once you have created the `.env` file, you can run the following commands to start the Node.js app.
 
-                ```txt
-                cd app //navigate to the app directory (this is where the `.env` file is located)
-                ```
-                ```txt
-                sudo npm install //install the Node.js modules
-                ```
-                ```txt
-                cd bin //navigate to the bin directory
-                ```
-                ```txt
-                python3 setup.py //setup the Server to have mDNS and a proper hostname
-                ```
-                ```txt
-                cd .. //navigate back to the app directory
-                ```
-                ```txt
-                sudo npm start //this will start the Node.js app
-                ```
+        ```txt
+        cd app //navigate to the app directory (this is where the `.env` file is located)
+        ```
+        ```txt
+        sudo npm install //install the Node.js modules
+        ```
+        ```txt
+        cd bin //navigate to the bin directory
+        ```
+        ```txt
+        python3 setup.py //setup the Server to have mDNS and a proper hostname
+        ```
+        ```txt
+        cd .. //navigate back to the app directory
+        ```
+        ```txt
+        sudo npm start //this will start the Node.js app
+        ```
 
 Now you are setup and ready to go. You can now access the app by going to `http://<your hostname.local>`. The default hostname is `picalendar`. If you want to change this, you can do so by running the following command.
 
-                ```shell
-                sudo hostname.sh <newhostname> //navigate to the hostname file
-                ```
+        ```shell
+        sudo hostname.sh <newhostname> //navigate to the hostname file
+        ```
 
 ## Things to Do 📝
 
