@@ -1,6 +1,6 @@
 # Microsoft_Calendar_Epaper_Display
 
-# :pencil2:
+# :pencil:
 
 ## Smart Air Filter Project Controller
 
