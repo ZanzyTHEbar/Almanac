@@ -22,9 +22,9 @@ This project is dedicated to designing a sleak and platform agnostic locally hos
 
 ## Things to Do
 
-Below is a list of project goals, **__completed__** goals out marked with a check.
+Below is a list of project goals, ***completed*** goals are marked with a check.
 
-**__Hardware__**
+***Hardware***
 
 - [ ] Any Server-cable Machine - Raspberrypi Zero WH preferred - Header pins are needed to connect to the E-Ink display
 - [ ] Battery-Pack or permanent plugin point
@@ -35,7 +35,7 @@ Below is a list of project goals, **__completed__** goals out marked with a chec
 - [ ] PiSugar2 for Raspberry Pi Zero (Tindie) - Provides the RTC and battery for this project
 
 
-**__Software__**
+***Software***
 
 - [x] Implement proper Auth-Token management
 - [ ] Implement proper error handling&logging
@@ -53,4 +53,4 @@ Below is a list of project goals, **__completed__** goals out marked with a chec
 - [ ] Implement NTP service to get Real-Time based on time-zone
         
 
-_Inspired by (InkyCal)[https://github.com/aceisace/Inkycal] and (MagikCal)[https://github.com/speedyg0nz/MagInkCal]._
+_Inspired by [InkyCal](https://github.com/aceisace/Inkycal) and [MagikCal](https://github.com/speedyg0nz/MagInkCal)._
