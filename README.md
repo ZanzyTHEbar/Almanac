@@ -16,7 +16,7 @@ Through the power of web-magic the PiSugar2's web interface is grabbed by this N
 
 Battery life is definitely a concern, but not a huge issue for me personally. The [dev](https://github.com/speedyg0nz) over at [MagikCal](https://github.com/speedyg0nz/MagInkCal) was getting around 3-4 weeks before needing to recharge the PiSugar2.
 
-With the addition of WakeonLAN and presence detection, i am not too concerned about this. However, if you are, please go into the UI settings and disable these features.
+With the addition of RTC and presence detection, i am not too concerned about this. However, if you are, please go into the UI settings and disable these features.
 
 With E-Ink/E-Paper displays of the tri-colour variety you have the luxury of using red, I used it to highlight the current date, as well as recently added/updated events. However, if you are using a multicolor display or an LCD panel, you can have a full-colour experience, without the added feature of the display containing content when powered off. This is why i implemented presence detection, and deep-sleep modes. I highly recommend you enable these features if using a full-colour display.
 
@@ -42,13 +42,15 @@ Go to the Azure Admin Portal and create a new app. This will be the app you will
 
 If you do not know how to do this, please refer to the [Microsoft Azure Active Directory](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps). You will need to create a new app, and then grant access to the Microsoft Graph API, which i will explain in the next step.
 
-Clone this repo and navigate to the `app` directory. This will be the directory where you will be running the Node.js app and creating your `/env` file. You will need to have the `node` and `npm` installed on your system. If you do not know how to do this, please refer to the [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) documentation. If you wish to use the Azure storage features, you will also need to have the `azure-storage` and `azure-storage-blob` modules installed, however these are optional. If you do not know how to do this, please refer to the [Azure Storage](https://azure.microsoft.com/en-us/services/storage/) and [Azure Storage Blob](https://azure.microsoft.com/en-us/services/storage/blob-storage/) documentation.
+Clone this repo to `/home/pi/` directory and **DO NOT** clone this repo into a nested folder, clone it directly to the user directory. The project already exists inside of a nested directory.
 
-While in the `app` directory, create a `.env` file. This will be the file that will contain your Microsoft Graph API credentials. You will need to create this file, and then fill it with your Microsoft Graph API credentials. You can find this on the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/docs/concepts/overview).
+Navigate to the `app` directory of this project `JavaScript-Calendar-Project/App`. This will be the directory where you will be running the Node.js app and creating your `/env` file. You will need to have `nodejs` and `npm` installed onto your system. If you do not know how to do this, please refer to the [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) documentation. If you wish to use the Azure storage features, you will also need to have the `azure-storage` and `azure-storage-blob` modules installed, however these are optional. If you do not know how to do this, please refer to the [Azure Storage](https://azure.microsoft.com/en-us/services/storage/) and [Azure Storage Blob](https://azure.microsoft.com/en-us/services/storage/blob-storage/) documentation.
 
-You will have to configure the `/.keys` folder to store your private key and certificate. This is where the Node.js app will store the private key and certificate. You will need to fill it with your private key and certificate.
+While in the `app` directory, create an `.env` file. This will be the file that will contain your Microsoft Graph API credentials. You will need to create this file and then fill it with your Microsoft Graph API credentials. You can find this on the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/docs/concepts/overview).
 
-You will have to configure the `/bin/www` file to point to the correct file key and certs. The default names of the files is `client-key.pem` and `client-cert.pem`. You will need to fill it in with your private key and certificate. The default port is `4443`.
+You will have to configure the `/.keys` folder to store your SSL data. This is where the Node.js app will store the private key and certificate. You will need to generate these files and place them here.
+
+You will have to configure the `/bin/www` file to point to the correct file key and certs. The default names of the files is `client-key.pem` and `client-cert.pem`. The default port is `4443`.
 
 Your Microsoft Graph API credentials
 
@@ -72,32 +74,57 @@ OPTIONAL: Not required for this project, but if you want to use DLNA Media Serve
         DLNA_MEDIA_SERVER_USERNAME=<your DLNA Media Server username>
         DLNA_MEDIA_SERVER_PASSWORD=<your DLNA Media Server password>
 
-Once you have created the `.env` file, you can run the following commands to start the Node.js app.
+Once you have created the `.env` file, you can run the following commands to setup and start the Node.js app.
 
 Navigate to the app directory (this is where the `.env` file is located)
 
-        cd app
+        cd /JavaScript-Calendar-Project/App
 
 Install the Node.js modules
 
         sudo npm install
 
+Then fix any vulnerabilities of the Node.js app
+
+        sudo npm audit fix
+
 Navigate to the bin directory
 
         cd bin
 
-Setup the Server to have mDNS and a proper hostname
+Setup the Server environment
 
         python3 setup.py
 
-Navigate back to the app directory
+The device will reboot automatically, and can be accessed via ssh using `pi@picalendar.local`.
 
-        cd ..
+To manually start the server navigate back to the app directory
 
-This will start the Node.js app
+        cd /JavaScript-Calendar-Project/App
+
+This will start the Node.js app with the ability to quickly restart it using `rs` command
+
         sudo nodemon
-        or
+
+or use the following command to start the server in the background
+
         sudo npm start
+
+However, the server will automatically restart whenever the device reboots.
+
+Now let's configure the `raspi-config` file. This file will be used to configure the Raspberry Pi.
+
+        sudo raspi-config
+
+Edit the following settings
+
+        Advanced Options > Advanced OverScan: Enable Compensation - No
+
+        Boot options > Desktop/CLI - CLI
+
+        Boot options > Console Autologin - Yes
+
+Select `Finish` to save the changes. Select `Yes` to reboot the Pi. You should now be able to see the GUI upon boot via HDMI or the connected display.
 
 Now you are setup and ready to go. You can now access the app by going to `http://<your hostname.local>`. The default hostname is `picalendar`. If you want to change this, you can do so by running the following command.
 

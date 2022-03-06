@@ -2,9 +2,11 @@
     "bloop.openOnSuggestionsAvailable": false,
     "cSpell.words": [
         "Akum",
+        "Autologin",
         "calendarview",
         "DLNA",
         "Epaper",
+        "fgconsole",
         "fullchain",
         "letsencrypt",
         "loglevel",
@@ -17,8 +19,10 @@
         "newhostname",
         "picalendar",
         "pivpn",
+        "preinstall",
         "privkey",
         "Raspberrypi",
+        "raspi",
         "readwrite",
         "resave",
         "signin",
@@ -27,6 +31,7 @@
         "turbolinks",
         "Wakeon",
         "Waveshare",
-        "xgpx"
+        "xgpx",
+        "xinit"
     ]
 }

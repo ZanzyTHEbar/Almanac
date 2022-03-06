@@ -24,3 +24,9 @@ echo "Changing Hostname"
 sudo hostname.sh picalendar
 echo "Hostname Changed to:"
 hostname
+
+echo "Hostname Setter Service Creator Finished"
+
+sudo apt-get install bluetooth bluez blueman -y
+sudo apt-get install chromium-browser -y && sudo apt-get install matchbox-window-manager xautomation unclutter -y && sudo apt-get install --no-install-recommends xserver-xorg -y && sudo apt-get install --no-install-recommends xinit -y && sudo apt-get install --no-install-recommends x11-xserver-utils -y
+echo "Installed Chromium Browser and peripherals"

@@ -1,0 +1,1 @@
+xinit /home/pi/kiosk.sh -- vt$(fgconsole)
