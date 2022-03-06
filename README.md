@@ -105,9 +105,9 @@ Now you are setup and ready to go. You can now access the app by going to `http:
 
 ## Things to Do 📝
 
-Below is a list of project goals, ***completed*** goals are marked with a check.
+Below is a list of project goals, _completed_ goals are marked with a check.
 
-***Hardware***
+### Hardware
 
 - [ ] Any Server-cable Machine - Raspberrypi Zero WH preferred - Header pins are needed to connect to the E-Ink display
 - [ ] Battery-Pack or permanent plugin point
@@ -119,7 +119,7 @@ Below is a list of project goals, ***completed*** goals are marked with a check.
 - [ ] Implement option for Presence Detection via a choice of sensors or phone GPS
 - [ ] Implement WakeOnLan
 
-***Software***
+### Software
 
 - [x] Implement proper Auth-Token management
 - [ ] Implement proper error handling&logging
