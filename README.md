@@ -16,9 +16,9 @@ Through the power of web-magic the PiSugar2's web interface is grabbed by this N
 
 Battery life is definitely a concern, but not a huge issue for me personally. The [dev](https://github.com/speedyg0nz) over at [MagikCal](https://github.com/speedyg0nz/MagInkCal) was getting around 3-4 weeks before needing to recharge the PiSugar2. 
 
-With the addition of WakeonLAN and presence detection, i am not too concserned about this. However, if you are, please go into the UI settings and disable these features.
+With the addition of WakeonLAN and presence detection, i am not too conserned about this. However, if you are, please go into the UI settings and disable these features.
 
-With E-Ink/E-Paper displays of the tri-colour variaty you have the luxury of using red, I used it to highlight the current date, as well as recently added/updated events. However, if using a mutlicolour display or an LCD panel, you can have a full-colour experience, without the added feature of the dispaly containing content when powered off. This is why i implemented presence detection, and deep-sleep modes. I highly recommend you enable these features if using a full-colour display.
+With E-Ink/E-Paper displays of the tri-colour variety you have the luxury of using red, I used it to highlight the current date, as well as recently added/updated events. However, if you are using a mutlicolour display or an LCD panel, you can have a full-colour experience, without the added feature of the dispaly containing content when powered off. This is why i implemented presence detection, and deep-sleep modes. I highly recommend you enable these features if using a full-colour display.
 
 Given the limited space and resolution on e-paper displays, One can only show 3 events per day and an indicator (e.g. 4 more) for those not displayed. If an e-paper display is chosen, the calendar will always start from the current week, and display the next four (total 35 days). If the dates for an event cross over to the new month, that event is displayed in grey instead of black.
 
