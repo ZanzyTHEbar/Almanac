@@ -1,1 +1,7 @@
+# This file is where you will set environment variables specific to your application.
+
 /.env
+
+# This folder is where your SSL certificates and keys are stored.
+
+/.keys
