@@ -91,6 +91,8 @@ Navigate back to the app directory
         cd ..
 
 This will start the Node.js app
+        sudo nodemon
+        or
         sudo npm start
 
 Now you are setup and ready to go. You can now access the app by going to `http://<your hostname.local>`. The default hostname is `picalendar`. If you want to change this, you can do so by running the following command.
