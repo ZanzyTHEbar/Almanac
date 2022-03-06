@@ -6,7 +6,25 @@
 
 var app = require('../app');
 var debug = require('debug')('graph-tutorial:server');
-var http = require('http');
+var https = require('https');
+//var http = require('http');
+const certDir = `app/etc/letsencrypt/live`;
+const domain = `picalendar.local`;
+
+var fs = require('fs');
+
+// Create a service (the app object is just a callback).
+var app = express();
+
+const options = {
+  key: fs.readFileSync(`${certDir}/${domain}/privkey.pem`),
+  cert: fs.readFileSync(`${certDir}/${domain}/fullchain.pem`)
+};
+
+// Create an HTTP service.
+//http.createServer(app).listen(80);
+// Create an HTTPS service identical to the HTTP service.
+https.createServer(options, app).listen(443);
 
 /**
  * Get port from environment and store in Express.
@@ -19,7 +37,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = https.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
