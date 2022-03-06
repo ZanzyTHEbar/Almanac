@@ -1,15 +1,23 @@
 {
+    "bloop.openOnSuggestionsAvailable": false,
     "cSpell.words": [
         "Akum",
         "calendarview",
+        "DLNA",
         "loglevel",
+        "Magik",
         "mailboxsettings",
+        "minimalistic",
+        "msal",
         "MSAL",
         "newevent",
+        "Raspberrypi",
         "readwrite",
         "resave",
         "signin",
         "signout",
+        "Tindie",
+        "Waveshare",
         "xgpx"
     ]
 }
