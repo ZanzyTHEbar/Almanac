@@ -1,5 +1,7 @@
 # Microsoft_Calendar_Epaper_Display
 
+[![GitHub issues](https://img.shields.io/github/issues/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/issues) [![GitHub forks](https://img.shields.io/github/forks/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/network) [![GitHub stars](https://img.shields.io/github/stars/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/stargazers) [![GitHub license](https://img.shields.io/github/license/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/blob/main/LICENSE)
+
 # :pencil:
 
 ## 📅 Microsoft Calendar Epaper Display 🗓️
@@ -9,6 +11,14 @@ This repo is dedicated to the **Microsoft Calendar Epaper Display**, an automate
 ## WHAT IS THIS PROJECT
 
 This project is dedicated to designing a sleak and platform agnostic locally hosted webserver for displaying, interacting, and syncing data across Microsoft services. With the intention 
+
+![Example]()
+
+![Themes]()
+
+![Software GUI]()
+
+![DLNA Service]()
 
 ## Things to Do
 
