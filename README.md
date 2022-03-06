@@ -10,7 +10,7 @@ This repo is dedicated to the **Microsoft Calendar Epaper Display**, an automate
 
 ## WHAT IS THIS PROJECT
 
-This project is dedicated to designing a sleak and platform agnostic locally hosted webserver for displaying, interacting, and syncing data across Microsoft services. With the intention 
+This project is dedicated to designing a sleak and platform agnostic locally hosted webserver for displaying, interacting, and syncing data across Microsoft services. With the intention of user-friendly and minimalistic.
 
 ![Example]()
 
