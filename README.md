@@ -72,23 +72,40 @@ While in the `app` directory, create a `.env` file. This will be the file that w
 Once you have created the `.env` file, you can run the following commands to start the Node.js app.
 
         ```txt
-        cd app //navigate to the app directory (this is where the `.env` file is located)
+        cd app
         ```
+
+Navigate to the app directory (this is where the `.env` file is located)
+
         ```txt
-        sudo npm install //install the Node.js modules
+        sudo npm install
         ```
+
+Install the Node.js modules
+
         ```txt
-        cd bin //navigate to the bin directory
+        cd bin
         ```
+
+Navigate to the bin directory
+
         ```txt
-        python3 setup.py //setup the Server to have mDNS and a proper hostname
+        python3 setup.py
         ```
+
+Setup the Server to have mDNS and a proper hostname
+
         ```txt
-        cd .. //navigate back to the app directory
+        cd ..
         ```
+
+Navigate back to the app directory
+
         ```txt
-        sudo npm start //this will start the Node.js app
+        sudo npm start
         ```
+
+This will start the Node.js app
 
 Now you are setup and ready to go. You can now access the app by going to `http://<your hostname.local>`. The default hostname is `picalendar`. If you want to change this, you can do so by running the following command.
 
@@ -131,6 +148,6 @@ Below is a list of project goals, ***completed*** goals are marked with a check.
 - [ ] Implement option for Presence Detection via a choice of sensors or phone GPS
 - [ ] Implement WakeOnLan
 - [ ] Cronjob to update calendar images every day
-- [ ] Cronjob to update 
+- [ ] Cronjob to update
 
 _Inspired by [InkyCal](https://github.com/aceisace/Inkycal) and [MagikCal](https://github.com/speedyg0nz/MagInkCal)._
