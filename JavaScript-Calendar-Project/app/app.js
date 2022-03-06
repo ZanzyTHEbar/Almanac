@@ -12,8 +12,8 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-const authRouter = require('./routes/auth');
-const calendarRouter = require('./routes/calendar');
+const authRouter = require("./routes/auth");
+const calendarRouter = require("./routes/calendar");
 
 var app = express();
 
@@ -49,7 +49,7 @@ app.locals.msalClient = new msal.ConfidentialClientApplication(msalConfig);
 
 app.use(
   session({
-    secret: "your_secret_value_here",
+    secret: process.env.OAUTH_CLIENT_SECRET,
     resave: false,
     saveUninitialized: false,
     unset: "destroy",
@@ -85,13 +85,13 @@ app.use(function (req, res, next) {
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
-var hbs = require('hbs');
-var parseISO = require('date-fns/parseISO');
-var formatDate = require('date-fns/format');
+var hbs = require("hbs");
+var parseISO = require("date-fns/parseISO");
+var formatDate = require("date-fns/format");
 // Helper to format date/time sent by Graph
-hbs.registerHelper('eventDateTime', function(dateTime) {
+hbs.registerHelper("eventDateTime", function (dateTime) {
   const date = parseISO(dateTime);
-  return formatDate(date, 'M/d/yy h:mm a');
+  return formatDate(date, "M/d/yy h:mm a");
 });
 
 app.use(logger("dev"));
@@ -101,8 +101,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use('/auth', authRouter);
-app.use('/calendar', calendarRouter);
+app.use("/auth", authRouter);
+app.use("/calendar", calendarRouter);
 app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
