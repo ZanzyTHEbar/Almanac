@@ -2,37 +2,45 @@
 
 # :pencil:
 
-## Smart Air Filter Project Controller
+## 📅 Microsoft Calendar Epaper Display 🗓️
 
-## :cat: Air Filter Project for Cats and Home :cat2:
-
-This repo is dedicated to the **Smart Air Filter Project**, an automated system for purifying cat litter air.
+This repo is dedicated to the **Microsoft Calendar Epaper Display**, an automated system for displaying a user(s) work/personal calendar events onto an epaper-like display.
 
 ## WHAT IS THIS PROJECT
 
-This project is dedicated to designing PCB and programming files to bring Smart Air Filtering to the DIY community. Using water as the filtration medium, no need for expensive consumable filters. 
+This project is dedicated to designing a sleak and platform agnostic locally hosted webserver for displaying, interacting, and syncing data across Microsoft services. With the intention 
 
 ## Things to Do
 
+Below is a list of project goals, **__completed__** goals out marked with a check.
+
 **__Hardware__**
 
-- [x] Formulate project as PlatformIO
-- [x] Integrate the PCB schematic layout
-- [x] Integrate a BOM parts list for PCB
-- [x] Integrate a Pick and Place file
-- [ ] Integrate Panelised PCB gerber files
-- [ ] Integrate SPI SRAM chip instead of SD Card
+- [ ] Any Server-cable Machine - Raspberrypi Zero WH preferred - Header pins are needed to connect to the E-Ink display
+- [ ] Battery-Pack or permanent plugin point
+- [ ] Integrate a BOM parts list
+- [ ] Integrate SD Card
 - [ ] Integrate speakers for audio feedback
+- [ ] Preferred Waveshare 12.48" Tri-color E-Ink Display - Unfortunately out of stock at the time this is published (any display will work of course)
+- [ ] PiSugar2 for Raspberry Pi Zero (Tindie) - Provides the RTC and battery for this project
+
 
 **__Software__**
 
-- [x] Implement proper memory management
+- [x] Implement proper Auth-Token management
 - [ ] Implement proper error handling&logging
 - [ ] Implement proper documentation
 - [ ] Implement proper debugging for testing
 - [ ] Add custom sounds for speakers
-- [x] implement code as proper custom library
-- [ ] implement dual core system archtecture
-        --> Networking on one core and Application code on the other (esp32 is dual core)
+- [ ] Implement custom themes the user can choose from
+- [ ] Implement theme changes based on weather outside
+        -> Implement choice to change to opposite - ex: Hot outside show cool theme
+- [ ] Implement weather display section
+- [ ] Add radio button to enable/disable slideshow of calendar images
+        -> Custom images from DLNA server
+        -> Stock photos from microsoft windows backgrounds
+        -> stock images of seasons/places
+- [ ] Implement NTP service to get Real-Time based on time-zone
         
 
+_Inspired by (InkyCal)[https://github.com/aceisace/Inkycal] and (MagikCal)[https://github.com/speedyg0nz/MagInkCal]._
