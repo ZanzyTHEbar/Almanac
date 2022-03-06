@@ -1,6 +1,6 @@
 # Microsoft_Calendar_Epaper_Display
 
-# <:Microsoft:350376559993159680>
+# :Microsoft:
 
 ## Smart Air Filter Project Controller
 
