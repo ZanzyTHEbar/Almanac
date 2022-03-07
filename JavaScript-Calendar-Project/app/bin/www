@@ -24,7 +24,6 @@ var State = args[1];
 console.log("Server is running on port " + Port);
 console.log("Server state " + State);
 
-
 var noip = new NoIp({
   hostname: process.env.NOIP_DOMAIN,
   user: process.env.NOIP_USERNAME,
@@ -59,7 +58,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
+  var bind = typeof Port === "string" ? "Pipe " + Port : "Port " + Port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -117,7 +116,6 @@ function Server(port) {
     server2.on("listening", onListening);
   }
 }
-
 
 noip.on("success", function (isChanged, ip) {
   console.log(isChanged, ip);
