@@ -63,11 +63,25 @@ You can test the installation with:
 
 There you go 😁 NPM and NodeJS are successfully installed. Onto the next.
 
+Install GIT:
+
+        sudo apt-get install git
+
+Then update the pi:
+
+        sudo apt-get update -y && sudo apt-get upgrade -y
+
+Clone this repo to `/home/<your username>/` directory and **DO NOT** clone this repo into a nested folder, clone it directly to the user directory. The project already exists inside of a nested directory.
+
+Now clone this repo:
+
+        git clone https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display.git
+
+Alright! Doing great 🤗
+
 Go to the Azure Admin Portal and create a new app. This will be the app you will use to access the Microsoft Graph API.
 
 If you do not know how to do this, please refer to the [Microsoft Azure Active Directory](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps). You will need to create a new app, and then grant access to the Microsoft Graph API, which i will explain in the next step.
-
-Clone this repo to `/home/pi/` directory and **DO NOT** clone this repo into a nested folder, clone it directly to the user directory. The project already exists inside of a nested directory.
 
 Navigate to the `app` directory of this project `JavaScript-Calendar-Project/App`. This will be the directory where you will be running the Node.js app and creating your `/env` file. You will need to have `nodejs` and `npm` installed onto your system. If you do not know how to do this, please refer to the [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) documentation. If you wish to use the Azure storage features, you will also need to have the `azure-storage` and `azure-storage-blob` modules installed, however these are optional. If you do not know how to do this, please refer to the [Azure Storage](https://azure.microsoft.com/en-us/services/storage/) and [Azure Storage Blob](https://azure.microsoft.com/en-us/services/storage/blob-storage/) documentation.
 
