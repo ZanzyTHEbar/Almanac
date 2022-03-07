@@ -26,8 +26,6 @@ echo "Hostname Changed to:"
 hostname
 echo "This is the default hostname, feel free to change it to whatever you want"
 
-echo "Hostname Setter Service Creator Finished"
-
 # sudo apt-get install bluetooth bluez blueman -y
 
 #sudo apt-get install chromium-browser -y 

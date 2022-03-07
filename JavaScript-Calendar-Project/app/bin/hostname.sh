@@ -18,9 +18,9 @@ echo "127.0.0.1      " $NAME " ### Set by hostname-setter"  | sudo tee -a /etc/h
 sudo service hostname.sh stop
 sudo service hostname.sh start
 
-echo "Hostname set. Log out to see it on the command line"
-echo "You can use the command line to set the hostname using the following command:"
+echo "Hostname set."
+echo "You can use the command line to set the hostname at anytime using the following command:"
 echo "sudo hostname.sh <hostname>"
-echo "Rebooting machine in 5 seconds"
-sleep 5
+echo "Rebooting machine in 15 seconds"
+sleep 15
 sudo reboot

@@ -76,12 +76,12 @@ def checkPackages():
             check_packages,
             stdout=s.PIPE,
         )
-        proc4
         if proc4 is "not inst":
             print("Installing " + module)
             s.call(['apt', 'install', module + " -y"])
         else:
             print(module + " is installed")
+            print("Continuing with setup, setting up Chromium")
             setupChromium()
         zzz(5)
 
@@ -95,12 +95,12 @@ def setupKiosk():
     proc3
     s.call(['cp', 'kiosk.sh', '~/kiosk.sh'])
     s.call(['cat', '.setupkiosk.txt', '>>', '~/.bashrc'])
-    print("Kiosk script added to the bashrc file. Setup complete")
+    print("Kiosk script added to the bashrc file.")
 
 
 if __name__ == '__main__':
     checkPackages()
     setupKiosk()
+    rotateScreen()
     setupServer()
-    zzz(5)
     quit()
