@@ -9,7 +9,7 @@ var debug = require("debug")("graph-tutorial:server");
 var http = require("http");
 var https = require("https");
 var fs = require("fs");
-var NoIp = require("no-ip");
+/* var NoIp = require("no-ip"); */
 var httpOptions = {
   key: fs.readFileSync(".keys/client-key.pem"),
 
@@ -25,11 +25,11 @@ var State = args[1];
 console.log("Server is running on port " + process.env.PORT);
 console.log("Server state " + State);
 
-var noip = new NoIp({
+/* var noip = new NoIp({
   hostname: process.env.NOIP_DOMAIN,
   user: process.env.NOIP_USERNAME,
   pass: process.env.NOIP_PASSWORD,
-});
+}); */
 
 /**
  * Normalize a port into a number, string, or false.
@@ -117,12 +117,12 @@ function Server(port) {
   }
 }
 
-noip.on("success", function (isChanged, ip) {
+/* noip.on("success", function (isChanged, ip) {
   console.log(isChanged, ip);
 });
 
 noip.update(); // Manual update, you can also provide a custom IP address
 
-noip.start(); // Start the update loop
+noip.start(); // Start the update loop */
 
 Server(process.env.PORT);
