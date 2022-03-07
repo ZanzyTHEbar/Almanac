@@ -34,9 +34,34 @@ I thought it was a pretty neat idea to bring the project full-circle with the ca
 
 ## Setup ✔️
 
-In order to properly run this server, you will need to have a Microsoft account. If you do not have one, you can [sign up for one](https://login.microsoftonline.com/). You will need to be an admin of the account, and have access to the Microsoft Graph API. You can find this on the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/docs/concepts/overview).
+In order to properly run this server, you will need to have a NodeJS install and a Microsoft account. If you do not have one, you can [sign up for one](https://login.microsoftonline.com/). You will need to be an admin of the account, and have access to the Microsoft Graph API. You can find this on the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/docs/concepts/overview).
 
 The following steps will guide you through the setup of this project.
+
+To install NodeJS for the Raspberrypi Zero W please follow the steps below, each Pi will have slightly different steps. I have used a Zero WH in this build, so those are the steps listed. 
+
+Firstly, copy this command and run as sudo:
+
+        curl -o node-v11.9.0-linux-armv6l.tar.gz https://nodejs.org/dist/v11.9.0/node-v11.9.0-linux-armv6l.tar.gz
+
+Wait until that is complete, then run this command:
+
+        tar -xzf node-v11.9.0-linux-armv6l.tar.gz
+
+Finally we copy these files to the correct directory:
+
+        sudo cp -r node-v11.9.0-linux-armv6l/* /usr/local/
+
+Now we can remove the extra files:
+
+        sudo rm -rf node-v11.9.0-linux-armv6l.tar.gz node-v11.9.0-linux-armv6l
+
+You can test the installation with:
+
+        node -v
+        npm -v
+
+There you go 😁 NPM and NodeJS are successfully installed. Onto the next.
 
 Go to the Azure Admin Portal and create a new app. This will be the app you will use to access the Microsoft Graph API.
 
