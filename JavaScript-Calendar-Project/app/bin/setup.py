@@ -6,11 +6,10 @@ from time import sleep as zzz
 
 def setupServer():
     chmod_setup = "sudo chmod +x setup.sh".split()
-    proc1 = s.run(
+    s.run(
         chmod_setup,
         stdout=s.PIPE,
     )
-    proc1
     s.call(['sh', './setup.sh'])
     print("Setup complete")
 
@@ -52,11 +51,10 @@ def rotateScreen():
 
 def setupChromium():
     chmod_chromium_start_script = "sudo chmod +x setupchromium.sh".split()
-    proc2 = s.run(
+    s.run(
         chmod_chromium_start_script,
         stdout=s.PIPE,
     )
-    proc2
     print("chromium permissions setup complete")
 
 
@@ -88,11 +86,10 @@ def checkPackages():
 
 def setupKiosk():
     chmod_kiosk_start_script = "sudo chmod +x kiosk.sh".split()
-    proc3 = s.run(
+    s.run(
         chmod_kiosk_start_script,
         stdout=s.PIPE,
     )
-    proc3
     s.call(['cp', 'kiosk.sh', '~/kiosk.sh'])
     s.call(['cat', '.setupkiosk.txt', '>>', '~/.bashrc'])
     print("Kiosk script added to the bashrc file.")
