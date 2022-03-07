@@ -56,7 +56,7 @@ def setupKiosk():
         stdout=s.PIPE,
     )
     proc3
-    s.call(['cp', 'kiosk.sh', '/home/pi/kiosk.sh'])
+    s.call(['cp', 'kiosk.sh', '~/kiosk.sh'])
     s.call(['cat', 'setupkiosk.txt', '>>', '~/.bashrc'])
     print("Kiosk script added to the bashrc file. Setup complete")
 

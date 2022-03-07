@@ -1,1 +1,1 @@
-xinit /home/pi/kiosk.sh -- vt$(fgconsole)
+xinit ~/kiosk.sh -- vt$(fgconsole)
