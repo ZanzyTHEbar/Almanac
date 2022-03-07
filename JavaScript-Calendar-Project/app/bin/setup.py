@@ -35,7 +35,7 @@ def rotateScreen():
     #   rotate screen
     # else
     #   exit function
-    rotate_screen, degrees = input("Would you like to rotate the screen? (y/n)" + "\n" + "How many degrees? (0-3), 0 is to reset and 3 is 270°" + "\n").split()
+    rotate_screen, degrees = input("Would you like to rotate the screen? (y/n)" + "\n" + "How many degrees? (0-3), 0 is to reset and 3 is 270°. Please use a space to separate answers." + "\n").split()
     print("Your choice to rotate screen", rotate_screen)
     print("Your degrees setting", degrees)
     if rotate_screen == "y" or rotate_screen == "Y":
