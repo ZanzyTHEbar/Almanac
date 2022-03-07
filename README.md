@@ -88,21 +88,37 @@ Then fix any vulnerabilities of the Node.js app
 
         sudo npm audit fix
 
-Navigate to the bin directory
+Now let's configure the `raspi-config` file. This file will be used to configure the Raspberry Pi.
 
-        cd bin
+        sudo raspi-config
 
-Setup the Server environment
+Edit the following settings
 
-        python3 setup.py
+        Advanced Options > Advanced OverScan > Enable Compensation: No
 
-The device will reboot automatically, and can be accessed via ssh using `pi@picalendar.local`.
+        Boot options > Desktop/CLI: CLI
 
-To manually start the server navigate back to the app directory
+        Boot options > Console Autologin: Yes
+
+Select `Finish` to save the changes. Select `Yes` to reboot the Pi. You should now be able to see the GUI upon boot via HDMI or the connected display.
+
+Once the device boots backup, navigate to the bin directory
+
+        cd /JavaScript-Calendar-Project/App/bin
+
+Now we will setup the Server environment
+
+        sudo python3 setup.py
+
+The device will reboot automatically when setup is complete, and can be accessed afterwards via ssh using `pi@picalendar.local`.
+
+The Node.js server will automatically start when the device boots.
+
+However, to manually start the server navigate back to the app directory
 
         cd /JavaScript-Calendar-Project/App
 
-This will start the Node.js app with the ability to quickly restart it using `rs` command
+The below command will start the Node.js app with the ability to quickly restart it using the `rs` command (great for development).
 
         sudo nodemon
 
@@ -110,23 +126,7 @@ or use the following command to start the server in the background
 
         sudo npm start
 
-However, the server will automatically restart whenever the device reboots.
-
-Now let's configure the `raspi-config` file. This file will be used to configure the Raspberry Pi.
-
-        sudo raspi-config
-
-Edit the following settings
-
-        Advanced Options > Advanced OverScan: Enable Compensation - No
-
-        Boot options > Desktop/CLI - CLI
-
-        Boot options > Console Autologin - Yes
-
-Select `Finish` to save the changes. Select `Yes` to reboot the Pi. You should now be able to see the GUI upon boot via HDMI or the connected display.
-
-Now you are setup and ready to go. You can now access the app by going to `http://<your hostname.local>`. The default hostname is `picalendar`. If you want to change this, you can do so by running the following command.
+Now you are setup and ready to go. You can now access the app by going to `https://<your hostname.local>`. The default hostname is `picalendar`. If you want to change this, you can do so by running the following command.
 
         sudo hostname.sh <newhostname>
 

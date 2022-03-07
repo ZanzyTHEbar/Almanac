@@ -1,5 +1,7 @@
 var graph = require("@microsoft/microsoft-graph-client");
 require("isomorphic-fetch");
+var args = process.argv.slice(2);
+var State = args[1];
 
 module.exports = {
   getUserDetails: async function (msalClient, userId) {
@@ -96,15 +98,49 @@ function getAuthenticatedClient(msalClient, userId) {
           // Attempt to get the token silently
           // This method uses the token cache and
           // refreshes expired tokens as needed
-          const response = await msalClient.acquireTokenSilent({
-            scopes: process.env.OAUTH_SCOPES.split(","),
-            redirectUri: process.env.OAUTH_REDIRECT_URI,
-            account: account,
-          });
 
-          // First param to callback is the error,
-          // Set to null in success case
-          done(null, response.accessToken);
+          switch (State) {
+            case "--secure": {
+              const response = await msalClient.acquireTokenSilent({
+                scopes: process.env.OAUTH_SCOPES.split(","),
+                redirectUri: process.env.OAUTH_REDIRECT_URI_SECURE,
+                account: account,
+              });
+              done(null, response.accessToken);
+              console.log("callback uri is set to secure");
+              break;
+            }
+            case "--localhost": {
+              const response = await msalClient.acquireTokenSilent({
+                scopes: process.env.OAUTH_SCOPES.split(","),
+                redirectUri: process.env.OAUTH_REDIRECT_URI_LOCALHOST,
+                account: account,
+              });
+              done(null, response.accessToken);
+              console.log("callback uri is set to localhost");
+              break;
+            }
+            case "--localhost-secure": {
+              const response = await msalClient.acquireTokenSilent({
+                scopes: process.env.OAUTH_SCOPES.split(","),
+                redirectUri: process.env.OAUTH_REDIRECT_URI_LOCALHOST_SECURE,
+                account: account,
+              });
+              done(null, response.accessToken);
+              console.log("callback uri is set to localhost-secure");
+              break;
+            }
+            default: {
+              const response = await msalClient.acquireTokenSilent({
+                scopes: process.env.OAUTH_SCOPES.split(","),
+                redirectUri: process.env.OAUTH_REDIRECT_URI,
+                account: account,
+              });
+              done(null, response.accessToken);
+              console.log("callback uri is set to default");
+              break;
+            }
+          }
         }
       } catch (err) {
         console.log(JSON.stringify(err, Object.getOwnPropertyNames(err)));

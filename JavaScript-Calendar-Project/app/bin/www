@@ -9,55 +9,31 @@ var debug = require("debug")("graph-tutorial:server");
 var http = require("http");
 var https = require("https");
 var fs = require("fs");
-var NoIp = require('no-ip');
-
-var noip = new NoIp({
-  hostname: process.env.NOIP_DOMAIN,
-  user: process.env.NOIP_USERNAME,
-  pass: process.env.NOIP_PASSWORD
-});
-
-/**
- * Get port from environment and store in Express.
- * @param {object} app - Express instance
- * @returns {number}
- * @private
- * @function
- * @example
- * var port = normalizePort(process.env.PORT || "3000");
- * app.set("port", port);
- */
+var NoIp = require("no-ip");
 var httpOptions = {
   key: fs.readFileSync(".keys/client-key.pem"),
 
   cert: fs.readFileSync(".keys/client-cert.pem"),
 };
-
-/**
- * Get port from environment and store in Express.
- */
-
-var port = normalizePort(process.env.PORT || "8080");
-app.set("port", port);
-
-/**
- * Create HTTP server.
- */
-
 var server = https.createServer(httpOptions, app);
+var server2 = http.createServer(app);
+var args = process.argv.slice(2);
+var Port = args[0];
+var State = args[1];
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+console.log("Server is running on port " + Port);
+console.log("Server state " + State);
 
-server.listen(port);
-server.on("error", onError);
-server.on("listening", onListening);
+
+var noip = new NoIp({
+  hostname: process.env.NOIP_DOMAIN,
+  user: process.env.NOIP_USERNAME,
+  pass: process.env.NOIP_PASSWORD,
+});
 
 /**
  * Normalize a port into a number, string, or false.
  */
-
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
@@ -103,17 +79,52 @@ function onError(error) {
 /**
  * Event listener for HTTP server "listening" event.
  */
-
-function onListening() {
+function onListeningSecure() {
   var addr = server.address();
   var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
 }
 
-noip.on('success', function(isChanged, ip){
-  console.log(isChanged, ip)
-})
- 
-noip.update() // Manual update, you can also provide a custom IP address
+function onListening() {
+  var addr = server2.address();
+  var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+  debug("Listening on " + bind);
+}
 
-noip.start() // Start the update loop
+/**
+ *Create a function that checks the arguments and uses http or https accordingly
+ */
+function Server(port) {
+  if (State == "--secure" || State == "--localhost-secure") {
+    var port = normalizePort(port);
+    app.set("port", port);
+
+    /**
+     * Listen on provided port, on all network interfaces.
+     */
+    server.listen(port);
+    server.on("error", onError);
+    server.on("listening", onListeningSecure);
+  } else if (State == "--localhost" || State == "") {
+    var port = normalizePort(port || "8080");
+    app.set("port", port);
+
+    /**
+     * Listen on provided port, on all network interfaces.
+     */
+    server2.listen(port);
+    server2.on("error", onError);
+    server2.on("listening", onListening);
+  }
+}
+
+
+noip.on("success", function (isChanged, ip) {
+  console.log(isChanged, ip);
+});
+
+noip.update(); // Manual update, you can also provide a custom IP address
+
+noip.start(); // Start the update loop
+
+Server(Port);
