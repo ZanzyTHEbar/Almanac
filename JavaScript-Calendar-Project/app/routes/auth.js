@@ -1,6 +1,7 @@
 const graph = require("../graph");
 const router = require("express-promise-router")();
 var args = process.argv.slice(2);
+process.env.PORT = args[0];
 var State = args[1];
 
 /* GET auth callback. */
@@ -10,7 +11,7 @@ router.get("/signin", async function (req, res) {
     case "--secure": {
       const urlParameters = {
         scopes: process.env.OAUTH_SCOPES.split(","),
-        redirectUri: process.env.OAUTH_REDIRECT_URI_SECURE,
+        redirectUri: process.env.OAUTH_REDIRECT_URI_SECURE + ":" + process.env.PORT + process.env.CALLBACK,
       };
     
       try {
@@ -32,7 +33,7 @@ router.get("/signin", async function (req, res) {
     case "--localhost": {
       const urlParameters = {
         scopes: process.env.OAUTH_SCOPES.split(","),
-        redirectUri: process.env.OAUTH_REDIRECT_URI_LOCALHOST,
+        redirectUri: process.env.OAUTH_REDIRECT_URI_LOCALHOST + ":" + process.env.PORT + process.env.CALLBACK,
       };
     
       try {
@@ -54,7 +55,7 @@ router.get("/signin", async function (req, res) {
     case "--localhost-secure": {
       const urlParameters = {
         scopes: process.env.OAUTH_SCOPES.split(","),
-        redirectUri: process.env.OAUTH_REDIRECT_URI_LOCALHOST_SECURE,
+        redirectUri: process.env.OAUTH_REDIRECT_URI_LOCALHOST_SECURE + ":" + process.env.PORT + process.env.CALLBACK,
       };
     
       try {
@@ -76,7 +77,7 @@ router.get("/signin", async function (req, res) {
     default: {
       const urlParameters = {
         scopes: process.env.OAUTH_SCOPES.split(","),
-        redirectUri: process.env.OAUTH_REDIRECT_URI,
+        redirectUri: process.env.OAUTH_REDIRECT_URI + ":" + process.env.PORT + process.env.CALLBACK,
       };
     
       try {
@@ -104,7 +105,7 @@ router.get("/callback", async function (req, res) {
       const tokenRequest = {
         code: req.query.code,
         scopes: process.env.OAUTH_SCOPES.split(","),
-        redirectUri: process.env.OAUTH_REDIRECT_URI_SECURE,
+        redirectUri: process.env.OAUTH_REDIRECT_URI_SECURE + ":" + process.env.PORT + process.env.CALLBACK,
       };
       console.log("callback uri is set to secure");
       try {
@@ -140,7 +141,7 @@ router.get("/callback", async function (req, res) {
       const tokenRequest = {
         code: req.query.code,
         scopes: process.env.OAUTH_SCOPES.split(","),
-        redirectUri: process.env.OAUTH_REDIRECT_URI_LOCALHOST,
+        redirectUri: process.env.OAUTH_REDIRECT_URI_LOCALHOST + ":" + process.env.PORT + process.env.CALLBACK,
       };
       console.log("callback uri is set to localhost");
       try {
@@ -176,7 +177,7 @@ router.get("/callback", async function (req, res) {
       const tokenRequest = {
         code: req.query.code,
         scopes: process.env.OAUTH_SCOPES.split(","),
-        redirectUri: process.env.OAUTH_REDIRECT_URI_LOCALHOST_SECURE,
+        redirectUri: process.env.OAUTH_REDIRECT_URI_LOCALHOST_SECURE + ":" + process.env.PORT + process.env.CALLBACK,
       };
       console.log("callback uri is set to localhost-secure");
       try {
@@ -212,7 +213,7 @@ router.get("/callback", async function (req, res) {
       const tokenRequest = {
         code: req.query.code,
         scopes: process.env.OAUTH_SCOPES.split(","),
-        redirectUri: process.env.OAUTH_REDIRECT_URI,
+        redirectUri: process.env.OAUTH_REDIRECT_URI + ":" + process.env.PORT + process.env.CALLBACK,
       };
       console.log("callback uri is set to default");
       try {

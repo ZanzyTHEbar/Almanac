@@ -15,13 +15,14 @@ var httpOptions = {
 
   cert: fs.readFileSync(".keys/client-cert.pem"),
 };
+
 var server = https.createServer(httpOptions, app);
 var server2 = http.createServer(app);
 var args = process.argv.slice(2);
-var Port = args[0];
+process.env.PORT = args[0];
 var State = args[1];
 
-console.log("Server is running on port " + Port);
+console.log("Server is running on port " + process.env.PORT);
 console.log("Server state " + State);
 
 var noip = new NoIp({
@@ -58,7 +59,10 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof Port === "string" ? "Pipe " + Port : "Port " + Port;
+  var bind =
+    typeof process.env.PORT === "string"
+      ? "Pipe " + process.env.PORT
+      : "Port " + process.env.PORT;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -90,30 +94,26 @@ function onListening() {
   debug("Listening on " + bind);
 }
 
-/**
- *Create a function that checks the arguments and uses http or https accordingly
- */
 function Server(port) {
-  if (State == "--secure" || State == "--localhost-secure") {
-    var port = normalizePort(port);
-    app.set("port", port);
+  switch (State) {
+    case "--localhost-secure":
+    case "--secure":
+      var port = normalizePort(port || "4443");
+      app.set("port", port);
 
-    /**
-     * Listen on provided port, on all network interfaces.
-     */
-    server.listen(port);
-    server.on("error", onError);
-    server.on("listening", onListeningSecure);
-  } else if (State == "--localhost" || State == "") {
-    var port = normalizePort(port || "8080");
-    app.set("port", port);
+      server.listen(port);
+      server.on("error", onError);
+      server.on("listening", onListeningSecure);
+      break;
+    case "--localhost":
+    default:
+      var port = normalizePort(port || "8080");
+      app.set("port", port);
 
-    /**
-     * Listen on provided port, on all network interfaces.
-     */
-    server2.listen(port);
-    server2.on("error", onError);
-    server2.on("listening", onListening);
+      server2.listen(port);
+      server2.on("error", onError);
+      server2.on("listening", onListening);
+      break;
   }
 }
 
@@ -125,4 +125,4 @@ noip.update(); // Manual update, you can also provide a custom IP address
 
 noip.start(); // Start the update loop
 
-Server(Port);
+Server(process.env.PORT);
