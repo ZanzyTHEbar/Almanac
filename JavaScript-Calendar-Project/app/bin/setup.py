@@ -1,6 +1,7 @@
+# MUST SUDO FOR THIS TO WORK - ELSE PERMISSION DENIED
+
 import subprocess as s
 from time import sleep as zzz
-from getpass import getpass
 
 
 def setupServer():
@@ -8,8 +9,6 @@ def setupServer():
     proc1 = s.run(
         chmod_setup,
         stdout=s.PIPE,
-        input=getpass("password: "),
-        encoding="ascii",
     )
     proc1
     s.call(['sh', './setup.sh'])
@@ -20,10 +19,34 @@ def setupChromium():
     proc2 = s.run(
         chmod_chromium_start_script,
         stdout=s.PIPE,
-        input=getpass("password: "),
-        encoding="ascii",
     )
     proc2
+
+
+def checkPackages():
+    # apt list --installed | grep name
+    # dpkg -l | grep name
+    # apt search name
+    # [[ $(dpkg -s bzip2 | grep Status) =~ "ok" ]] && echo "inst" || echo "not inst"
+    modules_dict = {'chromium-browser', 'matchbox-window-manager',
+                    'xautomation', 'unclutter', 'xserver-org', 'xinit', 'x11-xserver-utils'}
+    for module in modules_dict:
+        print(module)
+        check_packages = "[[ $(dpkg -s " + module + \
+            "| grep Status) =~ \"ok\" ]] && echo \"inst\" || echo \"not inst\"".split(
+            )
+        proc4 = s.run(
+            check_packages,
+            stdout=s.PIPE,
+        )
+        proc4
+        if proc4 is "not inst":
+            print("Installing " + module)
+            s.call(['apt', 'install', module + " -y"])
+        else:
+            print(module + " is installed")
+            setupChromium()
+        zzz(1)
 
 
 def setupKiosk():
@@ -31,8 +54,6 @@ def setupKiosk():
     proc3 = s.run(
         chmod_kiosk_start_script,
         stdout=s.PIPE,
-        input=getpass("password: "),
-        encoding="ascii",
     )
     proc3
     s.call(['cp', 'kiosk.sh', '/home/pi/kiosk.sh'])
@@ -42,8 +63,7 @@ def setupKiosk():
 
 if __name__ == '__main__':
     setupServer()
-    zzz(120)
-    setupChromium()
+    checkPackages()
     zzz(5)
     setupKiosk()
     zzz(5)

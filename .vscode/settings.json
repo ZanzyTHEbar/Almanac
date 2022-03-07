@@ -5,6 +5,7 @@
         "Autologin",
         "calendarview",
         "DLNA",
+        "dpkg",
         "Epaper",
         "fgconsole",
         "fullchain",
@@ -31,6 +32,7 @@
         "turbolinks",
         "Wakeon",
         "Waveshare",
+        "xautomation",
         "xgpx",
         "xinit"
     ]

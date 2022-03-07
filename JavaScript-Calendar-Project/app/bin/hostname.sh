@@ -13,7 +13,7 @@ echo $NAME
 echo $NAME | sudo tee  /etc/hostname
 
 sudo sed -i -e 's/^.*hostname-setter.*$//g' /etc/hosts
-echo "127.0.1.1      " $NAME " ### Set by hostname-setter"  | sudo tee -a /etc/hosts
+echo "127.0.0.1      " $NAME " ### Set by hostname-setter"  | sudo tee -a /etc/hosts
 
 sudo service hostname.sh stop
 sudo service hostname.sh start
