@@ -12,8 +12,8 @@ def setupServer():
     )
     proc1
     s.call(['sh', './setup.sh'])
-    s.call(['sudo', 'cp', '/boot/config.txt', '/boot/config.txt.bak'])
-    print("setup.sh complete")
+    print("Setup complete")
+
     
 def getRotationSettings(argument):
     switcher = {
@@ -30,6 +30,7 @@ def getRotationSettings(argument):
     return switcher.get(argument, "nothing")
     
 def rotateScreen():
+    s.call(['sudo', 'cp', '/boot/config.txt', '/boot/config.txt.bak'])
     # request user input
     # if input is "y"
     #   rotate screen
@@ -98,8 +99,8 @@ def setupKiosk():
 
 
 if __name__ == '__main__':
-    setupServer()
     checkPackages()
     setupKiosk()
+    setupServer()
     zzz(5)
     quit()
