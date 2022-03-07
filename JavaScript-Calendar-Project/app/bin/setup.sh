@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Hostname Setter Service Creator Started"
-sudo mv hostname.sh /usr/bin/hostname.sh
+sudo cp hostname.sh /usr/bin/hostname.sh
 echo "Moved hostname.sh to /usr/bin"
 sudo chmod +x /usr/bin/hostname.sh
 echo "Applied permissions to hostname.sh"
@@ -24,6 +24,7 @@ echo "Changing Hostname"
 sudo hostname.sh picalendar
 echo "Hostname Changed to:"
 hostname
+echo "This is the default hostname, feel free to change it to whatever you want"
 
 echo "Hostname Setter Service Creator Finished"
 

@@ -9,6 +9,13 @@ var debug = require("debug")("graph-tutorial:server");
 var http = require("http");
 var https = require("https");
 var fs = require("fs");
+var NoIp = require('no-ip');
+
+var noip = new NoIp({
+  hostname: process.env.NOIP_DOMAIN,
+  user: process.env.NOIP_USERNAME,
+  pass: process.env.NOIP_PASSWORD
+});
 
 /**
  * Get port from environment and store in Express.
@@ -102,3 +109,11 @@ function onListening() {
   var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
 }
+
+noip.on('success', function(isChanged, ip){
+  console.log(isChanged, ip)
+})
+ 
+noip.update() // Manual update, you can also provide a custom IP address
+
+noip.start() // Start the update loop
