@@ -12,6 +12,41 @@ def setupServer():
     )
     proc1
     s.call(['sh', './setup.sh'])
+    s.call(['sudo', 'cp', '/boot/config.txt', '/boot/config.txt.bak'])
+    print("setup.sh complete")
+    
+def getRotationSettings(argument):
+    switcher = {
+        0: ".rotatelcd0.txt",
+        1: ".rotatelcd1.txt",
+        2: ".rotatelcd2.txt",
+        3: ".rotatelcd3.txt",
+    }
+ 
+    # get() method of dictionary data type returns
+    # value of passed argument if it is present
+    # in dictionary otherwise second argument will
+    # be assigned as default value of passed argument
+    return switcher.get(argument, "nothing")
+    
+def rotateScreen():
+    # request user input
+    # if input is "y"
+    #   rotate screen
+    # else
+    #   exit function
+    rotate_screen, degrees = input("Would you like to rotate the screen? (y/n)" + "\n" + "How many degrees? (0-3), 0 is to reset and 3 is 270°" + "\n").split()
+    print("Your choice to rotate screen", rotate_screen)
+    print("Your degrees setting", degrees)
+    if rotate_screen == "y" or rotate_screen == "Y":
+        rotation_settings = getRotationSettings(degrees)
+        s.call(['sudo','cat', '/boot/config.txt.bak', '>', '/boot/config.txt']) 
+        s.call(['sudo','cat', rotation_settings, '>>', '/boot/config.txt']) # rotate the screen and touch input: options are "0" "1" "2" "3" - from 0 to 270 degrees of rotation
+        
+        print("Screen rotation has been set, please wait until setup completes to reboot")
+    else:
+        print("Continuing with setup")
+        pass
 
 
 def setupChromium():
@@ -21,6 +56,7 @@ def setupChromium():
         stdout=s.PIPE,
     )
     proc2
+    print("chromium permissions setup complete")
 
 
 def checkPackages():
@@ -46,7 +82,7 @@ def checkPackages():
         else:
             print(module + " is installed")
             setupChromium()
-        zzz(1)
+        zzz(5)
 
 
 def setupKiosk():
@@ -57,14 +93,13 @@ def setupKiosk():
     )
     proc3
     s.call(['cp', 'kiosk.sh', '~/kiosk.sh'])
-    s.call(['cat', 'setupkiosk.txt', '>>', '~/.bashrc'])
+    s.call(['cat', '.setupkiosk.txt', '>>', '~/.bashrc'])
     print("Kiosk script added to the bashrc file. Setup complete")
 
 
 if __name__ == '__main__':
     setupServer()
     checkPackages()
-    zzz(5)
     setupKiosk()
     zzz(5)
     quit()
