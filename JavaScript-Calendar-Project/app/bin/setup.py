@@ -13,7 +13,7 @@ def setupServer():
     s.call(['sh', './setup.sh'])
     print("Setup complete")
 
-    
+
 def getRotationSettings(argument):
     switcher = {
         0: ".rotatelcd0.txt",
@@ -21,13 +21,14 @@ def getRotationSettings(argument):
         2: ".rotatelcd2.txt",
         3: ".rotatelcd3.txt",
     }
- 
+
     # get() method of dictionary data type returns
     # value of passed argument if it is present
     # in dictionary otherwise second argument will
     # be assigned as default value of passed argument
     return switcher.get(argument, "nothing")
-    
+
+
 def rotateScreen():
     s.call(['sudo', 'cp', '/boot/config.txt', '/boot/config.txt.bak'])
     # request user input
@@ -35,18 +36,20 @@ def rotateScreen():
     #   rotate screen
     # else
     #   exit function
-    rotate_screen, degrees = input("Would you like to rotate the screen? (y/n)" + "\n" + "How many degrees? (0-3), 0 is to reset and 3 is 270°. Please use a space to separate answers." + "\n").split()
+    rotate_screen, degrees = input("Would you like to rotate the screen? (y/n)" + "\n" +
+                                   "How many degrees? (0-3), 0 is to reset and 3 is 270°. Please use a space to separate answers." + "\n").split()
     print("Your choice to rotate screen", rotate_screen)
     print("Your degrees setting", degrees)
+    print("Continuing with setup, setting up rotation")
     if rotate_screen == "y" or rotate_screen == "Y":
         rotation_settings = getRotationSettings(degrees)
-        s.call(['sudo','cat', '/boot/config.txt.bak', '>', '/boot/config.txt']) 
-        s.call(['sudo','cat', rotation_settings, '>>', '/boot/config.txt']) # rotate the screen and touch input: options are "0" "1" "2" "3" - from 0 to 270 degrees of rotation
-        
+        s.call(['sudo', 'cat', '/boot/config.txt.bak', '>', '/boot/config.txt'])
+        # rotate the screen and touch input: options are "0" "1" "2" "3" - from 0 to 270 degrees of rotation
+        s.call(['sudo', 'cat', rotation_settings, '>>', '/boot/config.txt'])
+
         print("Screen rotation has been set, please wait until setup completes to reboot")
     else:
-        print("Continuing with setup")
-        pass
+        print("Continuing with setup without rotating the screen")
 
 
 def setupChromium():
