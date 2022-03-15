@@ -5,3 +5,5 @@
 # This folder is where your SSL certificates and keys are stored.
 
 /.keys
+
+/.vscode
