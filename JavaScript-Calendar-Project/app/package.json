@@ -26,6 +26,7 @@
     "no-ip": "^1.0.2",
     "nodemon": "^2.0.15",
     "to": "^0.2.9",
+    "tui-calendar": "^1.15.3",
     "update": "^0.7.4",
     "windows-iana": "^5.0.2"
   }
