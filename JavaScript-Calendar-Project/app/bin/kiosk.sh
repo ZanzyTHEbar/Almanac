@@ -1,7 +1,6 @@
 #!/bin/sh
-warning="Please ensure your environment variables are set correctly."
 
-echo $warning
+echo "Please ensure your environment variables are set correctly."
 xset -dpms     # disable DPMS (Energy Star) features.
 xset s off     # disable screen saver
 xset s noblank # don't blank the video device
@@ -13,6 +12,7 @@ case $1 in
 --secure | -s | --https)
     echo "Secure mode"
     echo "Please ensure that you have a valid certificate and key in the /.keys directory."
+    echo "You will need to have a properly configured custom DNS and port forwarding for this option to work"
     sudo nodemon 443 --secure # start node server on port 443 in secure mode
     chromium-browser --display=:0 --kiosk --window-position=0,0 https://picalendar.ddns.net/
     ;;
