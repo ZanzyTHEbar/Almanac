@@ -53,7 +53,7 @@ def rotateScreen():
 
 
 def setupChromium():
-    chmod_chromium_start_script = "sudo chmod +x setupchromium.sh".split()
+    chmod_chromium_start_script = "sudo chmod +x ../setupchromium.sh".split()
     s.run(
         chmod_chromium_start_script,
         stdout=s.PIPE,
