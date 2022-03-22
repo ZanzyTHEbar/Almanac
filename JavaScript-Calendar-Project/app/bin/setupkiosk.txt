@@ -1,1 +1,4 @@
-xinit ~/kiosk.sh -- vt$(fgconsole)
+xinit ~/kiosk.sh -- vt$(fgconsole) # start kiosk in localhost http mode
+# uncomment one of the following lines to either enable the kiosk mode in secure mode(https and custom dns) or dev mode(http and localhost dns)
+# xinit ~/kiosk.sh --s -- vt$(fgconsole)
+# xinit ~/kiosk.sh --d -- vt$(fgconsole)
