@@ -12,7 +12,6 @@ def setupServer():
         stdout=s.PIPE,
     )
     s.call(['sh', './setup.sh'])
-    print("{FORE.BLUE}Setup complete, system will reboot to complete setup{STYLE.RESET_ALL}")
 
 
 def getRotationSettings(argument):
@@ -81,6 +80,10 @@ def checkPackages():
         if proc4 is "not inst":
             print("Installing " + module)
             s.call(['apt', 'install', module + " -y"])
+            zzz(3)
+            print(module + " is now installed")
+            print("Continuing with setup, setting up Chromium")
+            setupChromium()
         else:
             print(module + " is installed")
             print("Continuing with setup, setting up Chromium")
