@@ -6,13 +6,13 @@ STRONG_YELLOW='\033[93m\033[93m'
 BOLD='\033[1m\033[1m'
 UL='\033[4m'
 NC='\033[0m' # No Color
-
+printf "============================================================\n"
 if test $# -eq 0
 then
     printf "${BOLD}${UL}${RED} ERROR - ${NC}${BOLD}${STRONG_YELLOW}Please pass-in an ideal name${NC}"
     exit 1
 fi
-
+printf "============================================================\n"
 echo $1
 NAME=$1
 echo $NAME
@@ -31,3 +31,4 @@ printf "${BOLD}${STRONG_BLUE}${UL}sudo hostname.sh <hostname>${NC}"
 printf "${BOLD}${STRONG_YELLOW}Rebooting machine in 15 seconds${NC}"
 sleep 15
 sudo reboot
+printf "============================================================\n"
