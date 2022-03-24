@@ -2,6 +2,7 @@
 
 import subprocess as s
 from time import sleep as zzz
+from colorama import Fore, Style
 
 
 def setupServer():
@@ -11,7 +12,7 @@ def setupServer():
         stdout=s.PIPE,
     )
     s.call(['sh', './setup.sh'])
-    print("Setup complete")
+    print("{FORE.BLUE}Setup complete, system will reboot to complete setup{STYLE.RESET_ALL}")
 
 
 def getRotationSettings(argument):
@@ -36,20 +37,20 @@ def rotateScreen():
     #   rotate screen
     # else
     #   exit function
-    rotate_screen, degrees = input("Would you like to rotate the screen? (y/n)" + "\n" +
-                                   "How many degrees? (0-3), 0 is to reset and 3 is 270°. Please use a space to separate answers." + "\n").split()
-    print("Your choice to rotate screen", rotate_screen)
-    print("Your degrees setting", degrees)
-    print("Continuing with setup, setting up rotation")
+    rotate_screen, degrees = input("{FORE.YELLOW}Would you like to rotate the screen? (y/n)" + "\n" +
+                                   "How many degrees? (0-3), 0 is to reset and 3 is 270°. Please use a space to separate answers.{STYLE.RESET_ALL}" + "\n").split()
+    print("{FORE.BLUE}Your choice to rotate screen{STYLE.RESET_ALL}", rotate_screen)
+    print("{FORE.GREEN}Your degrees setting{STYLE.RESET_ALL}", degrees)
+    print("{FORE.BLUE}Continuing with setup, setting up rotation{STYLE.RESET_ALL}")
     if rotate_screen == "y" or rotate_screen == "Y":
         rotation_settings = getRotationSettings(degrees)
         s.call(['sudo', 'cat', '/boot/config.txt.bak', '>', '/boot/config.txt'])
         # rotate the screen and touch input: options are "0" "1" "2" "3" - from 0 to 270 degrees of rotation
         s.call(['sudo', 'cat', rotation_settings, '>>', '/boot/config.txt'])
 
-        print("Screen rotation has been set, please wait until setup completes to reboot")
+        print("{FORE.YELLOW}Screen rotation has been set, please wait until setup completes to reboot{STYLE.RESET_ALL}")
     else:
-        print("Continuing with setup without rotating the screen")
+        print("{FORE.YELLOW}Continuing with setup without rotating the screen{STYLE.RESET_ALL}")
 
 
 def setupChromium():
@@ -58,7 +59,7 @@ def setupChromium():
         chmod_chromium_start_script,
         stdout=s.PIPE,
     )
-    print("chromium permissions setup complete")
+    print("{FORE.YELLOW}Chromium permissions setup complete{STYLE.RESET_ALL}")
 
 
 def checkPackages():
@@ -95,7 +96,7 @@ def setupKiosk():
     )
     s.call(['cp', 'kiosk.sh', '~/kiosk.sh'])
     s.call(['cat', '.setupkiosk.txt', '>>', '~/.bashrc'])
-    print("Kiosk script added to the bashrc file.")
+    print("{FORE.YELLOW}Kiosk script added to the bashrc file.{STYLE.RESET_ALL}")
 
 
 if __name__ == '__main__':
