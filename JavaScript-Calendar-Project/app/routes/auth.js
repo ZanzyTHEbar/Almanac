@@ -1,3 +1,5 @@
+"use strict";
+
 const graph = require("../graph");
 const router = require("express-promise-router")();
 var args = process.argv.slice(2);

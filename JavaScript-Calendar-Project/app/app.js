@@ -1,3 +1,5 @@
+"use strict";
+
 require("dotenv").config();
 
 const session = require("express-session");
@@ -10,10 +12,11 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 const calendarRouter = require("./routes/calendar");
+const dlnaRouter = require("./routes/dlnaplayer");
 
 var app = express();
 
@@ -102,6 +105,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
+app.use("/dlna", dlnaRouter);
 app.use("/calendar", calendarRouter);
 app.use("/users", usersRouter);
 

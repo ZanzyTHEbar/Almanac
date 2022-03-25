@@ -8,6 +8,7 @@
   "dependencies": {
     "@azure/msal-node": "^1.3.0",
     "@microsoft/microsoft-graph-client": "^3.0.2",
+    "browserify": "^17.0.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "date-fns": "^2.23.0",
@@ -23,6 +24,7 @@
     "isomorphic-fetch": "^3.0.0",
     "morgan": "^1.10.0",
     "no-ip": "^1.0.2",
+    "nodecast-js": "^1.0.3",
     "nodemon": "^2.0.15",
     "to": "^0.2.9",
     "tui-calendar": "^1.15.3",

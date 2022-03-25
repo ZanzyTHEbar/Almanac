@@ -3,6 +3,8 @@
 /**
  * Module dependencies.
  */
+"use strict";
+
 var app = require("../app");
 var debug = require("debug")("graph-tutorial:server");
 var http = require("http");
@@ -21,8 +23,14 @@ var args = process.argv.slice(2);
 process.env.PORT = args[0];
 var State = args[1];
 
+var cLine = "-----------------------------------------------------------";
+
+console.log(cLine);
+
 console.log("Server is running on port " + process.env.PORT);
+console.log(cLine);
 console.log("Server state " + State);
+console.log(cLine);
 
 /* var noip = new NoIp({
   hostname: process.env.NOIP_DOMAIN,
@@ -93,9 +101,22 @@ function onListening() {
   debug("Listening on " + bind);
 }
 
+console.log("Open this url in a chromium browser:");
+
 function Server(port) {
   switch (State) {
     case "--localhost-secure":
+      var port = normalizePort(port || "4443");
+      app.set("port", port);
+
+      server.listen(port);
+      server.on("error", onError);
+      server.on("listening", onListeningSecure);
+      console.log(
+        process.env.OAUTH_REDIRECT_URI_LOCALHOST_SECURE + ":" + process.env.PORT
+      );
+      console.log(cLine);
+      break;
     case "--secure":
       var port = normalizePort(port || "4443");
       app.set("port", port);
@@ -103,8 +124,23 @@ function Server(port) {
       server.listen(port);
       server.on("error", onError);
       server.on("listening", onListeningSecure);
+      console.log(
+        process.env.OAUTH_REDIRECT_URI_SECURE + ":" + process.env.PORT
+      );
+      console.log(cLine);
       break;
     case "--localhost":
+      var port = normalizePort(port || "8080");
+      app.set("port", port);
+
+      server2.listen(port);
+      server2.on("error", onError);
+      server2.on("listening", onListening);
+      console.log(cLine);
+      console.log(
+        process.env.OAUTH_REDIRECT_URI_LOCALHOST + ":" + process.env.PORT
+      );
+      break;
     default:
       var port = normalizePort(port || "8080");
       app.set("port", port);
@@ -112,6 +148,8 @@ function Server(port) {
       server2.listen(port);
       server2.on("error", onError);
       server2.on("listening", onListening);
+      console.log(process.env.OAUTH_REDIRECT_URI + ":" + process.env.PORT);
+      console.log(cLine);
       break;
   }
 }
