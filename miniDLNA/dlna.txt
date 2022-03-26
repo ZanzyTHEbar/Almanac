@@ -1,0 +1,6 @@
+Service: urn:schemas-upnp-org:service:ContentDirectory:1
+URL: /ctl/ContentDir
+Service: urn:schemas-upnp-org:service:ConnectionManager:1
+URL: /ctl/ConnectionMgr
+Service: urn:microsoft.com:service:X_MS_MediaReceiverRegistrar:1
+URL: /ctl/X_MS_MediaReceiverRegistrar

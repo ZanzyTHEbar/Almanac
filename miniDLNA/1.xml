@@ -1,0 +1,3018 @@
+<?xml version="1.0" ?>
+<DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/" xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/">
+	
+
+	<container id="1$7$160" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>11 Of The Best (IMPORT)</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Billy Idol</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Billy Idol</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/56-7139.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$127" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>1967-1970 [Disc 1]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>The Beatles</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>The Beatles</upnp:artist>
+	</container>
+	<container id="1$7$126" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>1967-1970 [Disc 2]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>The Beatles</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>The Beatles</upnp:artist>
+	</container>
+	<container id="1$7$DC" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>1984</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$CB" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>1987</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Whitesnake</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Whitesnake</upnp:artist>
+	</container>
+	<container id="1$7$A3" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>1990 - Firehouse</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Firehouse</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Firehouse</upnp:artist>
+	</container>
+	<container id="1$7$DE" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>5150</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>VAN HALEN</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>VAN HALEN</upnp:artist>
+	</container>
+	<container id="1$7$136" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>7800° Fahrenheit</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bon Jovi</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Bon Jovi</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/51-6381.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$8E" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>A Day Without Rain</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Enya</dc:creator>
+		<upnp:genre>New Age</upnp:genre>
+		<upnp:artist>Enya</upnp:artist>
+	</container>
+	<container id="1$7$163" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>A Fistful Of Alice [Live]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Alice Cooper</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Alice Cooper</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/59-7181.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$9A" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>A Little Ain't Enough</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>David Lee Roth</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>David Lee Roth</upnp:artist>
+	</container>
+	<container id="1$7$154" parentID="1$7" restricted="1" searchable="1" childCount="17">
+		<dc:title>Aces And Kings : The Best Of Go West</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Go West</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Go West</upnp:artist>
+	</container>
+	<container id="1$7$50" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Adrenaline Sky</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Dan Reed</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Dan Reed</upnp:artist>
+	</container>
+	<container id="1$7$FD" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Adrenalize</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$69" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Ah Via Musicom</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Eric Johnson</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Eric Johnson</upnp:artist>
+	</container>
+	<container id="1$7$65" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Album Of The Year</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Faith No More</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Faith No More</upnp:artist>
+	</container>
+	<container id="1$7$82" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Alive III [Live]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>KISS</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>KISS</upnp:artist>
+	</container>
+	<container id="1$7$109" parentID="1$7" restricted="1" searchable="1" childCount="20">
+		<dc:title>All Over The World: The Very Best Of ELO</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Electric Light Orchestra</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Electric Light Orchestra</upnp:artist>
+	</container>
+	<container id="1$7$92" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>All Systems go</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Vinnie Vincent</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Vinnie Vincent</upnp:artist>
+	</container>
+	<container id="1$7$E9" parentID="1$7" restricted="1" searchable="1" childCount="33">
+		<dc:title>All The Best [Disc 1]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Tina Turner</dc:creator>
+		<upnp:genre>R&amp;B</upnp:genre>
+		<upnp:artist>Tina Turner</upnp:artist>
+	</container>
+	<container id="1$7$EC" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Almost unplugged</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Europe</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Europe</upnp:artist>
+	</container>
+	<container id="1$7$8A" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Amarantine</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Enya</dc:creator>
+		<upnp:genre>New Age</upnp:genre>
+		<upnp:artist>Enya</upnp:artist>
+	</container>
+	<container id="1$7$8B" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>And Winter Came...</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Enya</dc:creator>
+		<upnp:genre>New Age</upnp:genre>
+		<upnp:artist>Enya</upnp:artist>
+	</container>
+	<container id="1$7$C6" parentID="1$7" restricted="1" searchable="1" childCount="50">
+		<dc:title>Anthology</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bryan Adams</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Bryan Adams</upnp:artist>
+	</container>
+	<container id="1$7$61" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Appetite For Destruction</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Guns N' Roses</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Guns N' Roses</upnp:artist>
+	</container>
+	<container id="1$7$C5" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Atomic Playboys</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Steve Stevens' Atomic Playboys</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Steve Stevens' Atomic Playboys</upnp:artist>
+	</container>
+	<container id="1$7$33" parentID="1$7" restricted="1" searchable="1" childCount="29">
+		<dc:title>B sides</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Dan Reed Network</dc:creator>
+		<upnp:genre>Blues</upnp:genre>
+		<upnp:artist>Dan Reed Network</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/2-971.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$14B" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Baby one more time</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Britney spears</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Britney spears</upnp:artist>
+	</container>
+	<container id="1$7$170" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Back Street Symphony</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Thunder</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Thunder</upnp:artist>
+	</container>
+	<container id="1$7$124" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Back for the attack</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>DOKKEN</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>DOKKEN</upnp:artist>
+	</container>
+	<container id="1$7$46" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Backlash</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bad English</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Bad English</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/34-1318.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$55" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Bad Animals</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Heart</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Heart</upnp:artist>
+	</container>
+	<container id="1$7$45" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Bad English</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bad English</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Bad English</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/33-1301.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$6A" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Bad luck</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>FM</dc:creator>
+		<upnp:artist>FM</upnp:artist>
+	</container>
+	<container id="1$7$D9" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Balance</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$155" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Bangs &amp; Crashes</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Go West</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Go West</upnp:artist>
+	</container>
+	<container id="1$7$6B" parentID="1$7" restricted="1" searchable="1" childCount="3">
+		<dc:title>Barber's Adagio For Strings [Single]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>William Orbit</dc:creator>
+		<upnp:genre>Electronica</upnp:genre>
+		<upnp:artist>William Orbit</upnp:artist>
+	</container>
+	<container id="1$7$93" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Bat Out Of Hell II - Back Into Hell</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Meat Loaf</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Meat Loaf</upnp:artist>
+	</container>
+	<container id="1$7$75" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Bats head soup</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Ozzy Osbourne</dc:creator>
+		<upnp:artist>Ozzy Osbourne</upnp:artist>
+	</container>
+	<container id="1$7$171" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Behind Closed Doors</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Thunder</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Thunder</upnp:artist>
+	</container>
+	<container id="1$7$AC" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Best Of Rockers 'N' Ballads</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Scorpions</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Scorpions</upnp:artist>
+	</container>
+	<container id="1$7$0" parentID="1$7" restricted="1" searchable="1" childCount="4">
+		<dc:title>Best of</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>White Lion</dc:creator>
+		<upnp:artist>White Lion</upnp:artist>
+	</container>
+	<container id="1$7$129" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Best of</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Frankie goes to Hollywood</dc:creator>
+		<upnp:artist>Frankie goes to Hollywood</upnp:artist>
+	</container>
+	<container id="1$7$52" parentID="1$7" restricted="1" searchable="1" childCount="2">
+		<dc:title>Best of</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Motley crue</dc:creator>
+		<upnp:artist>Motley crue</upnp:artist>
+	</container>
+	<container id="1$7$EB" parentID="1$7" restricted="1" searchable="1" childCount="28">
+		<dc:title>Best of</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Europe</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Europe</upnp:artist>
+	</container>
+	<container id="1$7$E5" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Big Bang!</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Fuzzbox</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Fuzzbox</upnp:artist>
+	</container>
+	<container id="1$7$7C" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>Big Ones</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Aerosmith</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Aerosmith</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/37-2158.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$12C" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Big money</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>House of Lords</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>House of Lords</upnp:artist>
+	</container>
+	<container id="1$7$3F" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Bill &amp; Ted's Bogus Journey</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bill and Ted</dc:creator>
+		<upnp:genre>Soundtrack</upnp:genre>
+		<upnp:artist>Bill and Ted</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/32-1209.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$15F" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Billy Idol</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Billy Idol</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Billy Idol</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/55-7125.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$79" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Black Rain</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Ozzy Osbourne</dc:creator>
+		<upnp:genre>Blues</upnp:genre>
+		<upnp:artist>Ozzy Osbourne</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/36-2098.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$114" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Blood On The Bricks</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Aldo Nova</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Aldo Nova</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/46-5826.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$A6" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Blue Murder</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Blue Murder</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Blue Murder</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/40-4020.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$6" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Blurring The Edges</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Meredith Brooks</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Meredith Brooks</upnp:artist>
+	</container>
+	<container id="1$7$13C" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Bon Jovi</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bon Jovi</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Bon Jovi</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/53-6463.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$64" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Born this way</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Lady Gaga</dc:creator>
+		<upnp:artist>Lady Gaga</upnp:artist>
+	</container>
+	<container id="1$7$11" parentID="1$7" restricted="1" searchable="1" childCount="8">
+		<dc:title>Breakbreak</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Paul Sabu</dc:creator>
+		<upnp:artist>Paul Sabu</upnp:artist>
+	</container>
+	<container id="1$7$121" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Breakthrough</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Crown of Thorns</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Crown of Thorns</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/50-6048.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$58" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Brigade</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Heart</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Heart</upnp:artist>
+	</container>
+	<container id="1$7$162" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Brutal Planet</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Alice Cooper</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Alice Cooper</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/58-7167.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$1D" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Bump Ahead</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Mr Big</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Mr Big</upnp:artist>
+	</container>
+	<container id="1$7$E6" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>But Seriously</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Phil Collins</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Phil Collins</upnp:artist>
+	</container>
+	<container id="1$7$12D" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Cartesian Dreams</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>House of Lords</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>House of Lords</upnp:artist>
+	</container>
+	<container id="1$7$1" parentID="1$7" restricted="1" searchable="1" childCount="4">
+		<dc:title>Cherry Pie (CD single)</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Warrant</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Warrant</upnp:artist>
+	</container>
+	<container id="1$7$4D" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Chickenfoot</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Chickenfoot</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Chickenfoot</upnp:artist>
+	</container>
+	<container id="1$7$6E" parentID="1$7" restricted="1" searchable="1" childCount="3">
+		<dc:title>Chocolate Salty Balls [Single]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Chef</dc:creator>
+		<upnp:genre>Soundtrack</upnp:genre>
+		<upnp:artist>Chef</upnp:artist>
+	</container>
+	<container id="1$7$135" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Chocolate Starfish And The Hot Dog Flavored Water</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Limp Bizkit</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Limp Bizkit</upnp:artist>
+	</container>
+	<container id="1$7$C0" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Classic Experience 4 [Disc 2]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Classical</dc:creator>
+		<upnp:genre>Classical</upnp:genre>
+		<upnp:artist>Classical</upnp:artist>
+	</container>
+	<container id="1$7$BF" parentID="1$7" restricted="1" searchable="1" childCount="18">
+		<dc:title>Classic Experience IV [Disc 1]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Classical</dc:creator>
+		<upnp:genre>Classical</upnp:genre>
+		<upnp:artist>Classical</upnp:artist>
+	</container>
+	<container id="1$7$C9" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Come An' Get It</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Whitesnake</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Whitesnake</upnp:artist>
+	</container>
+	<container id="1$7$148" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>Come On Over</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Shania Twain</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Shania Twain</upnp:artist>
+	</container>
+	<container id="1$7$12F" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Come to my Kingdom</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>House of Lords</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>House of Lords</upnp:artist>
+	</container>
+	<container id="1$7$5B" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Coming up for air</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Dan Reed</dc:creator>
+		<upnp:artist>Dan Reed</upnp:artist>
+	</container>
+	<container id="1$7$14F" parentID="1$7" restricted="1" searchable="1" childCount="67">
+		<dc:title>Compilation 1</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Various 1</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Various 1</upnp:artist>
+	</container>
+	<container id="1$7$166" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Compliation</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>ALICE COOPER</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>ALICE COOPER</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/62-7222.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$81" parentID="1$7" restricted="1" searchable="1" childCount="21">
+		<dc:title>Compliation 2</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Various 2</dc:creator>
+		<upnp:artist>Various 2</upnp:artist>
+	</container>
+	<container id="1$7$E" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Contraband</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Contraband</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Contraband</upnp:artist>
+	</container>
+	<container id="1$7$16E" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Coverdale/Page</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Jimmy Page &amp; David Coverdale</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Jimmy Page &amp; David Coverdale</upnp:artist>
+	</container>
+	<container id="1$7$35" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Crazy crazy nights</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>KISS</dc:creator>
+		<upnp:artist>KISS</upnp:artist>
+	</container>
+	<container id="1$7$122" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Crown Of Thorns</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Crown Of Thorns</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Crown Of Thorns</upnp:artist>
+	</container>
+	<container id="1$7$4B" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Crystal Planet</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Joe Satriani</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Joe Satriani</upnp:artist>
+	</container>
+	<container id="1$7$38" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Dan Reed Network</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Dan Reed Network</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Dan Reed Network</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/4-1063.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$C2" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Danger Danger</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Danger Danger</dc:creator>
+		<upnp:artist>Danger Danger</upnp:artist>
+	</container>
+	<container id="1$7$116" parentID="1$7" restricted="1" searchable="1" childCount="4">
+		<dc:title>Days Of Thunder</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>John Waite</dc:creator>
+		<upnp:genre>Soundtrack</upnp:genre>
+		<upnp:artist>John Waite</upnp:artist>
+	</container>
+	<container id="1$7$A1" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Dehumanizer</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Black Sabbath</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Black Sabbath</upnp:artist>
+	</container>
+	<container id="1$7$12E" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Demons down</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>House of Lords</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>House of Lords</upnp:artist>
+	</container>
+	<container id="1$7$34" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Destination Anywhere (IMPORT)</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Jon Bon Jovi</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Jon Bon Jovi</upnp:artist>
+	</container>
+	<container id="1$7$99" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Diamond Dave</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>David Lee Roth</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>David Lee Roth</upnp:artist>
+	</container>
+	<container id="1$7$119" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Diamonds - The Best Of Dio</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Dio</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Dio</upnp:artist>
+	</container>
+	<container id="1$7$DB" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Diver Down</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$177" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Don't Tread</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Damn Yankees</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Damn Yankees</upnp:artist>
+	</container>
+	<container id="1$7$5" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Double Eclipse</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Hardline</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Hardline</upnp:artist>
+	</container>
+	<container id="1$7$74" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Down To Earth</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Ozzy Osbourne</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Ozzy Osbourne</upnp:artist>
+	</container>
+	<container id="1$7$54" parentID="1$7" restricted="1" searchable="1" childCount="7">
+		<dc:title>Dr Feelgood</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Motley crue</dc:creator>
+		<upnp:artist>Motley crue</upnp:artist>
+	</container>
+	<container id="1$7$9B" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Eat'Em And Smile</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>David Lee Roth</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>David Lee Roth</upnp:artist>
+	</container>
+	<container id="1$7$103" parentID="1$7" restricted="1" searchable="1" childCount="8">
+		<dc:title>Eclipse</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Yngwie J Malmsteen</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Yngwie J Malmsteen</upnp:artist>
+	</container>
+	<container id="1$7$174" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Emotions</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Mariah Carey</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Mariah Carey</upnp:artist>
+	</container>
+	<container id="1$7$113" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Empire</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Queensryche</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Queensryche</upnp:artist>
+	</container>
+	<container id="1$7$13F" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Escape From Television</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Jan Hammer</dc:creator>
+		<upnp:genre>Soundtrack</upnp:genre>
+		<upnp:artist>Jan Hammer</upnp:artist>
+	</container>
+	<container id="1$7$F9" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Euphoria</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$5A" parentID="1$7" restricted="1" searchable="1" childCount="4">
+		<dc:title>Every Heartbeat (Single)</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Amy Grant</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Amy Grant</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/35-1637.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$63" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Exposed</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Vince Neil</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Vince Neil</upnp:artist>
+	</container>
+	<container id="1$7$2E" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Extreme</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>EXTREME</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>EXTREME</upnp:artist>
+	</container>
+	<container id="1$7$3E" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Extreme Volume</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Racer X</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Racer X</upnp:artist>
+	</container>
+	<container id="1$7$D5" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Fair Warning</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$67" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Fallen</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Evanescence</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Evanescence</upnp:artist>
+	</container>
+	<container id="1$7$3C" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Femme Fatale</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Femme Fatale</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Femme Fatale</upnp:artist>
+	</container>
+	<container id="1$7$105" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Fire And Ice [Bonus Track]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Yngwie J Malmsteen</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Yngwie J Malmsteen</upnp:artist>
+	</container>
+	<container id="1$7$123" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Fireworks</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bonfire</dc:creator>
+		<upnp:artist>Bonfire</upnp:artist>
+	</container>
+	<container id="1$7$142" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>First Blood .. Last Cuts</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>W.A.S.P.</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>W.A.S.P.</upnp:artist>
+	</container>
+	<container id="1$7$B9" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Flesh &amp; Blood</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Poison</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Poison</upnp:artist>
+	</container>
+	<container id="1$7$5D" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Flex-Able</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Steve Vai</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Steve Vai</upnp:artist>
+	</container>
+	<container id="1$7$4A" parentID="1$7" restricted="1" searchable="1" childCount="20">
+		<dc:title>Flying in a blue dream</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>JOE SATRIANI</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>JOE SATRIANI</upnp:artist>
+	</container>
+	<container id="1$7$9" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Foo Fighters</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Foo Fighters</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Foo Fighters</upnp:artist>
+	</container>
+	<container id="1$7$E2" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>For Unlawful Carnal Knowledge</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$12A" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Forever Your Girl</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Paula Abdul</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Paula Abdul</upnp:artist>
+	</container>
+	<container id="1$7$44" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>From the moon to the sun</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Kip Winger</dc:creator>
+		<upnp:artist>Kip Winger</upnp:artist>
+	</container>
+	<container id="1$7$53" parentID="1$7" restricted="1" searchable="1" childCount="18">
+		<dc:title>Generation swine</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Motley crue</dc:creator>
+		<upnp:artist>Motley crue</upnp:artist>
+	</container>
+	<container id="1$7$1F" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Get over it</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Mr Big</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Mr Big</upnp:artist>
+	</container>
+	<container id="1$7$11C" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Girls Girls Girls</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Motley crue</dc:creator>
+		<upnp:artist>Motley crue</upnp:artist>
+	</container>
+	<container id="1$7$5C" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Girls Talk</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>The Rebel Pebbles</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>The Rebel Pebbles</upnp:artist>
+	</container>
+	<container id="1$7$14C" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>Glittering Prize 81/92</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Simple Minds</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Simple Minds</upnp:artist>
+	</container>
+	<container id="1$7$C8" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Good to be bad</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Whitesnake</dc:creator>
+		<upnp:artist>Whitesnake</upnp:artist>
+	</container>
+	<container id="1$7$6C" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>Gotta Get Thru This</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Daniel Bedingfield</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Daniel Bedingfield</upnp:artist>
+	</container>
+	<container id="1$7$2D" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Gourmandises</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Alizée</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Alizée</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/1-879.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$AE" parentID="1$7" restricted="1" searchable="1" childCount="22">
+		<dc:title>Greatest Hits</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Kylie Minogue</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Kylie Minogue</upnp:artist>
+	</container>
+	<container id="1$7$16A" parentID="1$7" restricted="1" searchable="1" childCount="17">
+		<dc:title>Greatest Hits, CD 1</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Queen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Queen</upnp:artist>
+	</container>
+	<container id="1$7$16C" parentID="1$7" restricted="1" searchable="1" childCount="17">
+		<dc:title>Greatest Hits, CD 2</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Queen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Queen</upnp:artist>
+	</container>
+	<container id="1$7$15C" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Greatest Movie Music</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Classic Fm</dc:creator>
+		<upnp:genre>Classical</upnp:genre>
+		<upnp:artist>Classic Fm</upnp:artist>
+	</container>
+	<container id="1$7$13D" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Guitar shop</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Jeff Beck</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Jeff Beck</upnp:artist>
+	</container>
+	<container id="1$7$11F" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>HIStory: Past, Present And Future Book 1 [Disc 1]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Michael Jackson</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Michael Jackson</upnp:artist>
+	</container>
+	<container id="1$7$120" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>HIStory: Past, Present And Future Book 1 [Disc 2]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Michael Jackson</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Michael Jackson</upnp:artist>
+	</container>
+	<container id="1$7$137" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Have a nice day</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bon Jovi</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Bon Jovi</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/52-6395.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$11A" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>Headlines And Deadlines: The Hits Of a-Ha</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>a-Ha</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>a-Ha</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/49-5908.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$57" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Heart</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Heart</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Heart</upnp:artist>
+	</container>
+	<container id="1$7$12" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Heartbreak station</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>CINDERELLA</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>CINDERELLA</upnp:artist>
+	</container>
+	<container id="1$7$42" parentID="1$7" restricted="1" searchable="1" childCount="22">
+		<dc:title>Here And Now</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Nickelback</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Nickelback</upnp:artist>
+	</container>
+	<container id="1$7$1B" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Hey Man</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Mr Big</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Mr Big</upnp:artist>
+	</container>
+	<container id="1$7$164" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Hey Stoopid</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Alice Cooper</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Alice Cooper</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/60-7197.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$AD" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Hi-Fi Serious</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>A</dc:creator>
+		<upnp:genre>Indie Rock</upnp:genre>
+		<upnp:artist>A</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/42-4126.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$3B" parentID="1$7" restricted="1" searchable="1" childCount="26">
+		<dc:title>Hidden Kingdoms</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Almine</dc:creator>
+		<upnp:genre>Sound Healing</upnp:genre>
+		<upnp:artist>Almine</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/6-1132.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$FB" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>High 'N' Dry</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$96" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Hooked</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Great White</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Great White</upnp:artist>
+	</container>
+	<container id="1$7$51" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>Hooligans holiday</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Motley crue</dc:creator>
+		<upnp:artist>Motley crue</upnp:artist>
+	</container>
+	<container id="1$7$131" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>House Of Lords</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>House Of Lords</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>House Of Lords</upnp:artist>
+	</container>
+	<container id="1$7$10F" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Hybrid theory</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>LINKIN PARK</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>LINKIN PARK</upnp:artist>
+	</container>
+	<container id="1$7$F8" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Hysteria</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$4" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>II</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Hardline</dc:creator>
+		<upnp:artist>Hardline</upnp:artist>
+	</container>
+	<container id="1$7$2F" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>III Sides To Every Story</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Extreme</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Extreme</upnp:artist>
+	</container>
+	<container id="1$7$B5" parentID="1$7" restricted="1" searchable="1" childCount="1">
+		<dc:title>IV</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Winger</dc:creator>
+		<upnp:genre>Metal</upnp:genre>
+		<upnp:artist>Winger</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/43-4249.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$176" parentID="1$7" restricted="1" searchable="1" childCount="8">
+		<dc:title>Images and words</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Dream theatre</dc:creator>
+		<upnp:genre>Progressive Metal</upnp:genre>
+		<upnp:artist>Dream theatre</upnp:artist>
+	</container>
+	<container id="1$7$B3" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>In The Heart Of The Young</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Winger</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Winger</upnp:artist>
+	</container>
+	<container id="1$7$A7" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>In Your Face</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Kingdom Come</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Kingdom Come</upnp:artist>
+	</container>
+	<container id="1$7$A8" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Infinity On High</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Fall Out Boy</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Fall Out Boy</upnp:artist>
+	</container>
+	<container id="1$7$91" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Invasion</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Vinnie Vincent</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Vinnie Vincent</upnp:artist>
+	</container>
+	<container id="1$7$15E" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Jagged Little Pill</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Alanis Morissette</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Alanis Morissette</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/54-7107.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$3" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Jam</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Little Angels</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Little Angels</upnp:artist>
+	</container>
+	<container id="1$7$B4" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Karma</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Winger</dc:creator>
+		<upnp:artist>Winger</upnp:artist>
+	</container>
+	<container id="1$7$156" parentID="1$7" restricted="1" searchable="1" childCount="1">
+		<dc:title>Kiss covers</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Kurt Nilsen</dc:creator>
+		<upnp:artist>Kurt Nilsen</upnp:artist>
+	</container>
+	<container id="1$7$B0" parentID="1$7" restricted="1" searchable="1" childCount="8">
+		<dc:title>Kylie Compilation</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Kylie Minogue</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Kylie Minogue</upnp:artist>
+	</container>
+	<container id="1$7$AF" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Kylie Minogue</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Kylie Minogue</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Kylie Minogue</upnp:artist>
+	</container>
+	<container id="1$7$22" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Last Of The Runaways</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Giant</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Giant</upnp:artist>
+	</container>
+	<container id="1$7$EA" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Last look at eden</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Europe</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Europe</upnp:artist>
+	</container>
+	<container id="1$7$16F" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Laughing On Judgement Day</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Thunder</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Thunder</upnp:artist>
+	</container>
+	<container id="1$7$1C" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Lean Into It</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Mr Big</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Mr Big</upnp:artist>
+	</container>
+	<container id="1$7$C7" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Left Of The Middle</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Natalie Imbruglia</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Natalie Imbruglia</upnp:artist>
+	</container>
+	<container id="1$7$117" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Let Go</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Avril Lavigne</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Avril Lavigne</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/47-5857.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$A4" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Let It Scream</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>The Scream</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>The Scream</upnp:artist>
+	</container>
+	<container id="1$7$F1" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Life Thru A Lens</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Robbie Williams</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Robbie Williams</upnp:artist>
+	</container>
+	<container id="1$7$39" parentID="1$7" restricted="1" searchable="1" childCount="33">
+		<dc:title>Live At Last! Halfway Around T</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Dan Reed Network</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Dan Reed Network</upnp:artist>
+	</container>
+	<container id="1$7$8F" parentID="1$7" restricted="1" searchable="1" childCount="25">
+		<dc:title>Live At sheperds bush, London</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Europe</dc:creator>
+		<upnp:artist>Europe</upnp:artist>
+	</container>
+	<container id="1$7$14" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Live at the key club</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>CINDERELLA</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>CINDERELLA</upnp:artist>
+	</container>
+	<container id="1$7$A2" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Live to win</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Paul Stanley</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Paul Stanley</upnp:artist>
+	</container>
+	<container id="1$7$CD" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Live... In The Heart Of The City</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Whitesnake</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Whitesnake</upnp:artist>
+	</container>
+	<container id="1$7$159" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Live: The Way We Walk, Vol. 1 - The Shorts</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Genesis</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Genesis</upnp:artist>
+	</container>
+	<container id="1$7$15B" parentID="1$7" restricted="1" searchable="1" childCount="6">
+		<dc:title>Live: The Way We Walk, Vol. 2 - The Longs</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Genesis</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Genesis</upnp:artist>
+	</container>
+	<container id="1$7$15" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Long cold winter</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>CINDERELLA</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>CINDERELLA</upnp:artist>
+	</container>
+	<container id="1$7$BA" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Look What The Cat Dragged In</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Poison</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Poison</upnp:artist>
+	</container>
+	<container id="1$7$CF" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Lovehunter</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Whitesnake</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Whitesnake</upnp:artist>
+	</container>
+	<container id="1$7$F" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Lucky?</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Skin</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Skin</upnp:artist>
+	</container>
+	<container id="1$7$26" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Lynch Mob</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Lynch Mob</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Lynch Mob</upnp:artist>
+	</container>
+	<container id="1$7$90" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>M.S.G.</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>McAuley Schenker Group</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>McAuley Schenker Group</upnp:artist>
+	</container>
+	<container id="1$7$4E" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>MCMXC a.D.</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Enigma</dc:creator>
+		<upnp:genre>Electronica</upnp:genre>
+		<upnp:artist>Enigma</upnp:artist>
+	</container>
+	<container id="1$7$108" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Marching out</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Yngwie J Malmsteen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Yngwie J Malmsteen</upnp:artist>
+	</container>
+	<container id="1$7$40" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Meet The Man</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>James Christian</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>James Christian</upnp:artist>
+	</container>
+	<container id="1$7$110" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Meteora</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Linkin Park</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Linkin Park</upnp:artist>
+	</container>
+	<container id="1$7$FA" parentID="1$7" restricted="1" searchable="1" childCount="22">
+		<dc:title>Mirrorball - Live and more</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$115" parentID="1$7" restricted="1" searchable="1" childCount="4">
+		<dc:title>Missing You</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>John Waite</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>John Waite</upnp:artist>
+	</container>
+	<container id="1$7$20" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Mr. Big</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Mr Big</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Mr Big</upnp:artist>
+	</container>
+	<container id="1$7$13" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>NIGHT SONGS</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>CINDERELLA</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>CINDERELLA</upnp:artist>
+	</container>
+	<container id="1$7$BB" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Native Tongue</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Poison</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Poison</upnp:artist>
+	</container>
+	<container id="1$7$138" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>New Jersey</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bon Jovi</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Bon Jovi</upnp:artist>
+	</container>
+	<container id="1$7$7D" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Nine Lives</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Aerosmith</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Aerosmith</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/38-2178.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$78" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>No More Tears</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Ozzy Osbourne</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Ozzy Osbourne</upnp:artist>
+	</container>
+	<container id="1$7$73" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>No Rest For The Wicked</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Ozzy Osbourne</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Ozzy Osbourne</upnp:artist>
+	</container>
+	<container id="1$7$15D" parentID="1$7" restricted="1" searchable="1" childCount="3">
+		<dc:title>No speech (CD-Single)</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Guano Apes</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Guano Apes</upnp:artist>
+	</container>
+	<container id="1$7$168" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Not That Kind</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Anastacia</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Anastacia</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/63-7254.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$A5" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Nothin' But Trouble</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Blue Murder</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Blue Murder</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/39-4005.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$D7" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>OU812</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>VAN HALEN</dc:creator>
+		<upnp:artist>VAN HALEN</upnp:artist>
+	</container>
+	<container id="1$7$72" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Odyssey</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Yngwie J Malmsteen</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Yngwie J Malmsteen</upnp:artist>
+	</container>
+	<container id="1$7$FC" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>On Through The Night</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$C" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>One By One</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Foo Fighters</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Foo Fighters</upnp:artist>
+	</container>
+	<container id="1$7$B6" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>One of the boys</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Katy Perry</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Katy Perry</upnp:artist>
+	</container>
+	<container id="1$7$14A" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Oops!...I Did It Again [Japan]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Britney Spears</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Britney Spears</upnp:artist>
+	</container>
+	<container id="1$7$167" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Open Road</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Gary Barlow</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Gary Barlow</upnp:artist>
+	</container>
+	<container id="1$7$B8" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Open Up &amp; Say...Ahh!</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Poison</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Poison</upnp:artist>
+	</container>
+	<container id="1$7$112" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Operation:  Mindcrime</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Queensryche</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Queensryche</upnp:artist>
+	</container>
+	<container id="1$7$EE" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Out of This World</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Europe</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Europe</upnp:artist>
+	</container>
+	<container id="1$7$77" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Ozzmosis</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Ozzy Osbourne</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Ozzy Osbourne</upnp:artist>
+	</container>
+	<container id="1$7$89" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>Paint The Sky With Stars: The Best Of Enya</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Enya</dc:creator>
+		<upnp:genre>New Age</upnp:genre>
+		<upnp:artist>Enya</upnp:artist>
+	</container>
+	<container id="1$7$5E" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Passion &amp; Warfare</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Steve Vai</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Steve Vai</upnp:artist>
+	</container>
+	<container id="1$7$2B" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Phenomenon</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Tony Ferrino</dc:creator>
+		<upnp:artist>Tony Ferrino</upnp:artist>
+	</container>
+	<container id="1$7$31" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Pornograffitti</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Extreme</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Extreme</upnp:artist>
+	</container>
+	<container id="1$7$D4" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Predator 2</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Alan Silvestri</dc:creator>
+		<upnp:genre>Soundtrack</upnp:genre>
+		<upnp:artist>Alan Silvestri</upnp:artist>
+	</container>
+	<container id="1$7$EF" parentID="1$7" restricted="1" searchable="1" childCount="2">
+		<dc:title>Prisoners in paradise</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Europe</dc:creator>
+		<upnp:artist>Europe</upnp:artist>
+	</container>
+	<container id="1$7$111" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Promised Land</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Queensryche</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Queensryche</upnp:artist>
+	</container>
+	<container id="1$7$97" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Psychotic Supper</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Tesla</dc:creator>
+		<upnp:artist>Tesla</upnp:artist>
+	</container>
+	<container id="1$7$B1" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Pull</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Winger</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Winger</upnp:artist>
+	</container>
+	<container id="1$7$10B" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Pulse [Live] [Disc 1]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Pink Floyd</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Pink Floyd</upnp:artist>
+	</container>
+	<container id="1$7$10A" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Pulse [Live] [Disc 2]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Pink Floyd</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Pink Floyd</upnp:artist>
+	</container>
+	<container id="1$7$C1" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Pure Classical Moods - Dreams</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Classical</dc:creator>
+		<upnp:genre>Classical</upnp:genre>
+		<upnp:artist>Classical</upnp:artist>
+	</container>
+	<container id="1$7$F7" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Pyromania</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$11B" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>R Rated</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Rihanna</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Rihanna</upnp:artist>
+	</container>
+	<container id="1$7$2" parentID="1$7" restricted="1" searchable="1" childCount="8">
+		<dc:title>Radical your lover EP</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Little Angels</dc:creator>
+		<upnp:artist>Little Angels</upnp:artist>
+	</container>
+	<container id="1$7$161" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Raise Your Fist And Yell</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Alice Cooper</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Alice Cooper</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/57-7153.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$1A" parentID="1$7" restricted="1" searchable="1" childCount="2">
+		<dc:title>Raw llike sushi (live)</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Mr Big</dc:creator>
+		<upnp:artist>Mr Big</upnp:artist>
+	</container>
+	<container id="1$7$CE" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Ready An' Willing</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Whitesnake</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Whitesnake</upnp:artist>
+	</container>
+	<container id="1$7$10E" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Repeat Offender</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Richard Marx</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Richard Marx</upnp:artist>
+	</container>
+	<container id="1$7$CA" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Restless Heart</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Whitesnake</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Whitesnake</upnp:artist>
+	</container>
+	<container id="1$7$F3" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Retro Active</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$86" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Revenge</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>KISS</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>KISS</upnp:artist>
+	</container>
+	<container id="1$7$10D" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Richard Marx</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Richard Marx</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Richard Marx</upnp:artist>
+	</container>
+	<container id="1$7$D8" parentID="1$7" restricted="1" searchable="1" childCount="24">
+		<dc:title>Right Here, Right Now [Live]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$106" parentID="1$7" restricted="1" searchable="1" childCount="8">
+		<dc:title>Rising force</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Yngwie J Malmsteen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Yngwie J Malmsteen</upnp:artist>
+	</container>
+	<container id="1$7$56" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Rock The House Live</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Heart</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Heart</upnp:artist>
+	</container>
+	<container id="1$7$16" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Romeo's daughter</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Romeo's daughter</dc:creator>
+		<upnp:artist>Romeo's daughter</upnp:artist>
+	</container>
+	<container id="1$7$41" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Rude Awakening</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>James Christian</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>James Christian</upnp:artist>
+	</container>
+	<container id="1$7$10C" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Rush Street</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Richard Marx</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Richard Marx</upnp:artist>
+	</container>
+	<container id="1$7$132" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Sahara</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>House of Lords</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>House of Lords</upnp:artist>
+	</container>
+	<container id="1$7$D0" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Saints &amp; Sinners</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Whitesnake</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Whitesnake</upnp:artist>
+	</container>
+	<container id="1$7$70" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Saints And Sinners</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Kane Roberts</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Kane Roberts</upnp:artist>
+	</container>
+	<container id="1$7$32" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Saudades de rock</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Extreme</dc:creator>
+		<upnp:genre>Blues</upnp:genre>
+		<upnp:artist>Extreme</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/2-967.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$175" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Scenes from a memory</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Dream theatre</dc:creator>
+		<upnp:genre>Progressive Metal</upnp:genre>
+		<upnp:artist>Dream theatre</upnp:artist>
+	</container>
+	<container id="1$7$C3" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>Screw It</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Danger Danger</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Danger Danger</upnp:artist>
+	</container>
+	<container id="1$7$3D" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Second Heat</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Racer X</dc:creator>
+		<upnp:artist>Racer X</upnp:artist>
+	</container>
+	<container id="1$7$178" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Second coming</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Damn yankees</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Damn yankees</upnp:artist>
+	</container>
+	<container id="1$7$6D" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Second first impressions</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Daniel Bedingfield</dc:creator>
+		<upnp:artist>Daniel Bedingfield</upnp:artist>
+	</container>
+	<container id="1$7$ED" parentID="1$7" restricted="1" searchable="1" childCount="7">
+		<dc:title>Secret society</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Europe</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Europe</upnp:artist>
+	</container>
+	<container id="1$7$66" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Set me free</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Marion Raven</dc:creator>
+		<upnp:artist>Marion Raven</upnp:artist>
+	</container>
+	<container id="1$7$8D" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Shepherd Moons</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Enya</dc:creator>
+		<upnp:genre>New Age</upnp:genre>
+		<upnp:artist>Enya</upnp:artist>
+	</container>
+	<container id="1$7$7E" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Sheryl Crow</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Sheryl Crow</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Sheryl Crow</upnp:artist>
+	</container>
+	<container id="1$7$E8" parentID="1$7" restricted="1" searchable="1" childCount="18">
+		<dc:title>Simply The Best (IMPORT)</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Tina Turner</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Tina Turner</upnp:artist>
+	</container>
+	<container id="1$7$145" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Skid Row</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Skid Row</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Skid Row</upnp:artist>
+	</container>
+	<container id="1$7$9C" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Skyscraper</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>David Lee Roth</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>David Lee Roth</upnp:artist>
+	</container>
+	<container id="1$7$36" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Slam</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Dan Reed Network</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Dan Reed Network</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/3-1018.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$F4" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Slang</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$144" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Slave To The Grind</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Skid Row</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Skid Row</upnp:artist>
+	</container>
+	<container id="1$7$D1" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Slip Of The Tongue</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Whitesnake</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Whitesnake</upnp:artist>
+	</container>
+	<container id="1$7$13B" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Slippery When Wet</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bon Jovi</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Bon Jovi</upnp:artist>
+	</container>
+	<container id="1$7$25" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Smoke this</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Lynch Mob</dc:creator>
+		<upnp:artist>Lynch Mob</upnp:artist>
+	</container>
+	<container id="1$7$A0" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>So Far So Good</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bryan Adams</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Bryan Adams</upnp:artist>
+	</container>
+	<container id="1$7$13E" parentID="1$7" restricted="1" searchable="1" childCount="18">
+		<dc:title>Soft Metal</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Soft metal</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Soft metal</upnp:artist>
+	</container>
+	<container id="1$7$F5" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Song's from the sparkle lounge</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$84" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Sonic Boom</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>KISS</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>KISS</upnp:artist>
+	</container>
+	<container id="1$7$169" parentID="1$7" restricted="1" searchable="1" childCount="20">
+		<dc:title>Sonic winter</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Johansson</dc:creator>
+		<upnp:artist>Johansson</upnp:artist>
+	</container>
+	<container id="1$7$9E" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Sound Of The Underground</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Girls Aloud</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Girls Aloud</upnp:artist>
+	</container>
+	<container id="1$7$14E" parentID="1$7" restricted="1" searchable="1" childCount="7">
+		<dc:title>Soundtracks</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Soundtracks</dc:creator>
+		<upnp:artist>Soundtracks</upnp:artist>
+	</container>
+	<container id="1$7$10" parentID="1$7" restricted="1" searchable="1" childCount="38">
+		<dc:title>Space &amp; Beyond 1</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Space &amp; Beyond 1</dc:creator>
+		<upnp:genre>Soundtrack</upnp:genre>
+		<upnp:artist>Space &amp; Beyond 1</upnp:artist>
+	</container>
+	<container id="1$7$E7" parentID="1$7" restricted="1" searchable="1" childCount="37">
+		<dc:title>Space &amp; beyond 2</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Space &amp; Beyond 2</dc:creator>
+		<upnp:genre>Soundtrack</upnp:genre>
+		<upnp:artist>Space &amp; Beyond 2</upnp:artist>
+	</container>
+	<container id="1$7$12B" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Spellbound [Europe]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Paula Abdul</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Paula Abdul</upnp:artist>
+	</container>
+	<container id="1$7$71" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Spiceworld</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Spice Girls</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Spice Girls</upnp:artist>
+	</container>
+	<container id="1$7$11E" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Star Trek: First Contact</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Star Trek</dc:creator>
+		<upnp:genre>Soundtrack</upnp:genre>
+		<upnp:artist>Star Trek</upnp:artist>
+	</container>
+	<container id="1$7$153" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Stevie Salas Colorcode</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Stevie Salas Colorcode</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Stevie Salas Colorcode</upnp:artist>
+	</container>
+	<container id="1$7$152" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Stick It To Ya</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Slaughter</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Slaughter</upnp:artist>
+	</container>
+	<container id="1$7$AB" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Still Loving You</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Scorpions</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Scorpions</upnp:artist>
+	</container>
+	<container id="1$7$49" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Strange Beautiful Music</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Joe Satriani</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Joe Satriani</upnp:artist>
+	</container>
+	<container id="1$7$23" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Stranger In This Town</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Richie Sambora</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Richie Sambora</upnp:artist>
+	</container>
+	<container id="1$7$143" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Subhuman Race</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Skid Row</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Skid Row</upnp:artist>
+	</container>
+	<container id="1$7$100" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Sudden Stop</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Colin James</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Colin James</upnp:artist>
+	</container>
+	<container id="1$7$BC" parentID="1$7" restricted="1" searchable="1" childCount="17">
+		<dc:title>Swallow this Live</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Poison</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Poison</upnp:artist>
+	</container>
+	<container id="1$7$11D" parentID="1$7" restricted="1" searchable="1" childCount="28">
+		<dc:title>Symphonic Star Trek</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Star Trek</dc:creator>
+		<upnp:genre>Classical</upnp:genre>
+		<upnp:artist>Star Trek</upnp:artist>
+	</container>
+	<container id="1$7$158" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Symphony</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Sarah brightman</dc:creator>
+		<upnp:artist>Sarah brightman</upnp:artist>
+	</container>
+	<container id="1$7$28" parentID="1$7" restricted="1" searchable="1" childCount="3">
+		<dc:title>Syzygy</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Lynch Mob</dc:creator>
+		<upnp:artist>Lynch Mob</upnp:artist>
+	</container>
+	<container id="1$7$29" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Tall Stories</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Tall Stories</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Tall Stories</upnp:artist>
+	</container>
+	<container id="1$7$B7" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Teenage dream</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Katy Perry</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Katy Perry</upnp:artist>
+	</container>
+	<container id="1$7$AA" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Tell no Tales</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>TNT</dc:creator>
+		<upnp:artist>TNT</upnp:artist>
+	</container>
+	<container id="1$7$150" parentID="1$7" restricted="1" searchable="1" childCount="18">
+		<dc:title>Tenacious D</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Tenacious D</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Tenacious D</upnp:artist>
+	</container>
+	<container id="1$7$37" parentID="1$7" restricted="1" searchable="1" childCount="18">
+		<dc:title>The B sides</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Dan Reed Network</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Dan Reed Network</upnp:artist>
+	</container>
+	<container id="1$7$BD" parentID="1$7" restricted="1" searchable="1" childCount="20">
+		<dc:title>The Best Classical Album In The World [Disc 1]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Classical</dc:creator>
+		<upnp:genre>Classical</upnp:genre>
+		<upnp:artist>Classical</upnp:artist>
+	</container>
+	<container id="1$7$BE" parentID="1$7" restricted="1" searchable="1" childCount="20">
+		<dc:title>The Best Classical Album In The World [Disc 2]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Classical</dc:creator>
+		<upnp:genre>Classical</upnp:genre>
+		<upnp:artist>Classical</upnp:artist>
+	</container>
+	<container id="1$7$D6" parentID="1$7" restricted="1" searchable="1" childCount="36">
+		<dc:title>The Best Of Both Worlds - Disc</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$173" parentID="1$7" restricted="1" searchable="1" childCount="18">
+		<dc:title>The Best Of Howard Jones 1983~</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Howard Jones</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Howard Jones</upnp:artist>
+	</container>
+	<container id="1$7$DD" parentID="1$7" restricted="1" searchable="1" childCount="17">
+		<dc:title>The Best Of Van Halen, Vol. I</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$47" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>The Best of Vixen: Full Thrott</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Vixen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Vixen</upnp:artist>
+	</container>
+	<container id="1$7$14D" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>The Chronicles Of Life And Death</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Good Charlotte</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Good Charlotte</upnp:artist>
+	</container>
+	<container id="1$7$95" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>The Collection</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Nik Kershaw</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Nik Kershaw</upnp:artist>
+	</container>
+	<container id="1$7$A" parentID="1$7" restricted="1" searchable="1" childCount="19">
+		<dc:title>The Colour And The Shape [Expanded Edition]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Foo Fighters</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Foo Fighters</upnp:artist>
+	</container>
+	<container id="1$7$140" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>The Crimson Idol</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>W.A.S.P.</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>W.A.S.P.</upnp:artist>
+	</container>
+	<container id="1$7$16D" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>The Crown Jewels: A Tribute To Queen</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Queen Tribue</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Queen Tribue</upnp:artist>
+	</container>
+	<container id="1$7$76" parentID="1$7" restricted="1" searchable="1" childCount="30">
+		<dc:title>The Essential</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Ozzy Osbourne</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Ozzy Osbourne</upnp:artist>
+	</container>
+	<container id="1$7$4C" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>The Extremist</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Joe Satriani</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Joe Satriani</upnp:artist>
+	</container>
+	<container id="1$7$D3" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>The Fame</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Lady Gaga</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Lady Gaga</upnp:artist>
+	</container>
+	<container id="1$7$D2" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>The Fame Monster</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Lady Gaga</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Lady Gaga</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/44-4740.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$157" parentID="1$7" restricted="1" searchable="1" childCount="20">
+		<dc:title>The Final countdown - The greatest hits</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Europe</dc:creator>
+		<upnp:artist>Europe</upnp:artist>
+	</container>
+	<container id="1$7$7" parentID="1$7" restricted="1" searchable="1" childCount="19">
+		<dc:title>The Greatest Hits</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Motley crue</dc:creator>
+		<upnp:artist>Motley crue</upnp:artist>
+	</container>
+	<container id="1$7$128" parentID="1$7" restricted="1" searchable="1" childCount="17">
+		<dc:title>The Heart Of Rock &amp; Roll: The Best Of Huey Lewis &amp; The News</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Huey Lewis &amp; The News</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Huey Lewis &amp; The News</upnp:artist>
+	</container>
+	<container id="1$7$3A" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>The Heat</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Dan Reed Network</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Dan Reed Network</upnp:artist>
+	</container>
+	<container id="1$7$88" parentID="1$7" restricted="1" searchable="1" childCount="18">
+		<dc:title>The Hits/The B-Sides [Disc 1]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Prince</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Prince</upnp:artist>
+	</container>
+	<container id="1$7$87" parentID="1$7" restricted="1" searchable="1" childCount="18">
+		<dc:title>The Hits/The B-Sides [Disc 2]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Prince</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Prince</upnp:artist>
+	</container>
+	<container id="1$7$101" parentID="1$7" restricted="1" searchable="1" childCount="17">
+		<dc:title>The Immaculate Collection</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Madonna</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Madonna</upnp:artist>
+	</container>
+	<container id="1$7$141" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>The Last Command</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>W.A.S.P.</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>W.A.S.P.</upnp:artist>
+	</container>
+	<container id="1$7$43" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>The Long Road</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Nickelback</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Nickelback</upnp:artist>
+	</container>
+	<container id="1$7$8C" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>The Memory Of Trees</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Enya</dc:creator>
+		<upnp:genre>New Age</upnp:genre>
+		<upnp:artist>Enya</upnp:artist>
+	</container>
+	<container id="1$7$16B" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>The Miracle</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Queen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Queen</upnp:artist>
+	</container>
+	<container id="1$7$48" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>The Mob</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>The Mob</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>The Mob</upnp:artist>
+	</container>
+	<container id="1$7$68" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>The Open Door</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Evanescence</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Evanescence</upnp:artist>
+	</container>
+	<container id="1$7$130" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>The Power and the Myth</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>House of Lords</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>House of Lords</upnp:artist>
+	</container>
+	<container id="1$7$179" parentID="1$7" restricted="1" searchable="1" childCount="1">
+		<dc:title>The Remote Viewing Online Training Course</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>David Morehouse</dc:creator>
+		<upnp:genre>Audio Book</upnp:genre>
+		<upnp:artist>David Morehouse</upnp:artist>
+	</container>
+	<container id="1$7$59" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>The Road Home</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Heart</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Heart</upnp:artist>
+	</container>
+	<container id="1$7$102" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>The Seventh Sign</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Yngwie J Malmsteen</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Yngwie J Malmsteen</upnp:artist>
+	</container>
+	<container id="1$7$134" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>The Uplift Mofo Party Plan</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Red Hot Chili Peppers</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Red Hot Chili Peppers</upnp:artist>
+	</container>
+	<container id="1$7$2A" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>The Urge</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Stuart Hamm</dc:creator>
+		<upnp:genre>Jazz</upnp:genre>
+		<upnp:artist>Stuart Hamm</upnp:artist>
+	</container>
+	<container id="1$7$9F" parentID="1$7" restricted="1" searchable="1" childCount="30">
+		<dc:title>The Very Best Of Roy Orbison</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Roy Orbison</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Roy Orbison</upnp:artist>
+	</container>
+	<container id="1$7$151" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>The Wild Life</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Slaughter</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Slaughter</upnp:artist>
+	</container>
+	<container id="1$7$5F" parentID="1$7" restricted="1" searchable="1" childCount="3">
+		<dc:title>The X Files [Single]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Mark Snow</dc:creator>
+		<upnp:genre>Soundtrack</upnp:genre>
+		<upnp:artist>Mark Snow</upnp:artist>
+	</container>
+	<container id="1$7$104" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>The Yngwie Malmsteen Collection</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Yngwie J Malmsteen</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Yngwie J Malmsteen</upnp:artist>
+	</container>
+	<container id="1$7$83" parentID="1$7" restricted="1" searchable="1" childCount="90">
+		<dc:title>The boxset</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>KISS</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>KISS</upnp:artist>
+	</container>
+	<container id="1$7$125" parentID="1$7" restricted="1" searchable="1" childCount="17">
+		<dc:title>The very best of</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>DOKKEN</dc:creator>
+		<upnp:artist>DOKKEN</upnp:artist>
+	</container>
+	<container id="1$7$6F" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>Theatre of pain</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Motley crue</dc:creator>
+		<upnp:artist>Motley crue</upnp:artist>
+	</container>
+	<container id="1$7$13A" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>These Days</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bon Jovi</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Bon Jovi</upnp:artist>
+	</container>
+	<container id="1$7$139" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>This left just feels right</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Bon Jovi</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Bon Jovi</upnp:artist>
+	</container>
+	<container id="1$7$133" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>ThisConversationSeemsLikeADrea</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Kip Winger</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Kip Winger</upnp:artist>
+	</container>
+	<container id="1$7$146" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Three</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Sugababes</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Sugababes</upnp:artist>
+	</container>
+	<container id="1$7$21" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Time to Burn</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Giant</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Giant</upnp:artist>
+	</container>
+	<container id="1$7$C4" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Titanic</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>James Horner</dc:creator>
+		<upnp:genre>Soundtrack</upnp:genre>
+		<upnp:artist>James Horner</upnp:artist>
+	</container>
+	<container id="1$7$94" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>To Be Frank</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Nik Kershaw</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Nik Kershaw</upnp:artist>
+	</container>
+	<container id="1$7$165" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Trash</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Alice Cooper</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Alice Cooper</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/61-7211.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$F0" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Travelling Without Moving</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Jamiroquai</dc:creator>
+		<upnp:genre>Electronica</upnp:genre>
+		<upnp:artist>Jamiroquai</upnp:artist>
+	</container>
+	<container id="1$7$7B" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Tribute</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Ozzy Osbourne</dc:creator>
+		<upnp:artist>Ozzy Osbourne</upnp:artist>
+	</container>
+	<container id="1$7$107" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Trilogy</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Yngwie J Malmsteen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Yngwie J Malmsteen</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/45-5623.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$17" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Trouble or nothing</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Robin beck</dc:creator>
+		<upnp:artist>Robin beck</upnp:artist>
+	</container>
+	<container id="1$7$7F" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Tuesday Night Music Club</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Sheryl Crow</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Sheryl Crow</upnp:artist>
+	</container>
+	<container id="1$7$80" parentID="1$7" restricted="1" searchable="1" childCount="6">
+		<dc:title>Tuesday Night Music Club: Bonus CD [Disc 2]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Sheryl Crow</dc:creator>
+		<upnp:genre>Pop</upnp:genre>
+		<upnp:artist>Sheryl Crow</upnp:artist>
+	</container>
+	<container id="1$7$19" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Twist the knife</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Steve Lukather</dc:creator>
+		<upnp:artist>Steve Lukather</upnp:artist>
+	</container>
+	<container id="1$7$7A" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Ultimate sin</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Ozzy Osbourne</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Ozzy Osbourne</upnp:artist>
+	</container>
+	<container id="1$7$118" parentID="1$7" restricted="1" searchable="1" childCount="13">
+		<dc:title>Under my skin</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Avril Lavigne</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Avril Lavigne</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/48-5874.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$24" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Undiscovered Soul</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Richie Sambora</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Richie Sambora</upnp:artist>
+	</container>
+	<container id="1$7$85" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>Unplugged [Live]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>KISS</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>KISS</upnp:artist>
+	</container>
+	<container id="1$7$2C" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Unruly Child</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Unruly Child</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Unruly Child</upnp:artist>
+	</container>
+	<container id="1$7$4F" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Up From The Ashes</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Don Dokken</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Don Dokken</upnp:artist>
+	</container>
+	<container id="1$7$147" parentID="1$7" restricted="1" searchable="1" childCount="19">
+		<dc:title>Up! Red Disk</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Shania Twain</dc:creator>
+		<upnp:genre>Country</upnp:genre>
+		<upnp:artist>Shania Twain</upnp:artist>
+	</container>
+	<container id="1$7$62" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>Use Your Illusion I</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Guns N' Roses</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Guns N' Roses</upnp:artist>
+	</container>
+	<container id="1$7$60" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Use Your Illusion II</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Guns N' Roses</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Guns N' Roses</upnp:artist>
+	</container>
+	<container id="1$7$DA" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Van Halen</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$E1" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Van Halen II</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$E0" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Van Halen III</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$8" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Various</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>George Lynch</dc:creator>
+		<upnp:artist>George Lynch</upnp:artist>
+	</container>
+	<container id="1$7$F2" parentID="1$7" restricted="1" searchable="1" childCount="16">
+		<dc:title>Vault: Def Leppard's Greatest Hits</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$FE" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Vault: Greatest Hits [Disc 2]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$E3" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Version 2.0</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Garbage</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Garbage</upnp:artist>
+	</container>
+	<container id="1$7$30" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Waiting For The Punchline</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Extreme</dc:creator>
+		<upnp:genre>Hard Rock</upnp:genre>
+		<upnp:artist>Extreme</upnp:artist>
+	</container>
+	<container id="1$7$B" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Wasting Light</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Foo Fighters</dc:creator>
+		<upnp:genre>Alternative</upnp:genre>
+		<upnp:artist>Foo Fighters</upnp:artist>
+	</container>
+	<container id="1$7$E4" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>Watermark</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Enya</dc:creator>
+		<upnp:genre>New Age</upnp:genre>
+		<upnp:artist>Enya</upnp:artist>
+	</container>
+	<container id="1$7$15A" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>We Can't Dance</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Genesis</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Genesis</upnp:artist>
+	</container>
+	<container id="1$7$A9" parentID="1$7" restricted="1" searchable="1" childCount="3">
+		<dc:title>We are</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Ana Johnsson</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Ana Johnsson</upnp:artist>
+		<upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.1:8200/AlbumArt/41-4071.jpg</upnp:albumArtURI>
+	</container>
+	<container id="1$7$9D" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>What Will The Neighbours Say</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Girls Aloud</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Girls Aloud</upnp:artist>
+	</container>
+	<container id="1$7$1E" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>What if</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Mr Big</dc:creator>
+		<upnp:artist>Mr Big</upnp:artist>
+	</container>
+	<container id="1$7$172" parentID="1$7" restricted="1" searchable="1" childCount="11">
+		<dc:title>When The Blackbird Sings...</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Saraya</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Saraya</upnp:artist>
+	</container>
+	<container id="1$7$CC" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Whitesnake Greatest Hits</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Whitesnake</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Whitesnake</upnp:artist>
+	</container>
+	<container id="1$7$27" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Wicked Sensation</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Lynch Mob</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Lynch Mob</upnp:artist>
+	</container>
+	<container id="1$7$149" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Wild &amp; Wicked</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Shania Twain</dc:creator>
+		<upnp:genre>Country</upnp:genre>
+		<upnp:artist>Shania Twain</upnp:artist>
+	</container>
+	<container id="1$7$B2" parentID="1$7" restricted="1" searchable="1" childCount="12">
+		<dc:title>Winger</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Winger</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Winger</upnp:artist>
+	</container>
+	<container id="1$7$D" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Wishful Thinking</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Propaganda</dc:creator>
+		<upnp:genre>Blues</upnp:genre>
+		<upnp:artist>Propaganda</upnp:artist>
+	</container>
+	<container id="1$7$DF" parentID="1$7" restricted="1" searchable="1" childCount="9">
+		<dc:title>Women And Children First</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Van Halen</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Van Halen</upnp:artist>
+	</container>
+	<container id="1$7$18" parentID="1$7" restricted="1" searchable="1" childCount="10">
+		<dc:title>Wordshaker</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>The saturdays</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>The saturdays</upnp:artist>
+	</container>
+	<container id="1$7$F6" parentID="1$7" restricted="1" searchable="1" childCount="3">
+		<dc:title>Work It Out [Disc 1]</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$FF" parentID="1$7" restricted="1" searchable="1" childCount="15">
+		<dc:title>X</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>Def Leppard</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>Def Leppard</upnp:artist>
+	</container>
+	<container id="1$7$98" parentID="1$7" restricted="1" searchable="1" childCount="14">
+		<dc:title>Your Filthy Little Mouth</dc:title>
+		<upnp:class>object.container.album.musicAlbum</upnp:class>
+		<upnp:storageUsed>-1</upnp:storageUsed>
+		<dc:creator>David Lee Roth</dc:creator>
+		<upnp:genre>Rock</upnp:genre>
+		<upnp:artist>David Lee Roth</upnp:artist>
+	</container>
+</DIDL-Lite>
