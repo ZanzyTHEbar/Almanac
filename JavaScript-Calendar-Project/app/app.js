@@ -21,8 +21,6 @@ var logger = require("morgan");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
-const calendarRouter = require("./routes/calendar");
-const dlnaRouter = require("./routes/dlnaplayer");
 
 var app = express();
 
@@ -115,8 +113,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
-app.use("/dlna", dlnaRouter);
-app.use("/calendar", calendarRouter);
 app.use("/users", usersRouter);
 
 function initCroutes(scope) {
@@ -195,7 +191,7 @@ app.use(function (req, res, next) {
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
+  res.locals.error = req.app.get("env") === "dev" ? err : {};
 
   // render the error page
   res.status(err.status || 500);

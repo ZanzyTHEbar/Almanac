@@ -116,7 +116,7 @@ function Server(port) {
       server.on("error", onError);
       server.on("listening", onListeningSecure);
       eLog(
-        `[STATUS] [CORE] Server running at http://${config.oauth.redirectUriLocalhostSecure}:${config.port}/`
+        `[STATUS] [CORE] Server running at ${config.oauth.redirectUriLocalhostSecure}:${config.port}/`
       );
       console.log(cLine);
       break;
@@ -128,7 +128,7 @@ function Server(port) {
       server.on("error", onError);
       server.on("listening", onListeningSecure);
       eLog(
-        `[STATUS] [CORE] Server running at http://${config.oauth.redirectUriSecure}:${config.port}/`
+        `[STATUS] [CORE] Server running at ${config.oauth.redirectUriSecure}:${config.port}/`
       );
       console.log(cLine);
       break;
@@ -140,7 +140,7 @@ function Server(port) {
       server2.on("error", onError);
       server2.on("listening", onListening);
       eLog(
-        `[STATUS] [CORE] Server running at http://${config.oauth.redirectUriLocalhost}:${config.port}/`
+        `[STATUS] [CORE] Server running at ${config.oauth.redirectUriLocalhost}:${config.port}/`
       );
       console.log(cLine);
       break;
@@ -152,7 +152,7 @@ function Server(port) {
       server2.on("error", onError);
       server2.on("listening", onListening);
       eLog(
-        `[STATUS] [CORE] Server running at http://${config.oauth.redirectUri}:${config.port}/`
+        `[STATUS] [CORE] Server running at ${config.oauth.redirectUri}:${config.port}/`
       );
       console.log(cLine);
       break;

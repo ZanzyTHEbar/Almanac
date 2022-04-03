@@ -1,7 +1,7 @@
 "use strict";
 
 const router = require("express-promise-router")();
-const graph = require("../scopes/MSCAL/graph");
+const graph = require("./graph");
 const addDays = require("date-fns/addDays");
 const formatISO = require("date-fns/formatISO");
 const startOfWeek = require("date-fns/startOfWeek");

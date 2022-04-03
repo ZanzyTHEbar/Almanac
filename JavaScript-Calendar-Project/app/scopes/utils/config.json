@@ -1,9 +1,10 @@
 {
     "description": "",
     "scopes": {
-        "CLI": true,
         "DATABASE": true,
-        "DLNA": true
+        "DLNA": true,
+        "MSCAL": true,
+        "GOOGLECAL": false
     },
     "eLog": {
         "cLogEnabled": true,
