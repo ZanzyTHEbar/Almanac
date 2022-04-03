@@ -35,10 +35,7 @@ def parse_service(service):
     url = service.getElementsByTagName('controlURL')[0].firstChild.nodeValue
     print (f"{Fore.BLUE}Service: {name} {Reset_colour}")
     print (f"{Fore.BLUE}URL: {url} {Reset_colour}")
-    # write the above to a file
-    with open('dlna.txt', 'a') as f:
-        f.write(f"Service: {name}\n")
-        f.write(f"URL: {url}\n")
+    
     return {'name': name, 'url': url
             }
 
@@ -54,10 +51,6 @@ def parse_item(item):
     index = item.getAttribute('id')
     title = item.getElementsByTagName('dc:title')[0].firstChild.nodeValue
     result = item.getElementsByTagName('res')[0]
-    # write the above to a file
-    with open('dlna.txt', 'a') as f:
-        f.write(f"Item: {title}\n")
-        f.write(f"Result: {result.firstChild.nodeValue}\n")
     return {'index': index, 'title': title, 'size': result.getAttribute('size'), 'duration': result.getAttribute('duration'), 'bitrate': result.getAttribute('bitrate'), 'sampling': result.getAttribute('sampleFrequency'), 'channels': result.getAttribute('nrAudioChannels'), 'resolution': result.getAttribute('resolution'), 'url': result.firstChild.nodeValue
             }
 
@@ -87,10 +80,7 @@ for container in containers:
         'Result')[0].firstChild.nodeValue)
     pretty = body.toprettyxml()
     print(pretty)
-    # write pretty to file
-    with open('%s.xml' % container['index'], 'w') as f:
-        f.write(pretty)
-
+    
     folders = list(map(lambda container: parse_container(
         container), body.getElementsByTagName('container')))
     for folder in folders:
@@ -103,8 +93,7 @@ for container in containers:
         body = parseString(root.getElementsByTagName(
             'Result')[0].firstChild.nodeValue)
         pretty = body.toprettyxml()
-        with open('%s.xml' % container['index'], 'w') as f:
-            f.write(pretty)
+        
         print(pretty)
         # write pretty to file
 

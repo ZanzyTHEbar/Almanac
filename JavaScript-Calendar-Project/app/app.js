@@ -1,6 +1,6 @@
 "use strict";
 
-require("dotenv").config();
+const config = require("./config");
 
 const session = require("express-session");
 const flash = require("connect-flash");
@@ -28,9 +28,9 @@ app.locals.users = {};
 // MSAL config
 const msalConfig = {
   auth: {
-    clientId: process.env.OAUTH_CLIENT_ID,
-    authority: process.env.OAUTH_AUTHORITY,
-    clientSecret: process.env.OAUTH_CLIENT_SECRET,
+    clientId: config.oauth.clientId,
+    authority: config.oauth.authority,
+    clientSecret: config.oauth.clientSecret,
   },
   system: {
     loggerOptions: {
@@ -52,7 +52,7 @@ app.locals.msalClient = new msal.ConfidentialClientApplication(msalConfig);
 
 app.use(
   session({
-    secret: process.env.OAUTH_CLIENT_SECRET,
+    secret: config.oauth.clientSecret,
     resave: false,
     saveUninitialized: false,
     unset: "destroy",

@@ -7,6 +7,7 @@ const url = require("url");
 const http = require("http");
 const xmltojs = require("xml2js");
 const browseServer = require("dlna-browser-utils");
+const config = require("../config");
 
 const mediaServerName = "LoveHouseFTP";
 
@@ -14,11 +15,11 @@ const Client = require("node-ssdp").Client,
   client = new Client();
 
 const args = process.argv.slice(2);
-process.env.PORT = args[0];
+config.port = args[0];
 const State = args[1];
 var done = false;
 /* 
-// Instanciate a client with a device description URL (discovered by SSDP)
+// Instantiate a client with a device description URL (discovered by SSDP)
 var client = new MediaRendererClient(
   process.env.DLNA_URL +
     process.env.DLNA_PORT +
@@ -123,7 +124,7 @@ router.get("/getenv", function (req, res) {
     res.redirect("/");
   } else {
     if (req.query.variables === "State") res.send(State);
-    else res.send(process.env[req.query.variables]);
+    else res.send(config.dlna[req.query.variables]);
   }
 });
 
@@ -151,7 +152,7 @@ router.get("/api/stopmedia", function (req, res) {
   }
 });
 
-/* router.get("/api/search_dlna_services", function (req, res) {
+router.get("/api/search_dlna_services", function (req, res) {
   if (!req.session.userId) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
@@ -171,9 +172,9 @@ router.get("/api/stopmedia", function (req, res) {
     //client.search("ssdp:all");
     res.render("dlna", {});
   }
-}); */
+});
 
-router.get("/api/search_dlna_services", function (req, res) {
+router.get("/api/search_dlna_services_poll", function (req, res) {
   if (!req.session.userId) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
@@ -234,14 +235,19 @@ router.get("/api/search_dlna_services", function (req, res) {
                             return;
                           }
                           console.log(result);
+                          if (result.container.item) {
+                            for (
+                              let i = 0;
+                              i < result.container.item.length;
+                              i++
+                            ) {
+                              console.log(
+                                "Item:" + result.container[i].item[i].title
+                              );
+                            }
+                          }
                         }
                       );
-                    }
-                  }
-
-                  if (result.item) {
-                    for (let i = 0; i < result.item.length; i++) {
-                      console.log("Item:" + result.item[i].title);
                     }
                   }
                 });
@@ -257,7 +263,7 @@ router.get("/api/search_dlna_services", function (req, res) {
     });
 
     // search for media server and display top level content
-    client.search("urn:schemas-upnp-org:service:ConnectionManager:1");
+    client.search("urn:schemas-upnp-org:service:ContentDirectory:1");
 
     setTimeout(function () {
       console.log("done");

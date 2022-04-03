@@ -1,9 +1,10 @@
 "use strict";
 
+const config = require("./config");
 var graph = require("@microsoft/microsoft-graph-client");
 require("isomorphic-fetch");
 var args = process.argv.slice(2);
-process.env.PORT = args[0];
+config.port = args[0];
 var State = args[1];
 
 module.exports = {
@@ -105,12 +106,12 @@ function getAuthenticatedClient(msalClient, userId) {
           switch (State) {
             case "--secure": {
               const response = await msalClient.acquireTokenSilent({
-                scopes: process.env.OAUTH_SCOPES.split(","),
+                scopes: config.oauth.scopes.split(","),
                 redirectUri:
-                  process.env.OAUTH_REDIRECT_URI_SECURE +
+                  config.oauth.redirectUriSecure +
                   ":" +
-                  process.env.PORT +
-                  process.env.CALLBACK,
+                  config.port +
+                  config.oauth.callback,
                 account: account,
               });
               done(null, response.accessToken);
@@ -119,12 +120,12 @@ function getAuthenticatedClient(msalClient, userId) {
             }
             case "--localhost": {
               const response = await msalClient.acquireTokenSilent({
-                scopes: process.env.OAUTH_SCOPES.split(","),
+                scopes: config.oauth.scopes.split(","),
                 redirectUri:
-                  process.env.OAUTH_REDIRECT_URI_LOCALHOST +
+                  config.oauth.redirectUriLocalhost +
                   ":" +
-                  process.env.PORT +
-                  process.env.CALLBACK,
+                  config.port +
+                  config.oauth.callback,
                 account: account,
               });
               done(null, response.accessToken);
@@ -133,12 +134,12 @@ function getAuthenticatedClient(msalClient, userId) {
             }
             case "--localhost-secure": {
               const response = await msalClient.acquireTokenSilent({
-                scopes: process.env.OAUTH_SCOPES.split(","),
+                scopes: config.oauth.scopes.split(","),
                 redirectUri:
-                  process.env.OAUTH_REDIRECT_URI_LOCALHOST_SECURE +
+                  config.oauth.redirectUriLocalhostSecure +
                   ":" +
-                  process.env.PORT +
-                  process.env.CALLBACK,
+                  config.port +
+                  config.oauth.callback,
                 account: account,
               });
               done(null, response.accessToken);
@@ -147,12 +148,12 @@ function getAuthenticatedClient(msalClient, userId) {
             }
             default: {
               const response = await msalClient.acquireTokenSilent({
-                scopes: process.env.OAUTH_SCOPES.split(","),
+                scopes: config.oauth.scopes.split(","),
                 redirectUri:
-                  process.env.OAUTH_REDIRECT_URI +
+                  config.oauth.redirectUri +
                   ":" +
-                  process.env.PORT +
-                  process.env.CALLBACK,
+                  config.port +
+                  config.oauth.callback,
                 account: account,
               });
               done(null, response.accessToken);
