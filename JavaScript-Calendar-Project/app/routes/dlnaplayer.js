@@ -7,7 +7,7 @@ const url = require("url");
 const http = require("http");
 const xmltojs = require("xml2js");
 const browseServer = require("dlna-browser-utils");
-const config = require("../config");
+const config = require("../scopes/utils/config");
 
 const mediaServerName = "LoveHouseFTP";
 

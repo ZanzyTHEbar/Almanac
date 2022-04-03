@@ -6,7 +6,9 @@
 "use strict";
 
 var app = require("../app");
-const config = require("../config");
+const config = require("../scopes/utils/config");
+const eLogPath = require("../scopes/utils/config.json").eLog.eLogPath;
+const { eLog } = require(eLogPath);
 var debug = require("debug")("graph-tutorial:server");
 var http = require("http");
 var https = require("https");
@@ -113,7 +115,9 @@ function Server(port) {
       server.listen(port);
       server.on("error", onError);
       server.on("listening", onListeningSecure);
-      console.log(config.oauth.redirectUriLocalhostSecure + ":" + config.port);
+      eLog(
+        `[STATUS] [CORE] Server running at http://${config.oauth.redirectUriLocalhostSecure}:${config.port}/`
+      );
       console.log(cLine);
       break;
     case "--secure":
@@ -123,7 +127,9 @@ function Server(port) {
       server.listen(port);
       server.on("error", onError);
       server.on("listening", onListeningSecure);
-      console.log(config.oauth.redirectUriSecure + ":" + config.port);
+      eLog(
+        `[STATUS] [CORE] Server running at http://${config.oauth.redirectUriSecure}:${config.port}/`
+      );
       console.log(cLine);
       break;
     case "--localhost":
@@ -133,8 +139,10 @@ function Server(port) {
       server2.listen(port);
       server2.on("error", onError);
       server2.on("listening", onListening);
+      eLog(
+        `[STATUS] [CORE] Server running at http://${config.oauth.redirectUriLocalhost}:${config.port}/`
+      );
       console.log(cLine);
-      console.log(config.oauth.redirectUriLocalhost + ":" + config.port);
       break;
     default:
       var port = normalizePort(port || "8080");
@@ -143,7 +151,9 @@ function Server(port) {
       server2.listen(port);
       server2.on("error", onError);
       server2.on("listening", onListening);
-      console.log(config.oauth.redirectUri + ":" + config.port);
+      eLog(
+        `[STATUS] [CORE] Server running at http://${config.oauth.redirectUri}:${config.port}/`
+      );
       console.log(cLine);
       break;
   }

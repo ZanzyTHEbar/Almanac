@@ -1,0 +1,16 @@
+{
+    "description": "",
+    "scopes": {
+        "CLI": true,
+        "DATABASE": true,
+        "DLNA": true
+    },
+    "eLog": {
+        "cLogEnabled": true,
+        "dLogEnabled": true,
+        "eLogEnabled": true,
+        "fLogEnabled": true,
+        "eLogPath": "C:\\Users\\zacar\\Documents\\GitHub\\Microsoft_Calendar_Epaper_Display\\JavaScript-Calendar-Project\\App\\scopes\\utils\\actions.js",
+        "filePath": "C:\\Users\\zacar\\Documents\\GitHub\\Microsoft_Calendar_Epaper_Display\\JavaScript-Calendar-Project\\App\\Logs\\"
+    }
+}

@@ -1,6 +1,6 @@
 "use strict";
 
-const config = require("./config");
+const config = require("../utils/config");
 var graph = require("@microsoft/microsoft-graph-client");
 require("isomorphic-fetch");
 var args = process.argv.slice(2);

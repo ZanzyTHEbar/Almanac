@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const assert = require("assert");
 dotenv.config();
 const {
+  NODE_ENV,
   OAUTH_CLIENT_ID,
   OAUTH_CLIENT_SECRET,
   OAUTH_REDIRECT_URI_LOCALHOST,
@@ -15,13 +16,9 @@ const {
   CALLBACK,
   COOKIE_ENCRYPTION_KEY,
   PORT,
-  SQL_USER,
-  SQL_PASSWORD,
+  SQL_DIALECT,
   SQL_DATABASE,
   SQL_HOST,
-  SQL_PORT,
-  SQL_INSTANCENAME,
-  SQL_ENCRYPT,
   OKTA_ORG_URL,
   OKTA_CLIENT_ID,
   OKTA_SECRET,
@@ -55,12 +52,9 @@ assert(
 assert(OAUTH_REDIRECT_URI, "OAUTH_REDIRECT_URI is required");
 assert(OAUTH_REDIRECT_URI_SECURE, "OAUTH_REDIRECT_URI_SECURE is required");
 assert(COOKIE_ENCRYPTION_KEY, "COOKIE_ENCRYPTION_KEY is required");
-assert(SQL_USER, "SQL_USER is required");
-assert(SQL_PASSWORD, "SQL_PASSWORD is required");
 assert(SQL_DATABASE, "SQL_DATABASE is required");
+assert(SQL_DIALECT, "SQL_DIALECT is required");
 assert(SQL_HOST, "SQL_HOST is required");
-assert(SQL_PORT, "SQL_PORT is required");
-assert(SQL_ENCRYPT, "SQL_ENCRYPT is required");
 assert(OKTA_ORG_URL, "OKTA_ORG_URL is required");
 assert(OKTA_CLIENT_ID, "OKTA_CLIENT_ID is required");
 assert(OKTA_SECRET, "OKTA_SECRET is required");
@@ -78,6 +72,7 @@ assert(DLNA_ICON_SM, "DLNA_ICON_SM is required");
 assert(DLNA_ICON_LG, "DLNA_ICON_LG is required");
 
 module.exports = {
+  NODE_ENV: NODE_ENV,
   port: PORT,
   oauth: {
     clientId: OAUTH_CLIENT_ID,
@@ -94,19 +89,9 @@ module.exports = {
     encryptionKey: COOKIE_ENCRYPTION_KEY,
   },
   sql: {
-    user: SQL_USER,
-    password: SQL_PASSWORD,
+    dialect: SQL_DIALECT,
     database: SQL_DATABASE,
     host: SQL_HOST,
-    port: SQL_PORT,
-    options: {
-      encrypt: sqlEncrypt,
-      trustedConnection: true,
-      connectTimeout: 10000,
-      requestTimeout: 10000,
-      enableArithAbort: true,
-      instancename: SQL_INSTANCENAME,
-    },
   },
   okta: {
     orgUrl: OKTA_ORG_URL,
