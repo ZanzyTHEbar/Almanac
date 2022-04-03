@@ -20,6 +20,7 @@ const {
   SQL_DATABASE,
   SQL_HOST,
   SQL_PORT,
+  SQL_INSTANCENAME,
   SQL_ENCRYPT,
   OKTA_ORG_URL,
   OKTA_CLIENT_ID,
@@ -100,9 +101,11 @@ module.exports = {
     port: SQL_PORT,
     options: {
       encrypt: sqlEncrypt,
+      trustedConnection: true,
       connectTimeout: 10000,
       requestTimeout: 10000,
       enableArithAbort: true,
+      instancename: SQL_INSTANCENAME,
     },
   },
   okta: {

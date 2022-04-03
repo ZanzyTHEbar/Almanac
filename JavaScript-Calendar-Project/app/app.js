@@ -6,17 +6,20 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const msal = require("@azure/msal-node");
 
+// Initialize the app.
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
+// Initialize the routers
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 const calendarRouter = require("./routes/calendar");
 const dlnaRouter = require("./routes/dlnaplayer");
+const sqldbRouter = require("./routes/db");
 
 var app = express();
 
@@ -91,7 +94,6 @@ app.set("view engine", "hbs");
 var hbs = require("hbs");
 var parseISO = require("date-fns/parseISO");
 var formatDate = require("date-fns/format");
-const { sql } = require("./config");
 // Helper to format date/time sent by Graph
 hbs.registerHelper("eventDateTime", function (dateTime) {
   const date = parseISO(dateTime);
@@ -109,6 +111,7 @@ app.use("/auth", authRouter);
 app.use("/dlna", dlnaRouter);
 app.use("/calendar", calendarRouter);
 app.use("/users", usersRouter);
+app.use("/db", sqldbRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
