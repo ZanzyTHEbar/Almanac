@@ -7,3 +7,7 @@
 /.keys
 
 /.vscode
+
+#Database Files
+.db
+UTIL.db

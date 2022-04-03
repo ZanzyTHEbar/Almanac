@@ -112,3 +112,7 @@ dist
 /.keys
 
 /.vscode
+
+#Database Files
+JavaScript-Calendar-Project/app/scopes/DATABASE/dbms/data/UTIL.db
+data/
