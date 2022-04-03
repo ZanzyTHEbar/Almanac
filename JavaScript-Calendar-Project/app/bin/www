@@ -10,6 +10,7 @@ var debug = require("debug")("graph-tutorial:server");
 var http = require("http");
 var https = require("https");
 var fs = require("fs");
+const config = require("../config");
 /* var NoIp = require("no-ip"); */
 var httpOptions = {
   key: fs.readFileSync(".keys/client-key.pem"),
@@ -20,22 +21,22 @@ var httpOptions = {
 var server = https.createServer(httpOptions, app);
 var server2 = http.createServer(app);
 var args = process.argv.slice(2);
-process.env.PORT = args[0];
+config.port = args[0];
 var State = args[1];
 
 var cLine = "-----------------------------------------------------------";
 
 console.log(cLine);
 
-console.log("Server is running on port " + process.env.PORT);
+console.log("Server is running on port " + config.port);
 console.log(cLine);
 console.log("Server state " + State);
 console.log(cLine);
 
 /* var noip = new NoIp({
-  hostname: process.env.NOIP_DOMAIN,
-  user: process.env.NOIP_USERNAME,
-  pass: process.env.NOIP_PASSWORD,
+  hostname: config.no_ip.hostname,
+  user: config.no_ip.username,
+  pass: config.no_ip.password,
 }); */
 
 /**
@@ -67,9 +68,9 @@ function onError(error) {
   }
 
   var bind =
-    typeof process.env.PORT === "string"
-      ? "Pipe " + process.env.PORT
-      : "Port " + process.env.PORT;
+    typeof config.port === "string"
+      ? "Pipe " + config.port
+      : "Port " + config.port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -112,9 +113,7 @@ function Server(port) {
       server.listen(port);
       server.on("error", onError);
       server.on("listening", onListeningSecure);
-      console.log(
-        process.env.OAUTH_REDIRECT_URI_LOCALHOST_SECURE + ":" + process.env.PORT
-      );
+      console.log(config.oauth.redirectUriLocalhostSecure + ":" + config.port);
       console.log(cLine);
       break;
     case "--secure":
@@ -124,9 +123,7 @@ function Server(port) {
       server.listen(port);
       server.on("error", onError);
       server.on("listening", onListeningSecure);
-      console.log(
-        process.env.OAUTH_REDIRECT_URI_SECURE + ":" + process.env.PORT
-      );
+      console.log(config.oauth.redirectUriSecure + ":" + config.port);
       console.log(cLine);
       break;
     case "--localhost":
@@ -137,9 +134,7 @@ function Server(port) {
       server2.on("error", onError);
       server2.on("listening", onListening);
       console.log(cLine);
-      console.log(
-        process.env.OAUTH_REDIRECT_URI_LOCALHOST + ":" + process.env.PORT
-      );
+      console.log(config.oauth.redirectUriLocalhost + ":" + config.port);
       break;
     default:
       var port = normalizePort(port || "8080");
@@ -148,7 +143,7 @@ function Server(port) {
       server2.listen(port);
       server2.on("error", onError);
       server2.on("listening", onListening);
-      console.log(process.env.OAUTH_REDIRECT_URI + ":" + process.env.PORT);
+      console.log(config.oauth.redirectUri + ":" + config.port);
       console.log(cLine);
       break;
   }
@@ -162,4 +157,4 @@ noip.update(); // Manual update, you can also provide a custom IP address
 
 noip.start(); // Start the update loop */
 
-Server(process.env.PORT);
+Server(config.port);
