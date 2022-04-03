@@ -6,11 +6,11 @@
 "use strict";
 
 var app = require("../app");
+const config = require("../config");
 var debug = require("debug")("graph-tutorial:server");
 var http = require("http");
 var https = require("https");
 var fs = require("fs");
-const config = require("../config");
 /* var NoIp = require("no-ip"); */
 var httpOptions = {
   key: fs.readFileSync(".keys/client-key.pem"),

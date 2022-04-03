@@ -1,7 +1,7 @@
 "use strict";
 
 const config = require("./config");
-
+/* const middleware = require("./middleware"); */
 const session = require("express-session");
 const flash = require("connect-flash");
 const msal = require("@azure/msal-node");
@@ -91,6 +91,7 @@ app.set("view engine", "hbs");
 var hbs = require("hbs");
 var parseISO = require("date-fns/parseISO");
 var formatDate = require("date-fns/format");
+const { sql } = require("./config");
 // Helper to format date/time sent by Graph
 hbs.registerHelper("eventDateTime", function (dateTime) {
   const date = parseISO(dateTime);
