@@ -1,3 +1,5 @@
+("use strict");
+
 var express = require("express");
 var router = express.Router();
 
@@ -36,26 +38,30 @@ router.all(
       switch (req.query.action) {
         case "get":
           console.log("Retrieving log ...");
-          res.send("Requested: " + req.query);
+          res.render("database");
+          //res.send("Requested: " + req.query);
           break;
         case "post":
           console.log("Creating element in database...");
-          res.send("Requested: " + req.query);
+          res.render("database");
+          //res.send("Requested: " + req.query);
           break;
         case "put":
           console.log("Update element in database ...");
-          res.send("Requested: " + req.query);
+          res.render("database");
+          //res.send("Requested: " + req.query);
           break;
         case "delete":
           console.log("Delete element in database ...");
-          res.send("Requested: " + req.query);
+          res.render("database");
+          //res.send("Requested: " + req.query);
           break;
         default:
           console.log("New log entry ...");
-          res.send("Requested: " + req.query);
+          res.render("database");
+          //res.send("Requested: " + req.query);
           break;
       }
-      //res.render("database");
     }
     next();
   },
