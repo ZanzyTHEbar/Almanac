@@ -55,12 +55,6 @@ assert(COOKIE_ENCRYPTION_KEY, "COOKIE_ENCRYPTION_KEY is required");
 assert(SQL_DATABASE, "SQL_DATABASE is required");
 assert(SQL_DIALECT, "SQL_DIALECT is required");
 assert(SQL_HOST, "SQL_HOST is required");
-assert(OKTA_ORG_URL, "OKTA_ORG_URL is required");
-assert(OKTA_CLIENT_ID, "OKTA_CLIENT_ID is required");
-assert(OKTA_SECRET, "OKTA_SECRET is required");
-assert(OKTA_REDIRECT_URI, "OKTA_REDIRECT_URI is required");
-assert(OKTA_SCOPES, "OKTA_SCOPES is required");
-assert(OKTA_AUTHORITY, "OKTA_AUTHORITY is required");
 assert(DLNA_USERNAME, "DLNA_USERNAME is required");
 assert(DLNA_PASSWORD, "DLNA_PASSWORD is required");
 assert(DLNA_PORT, "DLNA_PORT is required");
@@ -92,14 +86,6 @@ module.exports = {
     dialect: SQL_DIALECT,
     database: SQL_DATABASE,
     host: SQL_HOST,
-  },
-  okta: {
-    orgUrl: OKTA_ORG_URL,
-    clientId: OKTA_CLIENT_ID,
-    secret: OKTA_SECRET,
-    redirectUri: OKTA_REDIRECT_URI,
-    scopes: OKTA_SCOPES,
-    authority: OKTA_AUTHORITY,
   },
   dlna: {
     username: DLNA_USERNAME,
