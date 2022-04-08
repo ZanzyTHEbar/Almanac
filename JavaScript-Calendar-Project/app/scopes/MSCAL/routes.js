@@ -57,7 +57,7 @@ router.get("/", async function (req, res) {
         debug: JSON.stringify(err, Object.getOwnPropertyNames(err)),
       });
     }
-    res.render("calendar", params);
+    res.render("test", {encodedJson : encodeURIComponent(JSON.stringify(params))});
   }
 });
 
@@ -151,7 +151,6 @@ router.post(
           debug: JSON.stringify(error, Object.getOwnPropertyNames(error)),
         });
       }
-
       // Redirect back to the calendar view
       return res.redirect("/calendar");
     }
