@@ -103,7 +103,7 @@ const partials_path = path.join(__dirname, "../views/partials");
 // Initialize scopes
 app.use("/build/", express.static(path.join(__dirname, "node_modules/three/build/")));
 app.use("/jsm/", express.static(path.join(__dirname, "node_modules/three/examples/jsm/")));
-app.use("/jsm/controls/", express.static(path.join(__dirname, "node_modules/three/examples/jsm/controls/")));
+app.use("/jsm/controls/", express.static(path.join(__dirname, "./node_modules/three/examples/jsm/controls/")));
 app.use("/calendar/", express.static(calendar_path));
 app.use("/database/", express.static(database_path));
 app.use("/layouts/", express.static(layouts_path));
