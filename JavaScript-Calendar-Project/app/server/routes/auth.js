@@ -1,6 +1,6 @@
 "use strict";
-const config = require("../scopes/utils/config");
-const graph = require("../scopes/MSCAL/graph");
+const config = require("../../server/scopes/utils/config");
+const graph = require("../../server/scopes/MSCAL/graph");
 const router = require("express-promise-router")();
 var args = process.argv.slice(2);
 config.port = args[0];

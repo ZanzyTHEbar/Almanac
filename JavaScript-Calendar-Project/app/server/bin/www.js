@@ -5,9 +5,9 @@
  */
 "use strict";
 
-var app = require("../app");
-const config = require("../scopes/utils/config");
-const eLogPath = require("../scopes/utils/config.json").eLog.eLogPath;
+var app = require("../../app");
+const config = require("../../server/scopes/utils/config");
+const eLogPath = require("../../server/scopes/utils/config.json").eLog.eLogPath;
 const { eLog } = require(eLogPath);
 var debug = require("debug")("graph-tutorial:server");
 var http = require("http");
@@ -15,9 +15,9 @@ var https = require("https");
 var fs = require("fs");
 /* var NoIp = require("no-ip"); */
 var httpOptions = {
-  key: fs.readFileSync(".keys/client-key.pem"),
+  key: fs.readFileSync("server/.keys/client-key.pem"),
 
-  cert: fs.readFileSync(".keys/client-cert.pem"),
+  cert: fs.readFileSync("server/.keys/client-cert.pem"),
 };
 
 var server = https.createServer(httpOptions, app);

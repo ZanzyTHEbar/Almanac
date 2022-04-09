@@ -1,8 +1,8 @@
 "use strict";
 
-const SCOPES = require("./scopes/utils/config.json").scopes;
-const config = require("./scopes/utils/config");
-const eLogPath = require("./scopes/utils/config.json").eLog.eLogPath;
+const SCOPES = require("./server/scopes/utils/config.json").scopes;
+const config = require("./server/scopes/utils/config");
+const eLogPath = require("./server/scopes/utils/config.json").eLog.eLogPath;
 const { eLog } = require(eLogPath);
 /* const { addFunction } = require("./custom"); */
 const session = require("express-session");
@@ -18,9 +18,9 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 // Initialize the routers
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
-const authRouter = require("./routes/auth");
+const indexRouter = require("./server/routes/index");
+const usersRouter = require("./server/routes/users");
+const authRouter = require("./server/routes/auth");
 
 var app = express();
 
@@ -92,7 +92,7 @@ app.use(function (req, res, next) {
 });
 
 // view engine setup
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "/server/views"));
 app.set("view engine", "hbs");
 
 var hbs = require("hbs");
@@ -109,7 +109,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/server/public")));
 
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
@@ -122,13 +122,13 @@ function initCroutes(scope) {
     .filter((key) => SCOPES[key] && scope !== key)
     .forEach((key) => {
       try {
-        fs.readdirSync(`./scopes/${scope}/croutes`)
+        fs.readdirSync(`./server/scopes/${scope}/croutes`)
           .filter((file) => file.startsWith(key))
           .forEach((file) => {
             eLog(`[WARN] [CORE] ${scope} found extra croutes for ${key}`);
             app.use(
               `/${scope.toLowerCase()}/${key.toLowerCase}`,
-              require(`./scopes/${scope}/croutes/${file}`)
+              require(`./server/scopes/${scope}/croutes/${file}`)
             );
             changed = true;
           });
@@ -147,7 +147,7 @@ function initCroutes(scope) {
 for (const scope in SCOPES) {
   eLog(`[INFO] [CORE] ${scope} initializing`);
   if (config[scope.toUpperCase() + "_ENABLED"] && SCOPES[scope]) {
-    const routes = require(`./scopes/${scope}/routes`);
+    const routes = require(`./server/scopes/${scope}/routes`);
     app.use(`/${scope.toLowerCase()}`, routes);
     eLog(`[DEBUG] [CORE] Adding extended Functions to ${scope}`);
     addFunction(scope, app);
@@ -160,7 +160,7 @@ for (const scope in SCOPES) {
   ) {
     eLog(`[INFO] [CORE] Custom scope ${scope} found`);
     try {
-      const routes = require(`./scopes/${scope}/routes`);
+      const routes = require(`./server/scopes/${scope}/routes`);
       app.use(`/${scope.toLowerCase()}`, routes);
       eLog(`[FINE] [CORE] ${scope} loaded`);
       eLog(`[DEBUG] [CORE] Adding extended Functions to ${scope}`);
