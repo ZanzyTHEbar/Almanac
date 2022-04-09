@@ -99,13 +99,11 @@ const database_path = path.join(__dirname, "../template/views/database");
 const calendar_path = path.join(__dirname, "../template/views/calendar");
 const anim_path = path.join(__dirname, "../views/anim");
 const partials_path = path.join(__dirname, "../views/partials");
-const three_build_path = path.join(__dirname, "./node_modules/three/build");
-const three_jsm_path = path.join(__dirname, "./node_modules/three/examples/jsm");
-const three_js_path = path.join(__dirname, "./node_modules/three/src");
 
 // Initialize scopes
-app.use("/build/", express.static(three_build_path));
-app.use("/jsm/", express.static(three_jsm_path));
+app.use("/build/", express.static(path.join(__dirname, "node_modules/three/build/")));
+app.use("/jsm/", express.static(path.join(__dirname, "node_modules/three/examples/jsm/")));
+app.use("/jsm/controls/", express.static(path.join(__dirname, "node_modules/three/examples/jsm/controls/")));
 app.use("/calendar/", express.static(calendar_path));
 app.use("/database/", express.static(database_path));
 app.use("/layouts/", express.static(layouts_path));
