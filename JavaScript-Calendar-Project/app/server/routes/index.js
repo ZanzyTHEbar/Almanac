@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
     active: { home: true }
   };
 
-  res.render('index', params);
+  res.render('layouts/index', params);
 });
 
 module.exports = router;

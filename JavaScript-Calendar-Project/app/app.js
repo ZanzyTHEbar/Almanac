@@ -11,18 +11,20 @@ const msal = require("@azure/msal-node");
 const fs = require("fs");
 
 // Initialize the app.
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const createError = require("http-errors");
+const express = require("express");
+const hbs = require("hbs");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 
 // Initialize the routers
 const indexRouter = require("./server/routes/index");
 const usersRouter = require("./server/routes/users");
 const authRouter = require("./server/routes/auth");
+const animRouter = require("./server/routes/animation");
 
-var app = express();
+const app = express();
 
 eLog(`[INFO] [CORE] Initializing Application..`);
 // In-memory storage of logged-in users
@@ -91,11 +93,32 @@ app.use(function (req, res, next) {
   next();
 });
 
+const layouts_path = path.join(__dirname, "../views/layouts");
+const dlna_path = path.join(__dirname, "../template/views/dlna");
+const database_path = path.join(__dirname, "../template/views/database");
+const calendar_path = path.join(__dirname, "../template/views/calendar");
+const anim_path = path.join(__dirname, "../views/anim");
+const partials_path = path.join(__dirname, "../views/partials");
+const three_build_path = path.join(__dirname, "./node_modules/three/build");
+const three_jsm_path = path.join(__dirname, "./node_modules/three/examples/jsm");
+const three_js_path = path.join(__dirname, "./node_modules/three/src");
+
+// Initialize scopes
+app.use("/build/", express.static(three_build_path));
+app.use("/jsm/", express.static(three_jsm_path));
+app.use("/calendar/", express.static(calendar_path));
+app.use("/database/", express.static(database_path));
+app.use("/layouts/", express.static(layouts_path));
+app.use("/dlna/", express.static(dlna_path));
+app.use("/anim/", express.static(anim_path));
+app.use("/partials/", express.static(partials_path));
+
 // view engine setup
 app.set("views", path.join(__dirname, "/server/views"));
 app.set("view engine", "hbs");
 
-var hbs = require("hbs");
+hbs.registerPartials(path.join(__dirname + "partials_path"));
+
 eLog("[STATUS] [CORE] Frontend loaded");
 var parseISO = require("date-fns/parseISO");
 var formatDate = require("date-fns/format");
@@ -109,11 +132,13 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "/server/public")));
+app.use(express.static(path.join(__dirname, "public")));
 
+// Initialize the routers
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
 app.use("/users", usersRouter);
+app.use("/anim", animRouter);
 
 function initCroutes(scope) {
   eLog(`[INFO] [CORE] ${scope} initializing croutes`);
@@ -195,7 +220,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render("error");
+  res.render("layouts/error");
 });
 
 module.exports = app;

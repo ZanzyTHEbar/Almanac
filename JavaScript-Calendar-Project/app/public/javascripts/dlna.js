@@ -1,3 +1,5 @@
+"use strict";
+
 async function logParams() {
   const params = await grabENV("/dlna/getenv", "State");
   console.log("params: " + params);

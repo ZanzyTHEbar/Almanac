@@ -14,7 +14,7 @@ router.get(
       // Redirect unauthenticated requests to home page
       res.redirect("/");
     } else {
-      res.render("database");
+      res.render("database/database");
       //res.send("Requested: " + req.query);
     }
     next();
@@ -38,7 +38,7 @@ router.all(
       switch (req.query.action) {
         case "get":
           console.log("Retrieving log ...");
-          res.render("database");
+          res.render("database/database");
           //res.send("Requested: " + req.query);
           break;
         case "post":
@@ -48,17 +48,17 @@ router.all(
           break;
         case "put":
           console.log("Update element in database ...");
-          res.render("database");
+          res.render("database/database");
           //res.send("Requested: " + req.query);
           break;
         case "delete":
           console.log("Delete element in database ...");
-          res.render("database");
+          res.render("database/database");
           //res.send("Requested: " + req.query);
           break;
         default:
           console.log("New log entry ...");
-          res.render("database");
+          res.render("database/database");
           //res.send("Requested: " + req.query);
           break;
       }

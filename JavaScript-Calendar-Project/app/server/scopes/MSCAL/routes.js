@@ -57,7 +57,9 @@ router.get("/", async function (req, res) {
         debug: JSON.stringify(err, Object.getOwnPropertyNames(err)),
       });
     }
-    res.render("test", {encodedJson : encodeURIComponent(JSON.stringify(params))});
+    res.render("calendar/test", {
+      encodedJson: encodeURIComponent(JSON.stringify(params)),
+    });
   }
 });
 
@@ -68,7 +70,7 @@ router.get("/new", function (req, res) {
     res.redirect("/");
   } else {
     res.locals.newEvent = {};
-    res.render("newevent");
+    res.render("calendar/newevent");
   }
 });
 

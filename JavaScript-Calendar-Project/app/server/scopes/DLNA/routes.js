@@ -111,9 +111,9 @@ router.get("/", function (req, res, next) {
     res.redirect("/");
   } else {
     let params = {
-      active: { home: false },
+      active: { dlna: true },
     };
-    res.render("dlna", params);
+    res.render("dlna/dlna", params);
   }
 });
 
@@ -170,7 +170,7 @@ router.get("/api/search_dlna_services", function (req, res) {
     // Or get a list of all services on the network
 
     //client.search("ssdp:all");
-    res.render("dlna", {});
+    res.render("dlna/dlna", {});
   }
 });
 
