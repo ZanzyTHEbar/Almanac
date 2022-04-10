@@ -1,3 +1,5 @@
+/* Future Custom Objects */
+
 /* const config = require("./scopes/utils/config");
 const SCOPES = require("./scopes/utils/config.json").scopes;
 const { eLog } = require("./scopes/utils/actions");
