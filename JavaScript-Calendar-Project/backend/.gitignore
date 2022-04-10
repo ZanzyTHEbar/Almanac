@@ -4,7 +4,10 @@
 
 # This folder is where your SSL certificates and keys are stored.
 
-/.keys
+/server/.keys
+client-cert.pem
+client-key.pem
+.pem
 
 /.vscode
 

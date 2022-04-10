@@ -9,7 +9,7 @@ const xmltojs = require("xml2js");
 const browseServer = require("dlna-browser-utils");
 const config = require("../utils/config");
 
-const mediaServerName = "LoveHouseFTP";
+const mediaServerName = config.dlna.mediaserverName;
 
 const Client = require("node-ssdp").Client,
   client = new Client();

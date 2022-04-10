@@ -86,7 +86,7 @@ module.exports = {
     password: DLNA_PASSWORD,
     port: DLNA_PORT,
     deviceDescriptorPath: DLNA_DEVICE_DESCRIPTOR_PATH,
-    name: DLNA_NAME,
+    mediaserverName: DLNA_NAME,
     description: DLNA_DESCRIPTION,
     url: DLNA_URL,
     iconSm: DLNA_ICON_SM,
