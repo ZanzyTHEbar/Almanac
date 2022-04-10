@@ -11,6 +11,7 @@ router.get("/", function (req, res, next) {
   } else {
     let params = {
       active: { animation: true },
+      layout: false,
     };
     res.render("anim/anim", params);
   }
