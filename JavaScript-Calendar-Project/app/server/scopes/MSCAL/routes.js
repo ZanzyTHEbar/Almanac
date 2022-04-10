@@ -16,8 +16,9 @@ router.get("/", async function (req, res) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
   } else {
-    const params = {
+    let params = {
       active: { calendar: true },
+      layout: false,
     };
 
     // Get the user
@@ -57,9 +58,7 @@ router.get("/", async function (req, res) {
         debug: JSON.stringify(err, Object.getOwnPropertyNames(err)),
       });
     }
-    res.render("calendar/test", {
-      encodedJson: encodeURIComponent(JSON.stringify(params)),
-    });
+    res.render("calendar/test", params);
   }
 });
 

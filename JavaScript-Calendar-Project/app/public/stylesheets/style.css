@@ -1,18 +1,24 @@
-@import url("https://use.typekit.net/jmk3xov.css");
+/* @import url("https://use.typekit.net/jmk3xov.css"); */
 
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap")
+    format("normal");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
 }
 
 :root {
-  --dark-bg: rgba(15, 15, 15, 0.95);
+  --dark-bg: rgb(9 24 87 / 77%);
   --spacing: 350px;
-
-  font-family: brandon-grotesque, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
+  overflow-x: hidden;
 }
 
 main {
@@ -23,7 +29,6 @@ main {
   width: 100%;
   margin: 0px auto;
   padding: 120px 0px;
-
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }

@@ -93,12 +93,13 @@ hbat.position.x = 2;
 
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
-  moon.rotation.x += 0.05;
-  moon.rotation.y += 0.075;
-  moon.rotation.z += 0.05;
 
   hbat.rotation.y += 0.01;
   hbat.rotation.z += 0.01;
+
+  /* moon.rotation.x += 0.05;
+  moon.rotation.y += 0.075;
+  moon.rotation.z += 0.05; */
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
