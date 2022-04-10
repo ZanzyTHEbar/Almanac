@@ -7,7 +7,7 @@ config.port = args[0];
 var State = args[1];
 
 /* GET auth callback. */
-router.get("/signin", async function (req, res) {
+router.get("/signin", async (req, res) => {
   switch (State) {
     case "--secure": {
       const urlParameters = {
@@ -113,7 +113,7 @@ router.get("/signin", async function (req, res) {
   }
 });
 
-router.get("/callback", async function (req, res) {
+router.get("/callback", async (req, res) => {
   switch (State) {
     case "--secure": {
       const tokenRequest = {
@@ -275,7 +275,7 @@ router.get("/callback", async function (req, res) {
   }
 });
 
-router.get("/signout", async function (req, res) {
+router.get("/signout", async (req, res) => {
   // Sign out
   if (req.session.userId) {
     // Look up the user's account in the cache

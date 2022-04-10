@@ -11,7 +11,7 @@
         "dLogEnabled": true,
         "eLogEnabled": true,
         "fLogEnabled": true,
-        "eLogPath": "C:\\Users\\zacar\\Documents\\GitHub\\Microsoft_Calendar_Epaper_Display\\JavaScript-Calendar-Project\\App\\server\\scopes\\utils\\actions.js",
-        "filePath": "C:\\Users\\zacar\\Documents\\GitHub\\Microsoft_Calendar_Epaper_Display\\JavaScript-Calendar-Project\\App\\Logs\\"
+        "eLogPath": "C:\\Users\\zacar\\Documents\\GitHub\\Microsoft_Calendar_Epaper_Display\\JavaScript-Calendar-Project\\backend\\server\\scopes\\utils\\actions.js",
+        "filePath": "C:\\Users\\zacar\\Documents\\GitHub\\Microsoft_Calendar_Epaper_Display\\JavaScript-Calendar-Project\\backend\\Logs\\"
     }
 }

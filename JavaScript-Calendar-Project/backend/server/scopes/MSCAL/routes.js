@@ -11,7 +11,7 @@ const { body, validationResult } = require("express-validator");
 const validator = require("validator");
 
 /* GET /calendar */
-router.get("/", async function (req, res) {
+router.get("/", async (req, res) => {
   if (!req.session.userId) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
@@ -63,7 +63,7 @@ router.get("/", async function (req, res) {
 });
 
 /* GET /calendar/new */
-router.get("/new", function (req, res) {
+router.get("/new", (req, res) => {
   if (!req.session.userId) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
@@ -100,7 +100,7 @@ router.post(
     body("ev-end").isISO8601(),
     body("ev-body").escape(),
   ],
-  async function (req, res) {
+  async (req, res) => {
     if (!req.session.userId) {
       // Redirect unauthenticated requests to home page
       res.redirect("/");

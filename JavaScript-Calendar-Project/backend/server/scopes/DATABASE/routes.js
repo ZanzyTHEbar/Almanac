@@ -6,7 +6,7 @@ var router = express.Router();
 /* GET home page. */
 router.get(
   "/",
-  function (req, res, next) {
+  (req, res, next) => {
     if (req.query) next();
   },
   (req, res, next) => {
@@ -24,7 +24,7 @@ router.get(
 
 router.all(
   "/secret",
-  function (req, res, next) {
+  (req, res, next) => {
     if (req.query) next();
   },
   (req, res, next) => {

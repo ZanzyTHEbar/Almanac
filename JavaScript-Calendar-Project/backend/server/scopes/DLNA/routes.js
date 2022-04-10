@@ -105,7 +105,7 @@ client.on("speedChanged", function (speed) {
 */
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/", (req, res, next) => {
   if (!req.session.userId) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
@@ -118,7 +118,7 @@ router.get("/", function (req, res, next) {
 });
 
 /* GET process.env variables. */
-router.get("/getenv", function (req, res) {
+router.get("/getenv", (req, res) => {
   if (!req.session.userId) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
@@ -128,7 +128,7 @@ router.get("/getenv", function (req, res) {
   }
 });
 
-router.get("/api/devices", function (req, res) {
+router.get("/api/devices", (req, res) => {
   if (!req.session.userId) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
@@ -136,7 +136,7 @@ router.get("/api/devices", function (req, res) {
   }
 });
 
-router.get("/api/playmedia", function (req, res) {
+router.get("/api/playmedia", (req, res) => {
   if (!req.session.userId) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
@@ -144,7 +144,7 @@ router.get("/api/playmedia", function (req, res) {
   }
 });
 
-router.get("/api/stopmedia", function (req, res) {
+router.get("/api/stopmedia", (req, res) => {
   if (!req.session.userId) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
@@ -152,7 +152,7 @@ router.get("/api/stopmedia", function (req, res) {
   }
 });
 
-router.get("/api/search_dlna_services", function (req, res) {
+router.get("/api/search_dlna_services", (req, res) => {
   if (!req.session.userId) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
@@ -174,7 +174,7 @@ router.get("/api/search_dlna_services", function (req, res) {
   }
 });
 
-router.get("/api/search_dlna_services_poll", function (req, res) {
+router.get("/api/search_dlna_services_poll", (req, res) => {
   if (!req.session.userId) {
     // Redirect unauthenticated requests to home page
     res.redirect("/");
@@ -256,7 +256,7 @@ router.get("/api/search_dlna_services_poll", function (req, res) {
           });
         });
       });
-      req.on("error", function (err) {
+      req.on("error", (err) => {
         console.log(err);
       });
       req.end();
@@ -265,7 +265,7 @@ router.get("/api/search_dlna_services_poll", function (req, res) {
     // search for media server and display top level content
     client.search("urn:schemas-upnp-org:service:ContentDirectory:1");
 
-    setTimeout(function () {
+    setTimeout(() => {
       console.log("done");
     }, 10000);
   }

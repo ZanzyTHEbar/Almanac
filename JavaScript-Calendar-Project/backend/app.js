@@ -72,7 +72,7 @@ eLog("[STATUS] [CORE] Microsoft Graph API loaded");
 app.use(flash());
 
 // Set up local vars for template layout
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   // Read any flashed errors and save
   // in the response locals
   res.locals.error = req.flash("error_msg");
@@ -101,8 +101,14 @@ const anim_path = path.join(__dirname, "../views/anim");
 const partials_path = path.join(__dirname, "../views/partials");
 
 // Initialize scopes
-app.use("/build/", express.static(path.join(__dirname, "node_modules/three/build/")));
-app.use("/jsm/", express.static(path.join(__dirname, "node_modules/three/examples/jsm/")));
+app.use(
+  "/build/",
+  express.static(path.join(__dirname, "node_modules/three/build/"))
+);
+app.use(
+  "/jsm/",
+  express.static(path.join(__dirname, "node_modules/three/examples/jsm/"))
+);
 app.use("/calendar/", express.static(calendar_path));
 app.use("/database/", express.static(database_path));
 app.use("/layouts/", express.static(layouts_path));
@@ -120,7 +126,7 @@ eLog("[STATUS] [CORE] Frontend loaded");
 var parseISO = require("date-fns/parseISO");
 var formatDate = require("date-fns/format");
 // Helper to format date/time sent by Graph
-hbs.registerHelper("eventDateTime", function (dateTime) {
+hbs.registerHelper("eventDateTime", (dateTime) => {
   const date = parseISO(dateTime);
   return formatDate(date, "M/d/yy h:mm a");
 });
@@ -205,12 +211,12 @@ eLog(`[INFO] [CORE] Application initialized!`);
 eLog(`[INFO] [CORE] Starting Application...`);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "dev" ? err : {};
