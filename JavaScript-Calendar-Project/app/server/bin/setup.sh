@@ -82,15 +82,15 @@ printf "Hostname Setter Service Created, continuing with setup\n"
 
 # Set Aplication Variables
 printf "Please enter the hostname (name of machine should be similar to the DDNS that you setup)\n"
-read -p " where your application should run (default: picalendar):" app_ip
+read -p " where your application should run (default: picalendar):" app_hostname
 printf "Changing Hostname\n"
-if [ -z "$app_ip" ]
+if [ -z "$app_hostname" ]
 then
     app_ip="picalendar"
     printf "You have chosen the default hostname\n"
 fi
-sudo hostname.sh $app_ip
-printf "Hostname Changed to: \033[0;36m$app_ip\033[0m\n"
+sudo hostname.sh $app_hostname
+printf "Hostname Changed to: \033[0;36m$app_hostname\033[0m\n"
 
 read -p "Please enter the port where your application should run (backend default: 8080, frontend default: 80):" app_port
 
@@ -99,7 +99,15 @@ then
     app_port="8080"
 fi
 echo -e "APP_PORT=${app_port}" >> ${env_path}
-printf "\033[0;32mYour application will now run on: \"http://${app_ip}:${app_port}/\"\033[0m\n";
+
+read -p "Please enter the DNS where your application should run (backend default: localhost, frontend default: localhost):" app_dns
+
+if [ -z "$app_port" ]
+then
+    app_dns="localhost"
+fi
+echo -e "APP_DNS=${app_dns}" >> ${env_path}
+printf "\033[0;32mYour application will now run on: \"http://${app_dns}:${app_port}/\"\033[0m\n";
 
 # Microsoft Graph API settings
 read -p "Do you want to use the Microsoft Graph API? (y/n):" microsoft
