@@ -10,6 +10,7 @@ printf "\033[0;31mAlso Note that tokens should never be shared with anyone\033[0
 # Main Application variables, needed at all cost
 printf "\033[0;35m[Required by Application]\033[0m - "
 printf "Hostname and Port where your application should run\n"
+printf "If using a DNS, you will need to provide your DNS. It is recommended to setup your router with a dynamic DNS\n"
 
 # Microsoft Graph API variables, required for the application
 printf "\033[0;35m[Required by Microsoft]\033[0m - "
@@ -19,27 +20,47 @@ printf "Microsoft Graph API client ID, your API Client secret and your main Serv
 printf "\033[0;35m[Required by Azure Active Directory]\033[0m - "
 printf "Redicrect URI's for Azure Active Directory to correctly redirect to your application - "
 printf "\033[0;31mWARN: You must first set this up with your Azure Active Directory\033[0m\n"
-printf "\033[0;36mNote: You will require admin access to your Organisations Microsoft Account, or be given permissions to access the Azure Active Directory\033[0m\n"
+printf "\033[0;36mNote: You will require admin access to your Organisations Microsoft Account,"
+printf " or be given permissions to access the Azure Active Directory\033[0m\n"
 printf "\033[0;36mNote: in order to create a new application registration\033[0m\n"
 
 # DLNA variables, optional
 printf "\033[0;35m[Required by DLNA Server]\033[0m - "
-printf "DLNA Auth Token - "
+printf "DLNA Auth URL - "
+printf "DLNA Auth Username - "
+printf "DLNA Auth Password - "
+printf "DLNA Auth Port - "
+printf "DLNA Auth Friendly Name - "
+printf "DLNA Auth Description - "
+printf "DLNA Auth Icon Sm - "
+printf "DLNA Auth Icon Lg - "
+printf "DLNA Auth Device Descriptor Path - "
 printf "\033[0;31mWARN: NOT YET IMPLEMENTED\033[0m\n"
 
-# Azure Active Storage variables, recommended
+# Azure Active Storage variables, optional
 printf "\033[0;35m[Required by Azure Active Storage]\033[0m - "
 printf "Microsoft Azure Storage Auth token - "
 printf "\033[0;31mWARN: NOT YET IMPLEMENTED\033[0m\n"
 
-read -p "If all the needed information is at hand press enter to continue..."
+# SQL Server Configuration, required for the application
+printf "\033[0;35m[Required for usage of the database features]\033[0m - "
+printf "SQL dialect - "
+printf "SQL Database Name - "
+printf "SQL Host - "
+printf "\033[0;31mWARN: Do not store sensitive information in this database\033[0m\n"
+printf "\033[0;31mWARN: Do not expose this database to the internet\033[0m\n"
+
+printf "\033[0;31mPlease setup a Dynamic DNS for your router, "
+printf "preferrably using No-IP or another service supported by your router. "
+printf "If all the needed information is at hand,\033[0m\n"
+read -p " press enter to continue..."
 # Create .env file
-env_path="../App/sh.env"
+env_path="../app/sh.env"
 touch ${env_path}
-echo -e "#dotenv file - stores all app variables/flags" > ${env_path}
+echo ".env file - stores all app variables/flags"
 printf "\033[0;36mNote:To use the default values, just press enter\033[0m\n"
 
-printf "Hostname Setter Service Creator Started\n"
+printf "Hostname Setter Service-Creator Started\n"
 sudo cp hostname.sh /usr/bin/hostname.sh
 printf "Moved hostname.sh to /usr/bin\n"
 sudo chmod +x /usr/bin/hostname.sh
@@ -53,14 +74,15 @@ printf "Created service file\n"
 cat /etc/systemd/system/hostname.service
 
 sudo systemctl daemon-reload
-printf "Reloaded systemd\n"
+printf "Reloaded systemctl\n"
 sudo systemctl enable hostname.service
 printf "Enabled hostname.sh\n"
 sudo systemctl start hostname.service
 printf "Hostname Setter Service Created, continuing with setup\n"
 
 # Set Aplication Variables
-read -p "Please enter the hostname (ip) where your application should run (default: picalendar):" app_ip
+printf "Please enter the hostname (name of machine should be similar to the DDNS that you setup)\n"
+read -p " where your application should run (default: picalendar):" app_ip
 printf "Changing Hostname\n"
 if [ -z "$app_ip" ]
 then
@@ -70,7 +92,7 @@ fi
 sudo hostname.sh $app_ip
 printf "Hostname Changed to: \033[0;36m$app_ip\033[0m\n"
 
-read -p "Please enter the port where your application should run (default: 2070):" app_port
+read -p "Please enter the port where your application should run (backend default: 8080, frontend default: 80):" app_port
 
 if [ -z "$app_port" ]
 then
@@ -107,32 +129,42 @@ fi
 read -p "Do you want to use the DLNA server? (y/n):" dlna
 if [ "$dlna" = "y" || "$dlna" = "Y" ]
 then
-    printf "Please enter the DLNA IP and credentials:"
-    read -p "DLNA IP:" dlna_ip
+    printf "Please enter the DLNA URL:"
+    read -p "DLNA IP:" dlna_url
     
     printf "\033[0;33mCustom DLNA server stored at ${dlna_path}\033[0m\n"
     echo -e "DLNA_CUSTOM=true" >> ${env_path}
-    echo -e "DLNA_DIALECT=${dlna_ip}" >> ${env_path}
-    read -p "Please enter the hostname (ip) where your DLNA is running:" db_host
-    echo -e "DLNA_HOST=${dlna_host}" >> ${env_path}
-    read -p "Please enter the port where your DLNA is running:" db_port
+    read -p "Please enter the hostname (url, ip or DDNS for your router) where your DLNA is running:" dlna_device_descrip
+    echo -e "DLNA_DEVICE_DESCRIPTOR_PATH=${dlna_device_descrip}" >> ${env_path}
+    read -p "Please enter the port where your DLNA is running:" dlna_port
     echo -e "DLNA_PORT=${dlna_port}" >> ${env_path}
-    read -p "Please enter the DLNA name:" db_name
+    read -p "Please enter the DLNA friendly name:" dlna_name
     echo -e "DLNA_NAME=${dlna_name}" >> ${env_path}
-    read -p "Please enter the DLNA username:" db_user
+    read -p "Please enter the DLNA username:" dlna_user
     echo -e "DLNA_USER=${dlna_user}" >> ${env_path}
-    read -p "Please enter the DLNA password:" db_pass
+    read -p "Please enter the DLNA password:" dlna_pass
     echo -e "DLNA_PASS=${dlna_pass}" >> ${env_path}
-    printf "\033[0;33mUsing custom DLNA at \"${dlna_ip}://${db_user}:${db_pass}@${db_host}:${db_port}/${db_name}\"\033[0m\n"
+    printf "\033[0;33mUsing custom DLNA at \"https://${dlna_url}:${db_port}/${dlna_device_descrip}\"\033[0m\n"
 fi
 
 # Azure Storage setting
-printf "Do you want to use the Microsoft Azure Storage Services? (y/n):"
-read azure
-if [ "$azure" = "y" ]
+read -p "Do you want to use the Microsoft Azure Storage Services? (y/n):" azure
+if [ "$azure" = "y" || "$azure" = "Y" ]
 then
     read -p "Please enter your azure Auth Token:" azure_token
     echo -e "azure_TOKEN=${azure_token}" >> ${env_path}
+fi
+
+# SQL Storage setting
+read -p "Do you want to use the SQL Database Services? (y/n):" sql
+if [ "$sql" = "y" || "$sql" = "Y" ]
+then
+    read -p "Please enter your chosen SQL dialect (if you don't know, choose sqlite):" sql_dialect
+    echo -e "SQL_DIALECT=${sql_dialect}" >> ${env_path}
+    read -p "Please enter your chosen database name:" sql_database
+    echo -e "SQL_DATABASE=${sql_database}" >> ${env_path}
+    read -p "Please enter your sql host (if you don't know choose localhost):" sql_host
+    echo -e "SQL_HOST=${sql_host}" >> ${env_path}
 fi
 
 if [ -f "$env_path" ]
@@ -143,9 +175,9 @@ then
     sudo reboot
     exit 1
 else
-    printf "\033[0;31mFailed to create .env file\033[0m\n"µ
+    printf "\033[0;31mFailed to create .env file\033[0m\n"
     printf "\033[0;31mPlease check the permissions of the file and try again.\033[0m\n"
-    printf "\033[0;31mIf this issue persists, please manually create a .env file (named .env) in your /App directory.\033[0m\n"
+    printf "\033[0;31mIf this issue persists, please manually create a .env file (named sh.env) in your /app directory.\033[0m\n"
     exit 1
 fi
 
