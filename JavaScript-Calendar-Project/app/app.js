@@ -1,10 +1,10 @@
 "use strict";
 
-const SCOPES = require("./server/scopes/utils/config.json").scopes;
 const config = require("./server/scopes/utils/config");
-const eLogPath = require("./server/scopes/utils/config.json").eLog.eLogPath;
-const { eLog } = require(eLogPath);
-const logLevel = require("./server/scopes/utils/logLevels");
+const SCOPES = require("./server/scopes/utils/config.json").scopes;
+const utilPath = require("./server/scopes/utils/config.json").eLog.utilPath;
+const { eLog } = require(`${utilPath}\\actions`);
+const logLevel = require(`${utilPath}\\logLevels`);
 /* const { addFunction } = require("./custom"); */
 const session = require("express-session");
 const flash = require("connect-flash");
@@ -194,7 +194,7 @@ for (const scope in SCOPES) {
     try {
       const routes = require(`./server/scopes/${scope}/routes`);
       app.use(`/${scope.toLowerCase()}`, routes);
-      eLog(logLevel.FINE, "CORE", + scope + " loaded");
+      eLog(logLevel.FINE, "CORE", +scope + " loaded");
       eLog(logLevel.DEBUG, "CORE", "Adding extended Functions to " + scope);
       addFunction(scope, app);
       eLog(
@@ -217,7 +217,7 @@ for (const scope in SCOPES) {
 }
 
 eLog(logLevel.STATUS, "CORE", "Modules loaded");
-eLog(logLevel.STATUS, CORE, "Routers loaded");
+eLog(logLevel.STATUS, "CORE", "Routers loaded");
 
 eLog(logLevel.INFO, "CORE", "Application initialized!");
 eLog(logLevel.INFO, "CORE", "Starting Application...");

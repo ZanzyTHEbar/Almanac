@@ -6,9 +6,9 @@
 
 var app = require("../../app");
 const config = require("../scopes/utils/config");
-const eLogPath = require("../scopes/utils/config.json").eLog.eLogPath;
-const { eLog } = require(eLogPath);
-const logLevel = require("../scopes/utils/logLevels");
+const utilPath = require("../scopes/utils/config.json").eLog.utilPath;
+const { eLog } = require(`${utilPath}\\actions`);
+const logLevel = require(`${utilPath}\\logLevels`);
 var debug = require("debug")("outlook-knight:server");
 var http = require("http");
 var https = require("https");
