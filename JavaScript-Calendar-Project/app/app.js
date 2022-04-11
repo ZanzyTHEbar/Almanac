@@ -57,6 +57,7 @@ app.locals.msalClient = new msal.ConfidentialClientApplication(msalConfig);
 // Session middleware
 // NOTE: Uses default in-memory session store, which is not
 // suitable for production
+
 app.use(
   session({
     secret: config.oauth.clientSecret,
@@ -136,7 +137,7 @@ app.use("/users", usersRouter);
 app.use("/anim", animRouter);
 
 function initCroutes(scope) {
-  eLog(logLevel.INFO, "CORE", scope + " initializing croutes");
+  eLog(logLevel.INFO, "CORE", `${scope} initializing croutes`);
   let changed = false;
   Object.keys(SCOPES)
     .filter((key) => SCOPES[key] && scope !== key)
@@ -148,7 +149,7 @@ function initCroutes(scope) {
             eLog(
               logLevel.WARN,
               "CORE",
-              scope + "found extra croutes for" + key + ": " + file
+              `${scope} found extra croutes for ${key}`
             );
             app.use(
               `/${scope.toLowerCase()}/${key.toLowerCase}`,
@@ -160,59 +161,53 @@ function initCroutes(scope) {
         eLog(
           logLevel.INFO,
           "CORE",
-          scope + "did not need extra routes for" + key + ": " + error
+          `${scope} did not need extra routes for ${key}`
         );
       }
     });
   eLog(
     logLevel.STATUS,
     "CORE",
-    changed ? scope + "croutes initialized" : scope + "did not need any croutes"
+    changed
+      ? `${scope} croutes initialized`
+      : `${scope} did not need any croutes`
   );
 }
 
 // foreach scope, app.use the scope's router
 for (const scope in SCOPES) {
-  eLog(logLevel.FINE, "CORE", scope + " initializing");
+  eLog(logLevel.FINE, "CORE", `${scope} initializing`);
   if (config[scope.toUpperCase() + "_ENABLED"] && SCOPES[scope]) {
     const routes = require(`./server/scopes/${scope}/routes`);
     app.use(`/${scope.toLowerCase()}`, routes);
-    eLog(logLevel.DEBUG, "CORE", "Adding extended Functions to " + scope);
+    eLog(logLevel.DEBUG, "CORE", `Adding extended Functions to ${scope}`);
     addFunction(scope, app);
-    eLog(logLevel.DEBUG, "CORE", "Adding custom routes Functions to " + scope);
+    eLog(logLevel.DEBUG, "CORE", `Adding custom routes Functions to ${scope}`);
     initCroutes(scope);
-    eLog(logLevel.FINE, "CORE", scope + "loaded!");
+    eLog(logLevel.FINE, "CORE", `${scope} loaded!`);
   } else if (
     config[scope.toUpperCase() + "_ENABLED"] == null &&
     SCOPES[scope]
   ) {
-    eLog(
-      logLevel.INFO,
-      "CORE",
-      "Custom scope " + scope + " found, but not enabled"
-    );
+    eLog(logLevel.INFO, "CORE", `Custom scope ${scope} found`);
     try {
       const routes = require(`./server/scopes/${scope}/routes`);
       app.use(`/${scope.toLowerCase()}`, routes);
-      eLog(logLevel.FINE, "CORE", +scope + " loaded");
-      eLog(logLevel.DEBUG, "CORE", "Adding extended Functions to " + scope);
+      eLog(logLevel.FINE, "CORE", `${scope} loaded`);
+      eLog(logLevel.DEBUG, "CORE", `Adding extended Functions to ${scope}`);
       addFunction(scope, app);
       eLog(
         logLevel.DEBUG,
         "CORE",
-        "Adding custom routes Functions to " + scope
+        `Adding custom routes Functions to ${scope}`
       );
       initCroutes(scope);
     } catch {
-      eLog(
-        logLevel.ERROR,
-        "CORE",
-        "Loading of custom scope " + scope + "failed"
-      );
+      eLog(logLevel.ERROR, "CORE", `Loading of custom scope ${scope} failed`);
     }
   } else {
-    eLog(logLevel.ERROR, "CORE", scope + "not loaded");
-    eLog(logLevel.ERROR, "CORE", scope + "either not enabled or not found");
+    eLog(logLevel.ERROR, "CORE", `${scope} not loaded`);
+    eLog(logLevel.ERROR, "CORE", `${scope} either not enabled or not found`);
   }
 }
 
