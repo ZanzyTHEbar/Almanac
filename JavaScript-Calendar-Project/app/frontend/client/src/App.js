@@ -7,7 +7,7 @@ class App extends Component {
     data: null,
   };
 
-  componentDidMount() {
+  /* componentDidMount() {
     this.callBackendAPI()
       .then((res) => this.setState({ data: res.express }))
       .catch((err) => console.log(err));
@@ -21,7 +21,7 @@ class App extends Component {
       throw Error(body.message);
     }
     return body;
-  };
+  }; */
 
   render() {
     return (
