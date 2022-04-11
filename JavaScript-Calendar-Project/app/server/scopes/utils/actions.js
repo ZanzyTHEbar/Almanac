@@ -106,11 +106,11 @@ function eLog2(level, scope, rawmsg, forceConsole = false) {
           `${STYLE.RED}[ERROR] [UTIL] Error creating eLog file${STYLE.END}`
         );
       }
-      fs.appendFileSync(logFilePath, `${msg.slice(5, -7)}\n`, "utf8");
+      fs.appendFileSync(logFilePath, `${msg.slice(5, -4)}\n`, "utf8");
     }
     if (DLOG && DBENABLED) {
       const db = require("../DATABASE/actions");
-      db.logMessage(msg.slice(28, -7));
+      db.logMessage(msg.slice(28, -4));
     } else if (DLOG) {
       console.log(
         `${STYLE.YELLOW}[UTIL] eLog (DATABASE) is enabled but scope DATABASE is not${STYLE.END}`

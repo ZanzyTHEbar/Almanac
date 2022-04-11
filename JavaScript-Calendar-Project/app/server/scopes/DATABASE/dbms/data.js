@@ -14,7 +14,7 @@ module.exports = {
       dialect: config.sql.dialect,
       logging: config.NODE_ENV,
       // SQLite only
-      storage: path.join(__dirname, "data/UTIL.log"),
+      storage: path.join(__dirname, "data/UTIL.db"),
     });
     eLog(logLevel.DEBUG, "DATA", "Attempting to build new Table");
     const cdb = db.define(
@@ -32,12 +32,10 @@ module.exports = {
       }.append(Tags)
     );
 
-    Tags
-      .sync()
+    Tags.sync()
       .then(() => {
         eLog(logLevel.STATUS, "DATA", "Custom Database synced");
-        Tags
-          .authenticate()
+        Tags.authenticate()
           .then(() => {
             eLog(logLevel.FINE, "DATA", "Custom Database Authenticated");
             return cdb;
