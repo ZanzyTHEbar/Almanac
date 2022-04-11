@@ -25,7 +25,7 @@ const usersRouter = require("./server/routes/users");
 const authRouter = require("./server/routes/auth");
 const animRouter = require("./server/routes/animation");
 
-const app = express();
+var app = express();
 
 eLog(logLevel.INFO, "CORE", "Initializing Application...");
 // In-memory storage of logged-in users
@@ -57,7 +57,6 @@ app.locals.msalClient = new msal.ConfidentialClientApplication(msalConfig);
 // Session middleware
 // NOTE: Uses default in-memory session store, which is not
 // suitable for production
-
 app.use(
   session({
     secret: config.oauth.clientSecret,
@@ -195,8 +194,8 @@ for (const scope in SCOPES) {
     try {
       const routes = require(`./server/scopes/${scope}/routes`);
       app.use(`/${scope.toLowerCase()}`, routes);
-      eLog(logLevel.FINE, "CORE", +scope + " loaded");
-      eLog(logLevel.DEBUG, "CORE", "Adding extended Functions to" + scope);
+      eLog(logLevel.FINE, "CORE", + scope + " loaded");
+      eLog(logLevel.DEBUG, "CORE", "Adding extended Functions to " + scope);
       addFunction(scope, app);
       eLog(
         logLevel.DEBUG,
@@ -208,7 +207,7 @@ for (const scope in SCOPES) {
       eLog(
         logLevel.ERROR,
         "CORE",
-        "Loading of custom scope" + scope + "failed"
+        "Loading of custom scope " + scope + "failed"
       );
     }
   } else {
