@@ -1,5 +1,5 @@
 const config = require("./config");
-const configJSON = require("../../config.json");
+const configJSON = require("./config.json");
 const fs = require("fs");
 const logLevel = require("./logLevels");
 const time = new Date()

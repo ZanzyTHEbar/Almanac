@@ -3,17 +3,17 @@
 /**
  * Module dependencies.
  */
-/* "use strict"; */
 
 var app = require("../../app");
-const config = require("../../server/scopes/utils/config");
-const eLogPath = require("../../server/scopes/utils/config.json").eLog.eLogPath;
+const config = require("../scopes/utils/config");
+const eLogPath = require("../scopes/utils/config.json").eLog.eLogPath;
 const { eLog } = require(eLogPath);
-var debug = require("debug")("graph-tutorial:server");
+const logLevel = require("../scopes/utils/logLevels");
+var debug = require("debug")("outlook-knight:server");
 var http = require("http");
 var https = require("https");
 var fs = require("fs");
-/* var NoIp = require("no-ip"); */
+
 var httpOptions = {
   key: fs.readFileSync("server/.keys/client-key.pem"),
 
@@ -49,12 +49,6 @@ console.log("Server is running on port " + config.port);
 console.log(cLine);
 console.log("Server state " + State);
 console.log(cLine);
-
-/* var noip = new NoIp({
-  hostname: config.no_ip.hostname,
-  user: config.no_ip.username,
-  pass: config.no_ip.password,
-}); */
 
 /**
  * Normalize a port into a number, string, or false.
@@ -131,7 +125,12 @@ function Server(port) {
       server.on("error", onError);
       server.on("listening", onListeningSecure);
       eLog(
-        `[STATUS] [CORE] Server running at ${config.oauth.redirectUriLocalhostSecure}:${config.port}/`
+        logLevel.STATUS,
+        "CORE",
+        "Server running at " +
+          config.oauth.redirectUriLocalhostSecure +
+          ":" +
+          config.port
       );
       console.log(cLine);
       break;
@@ -143,7 +142,12 @@ function Server(port) {
       server.on("error", onError);
       server.on("listening", onListeningSecure);
       eLog(
-        `[STATUS] [CORE] Server running at ${config.oauth.redirectUriSecure}:${config.port}/`
+        logLevel.STATUS,
+        "CORE",
+        "Server running at " +
+          config.oauth.redirectUriSecure +
+          ":" +
+          config.port
       );
       console.log(cLine);
       break;
@@ -155,7 +159,12 @@ function Server(port) {
       server2.on("error", onError);
       server2.on("listening", onListening);
       eLog(
-        `[STATUS] [CORE] Server running at ${config.oauth.redirectUriLocalhost}:${config.port}/`
+        logLevel.STATUS,
+        "CORE",
+        "Server running at " +
+          config.oauth.redirectUriLocalhost +
+          ":" +
+          config.port
       );
       console.log(cLine);
       break;
@@ -167,19 +176,13 @@ function Server(port) {
       server2.on("error", onError);
       server2.on("listening", onListening);
       eLog(
-        `[STATUS] [CORE] Server running at ${config.oauth.redirectUri}:${config.port}/`
+        logLevel.STATUS,
+        "CORE",
+        "Server running at " + config.oauth.redirectUri + ":" + config.port
       );
       console.log(cLine);
       break;
   }
 }
-
-/* noip.on("success", function (isChanged, ip) {
-  console.log(isChanged, ip);
-});
-
-noip.update(); // Manual update, you can also provide a custom IP address
-
-noip.start(); // Start the update loop */
 
 Server(config.port);

@@ -1,8 +1,9 @@
 const config = require("../../utils/config");
+const configJSON = require("../../utils/config.json");
 const { Sequelize } = require("sequelize");
 const path = require("path");
 
-if (config.NODE_ENV === "development")
+if (config.NODE_ENV === "development" || configJSON.eLog.level == 0)
   console.log(
     "\x1b[35m[DEBUG] [DATA] Attempting to connect to UTIL database\x1b[0m"
   );
@@ -16,7 +17,7 @@ const logbank = new Sequelize({
   storage: path.join(__dirname, "data/UTIL.db"),
 });
 console.log("\x1b[34m[STATUS] [DATA] Logging database found/created\x1b[0m");
-if (config.NODE_ENV === "development")
+if (config.NODE_ENV === "development" || configJSON.eLog.level == 0)
   console.log("\x1b[35m[DEBUG] [DATA] Attempting to find Logbank\x1b[0m");
 const LOG = logbank.define("Logs", {
   logID: {
@@ -43,12 +44,12 @@ const LOG = logbank.define("Logs", {
     },
   },
 });
-if (config.NODE_ENV === "development")
+if (config.NODE_ENV === "development" || configJSON.eLog.level == 0)
   console.log("\x1b[34m[STATUS] [DATA] Logbank found/created\x1b[0m");
 
 module.exports = {
-  initLog: function () {
-    if (config.NODE_ENV === "development")
+  initLog: () => {
+    if (config.NODE_ENV === "development" || configJSON.eLog.level == 0)
       console.log(
         "\x1b[35m[DEBUG] [DATA] Attempting to initialize logging database\x1b[0m"
       );
@@ -76,30 +77,30 @@ module.exports = {
         )
       );
   },
-  createLog: function (msg) {
+  createLog: (severity, scope, message) => {
     try {
-      if (config.NODE_ENV === "development")
+      if (config.NODE_ENV === "development" || configJSON.eLog.level == 0)
         console.log(
           "\x1b[35m[DEBUG] [DATA] Attempting to create new log entry\x1b[0m"
         );
       LOG.create({
-        severity: msg[0].slice(1, -1),
-        scope: msg[1].slice(1, -1),
-        message: msg[2],
+        severity: severity,
+        scope: scope,
+        message: message,
       });
     } catch (error) {
       console.log(
         "\x1b[31m[ERROR] [DATA] Logging failed with error:\x1b[0m " + error
       );
     }
-    if (config.NODE_ENV === "development")
+    if (config.NODE_ENV === "development" || configJSON.eLog.level == 0)
       console.log(
         "\x1b[35m[DEBUG] [DATA] Logging complete - resync again\x1b[0m"
       );
     LOG.sync();
   },
   readLog: function (logID) {
-    if (config.NODE_ENV === "development")
+    if (config.NODE_ENV === "development" || configJSON.eLog.level == 0)
       console.log("\x1b[35m[DEBUG] [DATA] Attempting to read log entry\x1b[0m");
     if (logID) {
       return LOG.findOne({

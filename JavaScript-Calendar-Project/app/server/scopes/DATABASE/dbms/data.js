@@ -1,13 +1,14 @@
-
 const config = require("../../utils/config");
 const { Sequelize, Op, Model, DataTypes } = require("sequelize");
 const path = require("path");
-const eLogPath = require("../../utils/config.json").eLog.eLogPath;
-const { eLog } = require(eLogPath);
+const { table } = require("console");
+const utilPath = require("../../utils/config.json").eLog.utilPath;
+const { eLog } = require(`${utilPath}\\actions`);
+const logLevel = require(`${utilPath}\\logLevels`);
 
 module.exports = {
   newDB: function (name, Tags) {
-    eLog("[DEBUG] [DATA] Attempting to build new database");
+    eLog(logLevel.DEBUG, "DATA", "Attempting to build new database");
     const db = new Sequelize({
       host: config.sql.host,
       dialect: config.sql.dialect,
@@ -15,8 +16,7 @@ module.exports = {
       // SQLite only
       storage: path.join(__dirname, "data/UTIL.log"),
     });
-
-    eLog("[DEBUG] [DATA] Attempting to build new Table");
+    eLog(logLevel.DEBUG, "DATA", "Attempting to build new Table");
     const cdb = db.define(
       name,
       {
@@ -32,33 +32,35 @@ module.exports = {
       }.append(Tags)
     );
 
-    tags
+    Tags
       .sync()
       .then(() => {
-        eLog("[STATUS] [DATA] Custom Database synced");
-        tags
+        eLog(logLevel.STATUS, "DATA", "Custom Database synced");
+        Tags
           .authenticate()
           .then(() => {
-            eLog("[FINE] [DATA] Custom Database authenticated");
+            eLog(logLevel.FINE, "DATA", "Custom Database Authenticated");
             return cdb;
           })
           .catch((err) => {
             eLog(
-              "[ERROR] [DATA] Custom Database authentication failed with error: " +
-                err
+              logLevel.ERROR,
+              "DATA",
+              "Custom Database authentication failed with error: " + err
             );
           });
       })
       .catch(() => {
-        eLog("[ERROR] [DATA] Custom Database sync failed.");
+        eLog(logLevel.ERROR, "DATA", "Custom Database sync failed.");
       });
   }, // end newDB
-  createEntry: function (base, data) {
-    eLog("[DEBUG] [DATA] Attempting to create new entry");
-    base.create(data).catch(console.error);
+  createEntry: function (table, data) {
+    eLog(logLevel.DEBUG, "DATA", "Attempting to create new entry");
+    table.create(data).catch(console.error);
+    table.sync();
   },
   readEntry: function (base, id) {
-    eLog("[DEBUG] [DATA] Attempting to read entry");
+    eLog(logLevel.DEBUG, "DATA", "Attempting to read entry");
     if (id) {
       return base
         .findOne({
@@ -68,7 +70,7 @@ module.exports = {
         })
         .catch(console.error);
     } else {
-      eLog("[WARN] [DATA] No ID provided - returning all");
+      eLog(logLevel.WARN, "DATA", "No ID provided - returning all");
       return base.findAll().catch(console.error);
     }
   },

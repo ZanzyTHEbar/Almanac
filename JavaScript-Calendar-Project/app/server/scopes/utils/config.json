@@ -7,11 +7,12 @@
         "GOOGLECAL": false
     },
     "eLog": {
+        "level": 10,
         "cLogEnabled": true,
         "dLogEnabled": true,
         "eLogEnabled": true,
         "fLogEnabled": true,
-        "eLogPath": "C:\\Users\\zacar\\Documents\\GitHub\\Microsoft_Calendar_Epaper_Display\\JavaScript-Calendar-Project\\app\\server\\scopes\\utils\\actions.js",
+        "utilPath": "C:\\Users\\zacar\\Documents\\GitHub\\Microsoft_Calendar_Epaper_Display\\JavaScript-Calendar-Project\\app\\server\\scopes\\utils\\actions",
         "filePath": "C:\\Users\\zacar\\Documents\\GitHub\\Microsoft_Calendar_Epaper_Display\\JavaScript-Calendar-Project\\app\\Logs\\"
     }
 }
