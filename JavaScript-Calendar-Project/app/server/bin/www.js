@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-"use strict";
+/* "use strict"; */
 
 var app = require("../../app");
 const config = require("../../server/scopes/utils/config");
@@ -27,6 +27,21 @@ config.port = args[0];
 var State = args[1];
 
 var cLine = "-----------------------------------------------------------";
+
+function welcomeMessage() {
+  const LOGO = `
+     _____ _____ _____      _                _            
+    |  __ \\_   _/ ____|    | |              | |           
+    | |__) || || |     __ _| | ___ _ __   __| | __ _ _ __ 
+    |  ___/ | || |    / _\` | |/ _ \\ '_ \\ / _\` |/ _\` | '__|
+    | |    _| || |___| (_| | |  __/ | | | (_| | (_| | |   
+    |_|   |_____\\_____\\__,_|_|\\___|_| |_|\\__,_|\\__,_|_|                                                     
+  `;
+  console.log(cLine);
+  console.log(`\x1b[1m\x1b[35m${LOGO}\x1b[0m`);
+}
+
+welcomeMessage();
 
 console.log(cLine);
 

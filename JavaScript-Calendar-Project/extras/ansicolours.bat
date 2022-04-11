@@ -1,54 +1,54 @@
 @echo off
 cls
-echo [101;93m STYLES [0m
-echo [0m [0mReset[0m
-echo [1m [1mBold[0m
-echo [4m [4mUnderline[0m
-echo [7m [7mInverse[0m
+echo \033[101;93m STYLES \033[0m
+echo \033[0m \033[0mReset\033[0m
+echo \033[1m \033[1mBold\033[0m
+echo \033[4m \033[4mUnderline\033[0m
+echo \033[7m \033[7mInverse\033[0m
 echo.
-echo [101;93m NORMAL FOREGROUND COLORS [0m
-echo [30m [30mBlack[0m (black)
-echo [31m [31mRed[0m
-echo [32m [32mGreen[0m
-echo [33m [33mYellow[0m
-echo [34m [34mBlue[0m
-echo [35m [35mMagenta[0m
-echo [36m [36mCyan[0m
-echo [37m [37mWhite[0m
+echo \033[101;93m NORMAL FOREGROUND COLORS \033[0m
+echo \033[30m \033[30mBlack\033[0m (black)
+echo \033[31m \033[31mRed\033[0m
+echo \033[32m \033[32mGreen\033[0m
+echo \033[33m \033[33mYellow\033[0m
+echo \033[34m \033[34mBlue\033[0m
+echo \033[35m \033[35mMagenta\033[0m
+echo \033[36m \033[36mCyan\033[0m
+echo \033[37m \033[37mWhite\033[0m
 echo.
-echo [101;93m NORMAL BACKGROUND COLORS [0m
-echo [40m [40mBlack[0m
-echo [41m [41mRed[0m
-echo [42m [42mGreen[0m
-echo [43m [43mYellow[0m
-echo [44m [44mBlue[0m
-echo [45m [45mMagenta[0m
-echo [46m [46mCyan[0m
-echo [47m [47mWhite[0m (white)
+echo \033[101;93m NORMAL BACKGROUND COLORS \033[0m
+echo \033[40m \033[40mBlack\033[0m
+echo \033[41m \033[41mRed\033[0m
+echo \033[42m \033[42mGreen\033[0m
+echo \033[43m \033[43mYellow\033[0m
+echo \033[44m \033[44mBlue\033[0m
+echo \033[45m \033[45mMagenta\033[0m
+echo \033[46m \033[46mCyan\033[0m
+echo \033[47m \033[47mWhite\033[0m (white)
 echo.
-echo [101;93m STRONG FOREGROUND COLORS [0m
-echo [90m [90mWhite[0m
-echo [91m [91mRed[0m
-echo [92m [92mGreen[0m
-echo [93m [93mYellow[0m
-echo [94m [94mBlue[0m
-echo [95m [95mMagenta[0m
-echo [96m [96mCyan[0m
-echo [97m [97mWhite[0m
+echo \033[101;93m STRONG FOREGROUND COLORS \033[0m
+echo \033[90m \033[90mWhite\033[0m
+echo \033[91m \033[91mRed\033[0m
+echo \033[92m \033[92mGreen\033[0m
+echo \033[93m \033[93mYellow\033[0m
+echo \033[94m \033[94mBlue\033[0m
+echo \033[95m \033[95mMagenta\033[0m
+echo \033[96m \033[96mCyan\033[0m
+echo \033[97m \033[97mWhite\033[0m
 echo.
-echo [101;93m STRONG BACKGROUND COLORS [0m
-echo [100m [100mBlack[0m
-echo [101m [101mRed[0m
-echo [102m [102mGreen[0m
-echo [103m [103mYellow[0m
-echo [104m [104mBlue[0m
-echo [105m [105mMagenta[0m
-echo [106m [106mCyan[0m
-echo [107m [107mWhite[0m
+echo \033[101;93m STRONG BACKGROUND COLORS \033[0m
+echo \033[100m \033[100mBlack\033[0m
+echo \033[101m \033[101mRed\033[0m
+echo \033[102m \033[102mGreen\033[0m
+echo \033[103m \033[103mYellow\033[0m
+echo \033[104m \033[104mBlue\033[0m
+echo \033[105m \033[105mMagenta\033[0m
+echo \033[106m \033[106mCyan\033[0m
+echo \033[107m \033[107mWhite\033[0m
 echo.
-echo [101;93m COMBINATIONS [0m
-echo [31m                     [31mred foreground color[0m
-echo [7m                      [7minverse foreground ^<-^> background[0m
-echo [7;31m                   [7;31minverse red foreground color[0m
-echo [7m and nested [31m [7mbefore [31mnested[0m
-echo [31m and nested [7m [31mbefore [7mnested[0m
+echo \033[101;93m COMBINATIONS \033[0m
+echo \033[31m                     \033[31mred foreground color\033[0m
+echo \033[7m                      \033[7minverse foreground ^<-^> background\033[0m
+echo \033[7;31m                   \033[7;31minverse red foreground color\033[0m
+echo \033[7m and nested \033[31m \033[7mbefore \033[31mnested\033[0m
+echo \033[31m and nested \033[7m \033[31mbefore \033[7mnested\033[0m
