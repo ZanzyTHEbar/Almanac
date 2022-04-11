@@ -1,10 +1,10 @@
 "use strict";
 
+const config = require("./server/scopes/utils/config.json");
 const SCOPES = require("./server/scopes/utils/config.json").scopes;
-const config = require("./server/scopes/utils/config");
-const eLogPath = require("./server/scopes/utils/config.json").eLog.eLogPath;
-const { eLog } = require(eLogPath);
-const logLevel = require("./server/scopes/utils/logLevels");
+const utilPath = require("./server/scopes/utils/config.json").eLog.utilPath;
+const { eLog } = require(`${utilPath}\\actions`);
+const logLevel = require(`${utilPath}\\logLevels`);
 /* const { addFunction } = require("./custom"); */
 const session = require("express-session");
 const flash = require("connect-flash");
