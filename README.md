@@ -38,7 +38,7 @@ In order to properly run this server, you will need to have a NodeJS install and
 
 The following steps will guide you through the setup of this project.
 
-To install NodeJS for the Raspberrypi Zero W please follow the steps below, each Pi will have slightly different steps. I have used a Zero WH in this build, so those are the steps listed. 
+To install NodeJS for the Raspberrypi Zero W please follow the steps below, each Pi will have slightly different steps. I have used a Zero WH in this build, so those are the steps listed.
 
 Firstly, copy this command and run as sudo:
 
@@ -83,13 +83,17 @@ Go to the Azure Admin Portal and create a new app. This will be the app you will
 
 If you do not know how to do this, please refer to the [Microsoft Azure Active Directory](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps). You will need to create a new app, and then grant access to the Microsoft Graph API, which i will explain in the next step.
 
-Navigate to the `app` directory of this project `JavaScript-Calendar-Project/App`. This will be the directory where you will be running the Node.js app and creating your `/env` file. You will need to have `nodejs` and `npm` installed onto your system. If you do not know how to do this, please refer to the [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) documentation. If you wish to use the Azure storage features, you will also need to have the `azure-storage` and `azure-storage-blob` modules installed, however these are optional. If you do not know how to do this, please refer to the [Azure Storage](https://azure.microsoft.com/en-us/services/storage/) and [Azure Storage Blob](https://azure.microsoft.com/en-us/services/storage/blob-storage/) documentation.
+Navigate to the `app` directory of this project `JavaScript-Calendar-Project/app`. This will be the directory where you will be running the Node.js app and creating your `/.env` file. You will need to have `nodejs` and `npm` installed onto your system. If you do not know how to do this, please refer to the [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) documentation. If you wish to use the Azure storage features, you will also need to have the `azure-storage` and `azure-storage-blob` modules installed, however these are optional. If you do not know how to do this, please refer to the [Azure Storage](https://azure.microsoft.com/en-us/services/storage/) and [Azure Storage Blob](https://azure.microsoft.com/en-us/services/storage/blob-storage/) documentation.
+
+The next step is to create a `.env` file. However, this does **not** need to be done manually anymore. There is a script that will do this for you, built into the project. Please click this link to move to the next step: [Setup Server](#setup-server).
+
+To manually create the `.env` file, follow the steps below:
 
 While in the `app` directory, create an `.env` file. This will be the file that will contain your Microsoft Graph API credentials. You will need to create this file and then fill it with your Microsoft Graph API credentials. You can find this on the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/docs/concepts/overview).
 
 You will have to configure the `/.keys` folder to store your SSL data. This is where the Node.js app will store the private key and certificate. You will need to generate these files and place them here.
 
-You will have to configure the `/bin/www` file to point to the correct file key and certs. The default names of the files is `client-key.pem` and `client-cert.pem`. The default port is `4443`.
+You will have to configure the `/bin/www` file to point to the correct file key and certs. The default names of the files is `client-key.pem` and `client-cert.pem`. The default port is `443`.
 
 Your Microsoft Graph API credentials
 
@@ -115,9 +119,11 @@ OPTIONAL: Not required for this project, but if you want to use DLNA Media Serve
 
 Once you have created the `.env` file, you can run the following commands to setup and start the Node.js app.
 
-Navigate to the app directory (this is where the `.env` file is located)
+## Setup Server
 
-        cd /JavaScript-Calendar-Project/App
+Navigate to the app directory (this is where the `.env` file will be located)
+
+        cd /JavaScript-Calendar-Project/app
 
 Install the Node.js modules
 
@@ -143,7 +149,7 @@ Select `Finish` to save the changes. Select `Yes` to reboot the Pi. You should n
 
 Once the device boots backup, navigate to the bin directory
 
-        cd /JavaScript-Calendar-Project/App/bin
+        cd /JavaScript-Calendar-Project/app/server/bin
 
 Now we will setup the Server environment
 
@@ -159,7 +165,17 @@ However, to manually start the server navigate back to the app directory
 
 The below command will start the Node.js app with the ability to quickly restart it using the `rs` command (great for development).
 
-        sudo nodemon
+        sudo nodemon <port> <state>
+        eg: sudo nodemon 443 --secure
+        eg: sudo nodemon 443 --localhost-secure
+        eg: sudo nodemon 8080 --localhost
+        eg: sudo nodemon --localhost
+        eg: sudo nodemon --secure
+        eg: sudo nodemon --localhost-secure
+
+Port is the port the server will be listening on, and is completely optional.
+State is the state the server will be in, and is completely optional.
+Defaults to --localhost if no state is specified, with port 8080.
 
 or use the following command to start the server in the background
 

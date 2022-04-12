@@ -110,7 +110,7 @@ function eLog2(level, scope, rawmsg, forceConsole = false) {
     }
     if (DLOG && DBENABLED) {
       const db = require("../DATABASE/actions");
-      db.logMessage(msg.slice(28, -4));
+      db.logMessage(level.def, scope, rawmsg);
     } else if (DLOG) {
       console.log(
         `${STYLE.YELLOW}[UTIL] eLog (DATABASE) is enabled but scope DATABASE is not${STYLE.END}`
