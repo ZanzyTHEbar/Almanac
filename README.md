@@ -85,7 +85,9 @@ If you do not know how to do this, please refer to the [Microsoft Azure Active D
 
 Navigate to the `app` directory of this project `JavaScript-Calendar-Project/app`. This will be the directory where you will be running the Node.js app and creating your `/.env` file. You will need to have `nodejs` and `npm` installed onto your system. If you do not know how to do this, please refer to the [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) documentation. If you wish to use the Azure storage features, you will also need to have the `azure-storage` and `azure-storage-blob` modules installed, however these are optional. If you do not know how to do this, please refer to the [Azure Storage](https://azure.microsoft.com/en-us/services/storage/) and [Azure Storage Blob](https://azure.microsoft.com/en-us/services/storage/blob-storage/) documentation.
 
-The next step is to create a `.env` file. However, this does **not** need to be done manually anymore. There is a script that will do this for you, built into the project. Please click this link to move to the next step: [Setup Server](#setup-server).
+The next step is to create a `.env` file. However, this **does not** need to be done manually anymore. There is a script that will do this for you, built into the project. Please click this link to move to the next step: [Setup Server](#setup-server).
+
+The below is only kept here for reference.
 
 To manually create the `.env` file, follow the steps below:
 
