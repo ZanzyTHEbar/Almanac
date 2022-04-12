@@ -77,7 +77,7 @@ module.exports = {
     return true;
   },
   disableLogBase: () => {
-    eLog(logLevel.WARN, "UTIL", "Disabling logging database");
+    eLog2(logLevel.WARN, "UTIL", "Disabling logging database");
     DBENABLED = false;
   },
   eLog: (level, scope, rawmsg, forceConsole = false) => {

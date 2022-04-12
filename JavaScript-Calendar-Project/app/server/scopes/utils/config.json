@@ -4,7 +4,7 @@
         "DATABASE": true,
         "DLNA": true,
         "MSCAL": true,
-        "GOOGLECAL": false
+        "GOOGLECAL": true
     },
     "eLog": {
         "level": 10,
