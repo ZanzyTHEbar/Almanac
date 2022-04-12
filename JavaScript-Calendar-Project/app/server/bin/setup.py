@@ -51,13 +51,14 @@ def rotateScreen():
     #   rotate screen
     # else
     #   exit function
-    print(f"{Fore.YELLOW}Would you like to rotate the screen? (y/n)" + "\n" +
-          "How many degrees? (0-3), 0 is to reset and 3 is 270°. Please use a space to separate answers.{Style.RESET_ALL}" + "\n")
-    rotate_screen, degrees = input().split()
-    print(f"{Fore.BLUE}Your choice to rotate screen{Style.RESET_ALL}", rotate_screen)
-    print(f"{Fore.GREEN}Your degrees setting{Style.RESET_ALL}", degrees)
-    print(f"{Fore.BLUE}Continuing with setup, setting up rotation{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}Would you like to rotate the screen? (y/n)\n")
+    rotate_screen = input()
     if rotate_screen == "y" or rotate_screen == "Y":
+        print(f"How many degrees? (0-3), 0 is to reset and 3 is 270°. Please use a space to separate answers{Style.RESET_ALL}.\n")
+        degrees = input()
+        print(f"{Fore.BLUE}Your choice to rotate screen{Style.RESET_ALL}", rotate_screen)
+        print(f"{Fore.GREEN}Your degrees setting{Style.RESET_ALL}", degrees)
+        print(f"{Fore.BLUE}Continuing with setup, setting up rotation{Style.RESET_ALL}")
         rotation_settings = getRotationSettings(degrees)
         s.call(['sudo', 'cat', '/boot/config.txt.bak', '>', '/boot/config.txt'])
         # rotate the screen and touch input: options are "0" "1" "2" "3" - from 0 to 270 degrees of rotation
