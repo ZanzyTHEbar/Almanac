@@ -183,14 +183,13 @@ Below is a list of project goals, _completed_ goals are marked with a check.
 - [ ] Preferred Waveshare 12.48" Tri-color E-Ink Display - Unfortunately out of stock at the time this is published (any display will work of course)
 - [ ] PiSugar2 for Raspberry Pi Zero (Tindie) - Provides the RTC and battery for this project
 - [ ] Implement option for Presence Detection via a choice of sensors or phone GPS
-- [ ] Implement WakeOnLan
 
 ### Software
 
 - [x] Implement proper Auth-Token management
-- [ ] Implement proper error handling&logging
-- [ ] Implement proper documentation
-- [ ] Implement proper debugging for testing
+- [x] Implement proper error handling&logging
+- [x] Implement proper documentation
+- [x] Implement proper debugging for testing
 - [ ] Add custom sounds for speakers
 - [ ] Implement custom themes the user can choose from
 - [ ] Implement theme changes based on weather outside
@@ -200,9 +199,8 @@ Below is a list of project goals, _completed_ goals are marked with a check.
         -> Custom images from DLNA or One Driver server
         -> Stock photos from microsoft windows backgrounds
         -> stock images of seasons/places
-- [ ] Implement NTP service to get Real-Time based on time-zone
+- [x] Implement NTP service to get Real-Time based on time-zone
 - [ ] Implement option for Presence Detection via a choice of sensors or phone GPS
-- [ ] Implement WakeOnLan
 - [ ] Cronjob to update calendar images every day
 - [ ] Cronjob to update
 
