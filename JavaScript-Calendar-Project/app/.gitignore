@@ -1,16 +1,18 @@
 # This file is where you will set environment variables specific to your application.
-
 /.env
 
 # This folder is where your SSL certificates and keys are stored.
-
-/server/.keys
+./server/.keys
 client-cert.pem
 client-key.pem
 .pem
+.csr
 
 /.vscode
 
 #Database Files
 .db
 UTIL.db
+
+# JSON Files
+.json
