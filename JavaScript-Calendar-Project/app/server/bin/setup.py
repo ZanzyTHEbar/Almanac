@@ -10,14 +10,13 @@ from colorama import Fore, Style
 
 # print ascii art logo
 def welcome():
-    print(f" {Fore.MAGENTA}")
+    print(f"{Fore.MAGENTA} ")
     print(r"""
-
- _____ _____ _____      _                _            
-|  __ \_   _/ ____|    | |              | |           
-| |__) || || |     __ _| | ___ _ __   __| | __ _ _ __ 
+ _____ _____ _____      _                _
+|  __ \_   _/ ____|    | |              | |
+| |__) || || |     __ _| | ___ _ __   __| | __ _ _ __
 |  ___/ | || |    / _` | |/ _ \ '_ \ / _` |/ _` | '__|
-| |    _| || |___| (_| | |  __/ | | | (_| | (_| | |   
+| |    _| || |___| (_| | |  __/ | | | (_| | (_| | |
 |_|   |_____\_____\__,_|_|\___|_| |_|\__,_|\__,_|_|   """)
     print(f" {Style.RESET_ALL}")
     print(f"{Fore.BLUE}Welcome to the setup script for the OutLook Knight Project{Style.RESET_ALL}")
@@ -25,16 +24,16 @@ def welcome():
     zzz(5)
 
 
-def run_fast_scandir(dir):    # dir: str, ext: list
+def scandir(path):
     subfolders = []
 
-    for f in os.scandir(dir):
+    for f in os.scandir(path):
         if f.is_dir():
             subfolders.append(f.path)
 
-    for dir in list(subfolders):
-        sf = run_fast_scandir(dir)
-        subfolders.extend(sf)
+    """ for path in list(subfolders):
+        subfol = scandir(path)
+        subfolders.extend(subfol) """
     return subfolders
 
 
@@ -44,12 +43,8 @@ def createConfigJSONFile():
     #   - description
     #   - scopes {Database, DLNA, MSCAL, GOOGLECAL}
     #   - elog {level, cLogEnabled, dLogEnabled, eLogEnabled, fLogEnabled, utilPath, filePath}
-    temp = {
+    json_file = {
         "scopes": {
-            "Database": False,
-            "DLNA": False,
-            "MSCAL": False,
-            "GOOGLECAL": False
         },
         "elog": {
             "level": 0,
@@ -65,48 +60,74 @@ def createConfigJSONFile():
     configPath = Path(__file__).parent
 
     relative_path = '../server/scopes/utils'
-    relative_path_2 = '../../app'
+
+    relative_path_2 = '../Logs'
+
     relative_path_3 = '../server/scopes/'
 
     src_path = (configPath / relative_path).resolve()
+
     src_path_2 = (configPath / relative_path_2).resolve()
+
     src_path_3 = (configPath / relative_path_3).resolve()
 
-    temp["elog"]["utilPath"] = str(src_path)
-    temp["elog"]["filePath"] = str(src_path_2 / "Logs/")
+    json_file["elog"]["utilPath"] = str(src_path)
+
+    json_file["elog"]["filePath"] = str(src_path_2)
 
     completeName = str(src_path / "config.json")
 
-    subfolders = run_fast_scandir(src_path_3)
-    
-    print(f"{Fore.GREEN}The following subfolders were found in the scopes folder{Style.RESET_ALL}")
-    for folder in subfolders:
-        print(f"{Fore.GREEN}{folder}{Style.RESET_ALL}")
+    subfolders = scandir(src_path_3)
 
-    print(f"{Fore.BLUE}Please enter the following information to create the config.json file{Style.RESET_ALL}")
-    print(f"{Fore.BLUE}Please choose the modules to enable (0 or 1 only).{Style.RESET_ALL}")
-    print(f"{Fore.GREEN}Enable Database Module?{Style.RESET_ALL}")
-    temp["scopes"]["Database"] = bool(int(input()))
-    print(f"{Fore.GREEN}Enable DLNA Client Module?{Style.RESET_ALL}")
-    temp["scopes"]["DLNA"] = bool(int(input()))
-    print(f"{Fore.GREEN}Enable Microsoft Calendar Module?{Style.RESET_ALL}")
-    temp["scopes"]["MSCAL"] = bool(int(input()))
-    print(f"{Fore.GREEN}Enable Google Calendar Module?{Style.RESET_ALL}")
-    temp["scopes"]["GOOGLECAL"] = bool(int(input()))
+    print(
+        f"{Fore.BLUE}Please enter the following information to create the config.json file{Style.RESET_ALL}")
+    print(
+        f"{Fore.BLUE}Please choose the modules to enable (0 or 1 only).{Style.RESET_ALL}")
+
+    for folder in subfolders:
+        temp = []
+
+        temp.append(folder.split("scopes\\")[-1])
+
+        for i in list(temp):
+            temp = i.split("\\")[-1]
+            # check if temp_2 has lowercase letters
+            if any(u.isupper() for u in list(temp)):
+
+                temp = temp
+
+                print(f"{Fore.GREEN}Found the scope: {Style.RESET_ALL}")
+
+                print(f"{Fore.GREEN}{temp}{Style.RESET_ALL}")
+
+                print(f"{Fore.GREEN}Enable {temp} Module?{Style.RESET_ALL}")
+
+                json_file["scopes"][temp] = bool(int(input()))
+
     print(f"{Fore.BLUE}Please enter the elog level (a number between 0 and 10){Style.RESET_ALL}")
-    temp["elog"]["level"] = int(input())
+
+    json_file["elog"]["level"] = int(input())
+
     print(f"{Fore.BLUE}Please choose the logging modules to enable (0 or 1 only).{Style.RESET_ALL}")
+
     print(f"{Fore.GREEN}Enable the elog cLogEnabled module?{Style.RESET_ALL}")
-    temp["elog"]["cLogEnabled"] = bool(int(input()))
+
+    json_file["elog"]["cLogEnabled"] = bool(int(input()))
+
     print(f"{Fore.GREEN}Enable the elog dLogEnabled module?{Style.RESET_ALL}")
-    temp["elog"]["dLogEnabled"] = bool(int(input()))
+
+    json_file["elog"]["dLogEnabled"] = bool(int(input()))
+
     print(f"{Fore.GREEN}Enable the elog eLogEnabled module?{Style.RESET_ALL}")
-    temp["elog"]["eLogEnabled"] = bool(int(input()))
+
+    json_file["elog"]["eLogEnabled"] = bool(int(input()))
+
     print(f"{Fore.GREEN}Enable the elog fLogEnabled module?{Style.RESET_ALL}")
-    temp["elog"]["fLogEnabled"] = bool(int(input()))
+
+    json_file["elog"]["fLogEnabled"] = bool(int(input()))
 
     with open(completeName, "w") as outfile:
-        json.dump(temp, outfile)
+        json.dump(json_file, outfile)
 
 
 def setupServer():
@@ -178,13 +199,13 @@ def checkPackages():
     for module in modules_dict:
         print(module)
         check_packages = "[[ $(dpkg -s " + module + \
-            "| grep Status) =~ \"ok\" ]] && echo \"inst\" || echo \"not inst\"".split(
+            "| grep Status) =~ \"ok\" ]] && echo \"inst\" || echo \"not installed\"".split(
             )
         proc4 = s.run(
             check_packages,
             stdout=s.PIPE,
         )
-        if proc4 is "not inst":
+        if proc4 is "not installed":
             print("Installing " + module)
             s.call(['apt', 'install', module + " -y"])
             zzz(3)
