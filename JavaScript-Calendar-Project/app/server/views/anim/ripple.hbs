@@ -1,0 +1,55 @@
+<style>
+    div {
+        position: fixed;
+        font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    }
+
+    .a {
+        left: 0;
+        top: 0;
+        right: 51%;
+        bottom: 51%;
+        background-size: cover;
+    }
+
+    .b {
+        left: 51%;
+        top: 25.5%;
+        right: 0;
+        bottom: 25.5%;
+        background-attachment: fixed;
+    }
+
+    .c {
+        left: 0;
+        top: 51%;
+        right: 51%;
+        bottom: 0;
+        background-size: cover;
+    }
+
+    .error {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8);
+        color: #eee;
+        padding: 20px;
+        display: none;
+    }
+</style>
+<h1 style="margin-top:150px;"></h1>
+<div class="a" style="background-image:url(https://placekitten.com/800/500)"></div>
+<div class="b" style="background-image:url(https://placekitten.com/500/700)"></div>
+<div class="c" style="background-image:url(https://placekitten.com/600/700)"></div>
+<div class="error"></div>
+<!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script
+    src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Water-Ripple-Animation-ripples/js/jquery.ripples.js"></script>
+<script src="/javascripts/ripple.js"></script>
