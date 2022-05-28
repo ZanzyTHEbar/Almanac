@@ -125,7 +125,7 @@ def createConfigJSONFile():
 
 
 def setupServer():
-    chmod_setup = "sudo chmod +x setup.sh".split()
+    chmod_setup = "sudo chmod a+x setup.sh".split()
     s.run(
         chmod_setup,
         stdout=s.PIPE,
@@ -175,7 +175,7 @@ def rotateScreen():
 
 
 def setupChromium():
-    chmod_chromium_start_script = "sudo chmod +x ../setupchromium.sh".split()
+    chmod_chromium_start_script = "sudo chmod a+x ../setupchromium.sh".split()
     s.run(
         chmod_chromium_start_script,
         stdout=s.PIPE,
@@ -214,7 +214,7 @@ def checkPackages():
 
 
 def setupKiosk():
-    chmod_kiosk_start_script = "sudo chmod +x kiosk.sh".split()
+    chmod_kiosk_start_script = "sudo chmod a+x kiosk.sh".split()
     s.run(
         chmod_kiosk_start_script,
         stdout=s.PIPE,
