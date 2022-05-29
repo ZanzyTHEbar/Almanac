@@ -127,7 +127,10 @@ class Mui extends Component {
       getDay,
       locales,
     });
+    
   }
+
+  
 
   onEventResize = (data) => {
     const { start, end } = data;
@@ -175,6 +178,13 @@ class Mui extends Component {
                       onEventResize={this.onEventResize}
                       resizable
                       style={{ height: "100vh" }}
+                      eventPropGetter={(event, start, end, isSelected) => ({
+                        event,
+                        start,
+                        end,
+                        isSelected,
+                        style: { backgroundColor: "green" },
+                      })}
                     />
                   </Paper>
                 </Grid>
