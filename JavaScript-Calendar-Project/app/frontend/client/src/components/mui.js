@@ -127,10 +127,7 @@ class Mui extends Component {
       getDay,
       locales,
     });
-    
   }
-
-  
 
   onEventResize = (data) => {
     const { start, end } = data;
