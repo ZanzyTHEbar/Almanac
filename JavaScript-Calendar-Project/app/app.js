@@ -1,9 +1,10 @@
 "use strict";
 
-const SCOPES = require("./server/scopes/utils/config.json").scopes;
 const config = require("./server/scopes/utils/config");
-const eLogPath = require("./server/scopes/utils/config.json").eLog.eLogPath;
-const { eLog } = require(eLogPath);
+const SCOPES = require("./server/scopes/utils/config.json").scopes;
+const utilPath = require("./server/scopes/utils/config.json").eLog.utilPath;
+const { eLog } = require(`${utilPath}\\actions`);
+const logLevel = require(`${utilPath}\\logLevels`);
 /* const { addFunction } = require("./custom"); */
 const session = require("express-session");
 const flash = require("connect-flash");
@@ -24,9 +25,9 @@ const usersRouter = require("./server/routes/users");
 const authRouter = require("./server/routes/auth");
 const animRouter = require("./server/routes/animation");
 
-const app = express();
+var app = express();
 
-eLog(`[INFO] [CORE] Initializing Application..`);
+eLog(logLevel.INFO, "CORE", "Initializing Application...");
 // In-memory storage of logged-in users
 // For demo purposes only, production apps should store
 // this in a reliable storage
@@ -66,7 +67,7 @@ app.use(
   })
 );
 
-eLog("[STATUS] [CORE] Microsoft Graph API loaded");
+eLog(logLevel.STATUS, "CORE", "Microsoft Graph API loaded");
 
 // Flash middleware
 app.use(flash());
@@ -100,15 +101,6 @@ const calendar_path = path.join(__dirname, "../template/views/calendar");
 const anim_path = path.join(__dirname, "../views/anim");
 const partials_path = path.join(__dirname, "../views/partials");
 
-// Initialize scopes
-app.use(
-  "/build/",
-  express.static(path.join(__dirname, "node_modules/three/build/"))
-);
-app.use(
-  "/jsm/",
-  express.static(path.join(__dirname, "node_modules/three/examples/jsm/"))
-);
 app.use("/calendar/", express.static(calendar_path));
 app.use("/database/", express.static(database_path));
 app.use("/layouts/", express.static(layouts_path));
@@ -122,7 +114,8 @@ app.set("view engine", "hbs");
 
 hbs.registerPartials(path.join(__dirname + "partials_path"));
 
-eLog("[STATUS] [CORE] Frontend loaded");
+eLog(logLevel.STATUS, "CORE", "Frontend loaded");
+
 var parseISO = require("date-fns/parseISO");
 var formatDate = require("date-fns/format");
 // Helper to format date/time sent by Graph
@@ -144,7 +137,7 @@ app.use("/users", usersRouter);
 app.use("/anim", animRouter);
 
 function initCroutes(scope) {
-  eLog(`[INFO] [CORE] ${scope} initializing croutes`);
+  eLog(logLevel.INFO, "CORE", `${scope} initializing croutes`);
   let changed = false;
   Object.keys(SCOPES)
     .filter((key) => SCOPES[key] && scope !== key)
@@ -153,7 +146,11 @@ function initCroutes(scope) {
         fs.readdirSync(`./server/scopes/${scope}/croutes`)
           .filter((file) => file.startsWith(key))
           .forEach((file) => {
-            eLog(`[WARN] [CORE] ${scope} found extra croutes for ${key}`);
+            eLog(
+              logLevel.WARN,
+              "CORE",
+              `${scope} found extra croutes for ${key}`
+            );
             app.use(
               `/${scope.toLowerCase()}/${key.toLowerCase}`,
               require(`./server/scopes/${scope}/croutes/${file}`)
@@ -161,54 +158,64 @@ function initCroutes(scope) {
             changed = true;
           });
       } catch (error) {
-        eLog(`[INFO] [CORE] ${scope} did not need extra routes for ${key}`);
+        eLog(
+          logLevel.INFO,
+          "CORE",
+          `${scope} did not need extra routes for ${key}`
+        );
       }
     });
   eLog(
+    logLevel.STATUS,
+    "CORE",
     changed
-      ? `[FINE] [CORE] ${scope} croutes initialized`
-      : `[INFO] [CORE] ${scope} did not need any croutes`
+      ? `${scope} croutes initialized`
+      : `${scope} did not need any croutes`
   );
 }
 
 // foreach scope, app.use the scope's router
 for (const scope in SCOPES) {
-  eLog(`[INFO] [CORE] ${scope} initializing`);
+  eLog(logLevel.FINE, "CORE", `${scope} initializing`);
   if (config[scope.toUpperCase() + "_ENABLED"] && SCOPES[scope]) {
     const routes = require(`./server/scopes/${scope}/routes`);
     app.use(`/${scope.toLowerCase()}`, routes);
-    eLog(`[DEBUG] [CORE] Adding extended Functions to ${scope}`);
+    eLog(logLevel.DEBUG, "CORE", `Adding extended Functions to ${scope}`);
     addFunction(scope, app);
-    eLog(`[DEBUG] [CORE] Adding custom routes Functions to ${scope}`);
+    eLog(logLevel.DEBUG, "CORE", `Adding custom routes Functions to ${scope}`);
     initCroutes(scope);
-    eLog(`[FINE] [CORE] ${scope} loaded!`);
+    eLog(logLevel.FINE, "CORE", `${scope} loaded!`);
   } else if (
     config[scope.toUpperCase() + "_ENABLED"] == null &&
     SCOPES[scope]
   ) {
-    eLog(`[INFO] [CORE] Custom scope ${scope} found`);
+    eLog(logLevel.INFO, "CORE", `Custom scope ${scope} found`);
     try {
       const routes = require(`./server/scopes/${scope}/routes`);
       app.use(`/${scope.toLowerCase()}`, routes);
-      eLog(`[FINE] [CORE] ${scope} loaded`);
-      eLog(`[DEBUG] [CORE] Adding extended Functions to ${scope}`);
+      eLog(logLevel.FINE, "CORE", `${scope} loaded`);
+      eLog(logLevel.DEBUG, "CORE", `Adding extended Functions to ${scope}`);
       addFunction(scope, app);
-      eLog(`[DEBUG] [CORE] Adding custom routes Functions to ${scope}`);
+      eLog(
+        logLevel.DEBUG,
+        "CORE",
+        `Adding custom routes Functions to ${scope}`
+      );
       initCroutes(scope);
     } catch {
-      eLog(`[ERROR] [CORE] Loading of custom scope ${scope} failed`);
+      eLog(logLevel.ERROR, "CORE", `Loading of custom scope ${scope} failed`);
     }
   } else {
-    eLog(`[WARN] [CORE] ${scope} not loaded`);
-    eLog(`[WARN] [CORE] ${scope} either not enabled or not found`);
+    eLog(logLevel.ERROR, "CORE", `${scope} not loaded`);
+    eLog(logLevel.ERROR, "CORE", `${scope} either not enabled or not found`);
   }
 }
 
-eLog(`[STATUS] [CORE] Modules loaded`);
-eLog("[STATUS] [CORE] Routers loaded");
+eLog(logLevel.STATUS, "CORE", "Modules loaded");
+eLog(logLevel.STATUS, "CORE", "Routers loaded");
 
-eLog(`[INFO] [CORE] Application initialized!`);
-eLog(`[INFO] [CORE] Starting Application...`);
+eLog(logLevel.INFO, "CORE", "Application initialized!");
+eLog(logLevel.INFO, "CORE", "Starting Application...");
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -219,7 +226,7 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "dev" ? err : {};
+  res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page
   res.status(err.status || 500);
