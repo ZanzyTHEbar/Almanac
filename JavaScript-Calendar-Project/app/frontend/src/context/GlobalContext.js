@@ -21,6 +21,8 @@ const GlobalContext = React.createContext({
     labels: [],
     updateLabel: () => { },
     filteredEvents: [],
+    setLoggedIn: (state) => { },
+    loggedIn: false,
 });
 
 export default GlobalContext;

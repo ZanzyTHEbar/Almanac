@@ -1,9 +1,11 @@
+/* eslint-disable no-lone-blocks */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import CalendarHeader from "@components/CalendarHeader";
 import EventModal from "@components/EventModal";
 import { getMonthDays } from "@components/Helpers/utils";
+import MSLogin from "@components/MSLogin";
 import Month from "@components/Month";
 import Sidebar from "@components/Sidebar";
 import GlobalContext from "@src/context/GlobalContext";
@@ -24,6 +26,9 @@ export function Main() {
         });
         console.log(event.currentTarget);
     }; */
+    const [loggedIn, setLoggedIn] = React.useState({
+        login: false,
+    });
 
     const [currentMonth, setCurrentMonth] = React.useState(getMonthDays());
     const { monthIndex, showEventModal } = React.useContext(GlobalContext);
@@ -32,10 +37,16 @@ export function Main() {
         setCurrentMonth(getMonthDays(monthIndex));
     }, [monthIndex]);
 
-    return (
+    const handleLogin = () => {
+        setLoggedIn({
+            ...loggedIn,
+            login: !loggedIn.login,
+        });
+    };
+
+    const Main = () => (
         <React.Fragment>
             {showEventModal && <EventModal />}
-
             <div className="h-screen flex flex-col">
                 <CalendarHeader />
                 <div
@@ -49,6 +60,16 @@ export function Main() {
                     <Month month={currentMonth} />
                 </div>
             </div>
+        </React.Fragment>
+    );
+
+    return (
+        <React.Fragment>
+            {loggedIn.login ? (
+                <Main />
+            ) : (
+                <MSLogin handleLogin={handleLogin} state={loggedIn} />
+            )}
         </React.Fragment>
     );
 }

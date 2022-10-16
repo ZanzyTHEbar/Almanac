@@ -40,6 +40,8 @@ export default function ContextWrapper(props) {
         initEvents
     );
 
+    const [loggedIn, setLoggedIn] = useState(null);
+
     const filteredEvents = useMemo(() => savedEvents.filter((evt) =>
             labels
                 .filter((lbl) => lbl.checked)
@@ -102,6 +104,8 @@ export default function ContextWrapper(props) {
                 labels,
                 updateLabel,
                 filteredEvents,
+                setLoggedIn,
+                loggedIn,
             }}
         >
             {props.children}
