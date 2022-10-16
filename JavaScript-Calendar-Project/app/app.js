@@ -54,9 +54,9 @@ const msalConfig = {
 // Create msal application object
 app.locals.msalClient = new msal.ConfidentialClientApplication(msalConfig);
 
-// Session middleware
+//* Session middleware
 // NOTE: Uses default in-memory session store, which is not
-// suitable for production
+// NOTE: suitable for production
 
 app.use(
   session({
