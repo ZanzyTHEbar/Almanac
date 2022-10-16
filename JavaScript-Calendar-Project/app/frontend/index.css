@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:500");
+/* @use "sass:math"; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.App {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    /* background-color: #22222d; */
+    color: #fff;
+    text-align: center;
+
+    /* display: flex;
+    flex-direction: column; */
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.main-div {
+    background-color: rgba(0, 0, 0, 0.73);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    word-wrap: break-word;
+}
+
+body {
+  cursor: default
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6d7faeb4;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #6d7fae;
+}
+
+/* @import "@pages/Calendar/index.scss"; */

@@ -23,7 +23,6 @@ const logger = require("morgan");
 const indexRouter = require("./server/routes/index");
 const usersRouter = require("./server/routes/users");
 const authRouter = require("./server/routes/auth");
-const animRouter = require("./server/routes/animation");
 
 var app = express();
 
@@ -98,14 +97,12 @@ const layouts_path = path.join(__dirname, "../views/layouts");
 const dlna_path = path.join(__dirname, "../template/views/dlna");
 const database_path = path.join(__dirname, "../template/views/database");
 const calendar_path = path.join(__dirname, "../template/views/calendar");
-const anim_path = path.join(__dirname, "../views/anim");
 const partials_path = path.join(__dirname, "../views/partials");
 
 app.use("/calendar/", express.static(calendar_path));
 app.use("/database/", express.static(database_path));
 app.use("/layouts/", express.static(layouts_path));
 app.use("/dlna/", express.static(dlna_path));
-app.use("/anim/", express.static(anim_path));
 app.use("/partials/", express.static(partials_path));
 
 // view engine setup
@@ -134,7 +131,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
 app.use("/users", usersRouter);
-app.use("/anim", animRouter);
 
 function initCroutes(scope) {
   eLog(logLevel.INFO, "CORE", `${scope} initializing croutes`);

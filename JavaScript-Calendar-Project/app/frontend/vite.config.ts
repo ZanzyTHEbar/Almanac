@@ -1,8 +1,8 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+const path = require('path')
 /* import { ViteToml } from 'vite-plugin-toml' */
 
-const path = require('path')
 
 export default defineConfig({
   clearScreen: false,
@@ -21,7 +21,8 @@ export default defineConfig({
       '@redux': path.resolve(__dirname, './src/redux'),
       '@interfaces': path.resolve(__dirname, './src/interfaces'),
       '@assets': path.resolve(__dirname, './assets'),
-      '@components': path.resolve(__dirname, 'src/pages/ETVRPage01/components')
+      '@components': path.resolve(__dirname, './src/components'),
+      '@public': path.resolve(__dirname, './public')
     },
   },
   server: {

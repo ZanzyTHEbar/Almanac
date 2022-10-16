@@ -7,7 +7,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "EyeTrackVR",
+    "productName": "Outlook Knight",
     "version": "0.1.0"
   },
   "tauri": {
@@ -47,19 +47,20 @@
     },
     "bundle": {
       "active": true,
-      "category": "Entertainment",
-      "copyright": "EyeTrackVR",
+      "category": "Productivity",
+      "copyright": "DaOfficialWizard",
       "deb": {
         "depends": []
       },
       "externalBin": [],
       "icon": [
-        "../public/images/icons/icon-48x48.png",
-        "../public/images/icons/icon-128x128.png",
-        "../public/images/icons/144x144.png",
-        "../public/images/icons/favicon.ico"
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
       ],
-      "identifier": "com.eyetrackvr.dev",
+      "identifier": "com.outlookknight.dev",
       "longDescription": "",
       "resources": [],
       "shortDescription": "",
@@ -74,16 +75,16 @@
         },
         "wix": {
           "language": [
-            "lv-LV", 
-            "it-IT", 
-            "th-TH", 
-            "uk-UA", 
-            "hr-HR", 
-            "ar-SA", 
-            "pt-PT", 
-            "fr-FR", 
-            "ca-ES", 
-            "zh-CN", 
+            "lv-LV",
+            "it-IT",
+            "th-TH",
+            "uk-UA",
+            "hr-HR",
+            "ar-SA",
+            "pt-PT",
+            "fr-FR",
+            "ca-ES",
+            "zh-CN",
             "cs-CZ",
             "el-GR",
             "nl-NL",
@@ -129,7 +130,7 @@
         "width": 800,
         "resizable": true,
         "center": true,
-        "title": "EyeTrackVR",
+        "title": "Outlook Knight",
         "visible": false,
         "decorations": false,
         "transparent": true
@@ -145,7 +146,7 @@
       }
     ],
     "systemTray": {
-      "iconPath": "../public/images/icons/icon-48x48.png",
+      "iconPath": "icons/32x32.png",
       "iconAsTemplate": true
     }
   }

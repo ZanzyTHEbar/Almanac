@@ -1,7 +1,8 @@
+import ContextWrapper from "@src/context/ContextWrapper";
 import { invoke } from "@tauri-apps/api/tauri";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "../index.scss";
+import "../index.css";
 import reportWebVitals from "../assets/js/reportWebVitals";
 import username from "../src-tauri/config/config.json";
 import App from "./App";
@@ -42,7 +43,9 @@ declare global {
 
 root.render(
     <StrictMode>
-        <App />
+        <ContextWrapper>
+            <App />
+        </ContextWrapper>
     </StrictMode>
 );
 

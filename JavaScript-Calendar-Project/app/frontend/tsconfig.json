@@ -28,6 +28,9 @@
       "@components/*": [
         "src/components/*",
       ],
+      "@public/*": [
+        "./public/*",
+      ],
       "@redux/*": [
         "src/redux/*"
       ],
