@@ -1,6 +1,6 @@
 .titlebar {
     height: 30px;
-    background: #329ea3; /* #9a6998- alternative really nice pink*/
+    background: #45a29f; /* #9a6998- alternative really nice pink*/
     user-select: none;
     display: flex;
     justify-content: flex-end;
@@ -11,9 +11,8 @@
 
     position: sticky;
     z-index: 1;
-
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    /* border-top-left-radius: 8px;
+    border-top-right-radius: 8px; */
 }
 
 .titlebar-button {

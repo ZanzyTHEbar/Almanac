@@ -1,9 +1,9 @@
+import reportWebVitals from "@assets/js/reportWebVitals";
 import ContextWrapper from "@src/context/ContextWrapper";
 import { invoke } from "@tauri-apps/api/tauri";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "../index.css";
-import reportWebVitals from "../assets/js/reportWebVitals";
+import "@assets/css/index.css";
 import username from "../src-tauri/config/config.json";
 import App from "./App";
 

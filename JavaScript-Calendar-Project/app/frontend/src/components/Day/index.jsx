@@ -21,7 +21,7 @@ export default function Day({ day, rowIdx }) {
 
     function getCurrentDayClass() {
         return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
-            ? "bg-blue-600 text-white rounded-full w-7"
+            ? "bg-red-600 text-white rounded-full w-7"
             : "";
     }
     return (
@@ -32,6 +32,7 @@ export default function Day({ day, rowIdx }) {
                 borderTopRightRadius: "8px",
                 borderBottomLeftRadius: "8px",
                 borderBottomRightRadius: "8px",
+                boxShadow: "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
             }}
         >
             <header className="flex flex-col items-center">
@@ -41,7 +42,7 @@ export default function Day({ day, rowIdx }) {
                     </p>
                 )}
                 <p
-                    className={`text-sm p-1 my-1 text-center  ${getCurrentDayClass()}`}
+                    className={`text-sm p-1 my-1 text-center ${getCurrentDayClass()}`}
                 >
                     {day.format("DD")}
                 </p>
