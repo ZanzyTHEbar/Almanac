@@ -13,7 +13,7 @@ router.get("/", (req, res, next) => {
       active: { animation: true },
       layout: false,
     };
-    res.render("anim/anim", params);
+    res.render("anim/ripple", params);
   }
 });
 
