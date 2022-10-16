@@ -1,20 +1,43 @@
 const { newDB } = require("./dbms/data");
 const { initLog, createLog } = require("./dbms/log");
-const eLogPath = require("../utils/config.json").eLog.eLogPath;
-const { eLog } = require(eLogPath);
+const utilPath = require("../utils/config.json").eLog.utilPath;
+const { eLog } = require(`${utilPath}\\actions`);
+const logLevel = require(`${utilPath}\\logLevels`);
+
+let dataBases = [];
 
 module.exports = {
+  init: () => {
+    eLog(logLevel.INFO, "DATA", "Initializing!");
+  },
   useDB: function (name, tags) {
-    eLog("[INFO] [DATA] Attempting to initialize new database...");
-    return newDB(name, tags);
+    eLog(logLevel.INFO, "DATA", "Attempting to initialize new database");
+    let newDB = newDB(name, tags);
+    dataBases.push(newDB);
+    return newDB;
   },
   useLog: function () {
-    eLog("[DEBUG] [DATA] Attempting to initialize logging database...");
-    return initLog(logbase);
+    eLog(logLevel.DEBUG, "DATA", "Attempting to initialize logging database");
+    const logBase = initLog();
+    dataBases.push(logBase);
+    return logBase;
   },
-  logMessage: function (msg) {
+  logMessage: function (severity, scope, message) {
     // NO ELOG, IT WOULD LOG ITSELF
-    createLog(msg);
+    createLog(severity, scope, message);
     // console.log(`SEVERITY: ${msg[0]}, SCOPE: ${msg[1]}, MESSAGE: ${msg[2]}`);
+  },
+  shutdown: () => {
+    eLog(
+      logLevel.WARN,
+      "DATA",
+      "Shutdown command received, attempting to shutdown..."
+    );
+
+    dataBases.forEach((db) => {
+      eLog(logLevel.INFO, "DATA", `Shutting down database ${db.name}`);
+      db.close();
+    });
+    eLog(logLevel.INFO, "DATA", "Successfully closed all database connections");
   },
 };

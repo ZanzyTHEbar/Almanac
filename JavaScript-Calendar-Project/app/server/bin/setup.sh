@@ -47,6 +47,7 @@ printf "\033[0;35m[Required for usage of the database features]\033[0m - "
 printf "SQL dialect - "
 printf "SQL Database Name - "
 printf "SQL Host - "
+printf "JSON Config File - "
 printf "\033[0;31mWARN: Do not store sensitive information in this database\033[0m\n"
 printf "\033[0;31mWARN: Do not expose this database to the internet\033[0m\n"
 
@@ -54,8 +55,9 @@ printf "\033[0;31mPlease setup a Dynamic DNS for your router, "
 printf "preferrably using No-IP or another service supported by your router. "
 printf "If all the needed information is at hand,\033[0m\n"
 read -p " press enter to continue..."
+
 # Create .env file
-env_path="../app/sh.env"
+env_path="../app/.env"
 touch ${env_path}
 echo ".env file - stores all app variables/flags"
 printf "\033[0;36mNote:To use the default values, just press enter\033[0m\n"

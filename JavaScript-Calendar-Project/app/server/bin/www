@@ -3,17 +3,17 @@
 /**
  * Module dependencies.
  */
-"use strict";
 
 var app = require("../../app");
-const config = require("../../server/scopes/utils/config");
-const eLogPath = require("../../server/scopes/utils/config.json").eLog.eLogPath;
-const { eLog } = require(eLogPath);
-var debug = require("debug")("graph-tutorial:server");
+const config = require("../scopes/utils/config");
+const utilPath = require("../scopes/utils/config.json").eLog.utilPath;
+const { eLog } = require(`${utilPath}\\actions`);
+const logLevel = require(`${utilPath}\\logLevels`);
+var debug = require("debug")("outlook-knight:server");
 var http = require("http");
 var https = require("https");
 var fs = require("fs");
-/* var NoIp = require("no-ip"); */
+
 var httpOptions = {
   key: fs.readFileSync("server/.keys/client-key.pem"),
 
@@ -28,18 +28,27 @@ var State = args[1];
 
 var cLine = "-----------------------------------------------------------";
 
+function welcomeMessage() {
+  const LOGO = `
+     _____ _____ _____      _                _            
+    |  __ \\_   _/ ____|    | |              | |           
+    | |__) || || |     __ _| | ___ _ __   __| | __ _ _ __ 
+    |  ___/ | || |    / _\` | |/ _ \\ '_ \\ / _\` |/ _\` | '__|
+    | |    _| || |___| (_| | |  __/ | | | (_| | (_| | |   
+    |_|   |_____\\_____\\__,_|_|\\___|_| |_|\\__,_|\\__,_|_|                                                     
+  `;
+  console.log(cLine);
+  console.log(`\x1b[1m\x1b[35m${LOGO}\x1b[0m`);
+}
+
+welcomeMessage();
+
 console.log(cLine);
 
 console.log("Server is running on port " + config.port);
 console.log(cLine);
 console.log("Server state " + State);
 console.log(cLine);
-
-/* var noip = new NoIp({
-  hostname: config.no_ip.hostname,
-  user: config.no_ip.username,
-  pass: config.no_ip.password,
-}); */
 
 /**
  * Normalize a port into a number, string, or false.
@@ -106,6 +115,12 @@ function onListening() {
 
 console.log("Open this url in a chromium browser:");
 
+const startTime = new Date();
+
+const startUpTime = new Date().getTime() - startTime.getTime();
+
+eLog(logLevel.INFO, "CORE", `App started in ${startUpTime}ms`);
+
 function Server(port) {
   switch (State) {
     case "--localhost-secure":
@@ -116,7 +131,12 @@ function Server(port) {
       server.on("error", onError);
       server.on("listening", onListeningSecure);
       eLog(
-        `[STATUS] [CORE] Server running at ${config.oauth.redirectUriLocalhostSecure}:${config.port}/`
+        logLevel.STATUS,
+        "CORE",
+        "Server running at " +
+          config.oauth.redirectUriLocalhostSecure +
+          ":" +
+          config.port
       );
       console.log(cLine);
       break;
@@ -128,7 +148,12 @@ function Server(port) {
       server.on("error", onError);
       server.on("listening", onListeningSecure);
       eLog(
-        `[STATUS] [CORE] Server running at ${config.oauth.redirectUriSecure}:${config.port}/`
+        logLevel.STATUS,
+        "CORE",
+        "Server running at " +
+          config.oauth.redirectUriSecure +
+          ":" +
+          config.port
       );
       console.log(cLine);
       break;
@@ -140,7 +165,12 @@ function Server(port) {
       server2.on("error", onError);
       server2.on("listening", onListening);
       eLog(
-        `[STATUS] [CORE] Server running at ${config.oauth.redirectUriLocalhost}:${config.port}/`
+        logLevel.STATUS,
+        "CORE",
+        "Server running at " +
+          config.oauth.redirectUriLocalhost +
+          ":" +
+          config.port
       );
       console.log(cLine);
       break;
@@ -152,19 +182,13 @@ function Server(port) {
       server2.on("error", onError);
       server2.on("listening", onListening);
       eLog(
-        `[STATUS] [CORE] Server running at ${config.oauth.redirectUri}:${config.port}/`
+        logLevel.STATUS,
+        "CORE",
+        "Server running at " + config.oauth.redirectUri + ":" + config.port
       );
       console.log(cLine);
       break;
   }
 }
-
-/* noip.on("success", function (isChanged, ip) {
-  console.log(isChanged, ip);
-});
-
-noip.update(); // Manual update, you can also provide a custom IP address
-
-noip.start(); // Start the update loop */
 
 Server(config.port);
