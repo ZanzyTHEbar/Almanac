@@ -115,6 +115,12 @@ function onListening() {
 
 console.log("Open this url in a chromium browser:");
 
+const startTime = new Date();
+
+const startUpTime = new Date().getTime() - startTime.getTime();
+
+eLog(logLevel.INFO, "CORE", `App started in ${startUpTime}ms`);
+
 function Server(port) {
   switch (State) {
     case "--localhost-secure":

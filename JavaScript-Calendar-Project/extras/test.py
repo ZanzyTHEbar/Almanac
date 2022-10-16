@@ -42,11 +42,11 @@ def createConfigJSONFile():
     # with the following settings:
     #   - description
     #   - scopes {Database, DLNA, MSCAL, GOOGLECAL}
-    #   - elog {level, cLogEnabled, dLogEnabled, eLogEnabled, fLogEnabled, utilPath, filePath}
+    #   - eLog {level, cLogEnabled, dLogEnabled, eLogEnabled, fLogEnabled, utilPath, filePath}
     json_file = {
         "scopes": {
         },
-        "elog": {
+        "eLog": {
             "level": 0,
             "cLogEnabled": False,
             "dLogEnabled": False,
@@ -67,8 +67,8 @@ def createConfigJSONFile():
     src_path_2 = (configPath / relative_path_2).resolve()
     src_path_3 = (configPath / relative_path_3).resolve()
 
-    json_file["elog"]["utilPath"] = str(src_path)
-    json_file["elog"]["filePath"] = str(src_path_2 / "Logs/")
+    json_file["eLog"]["utilPath"] = str(src_path)
+    json_file["eLog"]["filePath"] = str(src_path_2 / "Logs/")
 
     completeName = str(src_path / "config.json")
 
@@ -94,17 +94,17 @@ def createConfigJSONFile():
                 print(f"{Fore.GREEN}Enable {temp} Module?{Style.RESET_ALL}")
                 json_file["scopes"][temp] = bool(int(input()))
 
-    print(f"{Fore.BLUE}Please enter the elog level (a number between 0 and 10){Style.RESET_ALL}")
-    json_file["elog"]["level"] = int(input())
+    print(f"{Fore.BLUE}Please enter the eLog level (a number between 0 and 10){Style.RESET_ALL}")
+    json_file["eLog"]["level"] = int(input())
     print(f"{Fore.BLUE}Please choose the logging modules to enable (0 or 1 only).{Style.RESET_ALL}")
-    print(f"{Fore.GREEN}Enable the elog cLogEnabled module?{Style.RESET_ALL}")
-    json_file["elog"]["cLogEnabled"] = bool(int(input()))
-    print(f"{Fore.GREEN}Enable the elog dLogEnabled module?{Style.RESET_ALL}")
-    json_file["elog"]["dLogEnabled"] = bool(int(input()))
-    print(f"{Fore.GREEN}Enable the elog eLogEnabled module?{Style.RESET_ALL}")
-    json_file["elog"]["eLogEnabled"] = bool(int(input()))
-    print(f"{Fore.GREEN}Enable the elog fLogEnabled module?{Style.RESET_ALL}")
-    json_file["elog"]["fLogEnabled"] = bool(int(input()))
+    print(f"{Fore.GREEN}Enable the eLog cLogEnabled module?{Style.RESET_ALL}")
+    json_file["eLog"]["cLogEnabled"] = bool(int(input()))
+    print(f"{Fore.GREEN}Enable the eLog dLogEnabled module?{Style.RESET_ALL}")
+    json_file["eLog"]["dLogEnabled"] = bool(int(input()))
+    print(f"{Fore.GREEN}Enable the eLog eLogEnabled module?{Style.RESET_ALL}")
+    json_file["eLog"]["eLogEnabled"] = bool(int(input()))
+    print(f"{Fore.GREEN}Enable the eLog fLogEnabled module?{Style.RESET_ALL}")
+    json_file["eLog"]["fLogEnabled"] = bool(int(input()))
 
     with open(completeName, "w") as outfile:
         json.dump(json_file, outfile)
