@@ -1,10 +1,5 @@
 import dayjs from "dayjs";
-import React, {
-    useState,
-    useEffect,
-    useReducer,
-    useMemo,
-} from "react";
+import React, { useState, useEffect, useReducer, useMemo } from "react";
 import GlobalContext from "./GlobalContext";
 
 function savedEventsReducer(state, { type, payload }) {
@@ -12,9 +7,7 @@ function savedEventsReducer(state, { type, payload }) {
         case "push":
             return [...state, payload];
         case "update":
-            return state.map((evt) =>
-                evt.id === payload.id ? payload : evt
-            );
+            return state.map((evt) => (evt.id === payload.id ? payload : evt));
         case "delete":
             return state.filter((evt) => evt.id !== payload.id);
         default:
@@ -42,29 +35,33 @@ export default function ContextWrapper(props) {
 
     const [loggedIn, setLoggedIn] = useState(null);
 
-    const filteredEvents = useMemo(() => savedEvents.filter((evt) =>
-            labels
-                .filter((lbl) => lbl.checked)
-                .map((lbl) => lbl.label)
-                .includes(evt.label)
-        ), [savedEvents, labels]);
+    const filteredEvents = useMemo(
+        () =>
+            savedEvents.filter((evt) =>
+                labels
+                    .filter((lbl) => lbl.checked)
+                    .map((lbl) => lbl.label)
+                    .includes(evt.label)
+            ),
+        [savedEvents, labels]
+    );
 
     useEffect(() => {
         localStorage.setItem("savedEvents", JSON.stringify(savedEvents));
     }, [savedEvents]);
 
     useEffect(() => {
-        setLabels((prevLabels) => [...new Set(savedEvents.map((evt) => evt.label))].map(
-                (label) => {
-                    const currentLabel = prevLabels.find(
-                        (lbl) => lbl.label === label
-                    );
-                    return {
-                        label,
-                        checked: currentLabel ? currentLabel.checked : true,
-                    };
-                }
-            ));
+        setLabels((prevLabels) =>
+            [...new Set(savedEvents.map((evt) => evt.label))].map((label) => {
+                const currentLabel = prevLabels.find(
+                    (lbl) => lbl.label === label
+                );
+                return {
+                    label,
+                    checked: currentLabel ? currentLabel.checked : true,
+                };
+            })
+        );
     }, [savedEvents]);
 
     useEffect(() => {
