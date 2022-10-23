@@ -603,20 +603,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "eyetrackvr"
-version = "0.1.0"
-dependencies = [
- "serde",
- "serde_json",
- "sprintf",
- "sysinfo",
- "tauri",
- "tauri-build",
- "whoami",
- "window-shadows",
-]
-
-[[package]]
 name = "fastrand"
 version = "1.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1755,6 +1741,20 @@ checksum = "0dceb7e43f59c35ee1548045b2c72945a5a3bb6ce6d6f07cdc13dc8f6bc4930a"
 dependencies = [
  "libc",
  "winapi",
+]
+
+[[package]]
+name = "outlook_knight"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "sprintf",
+ "sysinfo",
+ "tauri",
+ "tauri-build",
+ "whoami",
+ "window-shadows",
 ]
 
 [[package]]

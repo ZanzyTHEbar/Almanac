@@ -1,11 +1,11 @@
 [package]
-name = "eyetrackvr"
+name = "outlook_knight"
 version = "0.1.0"
-description = "Eye tracking for VR"
+description = "Microsoft Outlook Calendar"
 authors = ["DaOfficialWizard"]
 license = "MIT"
-repository = "https://github.com/RedHawk989/EyeTrackVR"
-default-run = "eyetrackvr"
+repository = "https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display"
+default-run = "outlook_knight"
 edition = "2021"
 rust-version = "1.57"
 
