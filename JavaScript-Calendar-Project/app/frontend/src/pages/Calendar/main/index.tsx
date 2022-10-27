@@ -47,7 +47,12 @@ export function Main() {
     const Main = () => (
         <React.Fragment>
             {showEventModal && <EventModal />}
-            <div className="h-screen flex flex-col">
+            <div
+                className="h-fit flex flex-col"
+                style={{
+                    height: "97vh",
+                }}
+            >
                 <CalendarHeader />
                 <div
                     className="flex flex-1"
