@@ -1,11 +1,7 @@
 import { Main } from "./main";
 
 function MainWindow() {
-    return (
-        <>
-            <Main />
-        </>
-    );
+    return <Main />;
 }
 
 export default MainWindow;
