@@ -1,8 +1,8 @@
-# Microsoft Calendar Epaper Display
-
 [![GitHub issues](https://img.shields.io/github/issues/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/issues) [![GitHub forks](https://img.shields.io/github/forks/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/network) [![GitHub stars](https://img.shields.io/github/stars/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/stargazers) [![GitHub license](https://img.shields.io/github/license/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display?style=plastic)](https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display/blob/main/LICENSE)
 
 ## 📅 Microsoft Calendar E-paper Display 🗓️
+
+> **Warning**: This project is not yet complete - it is _not_ fully functional - please do not use it intending it to work. I am actively working on this as i have the time to do so. Stay tuned, I'll make a release once the project is fully operational. The instructions for use will change, as i have switched the UI to the `tauri` framework.
 
 This repo is dedicated to the **Microsoft Calendar E-paper Display**, an automated system for displaying a user(s) work/personal calendar events onto an e-paper-like display.
 
