@@ -1,8 +1,0 @@
-[Unit]
-Description=Change Hostname and reboot device
-
-[Service]
-ExecStart=/usr/bin/hostname.sh
-
-[Install]
-WantedBy=multi-user.target
