@@ -1,16 +1,16 @@
 {
   "folders": [
     {
-      "name": "Project",
-      "path": "./OutlookKnight"
-    },
-    {
       "name": "Frontend",
-      "path": "./OutlookKnight/app/frontend"
+      "path": "./app/frontend"
     },
     {
       "name": "Backend",
-      "path": "./OutlookKnight/app/backend"
+      "path": "./app/backend"
+    },
+    {
+      "name": "Project",
+      "path": "./app"
     },
     {
       "name": "RepoRoot",
