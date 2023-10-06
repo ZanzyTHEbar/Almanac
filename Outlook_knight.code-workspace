@@ -5,6 +5,14 @@
       "path": "./OutlookKnight"
     },
     {
+      "name": "Frontend",
+      "path": "./OutlookKnight/app/frontend"
+    },
+    {
+      "name": "Backend",
+      "path": "./OutlookKnight/app/backend"
+    },
+    {
       "name": "RepoRoot",
       "path": "./"
     }
