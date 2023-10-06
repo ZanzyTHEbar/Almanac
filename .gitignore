@@ -113,10 +113,5 @@ dist
 
 /.vscode
 
-#Database Files
-JavaScript-Calendar-Project/app/scopes/DATABASE/dbms/data/UTIL.db
-JavaScript-Calendar-Project/app/scopes/DATABASE/dbms/data/
-JavaScript-Calendar-Project/app/server/.keys/client.csr
-JavaScript-Calendar-Project/app/server/scopes/utils/config.json
-JavaScript-Calendar-Project/app/server/scopes/utils/googleoauth.json
+/app/backend-old
 

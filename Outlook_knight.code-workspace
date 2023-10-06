@@ -1,14 +1,6 @@
 {
   "folders": [
     {
-      "name": "Frontend",
-      "path": "./app/frontend"
-    },
-    {
-      "name": "Backend",
-      "path": "./app/backend"
-    },
-    {
       "name": "Project",
       "path": "./app"
     },
@@ -16,5 +8,8 @@
       "name": "RepoRoot",
       "path": "./"
     }
-  ]
+  ],
+  "settings": {
+    "cSpell.words": ["reqwest", "thiserror"]
+  }
 }
