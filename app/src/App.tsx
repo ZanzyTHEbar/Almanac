@@ -1,16 +1,33 @@
-// import AppRoutes from "./routes/frontend/Routes";
-// import { Outlet } from "react-router-dom";
-import MainWindow from "@pages/Calendar";
-/* import { appWindow } from "@tauri-apps/api/window";
-await appWindow.setDecorations(false); */
+import { lazy, onMount, Suspense } from 'solid-js'
+import { useAppContextMain } from './store/context/main'
+import { AppProvider } from '@src/store/context/app'
 
-function App() {
+const AppRoutes = lazy(() => import('@routes/routes'))
+//const NewContextMenu = lazy(() => import('@components/NewMenu'))
+//const ExampleMenu = lazy(() => import('@components/NewMenu/DevTools'))
+const ToastNotificationWindow = lazy(() => import('@components/Notifications'))
+
+const App = () => {
+    const { handleTitlebar, handleAppBoot } = useAppContextMain()
+    //const ref = document.getElementById('titlebar')
+    onMount(() => {
+        handleTitlebar(true)
+        handleAppBoot()
+    })
+
     return (
-        <main className="App">
-            <MainWindow />
-            {/* <Outlet /> */}
-        </main>
-    );
+        <div class="App overflow-y-auto items-center">
+            <Suspense>
+                <AppProvider>
+                    <AppRoutes />
+                    {/* <NewContextMenu ref={ref} name="test">
+                        <ExampleMenu />
+                    </NewContextMenu> */}
+                    <ToastNotificationWindow />
+                </AppProvider>
+            </Suspense>
+        </div>
+    )
 }
 
-export default App;
+export default App

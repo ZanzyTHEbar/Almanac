@@ -8,9 +8,9 @@ edition = "2021"
 [dependencies]
 thiserror = "1"
 log = { workspace = true }
-reqwest = { workspace = true }
 dialoguer = { workspace = true }
 serde = { workspace = true }
 specta = { workspace = true }
 tauri = { workspace = true }
 tauri-specta = { workspace = true }
+reqwest = { workspace = true }

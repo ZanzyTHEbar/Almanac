@@ -1,153 +1,182 @@
 {
-  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
-  "build": {
-    "beforeBuildCommand": "npm run build",
-    "beforeDevCommand": "npm run dev",
-    "devPath": "http://localhost:5173",
-    "distDir": "../dist"
-  },
-  "package": {
-    "productName": "Outlook Knight",
-    "version": "0.1.0"
-  },
-  "tauri": {
-    "allowlist": {
-      "all": true,
-      "window": {
-        "all": true,
-        "create": true,
-        "center": true,
-        "requestUserAttention": true,
-        "setResizable": true,
-        "setTitle": true,
-        "maximize": true,
-        "unmaximize": true,
-        "minimize": true,
-        "unminimize": true,
-        "show": true,
-        "hide": true,
-        "close": true,
-        "setDecorations": true,
-        "setAlwaysOnTop": true,
-        "setSize": true,
-        "setMinSize": true,
-        "setMaxSize": true,
-        "setPosition": true,
-        "setFullscreen": true,
-        "setFocus": true,
-        "setIcon": true,
-        "setSkipTaskbar": true,
-        "setCursorGrab": true,
-        "setCursorVisible": true,
-        "setCursorIcon": true,
-        "setCursorPosition": true,
-        "startDragging": true,
-        "print": true
-      }
+    "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+    "build": {
+        "beforeBuildCommand": "pnpm build",
+        "beforeDevCommand": "pnpm dev",
+        "devPath": "http://localhost:3000",
+        "distDir": "../dist"
     },
-    "bundle": {
-      "active": true,
-      "category": "Productivity",
-      "copyright": "DaOfficialWizard",
-      "deb": {
-        "depends": []
-      },
-      "externalBin": [],
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ],
-      "identifier": "com.outlookknight.dev",
-      "longDescription": "",
-      "resources": [],
-      "shortDescription": "",
-      "targets": "all",
-      "windows": {
-        "allowDowngrades": false,
-        "certificateThumbprint": null,
-        "digestAlgorithm": "sha256",
-        "timestampUrl": "",
-        "webviewInstallMode": {
-          "type": "downloadBootstrapper"
+    "package": {
+        "productName": "Outlook Knight",
+        "version": "0.1.0"
+    },
+    "tauri": {
+        "allowlist": {
+            "all": false,
+            "clipboard": {
+                "all": false,
+                "readText": false,
+                "writeText": false
+            },
+            "dialog": {
+                "all": true,
+                "ask": true,
+                "confirm": true,
+                "message": true,
+                "open": true,
+                "save": true
+            },
+            "fs": {
+                "all": true,
+                "readFile": true,
+                "writeFile": true,
+                "readDir": true,
+                "copyFile": true,
+                "createDir": true,
+                "removeDir": true,
+                "removeFile": true,
+                "renameFile": true,
+                "exists": true,
+                "scope": ["$APP/*", "$APPDATA/*", "$APPCONFIG/*"]
+            },
+            "globalShortcut": {
+                "all": false
+            },
+            "http": {
+                "all": true,
+                "request": true,
+                "scope": [
+                    "http://127.0.0.1:8000/*",
+                    "http://localhost:8000/*",
+                    "https://api.github.com/repos/EyeTrackVR/OpenIris/*"
+                ]
+            },
+            "notification": {
+                "all": true
+            },
+            "os": {
+                "all": true
+            },
+            "path": {
+                "all": true
+            },
+            "process": {
+                "all": false,
+                "exit": true,
+                "relaunch": true,
+                "relaunchDangerousAllowSymlinkMacos": false
+            },
+            "protocol": {
+                "all": false,
+                "asset": true,
+                "assetScope": ["$APPCONFIG/*", "$APPDATA/*", "$RESOURCE/*"]
+            },
+            "window": {
+                "all": false,
+                "center": true,
+                "close": true,
+                "create": true,
+                "hide": true,
+                "maximize": true,
+                "minimize": true,
+                "print": false,
+                "requestUserAttention": true,
+                "setAlwaysOnTop": false,
+                "setCursorGrab": false,
+                "setCursorIcon": false,
+                "setCursorPosition": false,
+                "setCursorVisible": false,
+                "setDecorations": true,
+                "setFocus": true,
+                "setFullscreen": true,
+                "setIcon": false,
+                "setMaxSize": false,
+                "setMinSize": false,
+                "setPosition": true,
+                "setResizable": true,
+                "setSize": true,
+                "setSkipTaskbar": false,
+                "setTitle": true,
+                "show": true,
+                "startDragging": true,
+                "unmaximize": true,
+                "unminimize": true
+            }
         },
-        "wix": {
-          "language": [
-            "lv-LV",
-            "it-IT",
-            "th-TH",
-            "uk-UA",
-            "hr-HR",
-            "ar-SA",
-            "pt-PT",
-            "fr-FR",
-            "ca-ES",
-            "zh-CN",
-            "cs-CZ",
-            "el-GR",
-            "nl-NL",
-            "sl-SI",
-            "jp-JP",
-            "sr-Latn-CS",
-            "et-EE",
-            "hu-HU",
-            "ro-RO",
-            "tr-TR",
-            "sk-SK",
-            "de-DE",
-            "zh-TW",
-            "pt-BR",
-            "eu-ES",
-            "sv-SE",
-            "es-ES",
-            "ru-RU",
-            "vi-VN",
-            "fi-FI",
-            "lt-LT",
-            "bg-BG",
-            "he-IL",
-            "pl-PL",
-            "ko-KR",
-            "nb-NO",
-            "da-DK",
-            "en-US"
-          ]
+        "bundle": {
+            "active": true,
+            "category": "Productivity",
+            "copyright": "Outlook Knight",
+            "deb": {
+                "depends": []
+            },
+            "icon": [
+                "../public/images/icons/icon-48x48.png",
+                "../public/images/icons/icon-128x128.png",
+                "../public/images/icons/144x144.png",
+                "../public/images/icons/favicon.ico"
+            ],
+            "identifier": "com.outlook_night.dev",
+            "longDescription": "",
+            "resources": [],
+            "shortDescription": "",
+            "targets": "all",
+            "macOS": {
+                "frameworks": [],
+                "minimumSystemVersion": "",
+                "exceptionDomain": "",
+                "signingIdentity": null,
+                "entitlements": null
+            },
+            "windows": {
+                "allowDowngrades": false,
+                "certificateThumbprint": null,
+                "digestAlgorithm": "sha256",
+                "timestampUrl": "",
+                "webviewInstallMode": {
+                    "type": "downloadBootstrapper"
+                },
+                "wix": {
+                    "language": ["en-US"]
+                }
+            }
+        },
+        "security": {
+            "csp": "default-src blob: data: filesystem: ws: wss: http: https: tauri: 'unsafe-eval' 'unsafe-inline' 'self' img-src: 'self' asset: https://asset.localhost media-src stream: https://stream.localhost"
+        },
+        "updater": {
+            "active": false,
+            "dialog": true,
+            "endpoints": ["https://youtu.be/ZXjlZBisYPQ"],
+            "pubkey": ""
+        },
+        "windows": [
+            {
+                "fullscreen": false,
+                "height": 600,
+                "width": 800,
+                "resizable": true,
+                "center": true,
+                "title": "Outlook Knight",
+                "visible": false,
+                "decorations": false,
+                "transparent": true
+            },
+            {
+                "height": 370,
+                "width": 240,
+                "decorations": false,
+                "transparent": true,
+                "resizable": false,
+                "center": true,
+                "url": "src/windows/splashscreen/index.html",
+                "label": "splashscreen",
+                "alwaysOnTop": true
+            }
+        ],
+        "systemTray": {
+            "iconPath": "../public/images/icons/icon-48x48.png",
+            "iconAsTemplate": true
         }
-      }
-    },
-    "security": {
-      "csp": null
-    },
-    "updater": {
-      "active": false
-    },
-    "windows": [
-      {
-        "fullscreen": false,
-        "height": 600,
-        "width": 800,
-        "resizable": true,
-        "center": true,
-        "title": "Outlook Knight",
-        "visible": false,
-        "decorations": false,
-        "transparent": true
-      },
-      {
-        "height": 600,
-        "width": 800,
-        "decorations": false,
-        "resizable": false,
-        "center": true,
-        "url": "splashscreen.html",
-        "label": "splashscreen"
-      }
-    ],
-    "systemTray": {
-      "iconPath": "icons/32x32.png",
-      "iconAsTemplate": true
     }
-  }
 }

@@ -1,33 +1,40 @@
 {
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
     "extends": [
+        "prettier",
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "react-app",
-        "prettier"
+        "plugin:solid/typescript",
+        "plugin:import/typescript",
+        "plugin:import/recommended"
     ],
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "autofix",
-        "react-hooks"
-    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": ["@typescript-eslint", "solid", "import"],
     "rules": {
-        "@typescript-eslint/no-namespace": "off",
-        "react-hooks/exhaustive-deps": "error",
-        "@typescript-eslint/consistent-type-imports": [
+        "solid/reactivity": "warn",
+        "solid/no-destructure": "warn",
+        "solid/jsx-no-undef": "error",
+        "indent": [
             "error",
+            4,
             {
-                "prefer": "type-imports"
+                "SwitchCase": 1
             }
         ],
-        "autofix/no-unused-vars": [
-            "error",
-            {
-                "argsIgnorePattern": "^_",
-                "ignoreRestSiblings": true,
-                "destructuredArrayIgnorePattern": "^_"
-            }
-        ],
+        "quotes": ["error", "single"],
+        "semi": ["error", "never"],
+        "arrow-body-style": "off",
+        "import/no-unresolved": "error",
         "import/extensions": [
             "error",
             "ignorePackages",
@@ -38,38 +45,10 @@
                 "tsx": "never"
             }
         ],
-        "arrow-body-style": [
-            "error",
-            "as-needed"
-        ],
-        "react/self-closing-comp": [
-            "error",
-            {
-                "component": true,
-                "html": true
-            }
-        ],
-        "react/jsx-filename-extension": [
-            "error",
-            {
-                "extensions": [
-                    ".jsx",
-                    ".tsx"
-                ]
-            }
-        ],
         "import/order": [
             "error",
             {
-                "groups": [
-                    "builtin",
-                    "external",
-                    "parent",
-                    "sibling",
-                    "index",
-                    "object",
-                    "type"
-                ],
+                "groups": ["builtin", "external", "parent", "sibling", "index", "object", "type"],
                 "pathGroups": [
                     {
                         "pattern": "@/**/**",
@@ -81,24 +60,12 @@
                     "order": "asc"
                 }
             }
-        ]//,
-        // "no-restricted-imports": [
-        //   "error",
-        //   { 
-        //     "patterns": ["../"] 
-        //   }
-        // ],
+        ]
     },
     "settings": {
         "import/resolver": {
-            "node": {
-                "extensions": [
-                    ".js",
-                    ".jsx",
-                    ".ts",
-                    ".tsx"
-                ]
-            }
+            "typescript": "true",
+            "node": "true"
         }
     }
 }

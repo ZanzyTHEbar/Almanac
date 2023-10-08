@@ -1,6 +1,14 @@
 {
   "folders": [
     {
+      "name": "Tauri",
+      "path": "./app/src-tauri"
+    },
+    {
+      "name": "FrontEnd",
+      "path": "./app/src"
+    },
+    {
       "name": "Project",
       "path": "./app"
     },
@@ -10,6 +18,20 @@
     }
   ],
   "settings": {
-    "cSpell.words": ["reqwest", "thiserror"]
+    "cSpell.words": [
+      "chrono",
+      "Clothoid",
+      "notif",
+      "notifs",
+      "Pkce",
+      "Preferebly",
+      "readwrite",
+      "reqwest",
+      "solidjs",
+      "specta",
+      "thiserror",
+      "Unlisten",
+      "Xsts"
+    ]
   }
 }

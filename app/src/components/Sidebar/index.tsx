@@ -1,21 +1,22 @@
-import CreateEventButton from "@components/CreateEventButton";
-import Labels from "@components/Labels";
-import SmallCalendar from "@components/SmallCalendar";
-import React from "react";
-export default function Sidebar() {
+import CreateEventButton from '@components/CreateEventButton'
+import Labels from '@components/Labels'
+import SmallCalendar from '@components/SmallCalendar'
+
+const Sidebar = () => {
     return (
         <aside
-            className="border p-5 w-64"
+            class="border p-5 w-64"
             style={{
-                borderTopLeftRadius: "8px",
-                borderTopRightRadius: "8px",
-                borderBottomLeftRadius: "8px",
-                borderBottomRightRadius: "8px",
-            }}
-        >
+                'border-top-left-radius': '8px',
+                'border-top-right-radius': '8px',
+                'border-bottom-left-radius': '8px',
+                'border-bottom-right-radius': '8px',
+            }}>
             <CreateEventButton />
             <SmallCalendar />
             <Labels />
         </aside>
-    );
+    )
 }
+
+export default Sidebar

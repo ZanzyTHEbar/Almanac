@@ -13,8 +13,6 @@ use log::error;
 use serde::{Deserialize, Serialize};
 use tokio::time::sleep;
 
-//use sd_core::{Node, NodeError};
-
 use tauri::{self, ipc::RemoteDomainAccessScope, Manager, RunEvent, WindowEvent};
 
 //use tauri_plugin_store;
@@ -22,11 +20,7 @@ use tauri::{self, ipc::RemoteDomainAccessScope, Manager, RunEvent, WindowEvent};
 // use custom modules
 mod modules;
 
-//mod modules::tauri_plugins;
-
 use modules::menu;
-
-use modules::python_backend;
 
 use modules::tauri_commands;
 
@@ -59,7 +53,6 @@ enum TrayState {
 
 #[tokio::main]
 async fn main() -> tauri::Result<()> {
-    let mut backend = python_backend::Backend::default();
     let app = tauri::Builder::default();
 
     //Note: This is a workaround for a bug in tauri that causes the window to not resize properly inducing a noticeable lag
@@ -76,6 +69,7 @@ async fn main() -> tauri::Result<()> {
             tauri_commands::get_user,
             tauri_commands::handle_save_window_state,
             tauri_commands::handle_load_window_state,
+            tauri_commands::start_server,
         ])
         // allow only one instance and propagate args and cwd to existing instance
         .plugin(tauri_plugin_single_instance::init(|app, args, cwd| {
