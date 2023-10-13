@@ -1,4 +1,4 @@
-import * as path from 'path'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import solidPlugin from 'vite-plugin-solid'
 
@@ -7,18 +7,18 @@ export default defineConfig({
     envPrefix: ['VITE_', 'TAURI_'],
     resolve: {
         alias: {
-            '@interfaces': path.resolve(__dirname, './src/interfaces'),
-            '@components': path.resolve(__dirname, './src/components'),
-            '@routes': path.resolve(__dirname, './src/routes'),
-            '@pages': path.resolve(__dirname, './src/pages'),
-            '@styles': path.resolve(__dirname, './src/styles'),
-            '@config': path.resolve(__dirname, './src/config'),
-            '@src': path.resolve(__dirname, './src'),
-            '@assets': path.resolve(__dirname, './assets'),
-            '@hooks': path.resolve(__dirname, './src/utils/hooks'),
-            '@static': path.resolve(__dirname, './src/static'),
-            '@store': path.resolve(__dirname, './src/store'),
-            '@utils': path.resolve(__dirname, './src/utils'),
+            '@interfaces': resolve(__dirname, './src/interfaces'),
+            '@components': resolve(__dirname, './src/components'),
+            '@routes': resolve(__dirname, './src/routes'),
+            '@pages': resolve(__dirname, './src/pages'),
+            '@styles': resolve(__dirname, './src/styles'),
+            '@config': resolve(__dirname, './src/config'),
+            '@src': resolve(__dirname, './src'),
+            '@assets': resolve(__dirname, './assets'),
+            '@hooks': resolve(__dirname, './src/utils/hooks'),
+            '@static': resolve(__dirname, './src/static'),
+            '@store': resolve(__dirname, './src/store'),
+            '@utils': resolve(__dirname, './src/utils'),
         },
     },
     plugins: [solidPlugin()],
@@ -27,7 +27,15 @@ export default defineConfig({
         host: true,
         strictPort: true,
     },
+
     build: {
+        rollupOptions: {
+            input: {
+                main: resolve(__dirname, 'index.html'),
+                splashscreen: resolve(__dirname, 'src/windows/splashscreen/index.html'),
+                login: resolve(__dirname, 'src/windows/login/index.html'),
+            },
+        },
         // Tauri supports es2021
         target: ['es2021', 'chrome100', 'safari13', 'esnext'],
         // don't minify for debug builds

@@ -37,7 +37,7 @@ export default function Main() {
             <Show when={showEventModal()}>
                 <div class="fixed inset-0 z-50 bg-black bg-opacity-50">
                     <div class="absolute inset-0 z-50 flex justify-center items-center">
-                        <div class="bg-white rounded-lg shadow-2xl w-1/3">
+                        <div class="bg-[#e5e7eb] rounded-lg shadow-2xl w-1/3">
                             <EventModal />
                         </div>
                     </div>

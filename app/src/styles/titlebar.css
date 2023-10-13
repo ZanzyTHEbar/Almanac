@@ -1,6 +1,6 @@
 .titlebar {
     height: 30px;
-    background: #329ea3; /* #9a6998- alternative really nice pink*/
+    background: #e5e7eb; /* #9a6998- alternative really nice pink*/
     user-select: none;
     display: flex;
     justify-content: flex-end;

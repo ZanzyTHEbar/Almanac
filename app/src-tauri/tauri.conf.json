@@ -173,6 +173,17 @@
                 "url": "src/windows/splashscreen/index.html",
                 "label": "splashscreen",
                 "alwaysOnTop": true
+            },
+            {
+                "height": 633,
+                "width": 475,
+                "decorations": false,
+                "transparent": true,
+                "resizable": true,
+                "center": true,
+                "url": "src/windows/login/index.html",
+                "label": "login",
+                "alwaysOnTop": true
             }
         ],
         "systemTray": {

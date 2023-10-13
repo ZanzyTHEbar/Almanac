@@ -41,10 +41,6 @@ const AppRoutes: Component = () => {
         get('settings').then((settings) => {
             if (settings) {
                 debug('loading settings')
-                const activeUserName =
-                    typeof settings.user === 'string' ? settings.user : 'stranger'
-
-                setConnectedUser(activeUserName)
                 setEnableNotifications(settings.enableNotifications)
                 setEnableNotificationsSounds(settings.enableNotificationsSounds)
                 setGlobalNotificationsType(
@@ -98,16 +94,7 @@ const AppRoutes: Component = () => {
     })
 
     return (
-        <main class="pb-[5rem] w-[100%] px-8 max-w-[1920px]">
-            {/* <div class="header-wrapper">
-                <Header
-                    hideButtons={userIsInSettings()}
-                    name={connectedUserName() ? `Welcome${connectedUserName()}` : 'Welcome!'}
-                    onClick={() => navigate('/')}
-                />
-            </div> */}
-            {/* <div class="pt-[70px]">
-            </div> */}
+        <main class="w-screen h-screen">
             <Path />
         </main>
     )

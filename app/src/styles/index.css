@@ -91,7 +91,7 @@ body {
 }
 
 .calendar-main {
-    @apply bg-gray-100;
+    @apply bg-[#e5e7eb] h-screen overflow-hidden rounded-lg;
 }
 
 .App {
@@ -101,11 +101,3 @@ body {
     flex-direction: column;
     flex-grow: 1;
 }
-
-/* Clothoid Gradient */
-/* .main-div {
-    height: 100vh;
-    overflow: hidden;
-    border-radius: 0.4rem;
-    background: linear-gradient(247.32deg, #282830 0%, #181c28 100%);
-} */
