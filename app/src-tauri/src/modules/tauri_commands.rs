@@ -1,15 +1,15 @@
 use log::debug;
 use log::{error, info};
-use tauri::{self, Manager, Window};
+use tauri::{self, Manager};
 
 use tauri_plugin_store::with_store;
 
 //use specta::collect_types;
 //use tauri_specta::ts;
 use tauri_plugin_window_state::{AppHandleExt, StateFlags, WindowExt};
-use whoami::username;
+//use whoami::username;
 
-/// A command to get the user name from the system
+/* /// A command to get the user name from the system
 /// ## Returns
 /// - `user_name`: String - The user name of the current user
 #[tauri::command]
@@ -18,7 +18,7 @@ pub async fn get_user() -> Result<String, String> {
     let user_name: String = username();
     info!("User name: {}", user_name);
     Ok(user_name)
-}
+} */
 
 /// TODO: implement a way to open the logs dir from the UI
 //#[tauri::command(async)]

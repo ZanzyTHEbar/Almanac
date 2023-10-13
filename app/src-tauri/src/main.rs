@@ -66,7 +66,7 @@ async fn main() -> tauri::Result<()> {
     let app = app
         .invoke_handler(tauri::generate_handler![
             //tauri_commands::close_splashscreen,
-            tauri_commands::get_user,
+            //tauri_commands::get_user,
             tauri_commands::handle_save_window_state,
             tauri_commands::handle_load_window_state,
         ])

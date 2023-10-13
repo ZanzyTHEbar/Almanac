@@ -11,7 +11,7 @@
         "version": "0.1.0"
     },
     "tauri": {
-        "macOSPrivateApi": true,
+        "macOSPrivateApi": false,
         "allowlist": {
             "all": false,
             "clipboard": {
@@ -115,9 +115,9 @@
                 "../public/images/icons/icon-48x48.png",
                 "../public/images/icons/icon-128x128.png",
                 "../public/images/icons/144x144.png",
-                "../public/images/icons/favicon.ico"
+                "../public/images/icons/icon.ico"
             ],
-            "identifier": "com.outlook_night.dev",
+            "identifier": "com.outlook-night.dev",
             "longDescription": "",
             "resources": [],
             "shortDescription": "",

@@ -7,33 +7,9 @@ license = "MIT"
 repository = "https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display"
 default-run = "outlook_knight"
 edition = "2021"
-rust-version = "1.57"
+rust-version = "1.69"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dev-dependencies]
-anyhow = "1.0.75"
-
-[dependencies]
-serde = { workspace = true }
-tauri = { workspace = true }
-log = { workspace = true }
-specta = { workspace = true }
-dialoguer = { workspace = true }
-tauri-specta = { workspace = true }
-reqwest = { workspace = true }
-tiny_http = { workspace = true }
-whoami = "1.4.1"
-sysinfo = "0.29.10"
-sprintf = "0.1.3"
-lazy_static = "1.4.0"
-futures-util = "0.3.28"
-command-group = "2.1.0"
-serde_json = "1"
-graph-rs-sdk = "1.1.1"
-axum = "0.6"
-futures = "0.3"
-
 
 [dependencies.tauri-plugin-splashscreen]
 path = "src/lib/splashscreen"
@@ -67,10 +43,10 @@ branch = "dev"
 git = "https://github.com/tauri-apps/plugins-workspace"
 branch = "dev"
 
-[dependencies.tauri-plugin-authenticator]
-# TODO: https://github.com/tauri-apps/plugins-workspace/tree/v1/plugins/authenticator
-git = "https://github.com/tauri-apps/plugins-workspace"
-branch = "dev"
+#[dependencies.tauri-plugin-authenticator]
+## TODO: https://github.com/tauri-apps/plugins-workspace/tree/v1/plugins/authenticator
+#git = "https://github.com/tauri-apps/plugins-workspace"
+#branch = "dev"
 
 [dependencies.tauri-plugin-autostart]
 # TODO: https://github.com/tauri-apps/plugins-workspace/tree/v1/plugins/autostart
@@ -81,21 +57,37 @@ branch = "dev"
 version = "1"
 features = ["full"]
 
+[dev-dependencies]
+anyhow = "1.0.75"
+
+[dependencies]
+sysinfo = "0.29.10"
+serde = { workspace = true }
+serde_json = { workspace = true }
+tauri = { workspace = true }
+log = { workspace = true }
+specta = { workspace = true }
+dialoguer = { workspace = true }
+tauri-specta = { workspace = true }
+reqwest = { workspace = true }
+tiny_http = { workspace = true }
+graph-rs-sdk = { workspace = true }
+
 [workspace.dependencies]
 tauri-plugin-oauth = { git = "https://github.com/FabianLars/tauri-plugin-oauth", branch = "main" }
 dialoguer = "0.11.0"
 log = "0.4.20"
 tiny_http = "0.12.0"
 graph-rs-sdk = "1.1.1"
-reqwest = { version = "0.11", features = ["json", "rustls-tls"] }
-serde = { version = "1.0.188", features = ["derive"] }
+reqwest = { version = "0.11", features = ["rustls-tls", "json", "stream"] }
+serde = { version = "1.0.189", features = ["derive"] }
+serde_json = "1"
 specta = { version = "2.0.0-rc.5", features = ["functions", "tauri"] }
 tauri-specta = { version = "2.0.0-rc.2", features = [
     "javascript",
     "typescript",
 ] }
-tauri = { version = "1.4.1", features = [
-    "macos-private-api",
+tauri = { version = "1.5", features = [
     "process-exit",
     "protocol-asset",
     "fs-all",
@@ -137,7 +129,7 @@ custom-protocol = ["tauri/custom-protocol"]
 updater = ["tauri/updater"]
 
 [build-dependencies.tauri-build]
-version = "1.4.1"
+version = "1.5"
 features = []
 
 # //* If we need to implement OS specific commands, we can use these
