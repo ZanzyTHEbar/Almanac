@@ -10,14 +10,18 @@ export interface DayProps {
 
 const Day: Component<DayProps> = (props) => {
     const [dayEvents, setDayEvents] = createSignal<CalendarEvent[]>([])
-    const { setDaySelected, setShowEventModal, filteredEvents, setSelectedEvent } =
+    const { setDaySelected, setShowEventModal, filteredEvents, setSelectedEvent, _filteredEvents } =
         useCalendarContext()
 
     createEffect(() => {
-        const events = filteredEvents().filter(
-            (evt) => dayjs(evt.payload.date).format('DD-MM-YY') === props.day.format('DD-MM-YY'),
-        )
-        setDayEvents(events)
+        
+        console.log('[Day Events]: ', props.day.format('DD-MM-YY'), ' - ', filteredEvents().length)
+        /* const events = filteredEvents().filter((evt) => {
+            console.log('[Event Debug]: ', evt.payload.date)
+            return dayjs(evt.payload.date).format('DD-MM-YY') === props.day.format('DD-MM-YY')
+        })
+        console.log(events)
+        setDayEvents(events) */
     })
 
     const getCurrentDayClass = () => {
@@ -28,12 +32,8 @@ const Day: Component<DayProps> = (props) => {
 
     return (
         <div
-            class="border border-gray-200 flex flex-col"
+            class="border border-gray-200 flex flex-col grow-1 rounded-[8px]"
             style={{
-                'border-top-left-radius': '8px',
-                'border-top-right-radius': '8px',
-                'border-bottom-left-radius': '8px',
-                'border-bottom-right-radius': '8px',
                 'box-shadow':
                     'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
             }}>

@@ -14,3 +14,4 @@ specta = { workspace = true }
 tauri = { workspace = true }
 tauri-specta = { workspace = true }
 reqwest = { workspace = true }
+graph-rs-sdk = { workspace = true }

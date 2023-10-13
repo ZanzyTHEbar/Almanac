@@ -9,7 +9,6 @@ edition = "2021"
 etvr-utils = { path = "../util" }
 thiserror = "1"
 serde_json = "1"
-graph-rs-sdk = "1.1.1"
 axum = "0.6"
 futures = "0.3"
 chrono = { version = "0.4.26", default-features = false, features = ["std"] }
@@ -30,11 +29,13 @@ tracing = "0.1.37"
 tracing-error = "0.2.0"
 veil = "0.1.6"
 async-trait = "0.1.73"
+graph-rs-sdk = { workspace = true }
 serde = { workspace = true }
 specta = { workspace = true }
 tauri = { workspace = true }
 tauri-specta = { workspace = true }
 log = { workspace = true }
+tiny_http = { workspace = true }
 tauri-plugin-oauth = { workspace = true }
 
 [dev-dependencies]

@@ -69,7 +69,7 @@ const AppRoutes: Component = () => {
         return settings
     }
 
-    const handleSaveSettings = async () => {
+    const handleSaveSettings = () => {
         // check if the settings have changed and save to the store if they have
         get('settings').then((storedSettings) => {
             if (!isEqual(storedSettings, createSettingsObject())) {

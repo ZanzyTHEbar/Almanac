@@ -1,16 +1,16 @@
-use tauri::{
-    plugin::{Builder, TauriPlugin},
-    AppHandle, Manager, Runtime, Window,
-};
-
-use reqwest::Client;
+//use reqwest::Client;
 use serde::{Deserialize, Serialize};
 use std::sync::{Arc, Mutex};
+
+use tauri::{
+    plugin::{Builder, TauriPlugin},
+    AppHandle, Manager, Runtime,
+};
 
 use etvr_utils::{errors::ETVResult, prelude::*};
 
 use graph_rs_sdk::oauth::{AccessToken, OAuth};
-use graph_rs_sdk::*;
+//use graph_rs_sdk::*;
 
 use tauri_plugin_oauth::start;
 
@@ -31,35 +31,38 @@ pub struct User {
 }
 
 #[derive(Debug)]
-pub struct GraphAPIPlugin<R: Runtime> {
-    pub app_handle: AppHandle<R>,
+pub struct GraphAPIPlugin {
     pub user: Option<User>,
     pub redirect_uri: Arc<Mutex<Option<String>>>,
     pub port: Arc<Mutex<Option<u16>>>,
+    pub code_ready: Arc<Mutex<bool>>,
+    code: Arc<Mutex<Option<AccessCode>>>,
 }
 
-impl<R: Runtime> Clone for GraphAPIPlugin<R> {
-    fn clone(&self) -> Self {
-        Self {
-            app_handle: self.app_handle.clone(),
+impl Clone for GraphAPIPlugin {
+    fn clone(&self) -> GraphAPIPlugin {
+        GraphAPIPlugin {
             user: self.user.clone(),
             redirect_uri: self.redirect_uri.clone(),
             port: self.port.clone(),
+            code_ready: self.code_ready.clone(),
+            code: self.code.clone(),
         }
     }
 }
 
-impl<R: Runtime> GraphAPIPlugin<R> {
-    fn new(app_handle: AppHandle<R>) -> Self {
+impl GraphAPIPlugin {
+    fn new() -> Self {
         Self {
-            app_handle,
             user: None,
-            redirect_uri: Arc::new(Mutex::new(None)),
-            port: Arc::new(Mutex::new(Some(8000))),
+            redirect_uri: Arc::new(Mutex::new(Some("http://localhost".to_string()))),
+            port: Arc::new(Mutex::new(None)),
+            code_ready: Arc::new(Mutex::new(false)),
+            code: Arc::new(Mutex::new(None)),
         }
     }
 
-    pub async fn set_and_req_access_code(self, access_code: AccessCode) -> GraphResult<()> {
+    pub async fn set_and_req_access_code(self, access_code: AccessCode) -> ETVResult<()> {
         let mut oauth = self.oauth_client();
         // The response type is automatically set to token and the grant type is automatically
         // set to authorization_code if either of these were not previously set.
@@ -90,7 +93,25 @@ impl<R: Runtime> GraphAPIPlugin<R> {
         Ok(())
     }
 
-    async fn handle_redirect(self, code_option: Option<AccessCode>) -> Result<Box<String>, Error> {
+    fn is_ready(&self) -> bool {
+        return *self.code_ready.lock().unwrap();
+    }
+
+    fn set_code_ready(&self) {
+        *self.code_ready.lock().unwrap() = true;
+    }
+
+    fn get_access_code(&self) -> Option<AccessCode> {
+        let code = self.code_ready.lock().unwrap();
+        if *code {
+            return Some(AccessCode {
+                code: self.code.lock().unwrap().clone().unwrap().code,
+            });
+        }
+        None
+    }
+
+    /*   async fn handle_redirect(&self, code_option: Option<AccessCode>) -> ETVResult<Box<String>> {
         match code_option {
             Some(access_code) => {
                 // Print out the code for debugging purposes.
@@ -99,7 +120,7 @@ impl<R: Runtime> GraphAPIPlugin<R> {
                 // Set the access code and request an access token.
                 // Callers should handle the Result from requesting an access token
                 // in case of an error here.
-                self.set_and_req_access_code(access_code).await;
+                self.clone().set_and_req_access_code(access_code).await?;
 
                 // Generic login page response.
                 Ok(Box::new(
@@ -110,12 +131,17 @@ impl<R: Runtime> GraphAPIPlugin<R> {
                 "No access code was returned from the authorization server.".to_string(),
             )),
         }
-    }
+    } */
 
     fn oauth_client(self) -> OAuth {
         let mut oauth = OAuth::new();
 
-        let redirect_uri = f!("http://localhost:{}", self.port.lock().unwrap().unwrap());
+        let redirect_uri_result = self.redirect_uri.lock().unwrap().clone();
+
+        let redirect_uri = match redirect_uri_result {
+            Some(uri) => f!("{}:{}", uri, self.port.lock().unwrap().unwrap()),
+            None => f!("http://localhost:{}", self.port.lock().unwrap().unwrap()),
+        };
 
         oauth
             .client_id(CLIENT_ID)
@@ -133,20 +159,10 @@ impl<R: Runtime> GraphAPIPlugin<R> {
         oauth
     }
 
-    /// # Example
-    /// ```
-    /// use graph_rs_sdk::*:
-    ///
-    /// #[tokio::main]
-    /// async fn main() {
-    ///   start_server_main().await;
-    /// }
-    /// ```
-    pub async fn start_server_main(&self) -> &Self {
+    pub async fn start_auth_client(&self) -> &Self {
         let mut oauth = self.clone().oauth_client();
         let mut request = oauth.build_async().authorization_code_grant();
         request.browser_authorization().open().unwrap();
-
         self
     }
 }
@@ -154,88 +170,77 @@ impl<R: Runtime> GraphAPIPlugin<R> {
 #[tauri::command]
 #[specta::specta]
 async fn start_auth<R: Runtime>(app: AppHandle<R>) {
-    info!("Starting local auth server");
+    info!("[GraphAPIPlugin - start_auth]: Setting up redirect Listener");
 
-    let app_handler = app.clone();
-
-    let app = app_handler.clone();
-    let binding = app.state::<GraphAPIPlugin<R>>();
-    app_handler.listen_global("oauth://url", move |msg| {
+    //plugin.handle_redirect(code_option);
+    let app = app.clone();
+    let app_handle = app.app_handle();
+    app.listen_global("oauth://url", move |msg| {
         let url = msg.payload().unwrap().to_string();
 
-        print!("URL: {}", url);
+        debug!("[GraphAPIPlugin - start_auth]: URL: {}", url);
 
-        let codeoption = Some(AccessCode {
+        let code_option = Some(AccessCode {
             code: url.split("code=").collect::<Vec<&str>>()[1].to_string(),
         });
 
-        println!("Code: {:#?}", codeoption);
-        //
-        //binding.handle_redirect(codeoption);
+        debug!("[GraphAPIPlugin - start_auth]: Code: {:#?}", code_option);
+
+        match code_option {
+            Some(access_code) => {
+                // Print out the code for debugging purposes.
+                println!("{:#?}", access_code);
+                // Generic login page response.
+                app_handle
+                    .emit_all("oauth://code", access_code.code)
+                    .unwrap_or(error!("[GraphAPIPlugin - start_auth]: Failed to emit code to listeners"));
+            }
+            None => println!("[GraphAPIPlugin - start_auth]: No access code was returned from the authorization server."),
+        }
     });
-    info!("Local auth server started");
-}
 
-/// A command to start the local auth server
-/// ## Arguments
-/// - `window` The window to send the redirect_uri to
-/// ## Returns
-/// - `port`: u16 - The port the server is running on
-#[tauri::command]
-#[specta::specta]
-pub async fn start_server<R: Runtime>(app: AppHandle<R>, window: Window) -> Result<(), String> {
-    let app_handler = app.clone();
-
-    start_auth(app_handler.clone()).await;
-
-    let mut port = app_handler
-        .state::<GraphAPIPlugin<R>>()
-        .port
-        .lock()
-        .unwrap()
-        .unwrap();
-
-    let port_ = start(move |url| {
-        // Because of the unprotected localhost port, we must verify the URL here.
-        // Preferebly send back only the token, or nothing at all if we can handle everything else in Rust.
-        let _ = window.emit("redirect_uri", url);
-    })
-    .map_err(|err| err.to_string())?;
-
-    port = port_;
-
-    let result = app_handler
-        .state::<GraphAPIPlugin<R>>()
-        .start_server_main()
-        .await;
-
-    Ok(())
+    //port = port_;
 }
 
 macro_rules! specta_builder {
     ($e:expr, Runtime) => {
         ts::builder()
-            .commands(collect_commands![start_auth::<$e>, start_server::<$e>])
+            .commands(collect_commands![start_auth::<$e>])
             .path(generate_plugin_path(PLUGIN_NAME))
             .config(specta::ts::ExportConfig::default().formatter(specta::ts::prettier))
         //.events(collect_events![RandomNumber])
     };
 }
 
-pub fn init<R: Runtime>() -> TauriPlugin<tauri::Wry> {
+pub fn init<R: Runtime>() -> TauriPlugin<R> {
     //let plugin_utils = specta_builder!(R, Runtime).into_plugin_utils(PLUGIN_NAME);
     Builder::new(PLUGIN_NAME)
         //.invoke_handler(plugin_utils.invoke_handler)
         .setup(move |app| {
             let app = app.clone();
 
-            //(plugin_utils.setup)(&app);
+            let port = start(move |url| {
+                debug!("[GraphAPIPlugin - Init]: Local auth server started");
 
-            let plugin = GraphAPIPlugin::new(app.app_handle());
-            app.manage(plugin);
+                debug!("[GraphAPIPlugin - Init]: URL: {}", url);
+
+                // Because of the unprotected localhost port, we must verify the URL here.
+                // Preferebly send back only the token, or nothing at all if we can handle everything else in Rust.
+                let _ = app.emit_all("redirect_uri", url);
+            })
+            .map_err(|err| err.to_string())
+            .expect("Failed to start server");
+
+            debug!(
+                "[GraphAPIPlugin - Init]: Local auth server started on port {}",
+                port
+            );
+
+            info!("[GraphAPIPlugin - Init]: Starting local auth listener");
+            //(plugin_utils.setup)(&app);
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![start_auth, start_server])
+        .invoke_handler(tauri::generate_handler![start_auth])
         .build()
 }
 

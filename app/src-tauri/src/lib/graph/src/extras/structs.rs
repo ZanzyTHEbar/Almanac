@@ -131,8 +131,6 @@ impl CalendarToken {
 pub struct CalendarProfile {
     id: String,
     name: String,
-    skins: Vec<Skin>,
-    capes: Vec<Option<serde_json::Value>>,
 }
 
 impl CalendarProfile {
@@ -140,14 +138,4 @@ impl CalendarProfile {
     pub fn id(&self) -> &str {
         self.id.as_ref()
     }
-}
-
-#[derive(Debug, Deserialize, Clone)]
-#[allow(dead_code)]
-pub struct Skin {
-    id: String,
-    state: String,
-    url: String,
-    variant: String,
-    alias: Option<String>,
 }

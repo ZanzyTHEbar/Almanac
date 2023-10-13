@@ -1,14 +1,6 @@
 {
   "folders": [
     {
-      "name": "Tauri",
-      "path": "./app/src-tauri"
-    },
-    {
-      "name": "FrontEnd",
-      "path": "./app/src"
-    },
-    {
       "name": "Project",
       "path": "./app"
     },
@@ -18,9 +10,18 @@
     }
   ],
   "settings": {
+    "tailwindCSS.includeLanguages": {
+      "html": "html",
+      "javascript": "javascript",
+      "css": "css"
+    },
+    "editor.quickSuggestions": {
+      "strings": true
+    },
     "cSpell.words": [
       "chrono",
       "Clothoid",
+      "nanos",
       "notif",
       "notifs",
       "Pkce",

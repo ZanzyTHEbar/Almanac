@@ -4,8 +4,6 @@ use tauri::{self, Manager, Window};
 
 use tauri_plugin_store::with_store;
 
-
-
 //use specta::collect_types;
 //use tauri_specta::ts;
 use tauri_plugin_window_state::{AppHandleExt, StateFlags, WindowExt};
@@ -101,10 +99,8 @@ pub fn handle_debug<R: tauri::Runtime>(
         "info" => log::LevelFilter::Info,
         "debug" => log::LevelFilter::Debug,
         "trace" => log::LevelFilter::Trace,
-        _ => log::LevelFilter::Info,
+        _ => log::LevelFilter::Debug,
     };
     // return the result
     Ok(log_level)
 }
-
-

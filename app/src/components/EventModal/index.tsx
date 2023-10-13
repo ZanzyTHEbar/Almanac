@@ -1,11 +1,28 @@
+import {
+    FaSolidTrashCan,
+    FaRegularBookmark,
+    FaSolidCheck,
+    FaRegularClock,
+    FaSolidT,
+} from 'solid-icons/fa'
+import { RiEditorDraggable } from 'solid-icons/ri'
 import { createSignal, For, Show } from 'solid-js'
+import CloseIcon from '@components/CloseIcon'
+import SegmentIcon from '@components/SegmentIcon'
 import { useCalendarContext } from '@src/store/context/calendar'
 import { CalendarEvent, CalendarEventContent } from '@static/types/interfaces'
 
 const labelsClasses = ['indigo', 'gray', 'green', 'blue', 'red', 'purple']
 
 export default function EventModal() {
-    const { setShowEventModal, daySelected, setSavedEvents, selectedEvent } = useCalendarContext()
+    const {
+        setLabels,
+        setShowEventModal,
+        daySelected,
+        setSavedEvents,
+        selectedEvent,
+        savedEvents,
+    } = useCalendarContext()
 
     const [title, setTitle] = createSignal(selectedEvent() ? selectedEvent()!.payload.title : '')
     const [description, setDescription] = createSignal(
@@ -33,7 +50,10 @@ export default function EventModal() {
             payload: calendarContent,
         }
 
+        console.log(calendarEvent)
         setSavedEvents(calendarEvent)
+        // TODO: Change this to localForage or Tauri Store
+        localStorage.setItem('savedEvents', JSON.stringify(savedEvents()))
 
         setShowEventModal(false)
     }
@@ -41,7 +61,9 @@ export default function EventModal() {
         <div class="h-screen w-full fixed left-0 top-0 flex justify-center items-center">
             <form class="bg-white rounded-lg shadow-2xl w-1/3">
                 <header class="bg-gray-100 px-4 py-2 flex justify-between items-center">
-                    <span class="material-icons-outlined text-gray-400">drag_handle</span>
+                    <span class="text-gray-400">
+                        <RiEditorDraggable fill="#000000" size={25} />
+                    </span>
                     <div>
                         <Show when={selectedEvent()}>
                             <span
@@ -54,19 +76,26 @@ export default function EventModal() {
                                     })
                                     setShowEventModal(false)
                                 }}
-                                class="material-icons-outlined text-gray-400 cursor-pointer">
-                                delete
+                                class="text-gray-400 cursor-pointer">
+                                <FaSolidTrashCan fill="#FF0000" size={15} />
                             </span>
                         </Show>
 
-                        <button onClick={() => setShowEventModal(false)}>
-                            <span class="material-icons-outlined text-gray-400">close</span>
+                        <button
+                            type="button"
+                            class="close_button rounded-full"
+                            onClick={() => setShowEventModal(false)}>
+                            <CloseIcon />
                         </button>
                     </div>
                 </header>
                 <div class="p-3">
                     <div class="grid grid-cols-1/5 items-end gap-y-7">
-                        <div />
+                        <div class="pb-3">
+                            <span class="text-gray-400">
+                                <FaSolidT fill="#000000" size={25} />
+                            </span>
+                        </div>
                         <input
                             type="text"
                             name="title"
@@ -76,9 +105,13 @@ export default function EventModal() {
                             class="pt-3 border-0 text-gray-600 text-xl font-semibold pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500"
                             onChange={(e) => setTitle(e.target.value)}
                         />
-                        <span class="material-icons-outlined text-gray-400">schedule</span>
-                        <p>{daySelected().format('dddd, MMMM DD')}</p>
-                        <span class="material-icons-outlined text-gray-400">segment</span>
+                        <span class="text-gray-400">
+                            <FaRegularClock fill="#000000" size={25} />
+                        </span>
+                        <p class="mr-44">{daySelected().format('dddd, MMMM DD')}</p>
+                        <span class="pb-2">
+                            <SegmentIcon fill="text-gray-800" />
+                        </span>
                         <input
                             type="text"
                             name="description"
@@ -88,7 +121,9 @@ export default function EventModal() {
                             class="pt-3 border-0 text-gray-600 pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500"
                             onChange={(e) => setDescription(e.target.value)}
                         />
-                        <span class="material-icons-outlined text-gray-400">bookmark_border</span>
+                        <span class="text-gray-400">
+                            <FaRegularBookmark fill="#000000" size={25} />
+                        </span>
                         <div class="flex gap-x-2">
                             <For each={labelsClasses}>
                                 {(lblClass) => (
@@ -99,11 +134,11 @@ export default function EventModal() {
                                             )
                                         }
                                         class={`bg-${lblClass}-500 w-6 h-6 rounded-full flex items-center justify-center cursor-pointer`}>
-                                        {selectedLabel() === lblClass && (
-                                            <span class="material-icons-outlined text-white text-sm">
-                                                check
+                                        <Show when={selectedLabel() === lblClass}>
+                                            <span class="text-white text-sm">
+                                                <FaSolidCheck fill="#FFFFFF" size={15} />
                                             </span>
-                                        )}
+                                        </Show>
                                     </span>
                                 )}
                             </For>
@@ -111,10 +146,7 @@ export default function EventModal() {
                     </div>
                 </div>
                 <footer class="flex justify-end border-t p-3 mt-5">
-                    <button
-                        type="submit"
-                        onClick={handleSubmit}
-                        class="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded text-white hover:shadow-xl focus:bg-blue-700 transition duration-200 ease-in focus:shadow-inner">
+                    <button type="submit" onClick={handleSubmit} class="submit_button">
                         Save
                     </button>
                 </footer>

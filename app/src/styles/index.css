@@ -90,6 +90,10 @@ body {
     font-size: 14px;
 }
 
+.calendar-main {
+    @apply bg-gray-100;
+}
+
 .App {
     text-align: center;
     height: 100vh;

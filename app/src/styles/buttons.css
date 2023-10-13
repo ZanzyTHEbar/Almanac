@@ -1,0 +1,12 @@
+@layer components {
+    .close_button {
+        @apply bg-gray-300 hover:bg-gray-400 focus:bg-gray-600 flex-none w-6 h-6 p-1 text-gray-50;
+        @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75;
+    }
+
+    .submit_button {
+        @apply bg-blue-500 px-6 py-2 rounded text-white;
+        @apply hover:shadow-xl hover:bg-blue-600 focus:bg-blue-700 focus:shadow-inner;
+        @apply transition duration-200 ease-in;
+    }
+}

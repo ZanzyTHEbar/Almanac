@@ -1,4 +1,7 @@
 {
+    "editor.quickSuggestions": {
+        "strings": true
+    },
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true // ESLint auto format on save
     },

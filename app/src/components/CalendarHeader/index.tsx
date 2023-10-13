@@ -18,7 +18,7 @@ const CalendarHeader = () => {
     }
     return (
         <header
-            class="px-4 py-2 flex items-center"
+            class="px-4 py-2 flex items-center pt-"
             style={{
                 'padding-top': '20px',
             }}>
@@ -30,12 +30,12 @@ const CalendarHeader = () => {
                 Today
             </button>
             <button onClick={handlePrevMonth}>
-                <span class="material-icons-outlined cursor-pointer text-gray-600 mx-2">
+                <span class="close_button cursor-pointer text-gray-600 mx-2">
                     chevron_left
                 </span>
             </button>
             <button onClick={handleNextMonth}>
-                <span class="material-icons-outlined cursor-pointer text-gray-600 mx-2">
+                <span class="close_button cursor-pointer text-gray-600 mx-2">
                     chevron_right
                 </span>
             </button>

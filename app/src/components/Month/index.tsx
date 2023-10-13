@@ -7,22 +7,11 @@ export interface MonthProps {
 
 const Month: Component<MonthProps> = (props) => {
     return (
-        <div
-            class="flex-1 grid grid-cols-7 grid-rows-6"
-            style={{
-                'border-top-left-radius': '8px',
-                'border-top-right-radius': '8px',
-                gap: '3px',
-                padding: '3px',
-            }}>
+        <div class="p-3 gap-[3px] flex-1 grid grid-cols-7 grid-rows-6 rounded-[8px]">
             <For each={props.month}>
                 {(row, i) => (
                     <For data-index={i()} each={row}>
-                        {(day, j) => (
-                            <div>
-                                <Day data-index={j()} day={day} rowIdx={i()} />
-                            </div>
-                        )}
+                        {(day, j) => <Day data-index={j()} day={day} rowIdx={i()} />}
                     </For>
                 )}
             </For>

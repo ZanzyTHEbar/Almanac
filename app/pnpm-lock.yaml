@@ -86,6 +86,9 @@ importers:
       solidjs-use:
         specifier: ^2.3.0
         version: 2.3.0
+      tauri-plugin-graph-api:
+        specifier: workspace:*
+        version: link:src-tauri/src/lib/graph
       tauri-plugin-log-api:
         specifier: github:tauri-apps/tauri-plugin-log
         version: github.com/tauri-apps/tauri-plugin-log/1a369766cf90f3aed9c2b7c68b70bf39081538b3
@@ -186,6 +189,12 @@ importers:
       vite-plugin-solid:
         specifier: ^2.7.0
         version: 2.7.0(solid-js@1.7.12)(vite@4.4.11)
+
+  src-tauri/src/lib/graph:
+    devDependencies:
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
 
   src-tauri/src/lib/splashscreen:
     devDependencies:

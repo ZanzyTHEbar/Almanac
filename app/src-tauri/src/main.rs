@@ -69,7 +69,6 @@ async fn main() -> tauri::Result<()> {
             tauri_commands::get_user,
             tauri_commands::handle_save_window_state,
             tauri_commands::handle_load_window_state,
-            tauri_commands::start_server,
         ])
         // allow only one instance and propagate args and cwd to existing instance
         .plugin(tauri_plugin_single_instance::init(|app, args, cwd| {
@@ -83,6 +82,7 @@ async fn main() -> tauri::Result<()> {
         .plugin(tauri_plugin_upload::init())
         // splashscreen support
         .plugin(tauri_plugin_splashscreen::init())
+        .plugin(tauri_plugin_graph_api::init())
         // save window position and size between sessions
         .plugin(tauri_plugin_window_state::Builder::default().build())
         .setup(move |app| {
@@ -100,21 +100,21 @@ async fn main() -> tauri::Result<()> {
             let app_handle = app.handle();
 
             app.windows().iter().for_each(|(_, window)| {
-        tokio::spawn({
-          let window = window.clone();
-
-          async move {
-            sleep(Duration::from_secs(3)).await;
-            if !window.is_visible().unwrap_or(true) {
-              error!("[]:  Window did not emit `app_ready` event in time, showing it now.");
-
-              window.show().expect("Main window failed to show");
-            }
-          }
-        });
-
-        window.set_decorations(false).unwrap();
-      });
+                tokio::spawn({
+                  let window = window.clone();
+                
+                  async move {
+                    sleep(Duration::from_secs(3)).await;
+                    if !window.is_visible().unwrap_or(true) {
+                      error!("[]:  Window did not emit `app_ready` event in time, showing it now.");
+                    
+                      window.show().expect("Main window failed to show");
+                    }
+                  }
+                });
+            
+                window.set_decorations(false).unwrap();
+            });
 
             // Configure IPC for custom protocol
             app.ipc_scope().configure_remote_access(

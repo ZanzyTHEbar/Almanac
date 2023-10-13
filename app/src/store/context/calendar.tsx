@@ -29,6 +29,7 @@ interface CalendarContext {
     setSelectedEvent: (state: CalendarEvent | null) => void
     setLabels: (label: CalendarLabel[]) => void
     setLabel: (label: CalendarLabel) => void
+    _filteredEvents: () => void
 }
 
 const CalendarContext = createContext<CalendarContext>()
@@ -92,6 +93,15 @@ export const CalendarProvider: Component<Context> = (props) => {
     const setLabels = (label: CalendarLabel[]) => {
         setState(
             produce((s) => {
+                const new_labels = [...new Set(label.map((evt) => evt.label))].map((_label) => {
+                    const currentLabel = s.labels.find((lbl) => lbl.label === _label)
+                    return {
+                        _label,
+                        checked: currentLabel ? currentLabel.checked : true,
+                    }
+                })
+                console.log('[Calendar.tsx]:', new_labels)
+
                 s.labels = label
             }),
         )
@@ -105,23 +115,38 @@ export const CalendarProvider: Component<Context> = (props) => {
         )
     }
 
-    const filteredEvents = createMemo(() => {
+    const _filteredEvents = () => {
+        setState(
+            produce((s) => {
+                s.filteredEvents = s.savedEvents.filter((evt) =>
+                    s.labels
+                        .filter((lbl) => lbl.checked)
+                        .map((lbl) => lbl.label)
+                        .includes(evt.label),
+                )
+            }),
+        )
+    }
+
+    /* const filteredEvents = createMemo(() => {
         return appState().savedEvents.filter((evt) =>
             appState()
                 .labels.filter((lbl) => lbl.checked)
                 .map((lbl) => lbl.label)
                 .includes(evt.label),
         )
-    })
+    }) */
 
     const setSavedEvents = (action: CalendarEvent) => {
+        console.log(action)
+        console.log(appState().savedEvents)
         setState(
             produce((s) => {
                 const currentEvents = s.savedEvents
 
                 switch (action.type) {
                     case 'push':
-                        return [...currentEvents, action]
+                        return currentEvents.push(action)
                     case 'update':
                         return currentEvents.map((evt) => (evt.uuid === action.uuid ? evt : action))
                     case 'delete':
@@ -131,32 +156,12 @@ export const CalendarProvider: Component<Context> = (props) => {
                 }
             }),
         )
+        console.log(appState().savedEvents)
     }
 
     //#endregion
 
     //#region Effects
-    createEffect(() => {
-        // TODO: Change this to localForage or Tauri Store
-        localStorage.setItem('savedEvents', JSON.stringify(appState().savedEvents))
-    })
-
-    createEffect(() => {
-        setState(
-            produce((s) => {
-                const new_labels = [...new Set(s.savedEvents.map((evt) => evt.label))].map(
-                    (label) => {
-                        const currentLabel = s.labels.find((lbl) => lbl.label === label)
-                        return {
-                            label,
-                            checked: currentLabel ? currentLabel.checked : true,
-                        }
-                    },
-                )
-                setLabels(new_labels)
-            }),
-        )
-    })
 
     createEffect(() => {
         setState(
@@ -188,12 +193,14 @@ export const CalendarProvider: Component<Context> = (props) => {
     const selectedEvent = createMemo(() => appState().selectedEvent)
     const labels = createMemo(() => appState().labels)
     const savedEvents = createMemo(() => appState().savedEvents)
+    const filteredEvents = createMemo(() => appState().filteredEvents)
 
     //#endregion
 
     onMount(() => {
         // TODO: Change this to localForage or Tauri Store
         const storageEvents = localStorage.getItem('savedEvents')
+        console.log('[Load Store]:', JSON.parse(storageEvents!))
         const parsedEvents: CalendarEvent = storageEvents ? JSON.parse(storageEvents) : []
         setSavedEvents(parsedEvents)
     })
@@ -217,6 +224,7 @@ export const CalendarProvider: Component<Context> = (props) => {
                 setSelectedEvent,
                 setLabels,
                 setLabel,
+                _filteredEvents,
             }}>
             {props.children}
         </CalendarContext.Provider>

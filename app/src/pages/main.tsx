@@ -33,7 +33,7 @@ export default function Main() {
     })
 
     const Main = () => (
-        <main>
+        <div class="calendar-main">
             <Show when={showEventModal()}>
                 <div class="fixed inset-0 z-50 bg-black bg-opacity-50">
                     <div class="absolute inset-0 z-50 flex justify-center items-center">
@@ -49,17 +49,12 @@ export default function Main() {
                     height: '97vh',
                 }}>
                 <CalendarHeader />
-                <div
-                    class="flex flex-1"
-                    style={{
-                        'border-top-left-radius': '8px',
-                        'border-top-right-radius': '8px',
-                    }}>
+                <div class="flex flex-1 rounded-[8px]">
                     <Sidebar />
                     <Month month={currentMonth()} />
                 </div>
             </div>
-        </main>
+        </div>
     )
 
     return <Main />

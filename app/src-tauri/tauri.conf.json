@@ -11,6 +11,7 @@
         "version": "0.1.0"
     },
     "tauri": {
+        "macOSPrivateApi": true,
         "allowlist": {
             "all": false,
             "clipboard": {
@@ -175,7 +176,7 @@
             }
         ],
         "systemTray": {
-            "iconPath": "../public/images/icons/icon-48x48.png",
+            "iconPath": "../public/images/icons/32x32.png",
             "iconAsTemplate": true
         }
     }

@@ -1,6 +1,8 @@
+import { appDataDir } from '@tauri-apps/api/path'
 import { lazy, onMount, Suspense } from 'solid-js'
 import { useAppContextMain } from './store/context/main'
 import { AppProvider } from '@src/store/context/app'
+import { startAuth } from 'tauri-plugin-graph-api'
 
 const AppRoutes = lazy(() => import('@routes/routes'))
 //const NewContextMenu = lazy(() => import('@components/NewMenu'))
@@ -13,6 +15,13 @@ const App = () => {
     onMount(() => {
         handleTitlebar(true)
         handleAppBoot()
+        startAuth().then((res) => {
+            console.log(res)
+        })
+
+        appDataDir().then((res) => {
+            console.log(res)
+        })
     })
 
     return (
