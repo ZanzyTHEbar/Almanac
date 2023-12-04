@@ -3,9 +3,9 @@ import {
     isPermissionGranted,
     requestPermission,
 } from '@tauri-apps/api/notification'
-import { ToasterStore } from 'solid-headless'
 import { createContext, useContext, createMemo, type Component, Accessor } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
+import { ToasterStore } from 'terracotta'
 import type { Context } from '@static/types'
 import type {
     Notifications,

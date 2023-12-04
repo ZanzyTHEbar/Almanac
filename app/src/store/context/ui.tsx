@@ -2,34 +2,24 @@ import { Accessor, createContext, createMemo, useContext, type Component } from 
 import { createStore, produce } from 'solid-js/store'
 import type { Context } from '@static/types'
 import { MenuOpen, UiStore } from '@src/static/types/interfaces'
-import { loaderType } from '@static/types/enums'
 
 interface AppUIContext {
-    connectingStatus: Accessor<boolean | undefined>
-    loaderStatus: Accessor<Record<loaderType, boolean> | undefined>
     openModalStatus: Accessor<boolean | undefined>
     menuOpenStatus: Accessor<MenuOpen | null | undefined>
-    connectedUserName: Accessor<string>
-    showCameraView: Accessor<boolean | undefined>
+    showSidebar: Accessor<boolean>
     showNotifications: Accessor<boolean | undefined>
     setMenu: (menuOpen: MenuOpen | null) => void
-    setConnecting: (connecting: boolean) => void
     setOpenModal: (openModal: boolean) => void
-    setConnectedUser: (userName: string) => void
-    setLoader: (type: loaderType, value: boolean) => void
-    setShowCameraView: (showCameraView: boolean) => void
+    setShowSidebar: (showSidebar: boolean) => void
 }
 
 const AppUIContext = createContext<AppUIContext>()
 export const AppUIProvider: Component<Context> = (props) => {
     const defaultState: UiStore = {
-        loader: { [loaderType.MDNS_CONNECTING]: false, [loaderType.REST_CLIENT]: false },
-        connecting: false,
+        showSidebar: true,
         openModal: false,
         menuOpen: null,
-        connectedUser: '',
         loggedIn: false,
-        showCameraView: false,
         showNotifications: true,
     }
 
@@ -43,14 +33,6 @@ export const AppUIProvider: Component<Context> = (props) => {
         )
     }
 
-    const setConnecting = (connecting: boolean) => {
-        setState(
-            produce((s) => {
-                s.connecting = connecting
-            }),
-        )
-    }
-
     const setOpenModal = (openModal: boolean) => {
         setState(
             produce((s) => {
@@ -59,57 +41,31 @@ export const AppUIProvider: Component<Context> = (props) => {
         )
     }
 
-    const setConnectedUser = (userName: string) => {
+    const setShowSidebar = (showSidebar: boolean) => {
         setState(
             produce((s) => {
-                s.connectedUser = userName
-            }),
-        )
-    }
-
-    const setLoader = (type: loaderType, value: boolean) => {
-        setState(
-            produce((s) => {
-                if (s.loader) s.loader[type] = value
-            }),
-        )
-    }
-
-    const setShowCameraView = (showCameraView: boolean) => {
-        setState(
-            produce((s) => {
-                s.showCameraView = showCameraView
+                s.showSidebar = showSidebar
             }),
         )
     }
 
     const uiState = createMemo(() => state)
 
-    const connectingStatus = createMemo(() => uiState().connecting)
-    const loaderStatus = createMemo(() => uiState().loader)
     const openModalStatus = createMemo(() => uiState().openModal)
     const menuOpenStatus = createMemo(() => uiState().menuOpen)
-    const connectedUserName = createMemo(() => uiState().connectedUser)
-    const showCameraView = createMemo(() => uiState().showCameraView)
     const showNotifications = createMemo(() => uiState().showNotifications)
+    const showSidebar = createMemo(() => uiState().showSidebar)
 
     return (
         <AppUIContext.Provider
             value={{
-                connectingStatus,
-                loaderStatus,
                 openModalStatus,
                 menuOpenStatus,
-                connectedUserName,
-                showCameraView,
+                showSidebar,
                 showNotifications,
-
                 setMenu,
-                setConnecting,
                 setOpenModal,
-                setConnectedUser,
-                setLoader,
-                setShowCameraView,
+                setShowSidebar,
             }}>
             {props.children}
         </AppUIContext.Provider>

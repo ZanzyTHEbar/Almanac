@@ -21,17 +21,22 @@
     "cSpell.words": [
       "chrono",
       "Clothoid",
+      "daygrid",
+      "fullcalendar",
       "nanos",
       "notif",
       "notifs",
       "Pkce",
+      "preact",
       "Preferebly",
       "readwrite",
       "reqwest",
       "solidjs",
       "specta",
       "thiserror",
+      "timegrid",
       "Unlisten",
+      "vnode",
       "Xsts"
     ]
   }

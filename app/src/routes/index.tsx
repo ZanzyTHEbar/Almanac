@@ -1,4 +1,4 @@
-import { Component, lazy } from 'solid-js'
+import {  lazy } from 'solid-js'
 import type { RouteDefinition } from '@solidjs/router'
 
 const Home = lazy(() => import('@pages/main'))

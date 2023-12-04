@@ -1,10 +1,10 @@
 import dayjs from 'dayjs'
 
-import { ENotificationAction, ENotificationType, loaderType } from '../enums'
+import { ENotificationAction, ENotificationType } from '../enums'
 import type { CalendarEventTType, DebugMode } from '@static/types'
 import type { WebviewWindow } from '@tauri-apps/api/window'
-import type { ToasterStore } from 'solid-headless'
 import type { JSXElement } from 'solid-js'
+import type { ToasterStore } from 'terracotta'
 
 //* Utility Interfaces
 
@@ -125,12 +125,9 @@ export interface AppStoreNotifications {
 }
 
 export interface UiStore {
-    loader?: { [key in loaderType]: boolean }
-    connecting?: boolean
+    showSidebar: boolean
+    loggedIn: boolean
     openModal?: boolean
     menuOpen?: MenuOpen | null
-    showCameraView?: boolean
-    connectedUser: string
-    loggedIn: boolean
     showNotifications?: boolean
 }

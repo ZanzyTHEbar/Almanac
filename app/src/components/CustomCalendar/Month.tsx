@@ -1,5 +1,5 @@
-import { For, type Component, createEffect, createSignal, onMount } from 'solid-js'
-import Day, { dayjs } from '@components/Day'
+import { For, type Component, createSignal, onMount } from 'solid-js'
+import Day, { dayjs } from '@components/CustomCalendar/Day'
 
 export interface MonthProps {
     month: dayjs.Dayjs[][]

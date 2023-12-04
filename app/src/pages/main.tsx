@@ -1,36 +1,16 @@
-import { createSignal, createEffect, Show } from 'solid-js'
+import { Show } from 'solid-js'
+import BurgerMenuIcon from '@components/BurgerMenuIcon'
 import CalendarHeader from '@components/CalendarHeader'
-
 import EventModal from '@components/EventModal'
-import MSLogin from '@components/MSLogin'
-import Month from '@components/Month'
+import FullCalendar from '@components/FullCalendar'
 import Sidebar from '@components/Sidebar'
 import { useCalendarContext } from '@src/store/context/calendar'
 import { useAppContextMain } from '@src/store/context/main'
-import { getMonthDays } from '@utils/index'
+import { useAppUIContext } from '@src/store/context/ui'
 
 export default function Main() {
-    /* const [navState, setNavState] = React.useState({
-        dashboard: true,
-    });
-        settings: false,
-
-    const handleNavChange = (event) => {
-        setNavState({
-            ...navState,
-            dashboard: !navState.dashboard,
-            settings: !navState.settings,
-        });
-        console.log(event.currentTarget);
-    }; */
-
-    const [currentMonth, setCurrentMonth] = createSignal(getMonthDays())
-    const { monthIndex, showEventModal } = useCalendarContext()
-    const { loggedIn } = useAppContextMain()
-
-    createEffect(() => {
-        setCurrentMonth(getMonthDays(monthIndex()!))
-    })
+    const { showEventModal } = useCalendarContext()
+    const { showSidebar } = useAppUIContext()
 
     const Main = () => (
         <div class="calendar-main">
@@ -43,15 +23,23 @@ export default function Main() {
                     </div>
                 </div>
             </Show>
-            <div
-                class="h-fit flex flex-col"
-                style={{
-                    height: '97vh',
-                }}>
-                <CalendarHeader />
-                <div class="flex flex-1 rounded-[8px]">
-                    <Sidebar />
-                    <Month month={currentMonth()} />
+            <CalendarHeader />
+            <div class="flex flex-1 flex-row justify-center ">
+                <Show when={showSidebar()}>
+                    <Sidebar showSidebar={showSidebar()} />
+                </Show>
+                <div class="shadow-md border rounded-[8px] flex flex-1 grow h-screen w-screen justify-evenly overflow-y-auto">
+                    <div class={`p-3 ${showSidebar() ? 'flex flex-1 grow' : ''} rounded-[8px]`}>
+                        <Show when={!showSidebar()}>
+                            <BurgerMenuIcon
+                                class="pt-1 justify-start items-start"
+                                showSidebar={!showSidebar()}
+                            />
+                        </Show>
+                        <div class="flex flex-1 h-full w-full">
+                            <FullCalendar />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

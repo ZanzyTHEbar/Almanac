@@ -83,16 +83,13 @@ body {
     margin: 0;
     font-family: Ubuntu, 'times new roman', times, roman, serif;
     cursor: default;
-    background-color: transparent !important;
+    //background-color: transparent !important;
     width: 100%;
     height: 100%;
     text-align: center;
     font-size: 14px;
 }
 
-.calendar-main {
-    @apply bg-[#e5e7eb] h-screen overflow-hidden rounded-lg;
-}
 
 .App {
     text-align: center;
@@ -101,3 +98,4 @@ body {
     flex-direction: column;
     flex-grow: 1;
 }
+

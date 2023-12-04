@@ -1,6 +1,6 @@
-import { Toaster, ToasterStore, Transition, useToaster } from 'solid-headless'
 import { createEffect, createSignal, For, onCleanup } from 'solid-js'
 import { debug } from 'tauri-plugin-log-api'
+import { Toaster, ToasterStore, Transition, useToaster } from 'terracotta'
 import CustomToast from './CustomToast'
 import { useAppNotificationsContext } from '@src/store/context/notifications'
 import { Notifications } from '@static/types/interfaces'

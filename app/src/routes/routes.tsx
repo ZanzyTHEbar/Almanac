@@ -7,7 +7,7 @@ import { debug, error } from 'tauri-plugin-log-api'
 import { routes } from '.'
 import type { BackendConfig, PersistentSettings } from '@static/types'
 
-import { DevicePosition, ENotificationAction, ENotificationType } from '@static/types/enums'
+import { ENotificationAction, ENotificationType } from '@static/types/enums'
 import { useAppContext } from '@store/context/app'
 import { useAppNotificationsContext } from '@store/context/notifications'
 import { useAppUIContext } from '@store/context/ui'
@@ -34,7 +34,6 @@ const AppRoutes: Component = () => {
         checkPermission,
         addNotification,
     } = useAppNotificationsContext()
-    const { connectedUserName, setConnectedUser } = useAppUIContext()
 
     onMount(() => {
         //* load the app settings from the persistent store and assign to the global state
@@ -56,7 +55,6 @@ const AppRoutes: Component = () => {
 
     const createSettingsObject = () => {
         const settings: PersistentSettings = {
-            user: connectedUserName(),
             enableNotifications: getEnableNotifications(),
             enableNotificationsSounds: getEnableNotificationsSounds(),
             globalNotificationsType: getGlobalNotificationsType(),

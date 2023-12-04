@@ -1,0 +1,8 @@
+#calendar {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.calendar-main {
+    @apply h-screen w-screen overflow-hidden rounded-lg;
+}
