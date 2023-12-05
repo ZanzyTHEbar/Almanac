@@ -6,3 +6,15 @@
 .calendar-main {
     @apply h-screen w-screen overflow-hidden rounded-lg;
 }
+
+.calendar__sidebar {
+    @apply h-screen w-1/4 bg-gray-100 overflow-y-auto;
+}
+
+.calendars {
+    @apply h-screen w-3/4 bg-white overflow-y-auto;
+}
+
+.calendar__content {
+    @apply h-screen w-full bg-white overflow-y-auto;
+}

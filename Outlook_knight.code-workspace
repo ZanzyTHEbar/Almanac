@@ -21,8 +21,10 @@
     "cSpell.words": [
       "chrono",
       "Clothoid",
+      "codegen",
       "daygrid",
       "fullcalendar",
+      "kobalte",
       "nanos",
       "notif",
       "notifs",
@@ -35,6 +37,7 @@
       "specta",
       "thiserror",
       "timegrid",
+      "typecheck",
       "Unlisten",
       "vnode",
       "Xsts"

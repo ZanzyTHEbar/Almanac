@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+// Connect to file-based database using SQLite for development
+datasource db {
+    provider = "sqlite"
+    url      = "file:./dev.db"
+}
+
+// Connect to database using environment variable
+// This is probably a remote database in production
+//datasource db {
+//  provider = "sqlserver"
+//  url      = env("DATABASE_URL")
+//}
+
+model Profile {
+    id     String  @id @default(uuid())
+    bio    String?
+    user   User    @relation(fields: [userId], references: [id])
+    userId String  @unique
+}
+
+model User {
+    id       String     @id @default(uuid())
+    username String     @unique
+    email    String?
+    profile  Profile?
+    calendar Calendar[]
+    Crop     Crop[]
+}
+
+model CropContent {
+    id            String @id @default(uuid())
+    crop_name     String
+    growth_period String
+    total         Int
+    height        Int
+    season        String
+    Crop          Crop[]
+}
+
+model Crop {
+    id            String       @id @default(uuid())
+    name          String       @unique
+    description   String?
+    image         String?
+    createdAt     DateTime     @default(now())
+    updatedAt     DateTime     @updatedAt
+    author        User         @relation(fields: [authorId], references: [id])
+    authorId      String
+    CropContent   CropContent? @relation(fields: [cropContentId], references: [id])
+    cropContentId String?
+}
+
+model Calendar {
+    id              String           @id @default(uuid())
+    createdAt       DateTime         @default(now())
+    updatedAt       DateTime         @updatedAt
+    title           String           @unique
+    published       Boolean          @default(false)
+    author          User             @relation(fields: [authorId], references: [id])
+    authorId        String
+    calendar_name   String           @unique
+    calendar_events CalendarEvents[]
+}
+
+model CalendarEvents {
+    id            String   @id @default(uuid())
+    calendar_name String
+    start         DateTime
+    end           DateTime
+    date          DateTime
+    allDay        Boolean
+    groupId       String
+    title         String
+    url           String
+    interactive   Boolean
+    Calendar   Calendar? @relation(fields: [calendarId], references: [id])
+    calendarId String?
+}

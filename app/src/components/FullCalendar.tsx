@@ -8,6 +8,7 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import { FullCalendarElement } from '@fullcalendar/web-component'
 import { createSignal, onCleanup, onMount } from 'solid-js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import CalendarHeader from './CalendarHeader'
 
 declare module 'solid-js' {
     // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -30,32 +31,26 @@ class CustomDayHeader extends Component<{ text: string }> {
 const FullCalendar = () => {
     const [calendar, setCalendar] = createSignal<Calendar>()
 
-    const [calendarRef, setCalendarRef] = createSignal<any>(null)
+    const [calendarRef, setCalendarRef] = createSignal<unknown>(null)
 
     const handleDateClick = (arg: DateClickArg) => {
         console.log(arg)
     }
 
+    const handleEndDate = (begin: number, days: number) => {
+        const end = Date.now() + 1000 * 60 * 60 * 24 * days
+        const beginDate = new Date(begin)
+
+        if (beginDate.getDate() === new Date(end).getDate()) {
+            return
+        }
+        const date = new Date(end)
+        date.setDate(date.getDate())
+        return date
+    }
+
     onMount(() => {
-        /* calendarRef()!['options'] = {
-            plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin],
-            initialView: 'dayGridMonth',
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
-            },
-            initialDate: Date.now(),
-            navLinks: true, // can click day/week names to navigate views
-            editable: true,
-            dayMaxEvents: true, // allow "more" link when too many events
-            dayHeaderContent(arg: DayHeaderContentArg) {
-                return createElement(CustomDayHeader, { text: arg.text })
-            },
-            dateClick: handleDateClick,
-            events: [],
-        } */
-        const _calendar = new Calendar(calendarRef()!, {
+        const _calendar = new Calendar(calendarRef()! as HTMLElement, {
             plugins: [
                 bootstrap5Plugin,
                 dayGridPlugin,
@@ -66,19 +61,28 @@ const FullCalendar = () => {
             initialView: 'dayGridMonth',
             themeSystem: 'bootstrap5',
             headerToolbar: {
-                left: 'prev,next today',
+                left: 'today prevYear,prev,next,nextYear',
                 center: 'title',
                 right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
             },
             initialDate: Date.now(),
-            navLinks: true, // can click day/week names to navigate views
+            // can click day/week names to navigate views
+            navLinks: true,
             editable: true,
-            dayMaxEvents: true, // allow "more" link when too many events
-            dayHeaderContent(arg: DayHeaderContentArg) {
+            // allow "more" link when too many events
+            dayMaxEvents: true,
+            /* dayHeaderContent(arg: DayHeaderContentArg) {
                 return createElement(CustomDayHeader, { text: arg.text })
-            },
+            }, */
             dateClick: handleDateClick,
-            events: [],
+            events: [
+                {
+                    start: Date.now(),
+                    title: 'SolidJS',
+                    end: handleEndDate(10, 10),
+                    allDay: true,
+                },
+            ],
         })
 
         setCalendar(_calendar)
@@ -90,9 +94,12 @@ const FullCalendar = () => {
     })
 
     return (
-        <>
-            <g-calendar shadow ref={setCalendarRef} />
-        </>
+        <div class="w-full h-full">
+            <div class="pb-8">
+                <CalendarHeader id={'1'} />
+            </div>
+            <g-calendar class="w-[97%] h-[97vh] pr-3" shadow ref={setCalendarRef} />
+        </div>
     )
 }
 

@@ -9,6 +9,12 @@ const AppRoutes = lazy(() => import('@routes/routes'))
 //const ExampleMenu = lazy(() => import('@components/NewMenu/DevTools'))
 const ToastNotificationWindow = lazy(() => import('@components/Notifications'))
 
+
+// TODO: Add Crop button in header
+// TODO: Settings button in header
+// TODO: Edit button to change the garden calendar name
+
+
 const App = () => {
     const { handleTitlebar, handleAppBoot } = useAppContextMain()
     //const ref = document.getElementById('titlebar')

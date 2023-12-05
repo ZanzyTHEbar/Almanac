@@ -23,20 +23,22 @@ export default function Main() {
                     </div>
                 </div>
             </Show>
-            <CalendarHeader />
-            <div class="flex flex-1 flex-row justify-center ">
+            <div class="mt-8 flex flex-1 grow flex-row justify-center ">
                 <Show when={showSidebar()}>
                     <Sidebar showSidebar={showSidebar()} />
                 </Show>
-                <div class="shadow-md border rounded-[8px] flex flex-1 grow h-screen w-screen justify-evenly overflow-y-auto">
-                    <div class={`p-3 ${showSidebar() ? 'flex flex-1 grow' : ''} rounded-[8px]`}>
+                <div class="shadow-md border rounded-[8px] flex flex-1 grow w-[97%] h-[97vh] justify-evenly overflow-y-auto">
+                    <div
+                        class={`w-[97%] h-[97vh] p-3 ${
+                            showSidebar() ? 'flex flex-1 grow' : ''
+                        } rounded-[8px]`}>
                         <Show when={!showSidebar()}>
                             <BurgerMenuIcon
                                 class="pt-1 justify-start items-start"
                                 showSidebar={!showSidebar()}
                             />
                         </Show>
-                        <div class="flex flex-1 h-full w-full">
+                        <div class="flex flex-1 w-[97%] h-[97vh]">
                             <FullCalendar />
                         </div>
                     </div>

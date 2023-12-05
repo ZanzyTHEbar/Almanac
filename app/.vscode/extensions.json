@@ -1,0 +1,17 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "msjsdiag.debugger-for-chrome",
+        "octref.vetur",
+        "stylelint.vscode-stylelint",
+        "wix.vscode-import-cost",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-sqlite",
+        "gruntfuggly.todo-tree",
+        "wayou.vscode-todo-highlight",
+        "eamodio.gitlens",
+        "tauri-apps.tauri-vscode",
+        "prisma.prisma"
+    ]
+}

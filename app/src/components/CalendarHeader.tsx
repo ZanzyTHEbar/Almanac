@@ -1,49 +1,80 @@
-//import dayjs from 'dayjs'
-//import { useCalendarContext } from '@src/store/context/calendar'
+import { FiEdit } from 'solid-icons/fi'
+import { Show, createSignal, Component, onMount } from 'solid-js'
+import { getCalendarById, updateCalendar } from '@src/db/calendar'
 
-const CalendarHeader = () => {
-    /* const { monthIndex, setMonthIndex } = useCalendarContext()
+const CalendarHeader: Component<{
+    id: string | undefined
+}> = (props) => {
+    const [edit, setEdit] = createSignal(false)
+    const [calendarName, setCalendarName] = createSignal('')
 
-    const handlePrevMonth = () => {
-        setMonthIndex(monthIndex()! - 1)
+    const updateName = async () => {
+        if (!props.id) {
+            return
+        }
+
+        const calendar = await getCalendarById(props.id)
+        setCalendarName(calendar?.calendar_name || 'Calendar')
     }
 
-    const handleNextMonth = () => {
-        setMonthIndex(monthIndex()! + 1)
+    const saveName = async () => {
+        if (!props.id) {
+            return
+        }
+        const calendar = await getCalendarById(props.id)
+        if (!calendar) {
+            return
+        }
+
+        calendar.calendar_name = calendarName()
+        updateCalendar(props.id, calendar)
     }
-    const handleReset = () => {
-        setMonthIndex(
-            monthIndex()! === dayjs().month() ? monthIndex()! + Math.random() : dayjs().month(),
-        )
-    } */
+
+    onMount(() => {
+        updateName()
+    })
+
     return (
-        <header
-            class="px-4 py-2 flex items-center pt-"
-            style={{
-                'padding-top': '20px',
-            }}>
-            <img src="/images/logo.png" alt="calendar" class="mr-2 w-12 h-12" />
-            <h1 class="mr-10 text-xl text-gray-500 fond-bold">Outlook Knight</h1>
-            {/*<button
-                onClick={handleReset}
-                class="border rounded py-2 px-4 mr-5 shadow-md hover:shadow-xl focus:bg-gray-100 transition duration-200 ease-in focus:shadow-inner">
-                Today
-            </button>
-            <button onClick={handlePrevMonth}>
-                <span class="close_button cursor-pointer text-gray-600 mx-2">
-                    chevron_left
-                </span>
-            </button>
-            <button onClick={handleNextMonth}>
-                <span class="close_button cursor-pointer text-gray-600 mx-2">
-                    chevron_right
-                </span>
-            </button>
-            <h2 class="ml-4 text-xl text-gray-500 font-bold">
-                {dayjs(new Date(dayjs().year(), monthIndex()!)).format('MMMM YYYY')}
-            </h2> */}
+        <header class="flex w-full justify-start items-center">
+            <span class="flex flex-row justify-center items-center gap-1">
+                <h1>{calendarName()}</h1>
+                <Show when={!edit()}>
+                    <button onClick={() => setEdit(true)}>
+                        <FiEdit
+                            class="cursor-pointer pb-5"
+                            onClick={() => {
+                                setEdit(!edit)
+                            }}
+                            size={25}
+                        />
+                    </button>
+                </Show>
+            </span>
+            <Show when={edit()}>
+                <input
+                    type="text"
+                    class="border-2 border-gray-300 rounded-md"
+                    value={calendarName()}
+                    onInput={(e) => {
+                        setCalendarName(e.currentTarget.value)
+                    }}
+                    onChange={() => {
+                        saveName()
+                        setEdit(false)
+                    }}
+                />
+            </Show>
         </header>
     )
+}
+
+{
+    /* 
+<header class="flex w-full justify-start items-center">
+    <img src="/images/logo_seedling.png" alt="calendar" class="w-[8%] h-[8%] mr-2" />
+    <h1 class="mr-10 text-xl text-gray-500 fond-bold">Outlook Knight</h1>
+</header> 
+*/
 }
 
 export default CalendarHeader
