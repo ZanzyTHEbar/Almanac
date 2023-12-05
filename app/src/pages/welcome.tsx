@@ -1,3 +1,5 @@
+import { Link } from '@solidjs/router'
+import { FaSolidSeedling } from 'solid-icons/fa'
 import { createSignal, Show } from 'solid-js'
 
 const Welcome = () => {
@@ -13,9 +15,17 @@ const Welcome = () => {
                         <h5 class="text-[#5b9cf0] ">GARDEN</h5>
                     </div>
                     <h1 class="font-bold text-[#072268]">ALMANAC</h1>
-                    <button class="justify-end">
-                        TEST
-                    </button>
+                    <Link
+                        href="/home"
+                        class="content-center text-center btn btn-secondary justify-center bottom-52 absolute border p-4 rounded-full flex items-center shadow-md hover:shadow-2xl focus:bg-gray-100 transition duration-200 ease-in focus:shadow-inner">
+                        <FaSolidSeedling
+                            color="#b1c548"
+                            size={50}
+                            class="text-center justify-around content-center"
+                        />
+                        <br />
+                        <p>Enter</p>
+                    </Link>
                 </div>
             </div>
         </div>
