@@ -1,22 +1,34 @@
 import { useNavigate } from '@solidjs/router'
 import { Component, Show } from 'solid-js'
 import { Transition, TransitionChild } from 'terracotta'
-import BurgerMenuIcon from './BurgerMenuIcon'
-import CreateEventButton from '@components/CreateEventButton'
+import AddCrop from '@components/AddCrop'
+import BurgerMenuIcon from '@components/BurgerMenuIcon'
 import GenericButton from '@components/GenericButton'
 import Labels from '@components/Labels'
 import { useAppUIContext } from '@src/store/context/ui'
 
-const Sidebar: Component<{
-    showSidebar: boolean
-    class?: string
+const BurgerMenu: Component<{
+    class: string
 }> = (props) => {
     const { showSidebar } = useAppUIContext()
+    return (
+        <div class={`${props.class} flex flex-1 mb-5`}>
+            <Show when={showSidebar()}>
+                <BurgerMenuIcon class={props.class} />
+            </Show>
+        </div>
+    )
+}
+
+const Sidebar: Component<{
+    class?: string
+}> = (props) => {
+    const { showSidebar, setShowSidebar } = useAppUIContext()
 
     const navigate = useNavigate()
 
     return (
-        <Transition show={props.showSidebar} appear={true}>
+        <Transition show={showSidebar()} appear={true}>
             {/* TODO: Animate Calendar Resize */}
 
             {/* Sliding sidebar */}
@@ -30,10 +42,16 @@ const Sidebar: Component<{
                 leaveTo="translate-x-full">
                 <aside class="h-full shadow-md border p-5 w-64 mr-4 rounded-[8px] transition-all duration-300 ease-in-out overflow-x-hidden pt-[60px]">
                     <div class="flex grow flex-1 flex-col justify-around">
-                        <BurgerMenuIcon
-                            class="justify-end items-start"
-                            showSidebar={showSidebar()}
+                        <GenericButton
+                            onClick={() => {
+                                navigate('/')
+                            }}
+                            content="Menu"
                         />
+
+                        <div onClick={() => setShowSidebar(false)}>
+                            <BurgerMenu class="justify-end items-start" />
+                        </div>
 
                         {/* TODO: Add search bar to filter crops */}
 
@@ -42,17 +60,7 @@ const Sidebar: Component<{
                             <Show when={true}>
                                 <p class="pt-2 text-gray-700 font-bold">No crops in your garden</p>
                                 <p class="text-gray-500">You haven't added any crops yet</p>
-                                <CreateEventButton />
-                            </Show>
-                            <Show when={true}>
-                                <p class="pt-2 text-gray-700 font-bold">No crops in your garden</p>
-                                <p class="text-gray-500">You haven't added any crops yet</p>
-                                <GenericButton
-                                    onClick={() => {
-                                        navigate('/')
-                                    }}
-                                    content="Menu"
-                                />
+                                <AddCrop />
                             </Show>
                         </div>
                         <div class="mt-3 p-2 flex flex-col grow justify-evenly shadow-sm border rounded-[8px]">

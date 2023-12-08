@@ -1,5 +1,5 @@
 import bootstrap5Plugin from '@fullcalendar/bootstrap5'
-import { Calendar, DayHeaderContentArg } from '@fullcalendar/core'
+import { Calendar } from '@fullcalendar/core'
 import { Component, createElement } from '@fullcalendar/core/preact'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction'

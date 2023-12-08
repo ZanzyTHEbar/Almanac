@@ -1,6 +1,5 @@
-import { Show } from 'solid-js'
+import { Component, Show } from 'solid-js'
 import BurgerMenuIcon from '@components/BurgerMenuIcon'
-import CalendarHeader from '@components/CalendarHeader'
 import EventModal from '@components/EventModal'
 import FullCalendar from '@components/FullCalendar'
 import Sidebar from '@components/Sidebar'
@@ -8,9 +7,22 @@ import { useCalendarContext } from '@src/store/context/calendar'
 import { useAppContextMain } from '@src/store/context/main'
 import { useAppUIContext } from '@src/store/context/ui'
 
+const BurgerMenu: Component<{
+    class: string
+}> = (props) => {
+    const { showSidebar } = useAppUIContext()
+    return (
+        <div class={`${props.class} flex flex-1 mb-5`}>
+            <Show when={!showSidebar()}>
+                <BurgerMenuIcon class={props.class} />
+            </Show>
+        </div>
+    )
+}
+
 export default function Main() {
     const { showEventModal } = useCalendarContext()
-    const { showSidebar } = useAppUIContext()
+    const { setShowSidebar, showSidebar } = useAppUIContext()
 
     const Main = () => (
         <div class="calendar-main">
@@ -24,21 +36,16 @@ export default function Main() {
                 </div>
             </Show>
             <div class="mt-8 flex flex-1 grow flex-row justify-center ">
-                <Show when={showSidebar()}>
-                    <Sidebar showSidebar={showSidebar()} />
-                </Show>
-                <div class="shadow-md border rounded-[8px] flex flex-1 grow w-[97%] h-[97vh] justify-evenly overflow-y-auto">
+                <Sidebar />
+                <div class="shadow-md border rounded-[8px] flex flex-1 grow w-full h-[97vh] justify-evenly overflow-y-auto">
                     <div
-                        class={`w-[97%] h-[97vh] p-3 ${
+                        class={`rounded-[8px] w-full h-[97vh] ml-3 ${
                             showSidebar() ? 'flex flex-1 grow' : ''
-                        } rounded-[8px]`}>
-                        <Show when={!showSidebar()}>
-                            <BurgerMenuIcon
-                                class="pt-1 justify-start items-start"
-                                showSidebar={!showSidebar()}
-                            />
-                        </Show>
-                        <div class="flex flex-1 w-[97%] h-[97vh]">
+                        }`}>
+                        <div onClick={() => setShowSidebar(true)}>
+                            <BurgerMenu class="pt-1 justify-start items-start" />
+                        </div>
+                        <div class="flex flex-1 w-full h-[97vh]">
                             <FullCalendar />
                         </div>
                     </div>
@@ -49,6 +56,3 @@ export default function Main() {
 
     return <Main />
 }
-
-/* <Show when={loggedIn()} fallback={<MSLogin />}>
-   </Show> */
