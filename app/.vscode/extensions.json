@@ -2,7 +2,6 @@
     "recommendations": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "msjsdiag.debugger-for-chrome",
         "octref.vetur",
         "stylelint.vscode-stylelint",
         "wix.vscode-import-cost",

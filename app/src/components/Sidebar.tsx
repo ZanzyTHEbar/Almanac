@@ -1,7 +1,9 @@
+import { useNavigate } from '@solidjs/router'
 import { Component, Show } from 'solid-js'
 import { Transition, TransitionChild } from 'terracotta'
 import BurgerMenuIcon from './BurgerMenuIcon'
 import CreateEventButton from '@components/CreateEventButton'
+import GenericButton from '@components/GenericButton'
 import Labels from '@components/Labels'
 import { useAppUIContext } from '@src/store/context/ui'
 
@@ -10,6 +12,9 @@ const Sidebar: Component<{
     class?: string
 }> = (props) => {
     const { showSidebar } = useAppUIContext()
+
+    const navigate = useNavigate()
+
     return (
         <Transition show={props.showSidebar} appear={true}>
             {/* TODO: Animate Calendar Resize */}
@@ -29,7 +34,7 @@ const Sidebar: Component<{
                             class="justify-end items-start"
                             showSidebar={showSidebar()}
                         />
-                        
+
                         {/* TODO: Add search bar to filter crops */}
 
                         <div class="flex flex-col justify-center items-center content-center mt-3">
@@ -38,6 +43,16 @@ const Sidebar: Component<{
                                 <p class="pt-2 text-gray-700 font-bold">No crops in your garden</p>
                                 <p class="text-gray-500">You haven't added any crops yet</p>
                                 <CreateEventButton />
+                            </Show>
+                            <Show when={true}>
+                                <p class="pt-2 text-gray-700 font-bold">No crops in your garden</p>
+                                <p class="text-gray-500">You haven't added any crops yet</p>
+                                <GenericButton
+                                    onClick={() => {
+                                        navigate('/')
+                                    }}
+                                    content="Menu"
+                                />
                             </Show>
                         </div>
                         <div class="mt-3 p-2 flex flex-col grow justify-evenly shadow-sm border rounded-[8px]">

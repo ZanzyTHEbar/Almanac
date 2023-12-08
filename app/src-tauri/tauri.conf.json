@@ -7,7 +7,7 @@
         "distDir": "../dist"
     },
     "package": {
-        "productName": "Outlook Knight",
+        "productName": "Almanac",
         "version": "0.1.0"
     },
     "tauri": {
@@ -107,7 +107,7 @@
         "bundle": {
             "active": true,
             "category": "Productivity",
-            "copyright": "Outlook Knight",
+            "copyright": "Almanac",
             "deb": {
                 "depends": []
             },
@@ -117,7 +117,7 @@
                 "../public/images/icons/144x144.png",
                 "../public/images/icons/icon.ico"
             ],
-            "identifier": "com.outlook-night.dev",
+            "identifier": "com.almanac.dev",
             "longDescription": "",
             "resources": [],
             "shortDescription": "",
@@ -158,21 +158,10 @@
                 "width": 800,
                 "resizable": true,
                 "center": true,
-                "title": "Outlook Knight",
+                "title": "Almanac",
                 "visible": false,
                 "decorations": false,
                 "transparent": true
-            },
-            {
-                "height": 370,
-                "width": 240,
-                "decorations": false,
-                "transparent": true,
-                "resizable": false,
-                "center": true,
-                "url": "src/windows/splashscreen/index.html",
-                "label": "splashscreen",
-                "alwaysOnTop": true
             },
             {
                 "height": 633,

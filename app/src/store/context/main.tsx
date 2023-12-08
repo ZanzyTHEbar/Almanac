@@ -51,21 +51,8 @@ export const AppContextMainProvider: Component<Context> = (props) => {
     }
 
     const handleAppBoot = () => {
-        const { set, get } = usePersistentStore()
-
         console.log('[App Boot]: Frontend Initialization Starting')
         useEventListener(document, 'DOMContentLoaded', () => {
-            invoke('get_user')
-                .then((config) => {
-                    const userName = config as string
-                    console.log('[App Boot]: Welcome ', userName)
-                    get('settings').then((settings) => {
-                        if (userName) {
-                            set('settings', { user: userName, ...settings })
-                        }
-                    })
-                })
-                .catch((e) => console.error(e))
             // check if the window state is saved and restore it if it is
             invoke('handle_save_window_state').then(() => {
                 console.log('[App Boot]: saved window state')
@@ -79,8 +66,6 @@ export const AppContextMainProvider: Component<Context> = (props) => {
                     })
                     .catch((e) => console.error(e))
             }, 9000)
-
-            //setTimeout(() => invoke('close_splashscreen'), 15000)
         })
 
         //TODO: Start mdns and websocket clients only after the backend is ready
