@@ -1,0 +1,80 @@
+/* ------------------------------Modal----------------------------------------------- */
+
+.dialog__overlay {
+    @apply animate-[overlayHide_250ms_ease_100ms_forwards];
+    @apply fixed inset-0 z-50 bg-black bg-opacity-50;
+}
+
+.dialog__overlay[data-expanded] {
+    @apply animate-[overlayShow_250ms_ease];
+}
+
+.dialog__positioner {
+    @apply fixed inset-0 z-50 flex p-3 items-center justify-center;
+}
+
+.dialog__content {
+    @apply z-50 bg-[#e5e7eb] rounded-lg shadow-2xl w-2/3 max-w-full border-[1px_solid_hsl(240_5%_84%)];
+    @apply rounded-md p-4 bg-white shadow-md;
+    @apply animate-[contentHide_300ms_ease_in_forwards];
+}
+
+.dialog__content[data-expanded] {
+    @apply animate-[contentShow_300ms_ease_out];
+}
+.dialog__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.dialog__close-button {
+    height: 16px;
+    width: 16px;
+    color: hsl(240 5% 34%);
+}
+.dialog__title {
+    font-size: 20px;
+    font-weight: 500;
+    color: hsl(240 6% 10%);
+}
+.dialog__description {
+    font-size: 16px;
+    color: hsl(240 5% 26%);
+}
+@keyframes overlayShow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes overlayHide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes contentShow {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes contentHide {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+}

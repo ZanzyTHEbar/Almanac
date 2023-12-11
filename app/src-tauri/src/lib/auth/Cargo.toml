@@ -1,5 +1,5 @@
 [package]
-name = "tauri-plugin-graph-api"
+name = "tauri-plugin-auth-api"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.69"
@@ -7,11 +7,11 @@ rust-version = "1.69"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-etvr-utils = { path = "../util" }
-thiserror = "1"
+utils = { path = "../util" }
 oauth2 = "4.4.2"
 async-trait = "0.1.73"
-graph-rs-sdk = { workspace = true }
+anyhow = { workspace = true }
+url = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 specta = { workspace = true }
@@ -19,5 +19,4 @@ tauri = { workspace = true }
 tauri-specta = { workspace = true }
 log = { workspace = true }
 tiny_http = { workspace = true }
-tauri-plugin-oauth = { workspace = true }
 reqwest = { workspace = true }

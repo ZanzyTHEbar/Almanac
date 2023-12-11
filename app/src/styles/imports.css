@@ -16,3 +16,5 @@
 @import 'bootstrap.css';
 @import 'scrollbar.css';
 @import 'calendar.css';
+@import 'components/addcropmodal.css';
+@import 'components/addcropform.css';

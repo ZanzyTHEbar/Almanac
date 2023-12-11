@@ -1,11 +1,11 @@
 [package]
-name = "outlook_knight"
+name = "a_garden_almanac"
 version = "0.1.0"
-description = "Microsoft Outlook Calendar"
+description = "A Personal Gardening Assistant"
 authors = ["DaOfficialWizard"]
 license = "MIT"
 repository = "https://github.com/ZanzyTHEbar/Microsoft_Calendar_Epaper_Display"
-default-run = "outlook_knight"
+default-run = "a_garden_almanac"
 edition = "2021"
 rust-version = "1.69"
 
@@ -14,8 +14,8 @@ rust-version = "1.69"
 [dependencies.tauri-plugin-splashscreen]
 path = "src/lib/splashscreen"
 
-[dependencies.tauri-plugin-graph-api]
-path = "src/lib/graph"
+[dependencies.tauri-plugin-auth-api]
+path = "src/lib/auth"
 
 #[dependencies.tauri-plugin-request-client]
 #path = "src/lib/api"
@@ -57,9 +57,6 @@ branch = "dev"
 version = "1"
 features = ["full"]
 
-[dev-dependencies]
-anyhow = "1.0.75"
-
 [dependencies]
 sysinfo = "0.29.10"
 serde = { workspace = true }
@@ -71,14 +68,15 @@ dialoguer = { workspace = true }
 tauri-specta = { workspace = true }
 reqwest = { workspace = true }
 tiny_http = { workspace = true }
-graph-rs-sdk = { workspace = true }
+anyhow = { workspace = true }
+url = { workspace = true }
 
 [workspace.dependencies]
-tauri-plugin-oauth = { git = "https://github.com/FabianLars/tauri-plugin-oauth", branch = "main" }
+anyhow = "1.0.75"
+url = "2.5.0"
 dialoguer = "0.11.0"
 log = "0.4.20"
 tiny_http = "0.12.0"
-graph-rs-sdk = "1.1.1"
 reqwest = { version = "0.11", features = ["rustls-tls", "json", "stream"] }
 serde = { version = "1.0.189", features = ["derive"] }
 serde_json = "1"
@@ -87,6 +85,7 @@ tauri-specta = { version = "2.0.0-rc.2", features = [
     "javascript",
     "typescript",
 ] }
+tauri-plugin-oauth = { git = "https://github.com/FabianLars/tauri-plugin-oauth", branch = "main" }
 tauri = { version = "1.5", features = [
     "process-exit",
     "protocol-asset",
@@ -121,7 +120,7 @@ tauri = { version = "1.5", features = [
 
 
 [workspace]
-members = ["src/lib/splashscreen", "src/lib/graph", "src/lib/util"]
+members = ["src/lib/auth", "src/lib/util", "src/lib/splashscreen"]
 
 [features]
 default = ["custom-protocol"]

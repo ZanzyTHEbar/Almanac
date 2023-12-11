@@ -3,6 +3,9 @@
     windows_subsystem = "windows"
 )]
 
+// TODO: Create schema for user validation, calendar validation, etc
+// TODO: Setup OAuth using google and facebook for authentication
+
 #[cfg(target_os = "linux")]
 use std::fs::metadata;
 #[cfg(target_os = "linux")]
@@ -82,7 +85,6 @@ async fn main() -> tauri::Result<()> {
         .plugin(tauri_plugin_upload::init())
         // splashscreen support
         .plugin(tauri_plugin_splashscreen::init())
-        .plugin(tauri_plugin_graph_api::init())
         // save window position and size between sessions
         .plugin(tauri_plugin_window_state::Builder::default().build())
         .setup(move |app| {

@@ -2,6 +2,7 @@ import { useNavigate } from '@solidjs/router'
 import { Component, Show } from 'solid-js'
 import { Transition, TransitionChild } from 'terracotta'
 import AddCrop from '@components/AddCrop'
+import AppCropModal from '@components/AddCropModal'
 import BurgerMenuIcon from '@components/BurgerMenuIcon'
 import GenericButton from '@components/GenericButton'
 import Labels from '@components/Labels'
@@ -42,12 +43,7 @@ const Sidebar: Component<{
                 leaveTo="translate-x-full">
                 <aside class="h-full shadow-md border p-5 w-64 mr-4 rounded-[8px] transition-all duration-300 ease-in-out overflow-x-hidden pt-[60px]">
                     <div class="flex grow flex-1 flex-col justify-around">
-                        <GenericButton
-                            onClick={() => {
-                                navigate('/')
-                            }}
-                            content="Menu"
-                        />
+                        <GenericButton onClick={() => navigate('/')} content="Menu" />
 
                         <div onClick={() => setShowSidebar(false)}>
                             <BurgerMenu class="justify-end items-start" />
@@ -60,7 +56,8 @@ const Sidebar: Component<{
                             <Show when={true}>
                                 <p class="pt-2 text-gray-700 font-bold">No crops in your garden</p>
                                 <p class="text-gray-500">You haven't added any crops yet</p>
-                                <AddCrop />
+
+                                <AppCropModal trigger={<AddCrop />} />
                             </Show>
                         </div>
                         <div class="mt-3 p-2 flex flex-col grow justify-evenly shadow-sm border rounded-[8px]">

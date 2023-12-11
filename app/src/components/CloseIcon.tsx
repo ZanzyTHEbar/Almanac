@@ -4,7 +4,7 @@ const CloseIcon = (props: JSX.IntrinsicElements['svg']) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
+            fill={props.fill || 'none'}
             viewBox="0 0 24 24"
             stroke="currentColor"
             {...props}>

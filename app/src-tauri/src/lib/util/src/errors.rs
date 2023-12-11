@@ -1,9 +1,8 @@
 //! Main crate Error
-use graph_rs_sdk::error::GraphFailure;
 use serde::{ser::Serializer, Serialize};
 //use crate::{colors::Color, etvr_stderr, etvr_stdout, f};
 
-#[derive(thiserror::Error, Debug)]
+/* #[derive(thiserror::Error, Debug)]
 pub enum Error {
     #[error("Generic error: {0}")]
     Generic(String),
@@ -13,9 +12,9 @@ pub enum Error {
     OperationCancelled(String),
 }
 
-pub type ETVResult<T> = std::result::Result<T, Error>;
+pub type AppResult<T> = std::result::Result<T, Error>; */
 
-impl Error {
+/* impl Error {
     pub fn new(message: String) -> Self {
         Self::Generic(message)
     }
@@ -38,13 +37,7 @@ impl From<reqwest::Error> for Error {
     fn from(e: reqwest::Error) -> Self {
         Error::IO(std::io::Error::new(std::io::ErrorKind::Other, e))
     }
-}
-
-impl From<GraphFailure> for Error {
-    fn from(e: GraphFailure) -> Self {
-        Error::IO(std::io::Error::new(std::io::ErrorKind::Other, e))
-    }
-}
+} */
 
 // TODO: Handler for custom errors
 /* pub fn handle(result: ETVResult<()>) {

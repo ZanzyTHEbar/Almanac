@@ -1,10 +1,8 @@
 import PlusIcon from '@components/PlusIcon'
-import { useCalendarContext } from '@src/store/context/calendar'
 
 const AddCrop = () => {
-    const { setShowEventModal } = useCalendarContext()
     return (
-        <button onClick={() => setShowEventModal(true)} class="btn btn-primary">
+        <button class="btn btn-primary">
             <span class="flex flex-row items-center">
                 <PlusIcon
                     color="#ffffffe3"

@@ -1,7 +1,7 @@
 import { lazy } from 'solid-js'
 import type { RouteDefinition } from '@solidjs/router'
 
-const Main = lazy(() => import('@pages/main'))
+const Main = lazy(() => import('@pages/home'))
 const Welcome = lazy(() => import('@pages/welcome'))
 //const Settings = lazy(() => import('@pages/Settings'))
 //const AppSettings = lazy(() => import('@pages/AppSettings'))

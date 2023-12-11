@@ -23,6 +23,7 @@
       "Clothoid",
       "codegen",
       "daygrid",
+      "Frontyard",
       "fullcalendar",
       "kobalte",
       "nanos",
@@ -45,6 +46,7 @@
       "Unlisten",
       "vnode",
       "Xsts"
-    ]
+    ],
+    "rust-analyzer.showUnlinkedFileNotification": false
   }
 }

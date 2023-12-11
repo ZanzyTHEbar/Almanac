@@ -1,12 +1,11 @@
 [package]
-name = "etvr-utils"
+name = "utils"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-thiserror = "1"
 log = { workspace = true }
 dialoguer = { workspace = true }
 serde = { workspace = true }
@@ -14,4 +13,3 @@ specta = { workspace = true }
 tauri = { workspace = true }
 tauri-specta = { workspace = true }
 reqwest = { workspace = true }
-graph-rs-sdk = { workspace = true }

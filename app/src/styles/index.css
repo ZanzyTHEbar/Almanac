@@ -90,13 +90,13 @@ body {
     font-size: 14px;
 }
 
-/* .App {
+.App {
     text-align: center;
     height: 100vh;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-} */
+}
 
 .lotus-button {
     @apply bg-[url('images/lotus.png')] mix-blend-multiply bg-center bg-cover object-cover bg-no-repeat;

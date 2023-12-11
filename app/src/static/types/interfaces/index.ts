@@ -75,10 +75,10 @@ export interface CalendarEvent {
 export interface CalendarEventContent {
     title: string
     // number of milliseconds since UNIX epoch
-    date: number
+    date: Date | string | number
+    end: Date | string | number
     description: string
     startTime?: string
-    endTime?: string
     allDay?: boolean
     color?: string
 }

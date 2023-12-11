@@ -1,11 +1,14 @@
 import { Component, Show } from 'solid-js'
 import BurgerMenuIcon from '@components/BurgerMenuIcon'
-import EventModal from '@components/EventModal'
 import FullCalendar from '@components/FullCalendar'
 import Sidebar from '@components/Sidebar'
 import { useCalendarContext } from '@src/store/context/calendar'
 import { useAppContextMain } from '@src/store/context/main'
 import { useAppUIContext } from '@src/store/context/ui'
+
+// TODO: Add search bar to filter crops
+// TODO: Add resize event listener to resize calendar on sidebar open/close
+// TODO: Fix sidebar animation
 
 const BurgerMenu: Component<{
     class: string
@@ -26,15 +29,6 @@ export default function Main() {
 
     const Main = () => (
         <div class="calendar-main">
-            <Show when={showEventModal()}>
-                <div class="fixed inset-0 z-50 bg-black bg-opacity-50">
-                    <div class="absolute inset-0 z-50 flex justify-center items-center">
-                        <div class="bg-[#e5e7eb] rounded-lg shadow-2xl w-1/3">
-                            <EventModal />
-                        </div>
-                    </div>
-                </div>
-            </Show>
             <div class="mt-8 flex flex-1 grow flex-row justify-center ">
                 <Sidebar />
                 <div class="shadow-md border rounded-[8px] flex flex-1 grow w-full h-[97vh] justify-evenly overflow-y-auto">

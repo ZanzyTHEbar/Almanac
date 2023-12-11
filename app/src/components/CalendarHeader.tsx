@@ -1,6 +1,5 @@
 import { FiEdit } from 'solid-icons/fi'
 import { Show, createSignal, Component, onMount } from 'solid-js'
-import { getCalendarById, updateCalendar } from '@src/db/calendar'
 
 const CalendarHeader: Component<{
     id: string | undefined
@@ -12,22 +11,12 @@ const CalendarHeader: Component<{
         if (!props.id) {
             return
         }
-
-        const calendar = await getCalendarById(props.id)
-        setCalendarName(calendar?.calendar_name || 'Calendar')
     }
 
     const saveName = async () => {
         if (!props.id) {
             return
         }
-        const calendar = await getCalendarById(props.id)
-        if (!calendar) {
-            return
-        }
-
-        calendar.calendar_name = calendarName()
-        updateCalendar(props.id, calendar)
     }
 
     onMount(() => {

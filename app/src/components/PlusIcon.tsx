@@ -6,7 +6,6 @@ const PlusIcon: Component<{
     size: number
 }> = (props) => {
     const handleSize = (): string => {
-        console.log(props.size + 'px')
         return props.size + 'px'
     }
 
