@@ -2,7 +2,7 @@ import PlusIcon from '@components/PlusIcon'
 
 const AddCrop = () => {
     return (
-        <button class="btn btn-primary">
+        <button class="btn btn-primary btn-ghost">
             <span class="flex flex-row items-center">
                 <PlusIcon
                     color="#ffffffe3"

@@ -1,5 +1,3 @@
-import dayjs from 'dayjs'
-
 import { ENotificationAction, ENotificationType } from '../enums'
 import type { CalendarEventTType, DebugMode } from '@static/types'
 import type { WebviewWindow } from '@tauri-apps/api/window'
@@ -8,7 +6,7 @@ import type { ToasterStore } from 'terracotta'
 
 //* Utility Interfaces
 
-export interface ETVRError {
+export interface GeneralError {
     readonly _tag: 'ETVRError'
     readonly error: string | number | unknown
 }
@@ -60,6 +58,21 @@ export interface IWindow {
     window: WebviewWindow
 }
 
+//**********************************************************************************************************************************************************************/
+//*                                                                                                                                                                    */
+//*                                                                  Calendar Interfaces                                                                               */
+//*                                                                                                                                                                    */
+//**********************************************************************************************************************************************************************/
+
+export type CalendarDate = Date | string | number
+export type CalendarEventTType = 'event' | 'task' | 'reminder' | null
+export type CalendarEventModify = 'push' | 'update' | 'delete' | null
+
+export interface DateUtilityObject {
+    date?: CalendarDate
+    daySelected?: CalendarDate
+}
+
 export interface CalendarLabel {
     label: string
     checked: boolean
@@ -72,21 +85,17 @@ export interface CalendarEvent {
     payload: CalendarEventContent
 }
 
-export interface CalendarEventContent {
+export interface CalendarEventContent extends DateUtilityObject {
     title: string
-    // number of milliseconds since UNIX epoch
-    date: Date | string | number
-    end: Date | string | number
     description: string
-    startTime?: string
+    start: CalendarDate
+    end: CalendarDate
     allDay?: boolean
     color?: string
 }
 
-export interface Calendar {
-    monthIndex: number | null
-    smallCalendarMonth: number | null
-    daySelected: dayjs.Dayjs
+export interface Calendar extends DateUtilityObject {
+    smallCalendarWidget: DateUtilityObject
     showEventModal: boolean
     savedEvents: CalendarEvent[]
     selectedEvent: CalendarEvent | null

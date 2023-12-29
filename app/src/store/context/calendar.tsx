@@ -1,4 +1,4 @@
-import dayjs from 'dayjs'
+import moment from 'moment'
 import {
     createContext,
     useContext,
@@ -10,21 +10,26 @@ import {
 } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
 import type { Context } from '@static/types'
-import { Calendar, CalendarEvent, CalendarLabel } from '@static/types/interfaces'
+import {
+    Calendar,
+    CalendarDate,
+    CalendarEvent,
+    CalendarEventModify,
+    CalendarLabel,
+    DateUtilityObject,
+} from '@static/types/interfaces'
 
 interface CalendarContext {
     filteredEvents: Accessor<CalendarEvent[]>
-    monthIndex: Accessor<number | null>
-    smallCalendarMonth: Accessor<number | null>
-    daySelected: Accessor<dayjs.Dayjs>
+    smallCalendarWidget: Accessor<DateUtilityObject | null>
+    daySelected: Accessor<CalendarDate | undefined>
     showEventModal: Accessor<boolean>
     selectedEvent: Accessor<CalendarEvent | null>
     labels: Accessor<CalendarLabel[]>
+    setDate: (date: CalendarDate, smallCalendar?: boolean, selectedDay?: boolean) => void
     savedEvents: Accessor<CalendarEvent[]>
-    setSavedEvents: (action: CalendarEvent) => void
-    setMonthIndex: (index: number) => void
-    setSmallCalendarMonth: (index: number) => void
-    setDaySelected: (day: dayjs.Dayjs) => void
+    setSavedEvents: (event: CalendarEvent) => void
+    setDaySelected: (day: CalendarDate) => void
     setShowEventModal: (state: boolean) => void
     setSelectedEvent: (state: CalendarEvent | null) => void
     setLabels: (label: CalendarLabel[]) => void
@@ -35,38 +40,42 @@ interface CalendarContext {
 const CalendarContext = createContext<CalendarContext>()
 export const CalendarProvider: Component<Context> = (props) => {
     const defaultState: Calendar = {
-        monthIndex: dayjs().month(),
-        smallCalendarMonth: null,
-        daySelected: dayjs(),
+        daySelected: moment().day().toLocaleString(),
         showEventModal: false,
         selectedEvent: null,
         labels: [],
-        filteredEvents: [],
         savedEvents: [],
+        filteredEvents: [],
+        smallCalendarWidget: {
+            daySelected: moment().day().toLocaleString(),
+        },
     }
 
     const [state, setState] = createStore<Calendar>(defaultState)
     const appState = createMemo(() => state)
 
-    //#region Actions
+    //#region events
 
-    const setMonthIndex = (index: number) => {
+    const setDate = (date: CalendarDate | undefined, smallCalendar: boolean = false) => {
         setState(
             produce((s) => {
-                s.monthIndex = index
+                if (typeof date === 'number') {
+                    date = date.toString()
+                } else if (date instanceof Date) {
+                    date = date.toLocaleString()
+                }
+
+                if (smallCalendar) {
+                    s.smallCalendarWidget.date = date
+                    return
+                }
+
+                s.daySelected = date
             }),
         )
     }
 
-    const setSmallCalendarMonth = (index: number) => {
-        setState(
-            produce((s) => {
-                s.smallCalendarMonth = index
-            }),
-        )
-    }
-
-    const setDaySelected = (day) => {
+    const setDaySelected = (day: CalendarDate) => {
         setState(
             produce((s) => {
                 s.daySelected = day
@@ -137,20 +146,19 @@ export const CalendarProvider: Component<Context> = (props) => {
         )
     }) */
 
-    const setSavedEvents = (action: CalendarEvent) => {
-        console.log(action)
-        console.log(appState().savedEvents)
+    const setSavedEvents = (event: CalendarEvent, handle: CalendarEventModify) => {
+        console.debug('[Calendar.tsx]:', event)
+        console.debug(appState().savedEvents)
+
         setState(
             produce((s) => {
-                const currentEvents = s.savedEvents
-
-                switch (action.type) {
+                switch (handle) {
                     case 'push':
-                        return currentEvents.push(action)
+                        return s.savedEvents.push(event)
                     case 'update':
-                        return currentEvents.map((evt) => (evt.uuid === action.uuid ? evt : action))
+                        return s.savedEvents.map((evt) => (evt.uuid === event.uuid ? evt : event))
                     case 'delete':
-                        return currentEvents.filter((evt) => evt.uuid !== action.uuid)
+                        return s.savedEvents.filter((evt) => evt.uuid !== event.uuid)
                     default:
                         return s
                 }
@@ -166,8 +174,8 @@ export const CalendarProvider: Component<Context> = (props) => {
     createEffect(() => {
         setState(
             produce((s) => {
-                if (s.smallCalendarMonth !== null) {
-                    setMonthIndex(s.smallCalendarMonth)
+                if (s.smallCalendarWidget !== null) {
+                    setDate(s.smallCalendarWidget.date, true)
                 }
             }),
         )
@@ -186,8 +194,7 @@ export const CalendarProvider: Component<Context> = (props) => {
 
     //#region Getters
 
-    const monthIndex = createMemo(() => appState().monthIndex)
-    const smallCalendarMonth = createMemo(() => appState().smallCalendarMonth)
+    const smallCalendarWidget = createMemo(() => appState().smallCalendarWidget)
     const daySelected = createMemo(() => appState().daySelected)
     const showEventModal = createMemo(() => appState().showEventModal)
     const selectedEvent = createMemo(() => appState().selectedEvent)
@@ -209,16 +216,14 @@ export const CalendarProvider: Component<Context> = (props) => {
         <CalendarContext.Provider
             value={{
                 filteredEvents,
-                monthIndex,
-                smallCalendarMonth,
+                smallCalendarWidget,
                 daySelected,
                 showEventModal,
                 selectedEvent,
                 labels,
                 savedEvents,
                 setSavedEvents,
-                setMonthIndex,
-                setSmallCalendarMonth,
+                setDate,
                 setDaySelected,
                 setShowEventModal,
                 setSelectedEvent,

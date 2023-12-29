@@ -29,12 +29,12 @@
             "@src/*": ["src/*"],
             "@assets/*": ["./assets/*"],
             "@hooks/*": ["src/utils/hooks/*"],
-            "@static/*": ["src/static/*"],
             "@store/*": ["src/store/*"],
+            "@static/*": ["src/static/*"],
             "@utils/*": ["src/utils/*"]
         }
     },
-    "include": ["src", "**/*.ts", "**/*.tsx", "index.js"],
+    "include": ["src", "**/*.ts", "**/*.tsx", "index.js", "extras/CustomCalendar"],
     "references": [
         {
             "path": "./tsconfig.node.json"

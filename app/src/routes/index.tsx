@@ -12,5 +12,5 @@ export const routes: RouteDefinition[] = [
     { path: '/home', component: Main },
     //{ path: '/appSettings', component: AppSettings },
     //{ path: '/settings/:flag', component: Settings },
-    { path: '**', component: page404 },
+    { path: '*404', component: page404 },
 ]

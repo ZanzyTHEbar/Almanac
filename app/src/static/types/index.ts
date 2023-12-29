@@ -1,4 +1,3 @@
-export * as O from 'fp-ts/Option'
 import type { ENotificationAction } from './enums'
 import type { JSXElement } from 'solid-js'
 
@@ -6,10 +5,6 @@ import type { JSXElement } from 'solid-js'
 export type Context = {
     [key: string]: JSXElement
 }
-
-//********************************* Calendar *************************************/
-
-export type CalendarEventTType = 'event' | 'task' | 'reminder' | 'push' | 'update' | 'delete' | null
 
 //********************************* Settings *************************************/
 

@@ -9,6 +9,7 @@ import type { Context } from '@static/types'
 import type { UnlistenFn } from '@tauri-apps/api/event'
 import { usePersistentStore } from '@src/store/tauriStore'
 import { ExitCodes } from '@static/types/enums'
+import { AppProvider } from '@store/context/app'
 import { setFrontendReady } from 'tauri-plugin-splashscreen'
 
 interface AppContextMain {
@@ -113,7 +114,7 @@ export const AppContextMainProvider: Component<Context> = (props) => {
                 handleTitlebar,
                 setLoggedIn,
             }}>
-            {props.children}
+            <AppProvider>{props.children}</AppProvider>
         </AppContextMain.Provider>
     )
 }

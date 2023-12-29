@@ -1,7 +1,7 @@
 import { useNavigate } from '@solidjs/router'
 import { Component, Show } from 'solid-js'
 import { Transition, TransitionChild } from 'terracotta'
-import AddCrop from '@components/AddCrop'
+import AddCrop from '@components/AddCropButton'
 import AppCropModal from '@components/AddCropModal'
 import BurgerMenuIcon from '@components/BurgerMenuIcon'
 import GenericButton from '@components/GenericButton'

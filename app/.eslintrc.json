@@ -19,7 +19,11 @@
             "jsx": true
         }
     },
-    "plugins": ["@typescript-eslint", "solid", "import"],
+    "plugins": [
+        "@typescript-eslint",
+        "solid",
+        "import"
+    ],
     "rules": {
         "solid/reactivity": "warn",
         "solid/no-destructure": "warn",
@@ -31,8 +35,14 @@
                 "SwitchCase": 1
             }
         ],
-        "quotes": ["error", "single"],
-        "semi": ["error", "never"],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
         "arrow-body-style": "off",
         "import/no-unresolved": "error",
         "import/extensions": [
@@ -48,7 +58,15 @@
         "import/order": [
             "error",
             {
-                "groups": ["builtin", "external", "parent", "sibling", "index", "object", "type"],
+                "groups": [
+                    "builtin",
+                    "external",
+                    "parent",
+                    "sibling",
+                    "index",
+                    "object",
+                    "type"
+                ],
                 "pathGroups": [
                     {
                         "pattern": "@/**/**",

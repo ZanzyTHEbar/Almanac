@@ -1,16 +1,8 @@
 /* eslint-disable quotes */
-import { Link } from '@solidjs/router'
 import { createEffect, onCleanup } from 'solid-js'
 
 const Welcome = () => {
-    /* 
-        mixed-blend-mode: multiply;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-        object-fit: cover;
-    */
+
     const backgroundImageClasses = [
         "bg-[url('/images/welcome.png')]",
         'bg-cover',
@@ -42,9 +34,9 @@ const Welcome = () => {
                         <h5 class="text-[#5b9cf0] ">GARDEN</h5>
                     </div>
                     <h1 class="font-bold text-[#072268]">ALMANAC</h1>
-                    <Link class="justify-center absolute bottom-52 flex" href="/home">
+                    <a class="justify-center absolute bottom-52 flex" href="/home">
                         <div class="lotus-button" />
-                    </Link>
+                    </a>
                 </div>
             </div>
         </div>

@@ -1,16 +1,13 @@
-import { Router } from '@solidjs/router'
 import { render } from 'solid-js/web'
-import '@styles/imports.css'
-import App from './app'
+import AppRoutes from '@routes/routes'
 import { AppContextMainProvider } from '@store/context/main'
+import '@styles/imports.css'
 
 render(
     () => (
-        <Router>
-            <AppContextMainProvider>
-                <App />
-            </AppContextMainProvider>
-        </Router>
+        <AppContextMainProvider>
+            <AppRoutes />
+        </AppContextMainProvider>
     ),
     document.getElementById('root') as HTMLElement,
 )

@@ -4,10 +4,8 @@ import { useCalendarContext } from '@src/store/context/calendar'
 const labelsClasses = ['indigo', 'gray', 'green', 'blue', 'red', 'purple']
 
 const CropSettingsSection: Component = (props) => {
-    const {
-        setLabels,
-        selectedEvent,
-    } = useCalendarContext()
+    const { setLabels, selectedEvent, savedEvents, setSavedEvents } = useCalendarContext()
+
     const [selectedLabel, setSelectedLabel] = createSignal(
         selectedEvent()
             ? labelsClasses.find((lbl) => lbl === selectedEvent()!.label)
@@ -16,6 +14,20 @@ const CropSettingsSection: Component = (props) => {
     const [cropVariety, setCropVariety] = createSignal('')
     const [label, setLabel] = createSignal('')
     const [color, setColor] = createSignal('#91b026')
+
+    const handleNewEvent = () => {
+        const newEvent: CalendarEvent = {
+            type: 'event',
+            uuid: savedEvents().length + 1,
+            label: '',
+            payload: {
+                start: arg.date,
+                end: handleEndDate(arg.date.valueOf(), 1),
+                allDay: true,
+            },
+        }
+    }
+
     return (
         <div class="form-section">
             <h3>Crop settings</h3>

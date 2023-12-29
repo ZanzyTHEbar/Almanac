@@ -13,9 +13,11 @@ const generateSizeClass = (upToSize, startAt = 80) => {
 
 const labelsClasses = ['indigo', 'gray', 'green', 'blue', 'red', 'purple']
 
+// add class='dark' to <html> to enable dark mode - https://tailwindcss.com/docs/dark-mode
+
 // eslint-disable-next-line no-undef
 module.exports = {
-    darkMode: 'class', // add class='dark' to <html> to enable dark mode - https://tailwindcss.com/docs/dark-mode
+    darkMode: 'class',
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,css,md,mdx,html,json,scss}'],
     purge: {
         //Because we made a dynamic class with the label we need to add those classes
@@ -33,23 +35,6 @@ module.exports = {
             ...defaultTheme.screens,
         },
         extend: {
-            colors: {
-                primary: '#114B5F',
-                secondary: '#028090',
-                tertiary: '#E4FDE1',
-                quaternary: '#456990',
-                quinary: '#F45B69',
-                ...defaultTheme.colors,
-            },
-            backgroundColor: {
-                primary: 'var(--color-bg-primary)',
-                secondary: 'var(--color-bg-secondary)',
-            },
-            textColor: {
-                accent: 'var(--color-text-accent)',
-                primary: 'var(--color-text-primary)',
-                secondary: 'var(--color-text-secondary)',
-            },
             width: generateSizeClass(1024),
             minHeight: generateSizeClass(1024, 0),
             maxHeight: generateSizeClass(1024, 0),
@@ -66,11 +51,12 @@ module.exports = {
             },
         },
     },
-
-    // eslint-disable-next-line no-undef
     plugins: [
+        // eslint-disable-next-line no-undef
         require('@tailwindcss/forms'),
+        // eslint-disable-next-line no-undef
         require('@tailwindcss/typography'),
+        // eslint-disable-next-line no-undef, @typescript-eslint/no-var-requires
         require('@kobalte/tailwindcss')({ prefix: 'kb' }),
     ],
 }

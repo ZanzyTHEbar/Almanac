@@ -1,100 +1,15 @@
-import { useLocation, useNavigate, useRoutes } from '@solidjs/router'
-
-import { isEqual } from 'lodash'
-import { createEffect, onMount, type Component, createSignal } from 'solid-js'
-import { useEventListener, useInterval } from 'solidjs-use'
-import { debug, error } from 'tauri-plugin-log-api'
+import { Router, Route } from '@solidjs/router'
+import { For } from 'solid-js'
 import { routes } from '.'
-import type { BackendConfig, PersistentSettings } from '@static/types'
+import App from '@src/app'
 
-import { ENotificationAction, ENotificationType } from '@static/types/enums'
-import { useAppContext } from '@store/context/app'
-import { useAppNotificationsContext } from '@store/context/notifications'
-import { useAppUIContext } from '@store/context/ui'
-import { usePersistentStore } from '@store/tauriStore'
-import { isEmpty } from '@utils/index'
-
-const AppRoutes: Component = () => {
-    const [userIsInSettings, setUserIsInSettings] = createSignal(false)
-    const params = useLocation()
-
-    const Path = useRoutes(routes)
-    const { get, set } = usePersistentStore()
-    const navigate = useNavigate()
-
-    const { setDebugMode, getDebugMode } = useAppContext()
-
-    const {
-        setEnableNotifications,
-        setEnableNotificationsSounds,
-        setGlobalNotificationsType,
-        getEnableNotificationsSounds,
-        getEnableNotifications,
-        getGlobalNotificationsType,
-        checkPermission,
-        addNotification,
-    } = useAppNotificationsContext()
-
-    onMount(() => {
-        //* load the app settings from the persistent store and assign to the global state
-        get('settings').then((settings) => {
-            if (settings) {
-                debug('loading settings')
-                setEnableNotifications(settings.enableNotifications)
-                setEnableNotificationsSounds(settings.enableNotificationsSounds)
-                setGlobalNotificationsType(
-                    settings.globalNotificationsType ?? ENotificationAction.APP,
-                )
-
-                setDebugMode(settings.debugMode)
-            }
-        })
-        //* Check notification permissions
-        checkPermission()
-    })
-
-    const createSettingsObject = () => {
-        const settings: PersistentSettings = {
-            enableNotifications: getEnableNotifications(),
-            enableNotificationsSounds: getEnableNotificationsSounds(),
-            globalNotificationsType: getGlobalNotificationsType(),
-            debugMode: getDebugMode(),
-        }
-        return settings
-    }
-
-    const handleSaveSettings = () => {
-        // check if the settings have changed and save to the store if they have
-        get('settings').then((storedSettings) => {
-            if (!isEqual(storedSettings, createSettingsObject())) {
-                debug(`[Routes]: Saving Settings - ${JSON.stringify(createSettingsObject())}`)
-                set('settings', createSettingsObject())
-            }
-        })
-    }
-
-    createEffect(() => {
-        const { resume, pause } = useInterval(30000, {
-            controls: true,
-            callback: handleSaveSettings,
-        })
-
-        useEventListener(window, 'blur', () => {
-            pause()
-            debug(`[Routes]: Saving Settings - ${JSON.stringify(createSettingsObject())}`)
-            set('settings', createSettingsObject())
-            resume()
-        })
-    })
-
-    createEffect(() => {
-        setUserIsInSettings(params.pathname.match('settings') !== null)
-    })
-
+const AppRoutes = () => {
     return (
-        <main class="w-screen h-screen">
-            <Path />
-        </main>
+        <Router root={App}>
+            <For each={routes}>
+                {(route) => <Route path={route.path} component={route.component} />}
+            </For>
+        </Router>
     )
 }
 
