@@ -1,10 +1,10 @@
 import { Component, Show } from 'solid-js'
 import BurgerMenuIcon from '@components/BurgerMenuIcon'
-import FullCalendar from '@components/FullCalendar'
 import Sidebar from '@components/Sidebar'
 import { useCalendarContext } from '@src/store/context/calendar'
 import { useAppContextMain } from '@src/store/context/main'
 import { useAppUIContext } from '@src/store/context/ui'
+import FullCalendar from 'extras/FullCalendar'
 
 // TODO: Add search bar to filter crops
 // TODO: Add resize event listener to resize calendar on sidebar open/close

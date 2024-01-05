@@ -11,7 +11,6 @@ import {
 } from 'solid-js'
 import { useEventListener, useInterval } from 'solidjs-use'
 import { debug, error } from 'tauri-plugin-log-api'
-import { routes } from '.'
 import type { BackendConfig, PersistentSettings } from '@static/types'
 import { ENotificationAction, ENotificationType } from '@static/types/enums'
 import { useAppContext } from '@store/context/app'
@@ -20,6 +19,7 @@ import { useAppNotificationsContext } from '@store/context/notifications'
 import { useAppUIContext } from '@store/context/ui'
 import { usePersistentStore } from '@store/tauriStore'
 import { isEmpty } from '@utils/index'
+import GlobalStyles from '@styles/globalstyles'
 
 const ToastNotificationWindow = lazy(() => import('@components/Notifications'))
 
@@ -120,6 +120,7 @@ const App: Component<{
 
     return (
         <main class="w-screen h-screen">
+            <GlobalStyles />
             <div class="App overflow-y-auto items-center">
                 <Suspense>
                     {props.children}

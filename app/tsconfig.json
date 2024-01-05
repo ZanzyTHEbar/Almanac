@@ -8,6 +8,7 @@
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "jsx": "preserve",
+        "allowImportingTsExtensions": true,
         "jsxImportSource": "solid-js",
         "types": ["vite/client"],
         "useDefineForClassFields": true,
@@ -16,7 +17,7 @@
         "noEmit": true,
         "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "allowJs": true,
-        "skipLibCheck": false,
+        "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "resolveJsonModule": true,
         "paths": {
@@ -30,15 +31,17 @@
             "@assets/*": ["./assets/*"],
             "@hooks/*": ["src/utils/hooks/*"],
             "@store/*": ["src/store/*"],
+            "@context/*": ["src/context/*"],
             "@static/*": ["src/static/*"],
-            "@utils/*": ["src/utils/*"]
+            "@utils/*": ["src/utils/*"],
+            "@src": ["./src/*"]
         }
     },
-    "include": ["src", "**/*.ts", "**/*.tsx", "index.js", "extras/CustomCalendar"],
+    "include": ["src", "types", "tailwind.config.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
     "references": [
         {
             "path": "./tsconfig.node.json"
         }
     ],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "dist", "build", "docs"]
 }

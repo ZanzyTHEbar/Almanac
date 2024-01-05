@@ -2,7 +2,6 @@
 import { createEffect, onCleanup } from 'solid-js'
 
 const Welcome = () => {
-
     const backgroundImageClasses = [
         "bg-[url('/images/welcome.png')]",
         'bg-cover',

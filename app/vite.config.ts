@@ -3,6 +3,12 @@ import { defineConfig } from 'vite'
 import solidPlugin from 'vite-plugin-solid'
 
 export default defineConfig({
+    optimizeDeps: {
+        extensions: ['jsx', 'tsx'],
+        esbuildOptions: {
+            target: 'esnext',
+        },
+    },
     resolve: {
         alias: {
             '@interfaces': resolve(__dirname, './src/interfaces'),
@@ -15,18 +21,24 @@ export default defineConfig({
             '@assets': resolve(__dirname, './assets'),
             '@hooks': resolve(__dirname, './src/utils/hooks'),
             '@store': resolve(__dirname, './src/store'),
+            '@context': resolve(__dirname, './src/context'),
             '@static': resolve(__dirname, './src/static'),
             '@utils': resolve(__dirname, './src/utils'),
         },
     },
-    plugins: [solidPlugin()],
+    plugins: [
+        solidPlugin({
+            babel: {
+                plugins: ['babel-plugin-macros'],
+            },
+        }),
+    ],
     server: {
-        port: 3000,
         host: true,
+        port: 5478,
         strictPort: true,
     },
     build: {
         target: 'esnext',
-        polyfillDynamicImport: false,
     },
 })
