@@ -1,11 +1,10 @@
-import { createContext, useContext, createMemo, type Component, Accessor } from 'solid-js'
+import { createContext, useContext, createMemo, type ParentComponent, type Accessor } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
 import { attachConsole } from 'tauri-plugin-log-api'
 import { CalendarProvider } from './calendar'
 import { AppNotificationProvider } from './notifications'
 import { AppUIProvider } from './ui'
-import type { Context, DebugMode } from '@static/types'
-import type { AppStore } from '@static/types/interfaces'
+import type { AppStore, DebugMode } from '@static/types'
 import type { UnlistenFn } from '@tauri-apps/api/event'
 
 interface AppContext {
@@ -15,7 +14,7 @@ interface AppContext {
 }
 
 const AppContext = createContext<AppContext>()
-export const AppProvider: Component<Context> = (props) => {
+export const AppProvider: ParentComponent = (props) => {
     const detachConsole = attachConsole()
 
     //#region Store

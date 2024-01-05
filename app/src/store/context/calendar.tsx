@@ -1,15 +1,14 @@
-import moment from 'moment'
+import dayjs from 'dayjs'
 import {
     createContext,
     useContext,
     createMemo,
-    type Component,
+    type ParentComponent,
     Accessor,
     createEffect,
     onMount,
 } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
-import type { Context } from '@static/types'
 import {
     Calendar,
     CalendarDate,
@@ -17,37 +16,41 @@ import {
     CalendarEventModify,
     CalendarLabel,
     DateUtilityObject,
-} from '@static/types/interfaces'
+} from '@static/types'
 
 interface CalendarContext {
+    /* Get */
     filteredEvents: Accessor<CalendarEvent[]>
     smallCalendarWidget: Accessor<DateUtilityObject | null>
     daySelected: Accessor<CalendarDate | undefined>
     showEventModal: Accessor<boolean>
     selectedEvent: Accessor<CalendarEvent | null>
     labels: Accessor<CalendarLabel[]>
+    /* Utilities */
+    getMonth: (month?: number) => dayjs.Dayjs[][]
+    /* Set */
     setDate: (date: CalendarDate, smallCalendar?: boolean, selectedDay?: boolean) => void
     savedEvents: Accessor<CalendarEvent[]>
-    setSavedEvents: (event: CalendarEvent) => void
+    setSavedEvents: (event: CalendarEvent, handle: CalendarEventModify) => void
     setDaySelected: (day: CalendarDate) => void
     setShowEventModal: (state: boolean) => void
     setSelectedEvent: (state: CalendarEvent | null) => void
     setLabels: (label: CalendarLabel[]) => void
     setLabel: (label: CalendarLabel) => void
-    _filteredEvents: () => void
+    filterEvents: () => void
 }
 
 const CalendarContext = createContext<CalendarContext>()
-export const CalendarProvider: Component<Context> = (props) => {
+export const CalendarProvider: ParentComponent = (props) => {
     const defaultState: Calendar = {
-        daySelected: moment().day().toLocaleString(),
+        daySelected: dayjs().day(),
         showEventModal: false,
         selectedEvent: null,
         labels: [],
         savedEvents: [],
         filteredEvents: [],
         smallCalendarWidget: {
-            daySelected: moment().day().toLocaleString(),
+            daySelected: dayjs().day(),
         },
     }
 
@@ -124,7 +127,7 @@ export const CalendarProvider: Component<Context> = (props) => {
         )
     }
 
-    const _filteredEvents = () => {
+    const filterEvents = () => {
         setState(
             produce((s) => {
                 s.filteredEvents = s.savedEvents.filter((evt) =>
@@ -169,6 +172,37 @@ export const CalendarProvider: Component<Context> = (props) => {
 
     //#endregion
 
+    //#region Utilities
+    //const getYear = (year = DateTime.now().year) => {
+    //    const year = DateTime.now().year
+    //}
+
+    const getMonth = (month = dayjs().month()) => {
+        const year = dayjs().year()
+        // get the first day of the month
+        const firstDayofMonth = dayjs(new Date(year, month, 1)).day()
+        let currentMonthCount = 0 - firstDayofMonth
+        const daysMatrix = new Array(5).fill([]).map(() => {
+            return new Array(7).fill(null).map(() => {
+                currentMonthCount++
+                return dayjs(new Date(year, month, currentMonthCount))
+            })
+        })
+        return daysMatrix
+    }
+
+    //const getDay = (day = DateTime.now().day) => {}
+    //const getHour = (hour = DateTime.now().hour) => {}
+    //const getMinute = (minute = DateTime.now().minute) => {}
+
+    //const getYearLocalString = () => DateTime.now().year.toLocaleString()
+    //const getMonthLocalString = () => DateTime.now().month.toLocaleString()
+    //const getDayLocalString = () => dayjs().day
+    //const getHourLocalString = () => DateTime.now().hour.toLocaleString()
+    //const getMinuteLocalString = () => DateTime.now().minute.toLocaleString()
+
+    //#endregion
+
     //#region Effects
 
     createEffect(() => {
@@ -209,7 +243,7 @@ export const CalendarProvider: Component<Context> = (props) => {
         const storageEvents = localStorage.getItem('savedEvents')
         console.log('[Load Store]:', JSON.parse(storageEvents!))
         const parsedEvents: CalendarEvent = storageEvents ? JSON.parse(storageEvents) : []
-        setSavedEvents(parsedEvents)
+        setSavedEvents(parsedEvents, 'push')
     })
 
     return (
@@ -221,6 +255,7 @@ export const CalendarProvider: Component<Context> = (props) => {
                 showEventModal,
                 selectedEvent,
                 labels,
+                getMonth,
                 savedEvents,
                 setSavedEvents,
                 setDate,
@@ -229,7 +264,7 @@ export const CalendarProvider: Component<Context> = (props) => {
                 setSelectedEvent,
                 setLabels,
                 setLabel,
-                _filteredEvents,
+                filterEvents,
             }}>
             {props.children}
         </CalendarContext.Provider>

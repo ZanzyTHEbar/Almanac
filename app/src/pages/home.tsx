@@ -4,7 +4,6 @@ import Sidebar from '@components/Sidebar'
 import { useCalendarContext } from '@src/store/context/calendar'
 import { useAppContextMain } from '@src/store/context/main'
 import { useAppUIContext } from '@src/store/context/ui'
-import FullCalendar from 'extras/FullCalendar'
 
 // TODO: Add search bar to filter crops
 // TODO: Add resize event listener to resize calendar on sidebar open/close
@@ -39,9 +38,11 @@ export default function Main() {
                         <div onClick={() => setShowSidebar(true)}>
                             <BurgerMenu class="pt-1 justify-start items-start" />
                         </div>
+                        {/*
                         <div class="flex flex-1 w-full h-[97vh]">
                             <FullCalendar />
-                        </div>
+                        </div> 
+                        */}
                     </div>
                 </div>
             </div>

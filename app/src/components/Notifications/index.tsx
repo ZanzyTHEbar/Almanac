@@ -3,7 +3,7 @@ import { debug } from 'tauri-plugin-log-api'
 import { Toaster, ToasterStore, Transition, useToaster } from 'terracotta'
 import CustomToast from './CustomToast'
 import { useAppNotificationsContext } from '@src/store/context/notifications'
-import { Notifications } from '@static/types/interfaces'
+import { Notifications } from '@static/types'
 
 const ToastNotificationWindow = () => {
     const { getNotifications, getEnableNotifications } = useAppNotificationsContext()

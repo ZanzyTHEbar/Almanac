@@ -1,14 +1,13 @@
 import { exit } from '@tauri-apps/api/process'
 import { invoke } from '@tauri-apps/api/tauri'
 import { appWindow } from '@tauri-apps/api/window'
-import { createContext, useContext, createMemo, type Component, Accessor } from 'solid-js'
+import { createContext, useContext, createMemo, type ParentComponent, Accessor } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
 import { useEventListener } from 'solidjs-use'
 import { attachConsole, debug } from 'tauri-plugin-log-api'
-import type { Context } from '@static/types'
 import type { UnlistenFn } from '@tauri-apps/api/event'
 import { usePersistentStore } from '@src/store/tauriStore'
-import { ExitCodes } from '@static/types/enums'
+import { ExitCodes } from '@static/enums'
 import { AppProvider } from '@store/context/app'
 import { setFrontendReady } from 'tauri-plugin-splashscreen'
 
@@ -21,7 +20,7 @@ interface AppContextMain {
 }
 
 const AppContextMain = createContext<AppContextMain>()
-export const AppContextMainProvider: Component<Context> = (props) => {
+export const AppContextMainProvider: ParentComponent = (props) => {
     const detachConsole = attachConsole()
     const getDetachConsole = createMemo(() => detachConsole)
 

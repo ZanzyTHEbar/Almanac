@@ -3,10 +3,10 @@ import { FiAlertTriangle, FiAlertOctagon } from 'solid-icons/fi'
 import { IoAlertCircleSharp } from 'solid-icons/io'
 import { createSignal, Component, Show } from 'solid-js'
 import { Transition, Toast, Alert } from 'terracotta'
-import type { Notifications } from '@static/types/interfaces'
+import type { Notifications } from '@static/types'
 import CloseIcon from '@components/CloseIcon'
 import { useAppNotificationsContext } from '@src/store/context/notifications'
-import { ENotificationType } from '@static/types/enums'
+import { ENotificationType } from '@static/enums'
 
 interface ToastProps {
     id: string

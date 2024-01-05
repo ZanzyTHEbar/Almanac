@@ -12,14 +12,15 @@ import {
 import { useEventListener, useInterval } from 'solidjs-use'
 import { debug, error } from 'tauri-plugin-log-api'
 import type { BackendConfig, PersistentSettings } from '@static/types'
-import { ENotificationAction, ENotificationType } from '@static/types/enums'
+import { ENotificationAction, ENotificationType } from '@static/enums'
 import { useAppContext } from '@store/context/app'
+import { useCalendarContext } from '@store/context/calendar'
 import { useAppContextMain } from '@store/context/main'
 import { useAppNotificationsContext } from '@store/context/notifications'
 import { useAppUIContext } from '@store/context/ui'
 import { usePersistentStore } from '@store/tauriStore'
-import { isEmpty } from '@utils/index'
 import GlobalStyles from '@styles/globalstyles'
+import { isEmpty } from '@utils/index'
 
 const ToastNotificationWindow = lazy(() => import('@components/Notifications'))
 
@@ -61,6 +62,8 @@ const App: Component<{
         checkPermission,
         addNotification,
     } = useAppNotificationsContext()
+
+    const { getMonth } = useCalendarContext()
 
     onMount(() => {
         //* load the app settings from the persistent store and assign to the global state
@@ -116,6 +119,7 @@ const App: Component<{
 
     createEffect(() => {
         setUserIsInSettings(params.pathname.match('settings') !== null)
+        console.table(getMonth())
     })
 
     return (

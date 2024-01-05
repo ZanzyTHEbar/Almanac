@@ -8,7 +8,6 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 import animate from 'tailwindcss-animate'
 import brandColors from 'tailwindcss-brand-colors'
 import debugScreens from 'tailwindcss-debug-screens'
-import uiPreset from './ui.preset'
 import type { Config } from 'tailwindcss'
 
 const generateSizeClass = (upToSize: number, startAt = 80) => {
@@ -25,18 +24,9 @@ const labelsClasses = ['indigo', 'gray', 'green', 'blue', 'red', 'purple']
 // add class='dark' to <html> to enable dark mode - https://tailwindcss.com/docs/dark-mode
 
 const config = {
-    plugins: [
-        animate,
-        kobalte({ prefix: 'kb' }),
-        forms,
-        typography,
-        daisyui,
-        brandColors,
-        debugScreens,
-        uiPreset,
-    ],
-    darkMode: 'class',
-    content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,css,md,mdx,html,json,scss}'],
+    plugins: [kobalte, animate, forms, typography, daisyui, brandColors, debugScreens],
+    darkMode: ['class', '[data-kb-theme="dark"]'],
+    content: ['./src/**/*.{js,jsx,md,mdx,ts,tsx}'],
     purge: {
         //Because we made a dynamic class with the label we need to add those classes
         // to the safe list so the purge does not remove that
@@ -47,6 +37,13 @@ const config = {
         ],
     },
     theme: {
+        container: {
+            center: true,
+            padding: '2rem',
+            screens: {
+                '2xl': '1400px',
+            },
+        },
         debugScreens: {
             position: ['bottom', 'left'],
         },
@@ -64,11 +61,91 @@ const config = {
             borderWidth: {
                 1: '1px',
             },
-            fontFamily: {
-                sans: ['Roboto', 'sans-serif'],
-            },
             gridTemplateColumns: {
                 '1/5': '1fr 5fr',
+            },
+            colors: {
+                border: 'hsl(var(--border))',
+                input: 'hsl(var(--input))',
+                ring: 'hsl(var(--ring))',
+                background: 'hsl(var(--background))',
+                foreground: 'hsl(var(--foreground))',
+                primary: {
+                    DEFAULT: 'hsl(var(--primary))',
+                    foreground: 'hsl(var(--primary-foreground))',
+                },
+                secondary: {
+                    DEFAULT: 'hsl(var(--secondary))',
+                    foreground: 'hsl(var(--secondary-foreground))',
+                },
+                destructive: {
+                    DEFAULT: 'hsl(var(--destructive))',
+                    foreground: 'hsl(var(--destructive-foreground))',
+                },
+                info: {
+                    DEFAULT: 'hsl(var(--info))',
+                    foreground: 'hsl(var(--info-foreground))',
+                },
+                success: {
+                    DEFAULT: 'hsl(var(--success))',
+                    foreground: 'hsl(var(--success-foreground))',
+                },
+                warning: {
+                    DEFAULT: 'hsl(var(--warning))',
+                    foreground: 'hsl(var(--warning-foreground))',
+                },
+                error: {
+                    DEFAULT: 'hsl(var(--error))',
+                    foreground: 'hsl(var(--error-foreground))',
+                },
+                muted: {
+                    DEFAULT: 'hsl(var(--muted))',
+                    foreground: 'hsl(var(--muted-foreground))',
+                },
+                accent: {
+                    DEFAULT: 'hsl(var(--accent))',
+                    foreground: 'hsl(var(--accent-foreground))',
+                },
+                popover: {
+                    DEFAULT: 'hsl(var(--popover))',
+                    foreground: 'hsl(var(--popover-foreground))',
+                },
+                card: {
+                    DEFAULT: 'hsl(var(--card))',
+                    foreground: 'hsl(var(--card-foreground))',
+                },
+            },
+            borderRadius: {
+                lg: 'var(--radius)',
+                md: 'calc(var(--radius) - 2px)',
+                sm: 'calc(var(--radius) - 4px)',
+            },
+            fontFamily: {
+                sans: ['Inter', 'Roboto', 'sans-serif', ...defaultTheme.fontFamily.sans],
+            },
+            keyframes: {
+                'accordion-down': {
+                    from: { height: '0' },
+                    to: { height: 'var(--kb-accordion-content-height)' },
+                },
+                'accordion-up': {
+                    from: { height: 'var(--kb-accordion-content-height)' },
+                    to: { height: '0' },
+                },
+                'content-show': {
+                    from: { opacity: '0', transform: 'scale(0.96)' },
+                    to: { opacity: '1', transform: 'scale(1)' },
+                },
+                'content-hide': {
+                    from: { opacity: '1', transform: 'scale(1)' },
+                    to: { opacity: '0', transform: 'scale(0.96)' },
+                },
+            },
+            animation: {
+                'accordion-down': 'accordion-down 0.2s ease-out',
+                'accordion-up': 'accordion-up 0.2s ease-out',
+                'content-show': 'content-show 0.2s ease-out',
+                'content-hide': 'content-hide 0.2s ease-out',
             },
         },
     },
@@ -81,7 +158,7 @@ const config = {
         utils: true, // adds responsive and modifier utility classes
         prefix: '', // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
         logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
-        themeRoot: ':root', // The element that receives theme color CSS variables
+        themeRoot: '*', // The element that receives theme color CSS variables
     },
 } satisfies Config
 

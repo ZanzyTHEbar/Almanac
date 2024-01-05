@@ -3,16 +3,15 @@ import {
     isPermissionGranted,
     requestPermission,
 } from '@tauri-apps/api/notification'
-import { createContext, useContext, createMemo, type Component, Accessor } from 'solid-js'
+import { createContext, useContext, createMemo, type ParentComponent, Accessor } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
 import { ToasterStore } from 'terracotta'
-import type { Context } from '@static/types'
 import type {
     Notifications,
     NotificationAction,
     AppStoreNotifications,
 } from '@static/types/interfaces'
-import { ENotificationAction } from '@static/types/enums'
+import { ENotificationAction } from '@static/enums'
 
 interface AppNotificationsContext {
     getEnableNotificationsSounds: Accessor<boolean>
@@ -29,7 +28,7 @@ interface AppNotificationsContext {
 }
 
 const AppNotificationsContext = createContext<AppNotificationsContext>()
-export const AppNotificationProvider: Component<Context> = (props) => {
+export const AppNotificationProvider: ParentComponent = (props) => {
     const defaultState: AppStoreNotifications = {
         notifications: new ToasterStore<Notifications>(),
         enableNotificationsSounds: true,

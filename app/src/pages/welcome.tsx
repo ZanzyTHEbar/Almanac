@@ -2,15 +2,7 @@
 import { createEffect, onCleanup } from 'solid-js'
 
 const Welcome = () => {
-    const backgroundImageClasses = [
-        "bg-[url('/images/welcome.png')]",
-        'bg-cover',
-        'bg-center',
-        'bg-no-repeat',
-        'bg-fixed',
-        'object-cover',
-        'mixed-blend-multiply',
-    ]
+    const backgroundImageClasses = []
 
     const body = document.querySelector('body')
 
@@ -24,19 +16,20 @@ const Welcome = () => {
     })
 
     return (
-        <div class="overflow-hidden w-full h-full relative">
-            <div class="w-full h-full mb-8 p-3 flex flex-col justify-center items-center" />
-            <div class="flex flex-col items-center">
-                <div class="flex flex-col flex-1 grow justify-start items-center space-y-2 top-11 absolute z-10 w-full h-full">
-                    <div class="flex flex-row items-center gap-2">
-                        <h5 class="text-[#072268e3]">A</h5>
-                        <h5 class="text-[#5b9cf0] ">GARDEN</h5>
-                    </div>
-                    <h1 class="font-bold text-[#072268]">ALMANAC</h1>
-                    <a class="justify-center absolute bottom-52 flex" href="/home">
-                        <div class="lotus-button" />
-                    </a>
-                </div>
+        <div
+            class="flex flex-col justify-between artboard-demo w-screen h-screen z-100 overflow-hidden bg-no-repeat bg-center bg-cover"
+            style={{
+                background: "url('/images/welcome.png') no-repeat center center fixed",
+                'background-size': 'cover',
+            }}>
+            <div class="text-center pt-10">
+                <h5 class="text-base-300">A</h5>
+                <h5 class="text-blue-500">GARDEN</h5>
+                <h1 class="font-bold text-purple-600">ALMANAC</h1>
+            </div>
+
+            <div class="flex justify-center pb-10 p-10 z-10 shadow-md">
+                <a href="/home" class="lotus-button p-10 z-10" />
             </div>
         </div>
     )

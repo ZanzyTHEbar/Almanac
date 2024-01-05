@@ -1,7 +1,6 @@
-import { Accessor, createContext, createMemo, useContext, type Component } from 'solid-js'
+import { Accessor, createContext, createMemo, useContext, type ParentComponent } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
-import type { Context } from '@static/types'
-import { MenuOpen, UiStore } from '@src/static/types/interfaces'
+import { MenuOpen, UiStore } from '@src/static/types'
 
 interface AppUIContext {
     openModalStatus: Accessor<boolean | undefined>
@@ -14,7 +13,7 @@ interface AppUIContext {
 }
 
 const AppUIContext = createContext<AppUIContext>()
-export const AppUIProvider: Component<Context> = (props) => {
+export const AppUIProvider: ParentComponent = (props) => {
     const defaultState: UiStore = {
         showSidebar: true,
         openModal: false,

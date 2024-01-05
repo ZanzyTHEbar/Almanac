@@ -11,15 +11,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:500');
 
-/* Custom tailwind class overrides */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Custom Imports */
 @import 'index.css';
-@import 'bootstrap.css';
 @import 'scrollbar.css';
 @import 'calendar.css';
 @import 'components/addcropmodal.css';
 @import 'components/addcropform.css';
+
+/* Custom tailwind class overrides */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

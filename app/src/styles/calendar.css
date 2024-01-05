@@ -18,3 +18,28 @@
 .calendar__content {
     @apply h-screen w-full bg-white overflow-y-auto;
 }
+
+.App {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.lotus-button {
+    @apply bg-[url('images/lotus.png')] bg-center bg-cover object-cover bg-no-repeat;
+    @apply p-5 rounded-full shadow-md;
+    @apply hover:shadow-2xl transition duration-200 ease-in focus:shadow-inner cursor-pointer;
+    @apply w-14 h-14;
+    @apply bg-neutral-400;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.lotus-button:hover, .lotus-button:focus {
+    transform: scale(1.1);
+}
+
+.lotus-button:active {
+    transform: scale(0.9);
+}
