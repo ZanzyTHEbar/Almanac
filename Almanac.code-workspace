@@ -82,10 +82,12 @@
       "journaling",
       "kobalte",
       "Kruckenberg",
+      "lofi",
       "luxon",
       "manifestfile",
       "msvc",
       "nanos",
+      "nord",
       "notif",
       "notifs",
       "Pkce",
@@ -103,6 +105,7 @@
       "specta",
       "stackoverflow",
       "Swatinem",
+      "synthwave",
       "thisbeyond",
       "thiserror",
       "timegrid",
@@ -112,6 +115,7 @@
       "vnode",
       "Waveshare",
       "webserial",
+      "wireframe",
       "Xsts"
     ],
     "rust-analyzer.showUnlinkedFileNotification": false
