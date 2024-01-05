@@ -17,6 +17,7 @@
 @import 'calendar.css';
 @import 'components/addcropmodal.css';
 @import 'components/addcropform.css';
+@import 'components/sidebar.css';
 
 /* Custom tailwind class overrides */
 @tailwind base;

@@ -1,32 +1,3 @@
-#calendar {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.calendar-main {
-    @apply h-screen w-screen overflow-hidden rounded-lg;
-}
-
-.calendar__sidebar {
-    @apply h-screen w-1/4 bg-gray-100 overflow-y-auto;
-}
-
-.calendars {
-    @apply h-screen w-3/4 bg-white overflow-y-auto;
-}
-
-.calendar__content {
-    @apply h-screen w-full bg-white overflow-y-auto;
-}
-
-.App {
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
 .lotus-button {
     @apply bg-[url('images/lotus.png')] bg-center bg-cover object-cover bg-no-repeat;
     @apply p-5 rounded-full shadow-md;

@@ -1,4 +1,3 @@
-import { useNavigate } from '@solidjs/router'
 import { ParentComponent, createSignal, Component, Show } from 'solid-js'
 import { Transition, TransitionChild } from 'terracotta'
 import AddCrop from '@components/AddCropButton'
@@ -6,7 +5,7 @@ import AppCropModal from '@components/AddCropModal'
 import BurgerMenuIcon from '@components/BurgerMenuIcon'
 import GenericButton from '@components/GenericButton'
 import Labels from '@components/Labels'
-import { Resizer } from '@components/ui/resize'
+import Resizer from '@components/ui/resize'
 import { useAppUIContext } from '@src/store/context/ui'
 //import TabBar from '@components/TabBar'
 
@@ -30,28 +29,26 @@ const Sidebar: ParentComponent<{
 }> = (props) => {
     const { showSidebar, setShowSidebar } = useAppUIContext()
 
-    const navigate = useNavigate()
-
     // TODO: handle setting and getting the  width and height from local storage
 
     const [sidebar, setSidebar] = createSignal<HTMLDivElement | null>(null)
-    const [width, setWidth] = createSignal<number>(425)
-    const [height, setHeight] = createSignal<number>(225)
+    const [width, setWidth] = createSignal<number>(300)
+    //const [height, setHeight] = createSignal<number>(225)
     let resizer!: HTMLDivElement
 
     const changeWidth = (clientY: number, clientX: number) => {
+        console.debug('[Resize]: ', clientY, clientX)
         if (clientY < 0 || clientX < 0) return
+        if (clientY < 300) {
+            setWidth(300)
+            return
+        }
         setWidth(clientY)
-        setHeight(clientX)
     }
 
     return (
         <Transition show={showSidebar()} appear={true}>
-            {/* TODO: Animate Calendar Resize */}
-
-            {/* Sliding sidebar */}
             <TransitionChild
-                class="h-[97vh]"
                 enter="transition ease-in-out transform transition duration-[400ms]"
                 enterFrom="translate-x-full"
                 enterTo="-translate-x-0"
@@ -61,9 +58,8 @@ const Sidebar: ParentComponent<{
                 <div class="card h-auto pb-8 min-h-0">
                     <aside
                         ref={setSidebar}
-                        class="bg-base-200 card m-2 block min-h-0 min-w-0 p-0 overflow-hidden bg-base-100/90 border-base-100 text-primary h-full"
+                        class="sidebar bg-base-200 card m-2 block min-h-0 min-w-0 p-0 overflow-hidden bg-base-100/90 border-base-100 text-primary-content rounded-[8px] shadow-lg"
                         style={{
-                            height: `${height()}px`,
                             width: `${width()}px`,
                         }}>
                         <Resizer ref={resizer} side="right" onResize={changeWidth}>
@@ -79,6 +75,7 @@ const Sidebar: ParentComponent<{
 
 export default Sidebar
 
+/* TODO: Animate Calendar Resize */
 /* 
 <aside class="h-full shadow-md border p-5 w-64 mr-4 rounded-[8px] transition-all duration-300 ease-in-out overflow-x-hidden pt-[60px]">
     <div class="flex grow flex-1 flex-col justify-around">

@@ -25,7 +25,7 @@ const labelsClasses = ['indigo', 'gray', 'green', 'blue', 'red', 'purple']
 
 const config = {
     plugins: [kobalte, animate, forms, typography, daisyui, brandColors, debugScreens],
-    darkMode: ['class', '[data-kb-theme="dark"]'],
+    darkMode: ['class'/* , '[data-kb-theme="dark"]' */],
     content: ['./src/**/*.{js,jsx,md,mdx,ts,tsx}'],
     purge: {
         //Because we made a dynamic class with the label we need to add those classes

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="shortcut icon" type="image/ico" href="/images/icons/icon.ico" />
-    <title>Almanac</title>
-  </head>
-  <body class="debug-screens">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
-    <script type="text/javascript" data-sqs-type="imageloader-bootstrapper">
-      (function () { if (window.ImageLoader) { window.ImageLoader.bootstrap({}, document); } })();
-    </script>
-  </body>
+<html data-theme="garden" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/ico" href="/images/icons/icon.ico" />
+  <title>Almanac</title>
+</head>
+
+<body class="bg-base-100/75 debug-screens">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script type="module" src="/src/index.tsx"></script>
+  <script type="text/javascript" data-sqs-type="imageloader-bootstrapper">
+    (function () { if (window.ImageLoader) { window.ImageLoader.bootstrap({}, document); } })();
+  </script>
+</body>
+
 </html>

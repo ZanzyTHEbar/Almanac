@@ -109,9 +109,4 @@ const ResizerContent: Component<ResizerContentProps> = (props) => {
     )
 }
 
-export { Resizer }
-
-/* classList={{
-    'flex flex-col': !props.isHorizontal,
-    'flex flex-row': props.isHorizontal,
-}} */
+export default Resizer

@@ -1,4 +1,5 @@
-import dayjs from 'dayjs'
+import dayjs, { extend } from 'dayjs'
+import isoWeek from 'dayjs/plugin/isoWeek'
 import {
     createContext,
     useContext,
@@ -176,6 +177,20 @@ export const CalendarProvider: ParentComponent = (props) => {
     //const getYear = (year = DateTime.now().year) => {
     //    const year = DateTime.now().year
     //}
+    extend(isoWeek)
+    const year = dayjs().year()
+    const month = dayjs().month()
+    const today = dayjs().set('year', year)
+    const startWeek = today.startOf('isoWeek')
+    const weekDays = Array.from(new Array(7).keys()).map((index) => {
+        return startWeek.add(index, 'day')
+    })
+
+    const startOfMonth = today.set('month', month).startOf('month')
+    const startOfFirstWeek = startOfMonth.startOf('isoWeek')
+    const daysToFirstDay = startOfMonth.diff(startOfFirstWeek, 'day')
+    const daysToPrepend = Array.from(new Array(daysToFirstDay).keys())
+    const daysInMonth = Array.from(new Array(startOfMonth.daysInMonth()).keys())
 
     const getMonth = (month = dayjs().month()) => {
         const year = dayjs().year()
@@ -239,11 +254,15 @@ export const CalendarProvider: ParentComponent = (props) => {
     //#endregion
 
     onMount(() => {
-        // TODO: Change this to localForage or Tauri Store
+        // TODO: Change this to localForage or Tauri Store  when it's available
         const storageEvents = localStorage.getItem('savedEvents')
         console.log('[Load Store]:', JSON.parse(storageEvents!))
         const parsedEvents: CalendarEvent = storageEvents ? JSON.parse(storageEvents) : []
         setSavedEvents(parsedEvents, 'push')
+    })
+
+    createEffect(() => {
+        console.table(getMonth())
     })
 
     return (
