@@ -5,6 +5,7 @@ import AppCropModal from '@components/AddCropModal'
 import BurgerMenuIcon from '@components/BurgerMenuIcon'
 import GenericButton from '@components/GenericButton'
 import Labels from '@components/Labels'
+import { Card, CardContent } from '@components/ui/card'
 import Resizer from '@components/ui/resize'
 import { useAppUIContext } from '@src/store/context/ui'
 //import TabBar from '@components/TabBar'
@@ -30,6 +31,7 @@ const Sidebar: ParentComponent<{
     const { showSidebar, setShowSidebar } = useAppUIContext()
 
     // TODO: handle setting and getting the  width and height from local storage
+    // TODO: Animate hiding the sidebar
 
     const [sidebar, setSidebar] = createSignal<HTMLDivElement | null>(null)
     const [width, setWidth] = createSignal<number>(300)
@@ -50,24 +52,25 @@ const Sidebar: ParentComponent<{
         <Transition show={showSidebar()} appear={true}>
             <TransitionChild
                 enter="transition ease-in-out transform transition duration-[400ms]"
-                enterFrom="translate-x-full"
-                enterTo="-translate-x-0"
+                enterFrom="translate-x-0"
+                enterTo="-translate-x-full"
                 leave="transition ease-in-out transform transition duration-[400ms]"
-                leaveFrom="-translate-x-0"
-                leaveTo="translate-x-full">
-                <div class="card h-auto pb-8 min-h-0">
-                    <aside
-                        ref={setSidebar}
-                        class="sidebar bg-base-200 card m-2 block min-h-0 min-w-0 p-0 overflow-hidden bg-base-100/90 border-base-100 text-primary-content rounded-[8px] shadow-lg"
-                        style={{
-                            width: `${width()}px`,
-                        }}>
+                leaveFrom="-translate-x-full"
+                leaveTo="translate-x-0">
+                <Card
+                    style={{
+                        width: `${width()}px`,
+                    }}
+                    class="overflow-x-hidden mt-2 mb-2 mr-1 ml-1">
+                    <aside ref={setSidebar} class="sidebar">
                         <Resizer ref={resizer} side="right" onResize={changeWidth}>
                             {/* <TabBar zone="left" /> */}
-                            {props.children}
+                            <CardContent class="items-center text-center">
+                                {props.children}
+                            </CardContent>
                         </Resizer>
                     </aside>
-                </div>
+                </Card>
             </TransitionChild>
         </Transition>
     )
@@ -75,9 +78,8 @@ const Sidebar: ParentComponent<{
 
 export default Sidebar
 
-/* TODO: Animate Calendar Resize */
 /* 
-<aside class="h-full shadow-md border p-5 w-64 mr-4 rounded-[8px] transition-all duration-300 ease-in-out overflow-x-hidden pt-[60px]">
+<aside class="h-full shadow-md border p-5 w-64 mr-4 rounded-[8px]  pt-[60px]">
     <div class="flex grow flex-1 flex-col justify-around">
         <GenericButton onClick={() => navigate('/')} content="Menu" />
         <div onClick={() => setShowSidebar(false)}>

@@ -15,10 +15,13 @@
       "javascript": "javascript",
       "css": "css"
     },
+    "files.autoSave": "afterDelay",
     "editor.quickSuggestions": {
       "strings": true
     },
-    "files.autoSave": "afterDelay",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
     "rust-analyzer.checkOnSave.enable": true,
     "rust-analyzer.checkOnSave.command": "clippy",
     "rust-analyzer.checkOnSave.allTargets": true,
@@ -108,6 +111,7 @@
       "stackoverflow",
       "Swatinem",
       "synthwave",
+      "tamasfe",
       "thisbeyond",
       "thiserror",
       "timegrid",

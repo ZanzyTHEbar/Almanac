@@ -32,7 +32,7 @@ const SelectContent: Component<SelectPrimitive.SelectContentProps> = (props) => 
         <SelectPrimitive.Portal>
             <SelectPrimitive.Content
                 class={cn(
-                    'bg-popover bg-base-200 text-popover-foreground animate-in fade-in-80 relative z-10 min-w-[8rem] overflow-hidden rounded-md border shadow-md',
+                    'bg-secondary text-primary text-pretty text-primary-content animate-in fade-in-80 relative z-10 min-w-[8rem] overflow-hidden rounded-md border-input shadow-lg',
                     props.class,
                 )}
                 {...rest}>
@@ -47,7 +47,7 @@ const SelectItem: Component<SelectPrimitive.SelectItemProps> = (props) => {
     return (
         <SelectPrimitive.Item
             class={cn(
-                'text-neutral-600 focus:bg-base-100/70 relative mt-0 flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+                'dark:text-gray-200 dark:hover:bg-gray-400/55 text-primary text-pretty text-primary-content focus:bg-accent/75 relative mt-0 flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
                 props.class,
             )}
             {...rest}>

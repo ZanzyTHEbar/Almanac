@@ -25,7 +25,7 @@ const labelsClasses = ['indigo', 'gray', 'green', 'blue', 'red', 'purple']
 
 const config = {
     plugins: [kobalte, animate, forms, typography, daisyui, brandColors, debugScreens],
-    darkMode: ['class'/* , '[data-kb-theme="dark"]' */],
+    darkMode: ['class', '[data-theme="dark"]' /* , '[data-kb-theme="dark"]' */],
     content: ['./src/**/*.{js,jsx,md,mdx,ts,tsx}'],
     purge: {
         //Because we made a dynamic class with the label we need to add those classes
@@ -70,55 +70,6 @@ const config = {
                 ring: 'hsl(var(--ring))',
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
-                primary: {
-                    DEFAULT: 'hsl(var(--primary))',
-                    foreground: 'hsl(var(--primary-foreground))',
-                },
-                secondary: {
-                    DEFAULT: 'hsl(var(--secondary))',
-                    foreground: 'hsl(var(--secondary-foreground))',
-                },
-                destructive: {
-                    DEFAULT: 'hsl(var(--destructive))',
-                    foreground: 'hsl(var(--destructive-foreground))',
-                },
-                info: {
-                    DEFAULT: 'hsl(var(--info))',
-                    foreground: 'hsl(var(--info-foreground))',
-                },
-                success: {
-                    DEFAULT: 'hsl(var(--success))',
-                    foreground: 'hsl(var(--success-foreground))',
-                },
-                warning: {
-                    DEFAULT: 'hsl(var(--warning))',
-                    foreground: 'hsl(var(--warning-foreground))',
-                },
-                error: {
-                    DEFAULT: 'hsl(var(--error))',
-                    foreground: 'hsl(var(--error-foreground))',
-                },
-                muted: {
-                    DEFAULT: 'hsl(var(--muted))',
-                    foreground: 'hsl(var(--muted-foreground))',
-                },
-                accent: {
-                    DEFAULT: 'hsl(var(--accent))',
-                    foreground: 'hsl(var(--accent-foreground))',
-                },
-                popover: {
-                    DEFAULT: 'hsl(var(--popover))',
-                    foreground: 'hsl(var(--popover-foreground))',
-                },
-                card: {
-                    DEFAULT: 'hsl(var(--card))',
-                    foreground: 'hsl(var(--card-foreground))',
-                },
-            },
-            borderRadius: {
-                lg: 'var(--radius)',
-                md: 'calc(var(--radius) - 2px)',
-                sm: 'calc(var(--radius) - 4px)',
             },
             fontFamily: {
                 sans: ['Inter', 'Roboto', 'sans-serif', ...defaultTheme.fontFamily.sans],
@@ -158,7 +109,7 @@ const config = {
         utils: true, // adds responsive and modifier utility classes
         prefix: '', // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
         logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
-        themeRoot: '*', // The element that receives theme color CSS variables
+        themeRoot: ':root', // The element that receives theme color CSS variables
     },
 } satisfies Config
 
