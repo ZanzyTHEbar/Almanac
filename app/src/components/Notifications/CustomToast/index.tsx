@@ -4,7 +4,7 @@ import { IoAlertCircleSharp } from 'solid-icons/io'
 import { createSignal, Component, Show } from 'solid-js'
 import { Transition, Toast, Alert } from 'terracotta'
 import type { Notifications } from '@static/types'
-import CloseIcon from '@components/CloseIcon'
+import { Icons } from '@components/ui/icon'
 import { useAppNotificationsContext } from '@src/store/context/notifications'
 import { ENotificationType } from '@static/enums'
 
@@ -58,7 +58,10 @@ const CustomToast: Component<ToastProps> = (props) => {
                         type="button"
                         class="bg-slate-600 hover:bg-slate-700 focus:bg-slate-900 flex-none w-6 h-6 p-1 text-gray-50 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
                         onClick={dismiss}>
-                        <CloseIcon />
+                        <Icons.close
+                            color="white"
+                            size={10}
+                        />
                     </button>
                 </Alert>
             </Toast>

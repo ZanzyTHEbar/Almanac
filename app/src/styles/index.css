@@ -1,8 +1,8 @@
 @layer base {
     /* This style is REQUIRED due to how kobalte handles focus-visible state */
-    * {
+    /* * {
         @apply outline-none [&[data-focus-visible]]:outline-white;
-    }
+    } */
 
     /* :root {
         --background: 0 0% 100%;

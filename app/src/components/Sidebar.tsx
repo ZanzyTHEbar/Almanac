@@ -1,34 +1,14 @@
-import { ParentComponent, createSignal, Component, Show } from 'solid-js'
+import { ParentComponent, createSignal } from 'solid-js'
 import { Transition, TransitionChild } from 'terracotta'
-import AddCrop from '@components/AddCropButton'
-import AppCropModal from '@components/AddCropModal'
-import BurgerMenuIcon from '@components/BurgerMenuIcon'
-import GenericButton from '@components/GenericButton'
-import Labels from '@components/Labels'
 import { Card, CardContent } from '@components/ui/card'
 import Resizer from '@components/ui/resize'
 import { useAppUIContext } from '@src/store/context/ui'
 //import TabBar from '@components/TabBar'
 
-// TODO: Add search bar to filter crops
-
-const BurgerMenu: Component<{
-    class: string
-}> = (props) => {
-    const { showSidebar } = useAppUIContext()
-    return (
-        <div class={`${props.class} flex flex-1 mb-5`}>
-            <Show when={showSidebar()}>
-                <BurgerMenuIcon class={props.class} />
-            </Show>
-        </div>
-    )
-}
-
 const Sidebar: ParentComponent<{
     class?: string
 }> = (props) => {
-    const { showSidebar, setShowSidebar } = useAppUIContext()
+    const { showSidebar } = useAppUIContext()
 
     // TODO: handle setting and getting the  width and height from local storage
     // TODO: Animate hiding the sidebar
@@ -77,29 +57,3 @@ const Sidebar: ParentComponent<{
 }
 
 export default Sidebar
-
-/* 
-<aside class="h-full shadow-md border p-5 w-64 mr-4 rounded-[8px]  pt-[60px]">
-    <div class="flex grow flex-1 flex-col justify-around">
-        <GenericButton onClick={() => navigate('/')} content="Menu" />
-        <div onClick={() => setShowSidebar(false)}>
-            <BurgerMenu class="justify-end items-start" />
-        </div>
-        <div class="flex flex-col justify-center items-center content-center mt-3">
-            <img src="images/veg.svg" alt="" />
-            <Show when={true}>
-                <p class="pt-2 text-gray-700 font-bold">No crops in your garden</p>
-                <p class="text-gray-500">You haven't added any crops yet</p>
-                <AppCropModal trigger={<AddCrop />} />
-            </Show>
-        </div>
-        <div class="mt-3 p-2 flex flex-col grow justify-evenly shadow-sm border rounded-[8px]">
-            <Labels />
-        </div>
-    </div>
-</aside>
-
-
-
-
-*/

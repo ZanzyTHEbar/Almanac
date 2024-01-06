@@ -1,15 +1,18 @@
-import { Dialog } from '@kobalte/core'
-import { Component, createEffect, createSignal, JSXElement, onMount } from 'solid-js'
+import { createEffect, createSignal, onMount, ParentComponent } from 'solid-js'
 import CropCategory from './AddCropForm/CropCategory'
 import CropSettingsSection from './AddCropForm/CropSettings'
 import FormActions from './AddCropForm/FormActions'
-import CloseIcon from '@components/CloseIcon'
+import {
+    Dialog,
+    DialogTrigger,
+    DialogContent,
+    DialogHeader,
+    DialogFooter,
+    DialogTitle,
+    DialogDescription,
+} from '@components/ui/dialog'
 
-interface EventModalProps {
-    trigger: JSXElement
-}
-
-const EventModal: Component<EventModalProps> = (props) => {
+const EventModal: ParentComponent = (props) => {
     const [open, setOpen] = createSignal(false)
 
     const handleSubmit = (e) => {
@@ -27,41 +30,34 @@ const EventModal: Component<EventModalProps> = (props) => {
     })
 
     return (
-        <Dialog.Root modal={open()} open={open()} onOpenChange={setOpen}>
-            <Dialog.Trigger class="dialog__trigger">{props.trigger}</Dialog.Trigger>
-            <Dialog.Portal>
-                <Dialog.Overlay class="dialog__overlay" />
-                <div class="dialog__positioner">
-                    <Dialog.Content class="dialog__content">
-                        <div class="crop-form-container">
-                            <form class="p-2">
-                                <div class="dialog__header">
-                                    <Dialog.Title class="dialog__title">
-                                        <h2>Add a new crop</h2>
-                                    </Dialog.Title>
-                                    <Dialog.CloseButton class="dialog__close-button">
-                                        <CloseIcon width={30} height={30} />
-                                    </Dialog.CloseButton>
-                                </div>
-                                <p>Select an existing crop or create a new crop</p>
-                                <Dialog.Description class="dialog__description">
-                                    {/* <CropCategory /> */}
-                                    <CropSettingsSection />
-                                    <FormActions
-                                        onRestoreDefaults={handleRestoreDefaults}
-                                        onSubmit={handleSubmit}
-                                    />
-                                </Dialog.Description>
-                            </form>
-                        </div>
-                    </Dialog.Content>
-                </div>
-            </Dialog.Portal>
-        </Dialog.Root>
+        <Dialog open={open()} onOpenChange={setOpen} aria-label="Add Crop Modal">
+            <DialogTrigger>{props.children}</DialogTrigger>
+            <DialogContent>
+                <DialogHeader>
+                    <DialogTitle>Add a new crop</DialogTitle>
+                    <DialogDescription>
+                        Select an existing crop or create a new crop
+                    </DialogDescription>
+                </DialogHeader>
+
+                <form class="p-2">
+                    <CropCategory />
+                    <CropSettingsSection />
+                    <FormActions
+                        onRestoreDefaults={handleRestoreDefaults}
+                        onSubmit={handleSubmit}
+                    />
+                </form>
+                <DialogFooter>
+                    
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
     )
 }
 
 export default EventModal
+
 /* 
 
 const calendarContent: CalendarEventContent = {

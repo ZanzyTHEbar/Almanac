@@ -1,17 +1,23 @@
-import PlusIcon from '@components/PlusIcon'
+import { Button } from '@components/ui/button'
+import { Icons } from '@components/ui/icon'
 
 const AddCrop = () => {
     return (
-        <button class="btn btn-primary btn-ghost">
-            <span class="flex flex-row items-center">
-                <PlusIcon
-                    color="#ffffffe3"
+        <div class="pt-2">
+            <Button
+                class="text-pretty text-secondary-content"
+                variant="primary"
+                size="default"
+                styles="default">
+                <Icons.plus
+                    color="primary"
+                    viewBox='0 0 50 50'
                     size={30}
                     class="text-center justify-around content-center"
                 />
-                <p class="mt-3 pl-2 text-[#ffffffe3]">Add Crop</p>
-            </span>
-        </button>
+                Add Crop
+            </Button>
+        </div>
     )
 }
 

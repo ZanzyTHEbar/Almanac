@@ -1,15 +1,16 @@
 import { FiMenu } from 'solid-icons/fi'
-import { Component } from 'solid-js'
+import { Component, ComponentProps, Show, splitProps } from 'solid-js'
 import { Transition } from 'terracotta'
+import { cn } from '@src/lib/utils'
+import { useAppUIContext } from '@store/context/ui'
 
-const BurgerMenuIcon: Component<{
-    class: string
-}> = (props) => {
+const BurgerMenuIcon: Component<ComponentProps<'div'>> = (props) => {
+    const [, rest] = splitProps(props, ['class'])
     return (
-        <div class={props.class}>
+        <div class={props.class} {...rest}>
             <Transition
                 show={true}
-                class={`${props.class} flex flex-1 mb-5`}
+                class={cn(props.class)}
                 enter="transform transition duration-[400ms]"
                 enterFrom="opacity-0 rotate-[-120deg] scale-50"
                 enterTo="opacity-100 rotate-0 scale-100"
@@ -22,4 +23,16 @@ const BurgerMenuIcon: Component<{
     )
 }
 
-export default BurgerMenuIcon
+const BurgerMenu: Component<ComponentProps<'div'>> = (props) => {
+    const [, rest] = splitProps(props, ['class'])
+    const { showSidebar } = useAppUIContext()
+    return (
+        <div class={cn('flex flex-1 mb-5', props.class)} {...rest}>
+            <Show when={showSidebar()}>
+                <BurgerMenuIcon class={props.class} />
+            </Show>
+        </div>
+    )
+}
+
+export { BurgerMenuIcon, BurgerMenu }
