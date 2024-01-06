@@ -10,7 +10,7 @@ import brandColors from 'tailwindcss-brand-colors'
 import debugScreens from 'tailwindcss-debug-screens'
 import type { Config } from 'tailwindcss'
 
-const generateSizeClass = (upToSize: number, startAt = 80) => {
+/* const generateSizeClass = (upToSize: number, startAt = 80) => {
     const classes = {}
     for (let i = startAt; i < upToSize / 4; i += 4) {
         classes[i] = `${(i * 4) / 16}rem`
@@ -19,7 +19,7 @@ const generateSizeClass = (upToSize: number, startAt = 80) => {
     return classes
 }
 
-const labelsClasses = ['indigo', 'gray', 'green', 'blue', 'red', 'purple']
+const labelsClasses = ['indigo', 'gray', 'green', 'blue', 'red', 'purple'] */
 
 // add class='dark' to <html> to enable dark mode - https://tailwindcss.com/docs/dark-mode
 
@@ -27,7 +27,7 @@ const config = {
     plugins: [kobalte, animate, forms, typography, daisyui, brandColors, debugScreens],
     darkMode: ['class', '[data-theme="dark"]' /* , '[data-kb-theme="dark"]' */],
     content: ['./src/**/*.{js,jsx,md,mdx,ts,tsx}'],
-    purge: {
+    /* purge: {
         //Because we made a dynamic class with the label we need to add those classes
         // to the safe list so the purge does not remove that
         safelist: [
@@ -35,7 +35,8 @@ const config = {
             ...labelsClasses.map((lbl) => `bg-${lbl}-200`),
             ...labelsClasses.map((lbl) => `text-${lbl}-400`),
         ],
-    },
+    }, */
+
     theme: {
         container: {
             center: true,
@@ -53,24 +54,17 @@ const config = {
             ...defaultTheme.screens,
         },
         extend: {
-            width: generateSizeClass(1024),
+            /* width: generateSizeClass(1024),
             minHeight: generateSizeClass(1024, 0),
             maxHeight: generateSizeClass(1024, 0),
             maxWidth: generateSizeClass(1024, 0),
-            minWidth: generateSizeClass(1024, 0),
-            borderWidth: {
+            minWidth: generateSizeClass(1024, 0), */
+            /* borderWidth: {
                 1: '1px',
-            },
-            gridTemplateColumns: {
+            }, */
+            /*  gridTemplateColumns: {
                 '1/5': '1fr 5fr',
-            },
-            colors: {
-                border: 'hsl(var(--border))',
-                input: 'hsl(var(--input))',
-                ring: 'hsl(var(--ring))',
-                background: 'hsl(var(--background))',
-                foreground: 'hsl(var(--foreground))',
-            },
+            }, */
             fontFamily: {
                 sans: ['Inter', 'Roboto', 'sans-serif', ...defaultTheme.fontFamily.sans],
             },
@@ -100,6 +94,7 @@ const config = {
             },
         },
     },
+
     // daisyUI config (optional - here are the default values)
     daisyui: {
         themes: true, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
@@ -114,3 +109,10 @@ const config = {
 } satisfies Config
 
 export default config
+
+/* 
+
+
+
+
+*/
