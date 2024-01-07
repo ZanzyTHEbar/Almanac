@@ -1,7 +1,9 @@
-import { For, type Component, createSignal, onMount } from 'solid-js'
+import { For, type Component, createSignal, onMount, Show, createEffect } from 'solid-js'
+import { BurgerMenu } from '@components/BurgerMenuIcon'
 import Day, { dayjs } from '@components/Day'
 import { Card } from '@components/ui/card'
 import { Grid } from '@components/ui/grid'
+import { useAppUIContext } from '@src/store/context/ui'
 
 export interface MonthProps {
     month: dayjs.Dayjs[][]
@@ -42,8 +44,21 @@ const HandleDay: Component<MonthProps> = (props) => {
 const Month: Component<MonthProps> = (props) => {
     const cols = 7
 
+    const { showSidebar, setShowSidebar } = useAppUIContext()
+
+    createEffect(() => {
+        console.debug('[Month]: ', props.month)
+        console.debug('[Month]: ', showSidebar())
+    })
+
     return (
         <Card class="w-full rounded-box overflow-x-hidden mt-2 mb-2 mr-2 ml-1">
+            <Show when={!showSidebar()}>
+                <BurgerMenu
+                    onClick={() => setShowSidebar(true)}
+                    class="p-2 justify-start items-start"
+                />
+            </Show>
             <Grid cols={cols} class="w-full h-full">
                 <HandleDay month={props.month} />
             </Grid>

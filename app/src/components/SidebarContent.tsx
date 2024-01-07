@@ -4,7 +4,6 @@ import AppCropModal from '@components/AddCropModal'
 import { BurgerMenu } from '@components/BurgerMenuIcon'
 import Labels from '@components/Labels'
 import { Label } from '@components/ui/label'
-import { Separator } from '@components/ui/separator'
 import { cn } from '@src/lib/utils'
 import { useAppUIContext } from '@store/context/ui'
 

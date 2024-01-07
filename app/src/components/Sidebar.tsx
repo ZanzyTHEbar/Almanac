@@ -14,15 +14,15 @@ const Sidebar: ParentComponent<{
     // TODO: Animate hiding the sidebar
 
     const [sidebar, setSidebar] = createSignal<HTMLDivElement | null>(null)
-    const [width, setWidth] = createSignal<number>(300)
+    const [width, setWidth] = createSignal<number>(175)
     //const [height, setHeight] = createSignal<number>(225)
     let resizer!: HTMLDivElement
 
     const changeWidth = (clientY: number, clientX: number) => {
         console.debug('[Resize]: ', clientY, clientX)
         if (clientY < 0 || clientX < 0) return
-        if (clientY < 300) {
-            setWidth(300)
+        if (clientY < 175) {
+            setWidth(175)
             return
         }
         setWidth(clientY)
@@ -31,10 +31,10 @@ const Sidebar: ParentComponent<{
     return (
         <Transition show={showSidebar()} appear={true}>
             <TransitionChild
-                enter="transition ease-in-out transform transition duration-[400ms]"
+                enter="transition ease-in-out transform transition duration-400"
                 enterFrom="translate-x-full"
                 enterTo="-translate-x-0"
-                leave="transition ease-in-out transform transition duration-[400ms]"
+                leave="transition ease-in-out transform transition duration-400"
                 leaveFrom="-translate-x-0"
                 leaveTo="translate-x-full">
                 <Card
@@ -44,7 +44,6 @@ const Sidebar: ParentComponent<{
                     class="overflow-x-hidden mt-2 mb-2 mr-1 ml-1">
                     <aside ref={setSidebar} class="sidebar">
                         <Resizer ref={resizer} side="right" onResize={changeWidth}>
-                            {/* <TabBar zone="left" /> */}
                             <CardContent class="items-center text-center">
                                 {props.children}
                             </CardContent>
