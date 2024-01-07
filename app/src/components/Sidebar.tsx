@@ -32,11 +32,11 @@ const Sidebar: ParentComponent<{
         <Transition show={showSidebar()} appear={true}>
             <TransitionChild
                 enter="transition ease-in-out transform transition duration-[400ms]"
-                enterFrom="translate-x-0"
-                enterTo="-translate-x-full"
+                enterFrom="translate-x-full"
+                enterTo="-translate-x-0"
                 leave="transition ease-in-out transform transition duration-[400ms]"
-                leaveFrom="-translate-x-full"
-                leaveTo="translate-x-0">
+                leaveFrom="-translate-x-0"
+                leaveTo="translate-x-full">
                 <Card
                     style={{
                         width: `${width()}px`,

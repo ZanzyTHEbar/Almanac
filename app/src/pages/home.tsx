@@ -10,6 +10,8 @@ import { useAppUIContext } from '@store/context/ui'
 // TODO: Add search bar to filter crops
 
 export default function Main() {
+    const { getMonth } = useCalendarContext()
+
     const Main = () => (
         <Card class="w-screen rounded-none bg-primary-300 h-screen">
             <Header />
@@ -17,7 +19,7 @@ export default function Main() {
                 <Sidebar>
                     <SidebarContent />
                 </Sidebar>
-                <Month />
+                <Month month={getMonth()} />
             </CardContent>
         </Card>
     )

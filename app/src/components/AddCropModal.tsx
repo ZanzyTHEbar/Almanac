@@ -39,7 +39,6 @@ const EventModal: ParentComponent = (props) => {
                         Select an existing crop or create a new crop
                     </DialogDescription>
                 </DialogHeader>
-
                 <form class="p-2">
                     <CropCategory />
                     <CropSettingsSection />

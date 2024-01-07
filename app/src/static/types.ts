@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import type { ENotificationType, ENotificationAction } from '@static/enums'
 import type { WebviewWindow } from '@tauri-apps/api/window'
 import type { JSXElement } from 'solid-js'
@@ -65,7 +66,7 @@ export interface IWindow {
 //*                                                                                                                                                                    */
 //**********************************************************************************************************************************************************************/
 
-export type CalendarDate = Date | string | number
+export type CalendarDate = Date | string | number | dayjs.Dayjs | null
 export type CalendarEventTType = 'event' | 'task' | 'reminder' | null
 export type CalendarEventModify = 'push' | 'update' | 'delete' | null
 

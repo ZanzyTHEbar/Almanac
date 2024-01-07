@@ -37,7 +37,15 @@
             "@src": ["./src/*"]
         }
     },
-    "include": ["src", "types", "tailwind.config.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
+    "include": [
+        "src",
+        "types",
+        "tailwind.config.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js",
+        "extras/CustomCalendar"
+    ],
     "references": [
         {
             "path": "./tsconfig.node.json"
