@@ -1,17 +1,55 @@
-import { Separator as SeparatorPrimitive } from '@kobalte/core'
+//import { Separator as SeparatorPrimitive } from '@kobalte/core'
+import { cva } from 'class-variance-authority'
 import { splitProps } from 'solid-js'
-import type { Component } from 'solid-js'
-
+import type { VariantProps } from 'class-variance-authority'
+import type { Component, ComponentProps } from 'solid-js'
 import { cn } from '@src/lib/utils'
 
-const Separator: Component<SeparatorPrimitive.SeparatorRootProps> = (props) => {
-    const [, rest] = splitProps(props, ['class', 'orientation', 'fullWidth'])
+const separatorVariants = cva('divider', {
+    variants: {
+        variant: {
+            default: '',
+            neutral: 'divider-neutral',
+            primary: 'divider-primary',
+            secondary: 'divider-secondary',
+            accent: 'divider-accent',
+            success: 'divider-success',
+            warning: 'divider-warning',
+            info: 'divider-info',
+            active: 'divider-active',
+            error: 'divider-error',
+        },
+        styles: {
+            default: '',
+            start: 'divider-start',
+            end: 'divider-end',
+        },
+        orientation: {
+            default: 'divider-horizontal',
+            vertical: 'divider-vertical',
+        },
+    },
+    defaultVariants: {
+        variant: 'default',
+        styles: 'default',
+    },
+})
+
+export interface SeparatorProps
+    extends ComponentProps<'div'>,
+        VariantProps<typeof separatorVariants> {}
+
+const Separator: Component<SeparatorProps> = (props) => {
+    const [, rest] = splitProps(props, ['styles', 'variant', 'class', 'orientation'])
+
     return (
-        <SeparatorPrimitive.Root
-            orientation={props.orientation ?? 'horizontal'}
+        <div
             class={cn(
-                'border-accent/25  shrink-0 mx-4',
-                props.orientation === 'vertical' ? 'h-full w-[1px]' : props.fullWidth ? 'h-[1px] w-full' : 'h-[1px]',
+                separatorVariants({
+                    variant: props.variant,
+                    styles: props.styles,
+                    orientation: props.orientation,
+                }),
                 props.class,
             )}
             {...rest}
@@ -19,4 +57,4 @@ const Separator: Component<SeparatorPrimitive.SeparatorRootProps> = (props) => {
     )
 }
 
-export { Separator }
+export { Separator, separatorVariants }

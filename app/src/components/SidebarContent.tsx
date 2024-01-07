@@ -21,15 +21,18 @@ const SidebarContent: Component<ComponentProps<'div'>> = (props) => {
 
                 {/* TODO: Check the crops store */}
                 <Show when={true}>
-                    <Label class="pt-2 text-gray-700 font-bold">No crops in your garden</Label>
-                    <Label class="text-gray-500">You haven't added any crops yet</Label>
+                    <Label weight="bold" size="lg" class="pt-2 text-gray-700">
+                        No crops in your garden
+                    </Label>
+                    <Label class="text-gray-500" size="sm">
+                        You haven't added any crops yet
+                    </Label>
                     <AppCropModal>
                         <AddCrop />
                     </AppCropModal>
                 </Show>
             </div>
             <div class="h-full p-2 flex flex-col grow justify-evenly">
-                <Separator class="my-4" />
                 <Labels />
             </div>
         </div>

@@ -52,7 +52,7 @@ export interface ButtonProps
         VariantProps<typeof buttonVariants> {}
 
 const Button: Component<ButtonProps> = (props) => {
-    const [, rest] = splitProps(props, ['variant', 'size', 'class'])
+    const [, rest] = splitProps(props, ['styles', 'variant', 'size', 'class'])
     return (
         <button
             class={cn(
