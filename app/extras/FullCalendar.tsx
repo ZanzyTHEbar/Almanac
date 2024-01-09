@@ -9,7 +9,7 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import { FullCalendarElement } from '@fullcalendar/web-component'
 import { createSignal, onCleanup, onMount } from 'solid-js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import CalendarHeader from '../src/components/CalendarHeader'
+import CalendarHeader from '../src/components/Calendar/CalendarHeader'
 import { useCalendarContext } from '@src/store/context/calendar'
 import { CalendarEvent } from '@static/types/interfaces'
 

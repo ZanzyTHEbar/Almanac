@@ -66,9 +66,18 @@ export interface IWindow {
 //*                                                                                                                                                                    */
 //**********************************************************************************************************************************************************************/
 
-export type CalendarDate = Date | string | number | dayjs.Dayjs | null
-export type CalendarEventTType = 'event' | 'task' | 'reminder' | null
-export type CalendarEventModify = 'push' | 'update' | 'delete' | null
+export type CropsContextMenu = 'delete' | 'hide'
+export type CropContextMenu = 'duplicate' | 'edit' | 'succession' | CropsContextMenu
+export type CalendarDate = Date | string | number | dayjs.Dayjs
+export type CalendarEventTType = 'event' | 'task' | 'reminder'
+export type CalendarEventModify = 'push' | 'update' | 'delete'
+export type CalendarEventTasks =
+    | 'Seeding'
+    | 'Direct Seed'
+    | 'Transplanting'
+    | 'Cultivating'
+    | 'Harvesting'
+    | 'Bed Preparation'
 
 export interface DateUtilityObject {
     date?: CalendarDate
@@ -82,6 +91,7 @@ export interface CalendarLabel {
 
 export interface CalendarEvent {
     type: CalendarEventTType
+    task: CalendarEventTasks
     label: string
     uuid: string | number
     payload: CalendarEventContent
@@ -92,34 +102,17 @@ export interface CalendarEventContent extends DateUtilityObject {
     description: string
     start: CalendarDate
     end: CalendarDate
-    allDay?: boolean
     color?: string
 }
 
 export interface Calendar extends DateUtilityObject {
-    smallCalendarWidget: DateUtilityObject
+    //smallCalendarWidget: DateUtilityObject
     showEventModal: boolean
     savedEvents: CalendarEvent[]
     selectedEvent: CalendarEvent | null
     labels: CalendarLabel[]
     filteredEvents: CalendarEvent[]
-}
-
-export interface MenuOpen {
-    x: number
-    y: number
-}
-
-export interface NewMenu {
-    children: JSXElement
-    ref: HTMLElement | null
     name: string
-}
-
-export interface ModalMenu {
-    children: JSXElement
-    title?: string
-    initialFocus?: string
 }
 
 //*  App Store Interfaces  */
@@ -139,7 +132,6 @@ export interface UiStore {
     showSidebar: boolean
     loggedIn: boolean
     openModal?: boolean
-    menuOpen?: MenuOpen | null
     showNotifications?: boolean
 }
 

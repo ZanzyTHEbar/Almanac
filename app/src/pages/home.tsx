@@ -1,13 +1,14 @@
 import Header from '@components/Header'
-import Month from '@components/Month'
+import Month from '@components/Calendar/Month'
 import Sidebar from '@components/Sidebar'
-import SidebarContent from '@components/SidebarContent'
+import SidebarContent from '@components/Sidebar/Content'
 import { Card, CardContent } from '@components/ui/card'
 import { useCalendarContext } from '@store/context/calendar'
 import { useAppContextMain } from '@store/context/main'
 import { useAppUIContext } from '@store/context/ui'
 
-// TODO: Add search bar to filter crops
+// TODO: Add journal
+// TODO: Add Tasks with Todo list
 
 export default function Main() {
     const { getMonth } = useCalendarContext()

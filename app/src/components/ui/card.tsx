@@ -8,7 +8,7 @@ const Card: Component<ComponentProps<'div'>> = (props) => {
     return (
         <div
             class={cn(
-                'card bg-secondary-300/95 border border-accent/5 rounded-box shadow-md',
+                'card bg-secondary-300/95 border border-accent/25 rounded-box shadow-lg drop-shadow-sm',
                 props.class,
             )}
             {...rest}
@@ -25,7 +25,7 @@ const CardTitle: Component<ComponentProps<'h3'>> = (props) => {
     const [, rest] = splitProps(props, ['class'])
     return (
         <h3
-            class={cn('card-title text-lg font-semibold leading-none tracking-tight', props.class)}
+            class={cn('card-title text-lg font-semibold leading-none tracking-wider', props.class)}
             {...rest}
         />
     )

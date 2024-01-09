@@ -1,7 +1,9 @@
 import { FiMenu } from 'solid-icons/fi'
-import { Component, ComponentProps, splitProps } from 'solid-js'
+import { Component, ComponentProps, Show, splitProps } from 'solid-js'
 import { Transition } from 'terracotta'
+import { Label } from '@components/ui/label'
 import { cn } from '@src/lib/utils'
+import { useAppUIContext } from '@store/context/ui'
 
 const BurgerMenuIcon: Component<ComponentProps<'div'>> = (props) => {
     const [, rest] = splitProps(props, ['class'])
@@ -24,9 +26,15 @@ const BurgerMenuIcon: Component<ComponentProps<'div'>> = (props) => {
 
 const BurgerMenu: Component<ComponentProps<'div'>> = (props) => {
     const [, rest] = splitProps(props, ['class'])
+    const { showSidebar } = useAppUIContext()
     return (
         <div class={cn('flex flex-1 mb-5', props.class)} {...rest}>
-            <BurgerMenuIcon class={props.class} />
+            <Show when={showSidebar()}>
+                <Label for="burger-icon" weight="bold" size="lg">
+                    My Crops
+                </Label>
+            </Show>
+            <BurgerMenuIcon id="burger-icon" class={props.class} />
         </div>
     )
 }

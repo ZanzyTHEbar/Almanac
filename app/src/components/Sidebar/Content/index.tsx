@@ -1,20 +1,29 @@
 import { Component, ComponentProps, Show, splitProps } from 'solid-js'
-import AddCrop from '@components/AddCropButton'
 import AppCropModal from '@components/AddCropModal'
-import { BurgerMenu } from '@components/BurgerMenuIcon'
-import Labels from '@components/Labels'
+import { BurgerMenu } from '@components/BurgerMenu'
+import AddCrop from '@components/Sidebar/Content/AddCropButton'
+import Crops from '@components/Sidebar/Content/Crops'
 import { Label } from '@components/ui/label'
 import { cn } from '@src/lib/utils'
 import { useAppUIContext } from '@store/context/ui'
+import CropCategory from '@components/AddCropModal/CropCategory'
 
 // TODO: Add search bar to filter crops
+// TODO: Group by year planted
+// TODO: Add feature to link multiple planting schedules together
 
 const SidebarContent: Component<ComponentProps<'div'>> = (props) => {
     const [, rest] = splitProps(props, ['class'])
     const { setShowSidebar } = useAppUIContext()
+    //const { getMonth } = useCalendarContext()
     return (
         <div class={cn('', props.class)} {...rest}>
-            <BurgerMenu onClick={() => setShowSidebar(false)} class="p-2 justify-end items-start" />
+            <div class="p-3">
+                <BurgerMenu
+                    onClick={() => setShowSidebar(false)}
+                    class="justify-between items-start"
+                />
+            </div>
             <div class="flex flex-col justify-center items-center content-center mt-3">
                 <img class="mask mask-squircle bg-accent/75 p-3" src="images/veg.svg" alt="" />
 
@@ -26,14 +35,15 @@ const SidebarContent: Component<ComponentProps<'div'>> = (props) => {
                     <Label class="text-gray-500" size="sm">
                         You haven't added any crops yet
                     </Label>
-                    <AppCropModal>
+                    <AppCropModal id="sidebar-modal">
                         <AddCrop />
                     </AppCropModal>
                 </Show>
             </div>
             <div class="h-full p-2 flex flex-col grow justify-evenly">
-                <Labels />
+                <Crops />
             </div>
+            <CropCategory />
         </div>
     )
 }

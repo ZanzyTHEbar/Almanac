@@ -12,23 +12,23 @@ const DialogTrigger: Component<DialogPrimitive.DialogTriggerProps> = (props) => 
     return <DialogPrimitive.Trigger {...rest}>{props.children}</DialogPrimitive.Trigger>
 }
 
+//* fixed inset-0 z-50 flex items-start justify-center sm:items-center
 const DialogPortal: Component<DialogPrimitive.DialogPortalProps> = (props) => {
     const [, rest] = splitProps(props, ['children'])
     return (
         <DialogPrimitive.Portal {...rest}>
-            <div class="fixed inset-0 z-50 flex items-start justify-center sm:items-center">
-                {props.children}
-            </div>
+            <div class="modal modal-open modal-bottom sm:modal-middle">{props.children}</div>
         </DialogPrimitive.Portal>
     )
 }
 
+//* bg-black/25
 const DialogOverlay: Component<DialogPrimitive.DialogOverlayProps> = (props) => {
     const [, rest] = splitProps(props, ['class'])
     return (
         <DialogPrimitive.Overlay
             class={cn(
-                'bg-background/80 data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 fixed inset-0 z-50 backdrop-blur-sm',
+                'modal-backdrop data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 fixed inset-0 z-50 backdrop-blur-sm',
                 props.class,
             )}
             {...rest}
@@ -43,7 +43,7 @@ const DialogContent: Component<DialogPrimitive.DialogContentProps> = (props) => 
             <DialogOverlay />
             <DialogPrimitive.Content
                 class={cn(
-                    'bg-background data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 data-[closed]:slide-out-to-left-1/2 data-[closed]:slide-out-to-top-[48%] data-[expanded]:slide-in-from-left-1/2 data-[expanded]:slide-in-from-top-[48%] fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border p-6 shadow-lg duration-200 sm:rounded-lg',
+                    'modal-box data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 data-[closed]:slide-out-to-left-1/2 data-[closed]:slide-out-to-top-[48%] data-[expanded]:slide-in-from-left-1/2 data-[expanded]:slide-in-from-top-[48%] fixed z-50 grid w-full max-w-lg gap-4 border p-6 shadow-lg duration-200',
                     props.class,
                 )}
                 {...rest}>
@@ -67,6 +67,16 @@ const DialogHeader: Component<ComponentProps<'div'>> = (props) => {
     )
 }
 
+const DialogAction: Component<ComponentProps<'div'>> = (props) => {
+    const [, rest] = splitProps(props, ['class'])
+    return (
+        <div
+            class={cn('modal-action flex flex-col space-y-1.5 text-center sm:text-left', props.class)}
+            {...rest}
+        />
+    )
+}
+
 const DialogFooter: Component<ComponentProps<'div'>> = (props) => {
     const [, rest] = splitProps(props, ['class'])
     return (
@@ -81,7 +91,7 @@ const DialogTitle: Component<DialogPrimitive.DialogTitleProps> = (props) => {
     const [, rest] = splitProps(props, ['class'])
     return (
         <DialogPrimitive.Title
-            class={cn('text-lg font-semibold leading-none tracking-tight', props.class)}
+            class={cn('text-lg font-bold leading-none tracking-wider', props.class)}
             {...rest}
         />
     )
@@ -101,6 +111,7 @@ export {
     Dialog,
     DialogTrigger,
     DialogContent,
+    DialogAction,
     DialogHeader,
     DialogFooter,
     DialogTitle,

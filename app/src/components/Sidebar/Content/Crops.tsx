@@ -1,17 +1,26 @@
-import { For } from 'solid-js'
+import { For, Show } from 'solid-js'
 import { Card, CardContent, CardHeader, CardTitle } from '@components/ui/card'
 import { Input } from '@components/ui/input'
 import { Label } from '@components/ui/label'
 import { useCalendarContext } from '@store/context/calendar'
 
-const Labels = () => {
+// TODO: Add button to group by year
+
+
+const Crops = () => {
     const { labels, setLabel } = useCalendarContext()
     return (
         <Card class="h-full">
-            <CardHeader>
-                <CardTitle class="h-full text-pretty text-gray-500 font-bold">Label</CardTitle>
+            <CardHeader class="p-2">
+                <CardTitle class="h-full text-pretty text-gray-500 font-bold">Crops</CardTitle>
+                {/* TODO: Check the crops store */}
+                <Show when={true}>
+                    <Label class="text-pretty textarea-secondary" size="sm">
+                        Add a Crop!
+                    </Label>
+                </Show>
             </CardHeader>
-            <CardContent>
+            <CardContent class="p-2">
                 <For each={labels()}>
                     {(label, index) => (
                         <Label data-index={index()} class="items-center mt-3 block">
@@ -32,4 +41,4 @@ const Labels = () => {
     )
 }
 
-export default Labels
+export default Crops

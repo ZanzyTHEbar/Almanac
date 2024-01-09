@@ -87,6 +87,14 @@ export const CalendarProvider: ParentComponent = (props) => {
         )
     }
 
+    const setCurrentMonthIndex = (idx: number) => {
+        setState(
+            produce((s) => {
+                s.currentMonthIdx = idx
+            }),
+        )
+    }
+
     const setShowEventModal = (state: boolean) => {
         setState(
             produce((s) => {
@@ -174,9 +182,6 @@ export const CalendarProvider: ParentComponent = (props) => {
     //#endregion
 
     //#region Utilities
-    //const getYear = (year = DateTime.now().year) => {
-    //    const year = DateTime.now().year
-    //}
     extend(isoWeek)
     const year = dayjs().year()
     const month = dayjs().month()

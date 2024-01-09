@@ -1,6 +1,9 @@
 import { Card, CardContent } from '@components/ui/card'
 import SelectTheme from '@components/ui/theme'
 
+// TODO: Add Crop button in header
+// TODO: Settings button in header
+
 const Header = () => {
     return (
         <Card class="rounded-box p-2 m-2 navbar-center gap-2">

@@ -1,7 +1,5 @@
 import { createEffect, createSignal, onMount, ParentComponent } from 'solid-js'
-import CropCategory from './AddCropForm/CropCategory'
-import CropSettingsSection from './AddCropForm/CropSettings'
-import FormActions from './AddCropForm/FormActions'
+import ModalContent from '@components/AddCropModal/ModalContent'
 import {
     Dialog,
     DialogTrigger,
@@ -12,25 +10,17 @@ import {
     DialogDescription,
 } from '@components/ui/dialog'
 
-const EventModal: ParentComponent = (props) => {
+const EventModal: ParentComponent<{
+    id: string
+}> = (props) => {
     const [open, setOpen] = createSignal(false)
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    }
-
-    const handleRestoreDefaults = () => {
-        // Logic to restore defaults
-    }
-
     onMount(() => {})
-
     createEffect(() => {
         console.debug(open())
     })
 
     return (
-        <Dialog open={open()} onOpenChange={setOpen} aria-label="Add Crop Modal">
+        <Dialog id={props.id} open={open()} onOpenChange={setOpen} aria-label="Add Crop Modal">
             <DialogTrigger>{props.children}</DialogTrigger>
             <DialogContent>
                 <DialogHeader>
@@ -39,17 +29,8 @@ const EventModal: ParentComponent = (props) => {
                         Select an existing crop or create a new crop
                     </DialogDescription>
                 </DialogHeader>
-                <form class="p-2">
-                    <CropCategory />
-                    <CropSettingsSection />
-                    <FormActions
-                        onRestoreDefaults={handleRestoreDefaults}
-                        onSubmit={handleSubmit}
-                    />
-                </form>
-                <DialogFooter>
-                    
-                </DialogFooter>
+                <ModalContent />
+                <DialogFooter />
             </DialogContent>
         </Dialog>
     )
