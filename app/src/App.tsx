@@ -27,7 +27,7 @@ const App: ParentComponent = (props) => {
     return (
         <main class="w-screen h-screen">
             {/* <GlobalStyles /> */}
-            <div class="App overflow-hidden items-center">
+            <div class="overflow-hidden">
                 <Suspense>
                     {props.children}
                     <ToastNotificationWindow />

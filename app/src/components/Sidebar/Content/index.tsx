@@ -6,7 +6,6 @@ import Crops from '@components/Sidebar/Content/Crops'
 import { Label } from '@components/ui/label'
 import { cn } from '@src/lib/utils'
 import { useAppUIContext } from '@store/context/ui'
-import CropCategory from '@components/AddCropModal/CropCategory'
 
 // TODO: Add search bar to filter crops
 // TODO: Group by year planted
@@ -43,7 +42,6 @@ const SidebarContent: Component<ComponentProps<'div'>> = (props) => {
             <div class="h-full p-2 flex flex-col grow justify-evenly">
                 <Crops />
             </div>
-            <CropCategory />
         </div>
     )
 }

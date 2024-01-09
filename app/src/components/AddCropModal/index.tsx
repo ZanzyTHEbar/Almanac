@@ -9,6 +9,7 @@ import {
     DialogTitle,
     DialogDescription,
 } from '@components/ui/dialog'
+import { Label } from '@components/ui/label'
 
 const EventModal: ParentComponent<{
     id: string
@@ -24,7 +25,11 @@ const EventModal: ParentComponent<{
             <DialogTrigger>{props.children}</DialogTrigger>
             <DialogContent>
                 <DialogHeader>
-                    <DialogTitle>Add a new crop</DialogTitle>
+                    <DialogTitle>
+                        <Label size="2xl">
+                            Add a new crop
+                        </Label>
+                    </DialogTitle>
                     <DialogDescription>
                         Select an existing crop or create a new crop
                     </DialogDescription>

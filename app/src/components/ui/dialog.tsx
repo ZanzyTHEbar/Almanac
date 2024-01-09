@@ -12,12 +12,14 @@ const DialogTrigger: Component<DialogPrimitive.DialogTriggerProps> = (props) => 
     return <DialogPrimitive.Trigger {...rest}>{props.children}</DialogPrimitive.Trigger>
 }
 
-//* fixed inset-0 z-50 flex items-start justify-center sm:items-center
+//* fixed inset-0 z-10 flex items-start justify-center sm:items-center
 const DialogPortal: Component<DialogPrimitive.DialogPortalProps> = (props) => {
     const [, rest] = splitProps(props, ['children'])
     return (
         <DialogPrimitive.Portal {...rest}>
-            <div class="modal modal-open modal-bottom sm:modal-middle">{props.children}</div>
+            <div class="z-[50] modal modal-open modal-bottom sm:modal-middle">
+                {props.children}
+            </div>
         </DialogPrimitive.Portal>
     )
 }
@@ -28,7 +30,7 @@ const DialogOverlay: Component<DialogPrimitive.DialogOverlayProps> = (props) => 
     return (
         <DialogPrimitive.Overlay
             class={cn(
-                'modal-backdrop data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 fixed inset-0 z-50 backdrop-blur-sm',
+                'modal-backdrop data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 fixed inset-0 backdrop-blur-sm',
                 props.class,
             )}
             {...rest}
@@ -43,7 +45,7 @@ const DialogContent: Component<DialogPrimitive.DialogContentProps> = (props) => 
             <DialogOverlay />
             <DialogPrimitive.Content
                 class={cn(
-                    'modal-box data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 data-[closed]:slide-out-to-left-1/2 data-[closed]:slide-out-to-top-[48%] data-[expanded]:slide-in-from-left-1/2 data-[expanded]:slide-in-from-top-[48%] fixed z-50 grid w-full max-w-lg gap-4 border p-6 shadow-lg duration-200',
+                    'modal-box sm:w-11/12 sm:max-w-5xl z-[60] data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 data-[closed]:slide-out-to-left-1/2 data-[closed]:slide-out-to-top-[48%] data-[expanded]:slide-in-from-left-1/2 data-[expanded]:slide-in-from-top-[48%] border border-accent/25 p-6 shadow-lg duration-200',
                     props.class,
                 )}
                 {...rest}>
@@ -101,7 +103,7 @@ const DialogDescription: Component<DialogPrimitive.DialogDescriptionProps> = (pr
     const [, rest] = splitProps(props, ['class'])
     return (
         <DialogPrimitive.Description
-            class={cn('text-muted-foreground text-sm', props.class)}
+            class={cn('text-sm', props.class)}
             {...rest}
         />
     )

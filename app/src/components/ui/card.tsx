@@ -33,7 +33,7 @@ const CardTitle: Component<ComponentProps<'h3'>> = (props) => {
 
 const CardDescription: Component<ComponentProps<'p'>> = (props) => {
     const [, rest] = splitProps(props, ['class'])
-    return <p class={cn('card-body text-muted-foreground text-sm', props.class)} {...rest} />
+    return <p class={cn('card-body text-sm', props.class)} {...rest} />
 }
 
 const CardContent: Component<ComponentProps<'div'>> = (props) => {

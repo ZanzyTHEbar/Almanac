@@ -1,5 +1,6 @@
-import { Component, createEffect, createMemo, createSignal } from 'solid-js'
-import { rand } from 'solidjs-use'
+import { TbSelector, TbSearch } from 'solid-icons/tb'
+import { Component, createEffect, createMemo, createSignal, Show } from 'solid-js'
+import { onClickOutside } from 'solidjs-use'
 import {
     ComboboxContent,
     ComboboxControl,
@@ -11,20 +12,21 @@ import {
     ComboboxSection,
     ComboboxTrigger,
 } from '@components/ui/combobox'
+import { Label } from '@components/ui/label'
 
-interface Crop {
+export interface Crop {
     value: string
     label: string
     disabled?: boolean
 }
 
-interface CropCategory {
+export interface CropCategoryI {
     label: string
     options: Crop[]
 }
 
-const generateCrops = (): CropCategory[] => {
-    const crops: CropCategory[] = [
+const generateCrops = (): CropCategoryI[] => {
+    const crops: CropCategoryI[] = [
         {
             label: 'Fruits',
             options: [
@@ -54,34 +56,47 @@ const generateCrops = (): CropCategory[] => {
     return crops
 }
 
-const CropCategory: Component = (props) => {
+const CropCategory: Component<{
+    onChange: (crop: Crop) => void
+}> = (props) => {
     /* TODO:  Grab the options from the database, refresh the options  */
-    const [values, setValues] = createSignal<Crop[]>([{ value: 'apple', label: 'Apple' }])
-    const [cropCategory, setCropCategory] = createSignal('Artichoke')
 
-    const OPTIONS_ABC = createMemo(() =>
+    const [isHover, setIsHover] = createSignal(false)
+    const [inputRef, setInputRef] = createSignal<HTMLElement | null>(null)
+
+    const categories = createMemo(() =>
         generateCrops().sort((a, b) => a.label.localeCompare(b.label)),
     )
 
-    const placeHolder = createMemo(() => {
-        const randomCrop = rand(0, OPTIONS_ABC().length)
-        return OPTIONS_ABC()[randomCrop].label
-    })
+    const handleChange = (crop: Crop) => {
+        props.onChange(crop)
+        console.debug('[Crop onChange]: ', crop)
+    }
+
+    const TriggerIcon = () => {
+        return (
+            <Show when={!isHover()} fallback={<TbSearch />}>
+                <TbSelector />
+            </Show>
+        )
+    }
 
     createEffect(() => {
-        OPTIONS_ABC().forEach((cropCategory) => {
-            cropCategory.options.forEach((crop) => {
-                console.debug('[Crop]: ', crop)
-            })
-        })
+        onClickOutside(inputRef, () => setIsHover(false))
     })
 
     return (
-        <div>
-            <label for="cropCategory">Crop category</label>
-            <Combobox<Crop, CropCategory>
-                class="dropdown dropdown-end border-none"
-                options={OPTIONS_ABC()}
+        <div class="flex flex-1 grow w-full items-center justify-between gap-6">
+            <Label size="lg" for="cropCategory">
+                Crop category
+            </Label>
+            <Combobox<Crop, CropCategoryI>
+                ref={setInputRef}
+                id="cropCategory"
+                onChange={handleChange}
+                onPointerDown={() => setIsHover(true)}
+                class="w-[60%] pt-2 pb-2 z-[60]"
+                options={categories()}
                 optionValue="value"
                 optionTextValue="label"
                 optionLabel="label"
@@ -99,7 +114,9 @@ const CropCategory: Component = (props) => {
                 )}>
                 <ComboboxControl aria-label="Crops">
                     <ComboboxInput />
-                    <ComboboxTrigger />
+                    <ComboboxTrigger>
+                        <TriggerIcon />
+                    </ComboboxTrigger>
                 </ComboboxControl>
                 <ComboboxContent />
             </Combobox>

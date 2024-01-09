@@ -10,7 +10,7 @@ const ComboboxItem: Component<ComboboxPrimitive.ComboboxItemProps> = (props) => 
     return (
         <ComboboxPrimitive.Item
             class={cn(
-                'data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground relative flex cursor-default select-none items-center justify-between rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+                'z-[60] data-[highlighted]:bg-accent/75 data-[highlighted]:text-accent-content relative flex flex-row cursor-default select-none items-center justify-between rounded-box px-2 py-1.5 mt-2 text-lg outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
                 props.class,
             )}
             {...rest}
@@ -34,7 +34,7 @@ const ComboboxSection: Component<ComboboxPrimitive.ComboboxSectionProps> = (prop
     return (
         <ComboboxPrimitive.Section
             class={cn(
-                'text-muted-foreground overflow-hidden p-1 px-2 py-1.5 text-xs font-medium ',
+                'z-[60] border border-t-0 border-l-0 border-r-0 border-b-accent/25 overflow-hidden p-1 px-2 py-1.5 pb-2 text-sm text-gray-400/75',
                 props.class,
             )}
             {...rest}
@@ -47,7 +47,12 @@ function ComboboxControl<T>(props: ComboboxPrimitive.ComboboxControlProps<T>) {
     const [, rest] = splitProps(props, ['class'])
     return (
         <ComboboxPrimitive.Control
-            class={cn('flex items-center rounded-md border px-3', props.class)}
+            role="combobox"
+            tabIndex={0}
+            class={cn(
+                'outline-none focus-within:outline-none focus-within:ring-1 focus-within:ring-accent hover:ring-1 hover:ring-accent z-[60] dropdown dropdown-open flex items-center rounded-box border border-accent/25 px-3',
+                props.class,
+            )}
             {...rest}
         />
     )
@@ -58,7 +63,7 @@ const ComboboxInput: Component<ComboboxPrimitive.ComboboxInputProps> = (props) =
     return (
         <ComboboxPrimitive.Input
             class={cn(
-                'border-none focus:ring-0 enabled:border-none placeholder:text-base-100-content flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none focus-within:outline-none disabled:cursor-not-allowed disabled:opacity-50',
+                'z-[60] border-none focus:ring-0 enabled:border-none text-base-content flex h-10 w-full bg-transparent py-3 text-sm caret-accent outline-none focus-within:outline-none disabled:cursor-not-allowed disabled:opacity-50',
                 props.class,
             )}
             {...rest}
@@ -83,7 +88,7 @@ const ComboboxContent: Component<ComboboxPrimitive.ComboboxContentProps> = (prop
         <ComboboxPrimitive.Portal>
             <ComboboxPrimitive.Content
                 class={cn(
-                    'bg-base-200 text-base-200 animate-in fade-in-80 relative z-[1] min-w-[8rem] overflow-hidden rounded-md border shadow-md',
+                    'z-[60] dropdown-content rounded-box p-2 shadow bg-base-100 animate-in fade-in-80 min-w-[8rem] overflow-hidden border border-accent/25',
                     props.class,
                 )}
                 {...rest}>

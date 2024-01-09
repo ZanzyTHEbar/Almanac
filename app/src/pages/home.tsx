@@ -1,5 +1,5 @@
-import Header from '@components/Header'
 import Month from '@components/Calendar/Month'
+import Header from '@components/Header'
 import Sidebar from '@components/Sidebar'
 import SidebarContent from '@components/Sidebar/Content'
 import { Card, CardContent } from '@components/ui/card'
@@ -14,7 +14,7 @@ export default function Main() {
     const { getMonth } = useCalendarContext()
 
     const Main = () => (
-        <Card class="w-screen rounded-none bg-primary-300 h-screen">
+        <Card class="overflow-auto border-none w-screen rounded-none bg-primary-300 h-screen">
             <Header />
             <CardContent class="flex flex-1">
                 <Sidebar>

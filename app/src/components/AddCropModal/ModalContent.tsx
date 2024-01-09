@@ -1,6 +1,8 @@
-import CropCategory from './CropCategory'
+import { Show, createSignal } from 'solid-js'
 import CropSettingsSection from './CropSettings'
-import FormActions from './FormActions'
+import type { Crop } from '@components/AddCropModal/CropCategory'
+import CropCategory from '@components/AddCropModal/CropCategory'
+import FormActions from '@components/AddCropModal/FormActions'
 import { DialogAction } from '@components/ui/dialog'
 
 /**
@@ -35,6 +37,8 @@ import { DialogAction } from '@components/ui/dialog'
  *  - Date for winter gardening (seeding | transplanting)
  */
 const ModalContent = () => {
+    const [cropCategory, setCropCategory] = createSignal<Crop | null>(null)
+
     const handleSubmit = (e) => {
         e.preventDefault()
     }
@@ -43,11 +47,18 @@ const ModalContent = () => {
         // Logic to restore defaults
     }
 
+    const handleCropCategoryChange = (crop: Crop) => {
+        // Logic to update crop settings
+        setCropCategory(crop)
+    }
+
     return (
         <DialogAction>
             <form class="p-2" method="dialog">
-                <CropCategory />
-                <CropSettingsSection />
+                <CropCategory onChange={handleCropCategoryChange} />
+                <Show when={cropCategory() !== null}>
+                    <CropSettingsSection />
+                </Show>
                 <FormActions onRestoreDefaults={handleRestoreDefaults} onSubmit={handleSubmit} />
             </form>
         </DialogAction>
