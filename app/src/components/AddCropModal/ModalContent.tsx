@@ -39,11 +39,11 @@ import { DialogAction } from '@components/ui/dialog'
 const ModalContent = () => {
     const [cropCategory, setCropCategory] = createSignal<Crop | null>(null)
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = () => {
+        //e.preventDefault()
     }
 
-    const handleRestoreDefaults = () => {
+    const handleCancel = () => {
         // Logic to restore defaults
     }
 
@@ -59,7 +59,7 @@ const ModalContent = () => {
                 <Show when={cropCategory() !== null}>
                     <CropSettingsSection />
                 </Show>
-                <FormActions onRestoreDefaults={handleRestoreDefaults} onSubmit={handleSubmit} />
+                <FormActions onCancel={handleCancel} onSubmit={handleSubmit} />
             </form>
         </DialogAction>
     )

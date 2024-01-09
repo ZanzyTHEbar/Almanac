@@ -34,6 +34,7 @@ const labelVariants = cva(
             styles: {
                 default: 'not-italic',
                 italic: 'italic',
+                pointer: 'cursor-pointer',
             },
         },
         defaultVariants: {

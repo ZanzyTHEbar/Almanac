@@ -1,14 +1,24 @@
-import { Accessor, createContext, createMemo, useContext, type ParentComponent } from 'solid-js'
+import {
+    type Accessor,
+    type ParentComponent,
+    createContext,
+    createMemo,
+    useContext,
+} from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
-import { MenuOpen, UiStore } from '@src/static/types'
+import type { UiStore } from '@static/types'
 
 interface AppUIContext {
-    openModalStatus: Accessor<boolean | undefined>
-    menuOpenStatus: Accessor<MenuOpen | null | undefined>
+    openModalStatus: Accessor<
+        | {
+              openModal: boolean
+              editingMode: boolean
+          }
+        | undefined
+    >
     showSidebar: Accessor<boolean>
     showNotifications: Accessor<boolean | undefined>
-    setMenu: (menuOpen: MenuOpen | null) => void
-    setOpenModal: (openModal: boolean) => void
+    setOpenModal: (status: { openModal: boolean; editingMode: boolean }) => void
     setShowSidebar: (showSidebar: boolean) => void
 }
 
@@ -16,26 +26,20 @@ const AppUIContext = createContext<AppUIContext>()
 export const AppUIProvider: ParentComponent = (props) => {
     const defaultState: UiStore = {
         showSidebar: true,
-        openModal: false,
-        menuOpen: null,
+        modalStatus: {
+            openModal: false,
+            editingMode: false,
+        },
         loggedIn: false,
         showNotifications: true,
     }
 
     const [state, setState] = createStore<UiStore>(defaultState)
 
-    const setMenu = (menuOpen: MenuOpen | null) => {
+    const setOpenModal = (status: { openModal: boolean; editingMode: boolean }) => {
         setState(
             produce((s) => {
-                s.menuOpen = menuOpen || null
-            }),
-        )
-    }
-
-    const setOpenModal = (openModal: boolean) => {
-        setState(
-            produce((s) => {
-                s.openModal = openModal
+                s.modalStatus = status
             }),
         )
     }
@@ -50,8 +54,7 @@ export const AppUIProvider: ParentComponent = (props) => {
 
     const uiState = createMemo(() => state)
 
-    const openModalStatus = createMemo(() => uiState().openModal)
-    const menuOpenStatus = createMemo(() => uiState().menuOpen)
+    const openModalStatus = createMemo(() => uiState().modalStatus)
     const showNotifications = createMemo(() => uiState().showNotifications)
     const showSidebar = createMemo(() => uiState().showSidebar)
 
@@ -59,10 +62,8 @@ export const AppUIProvider: ParentComponent = (props) => {
         <AppUIContext.Provider
             value={{
                 openModalStatus,
-                menuOpenStatus,
                 showSidebar,
                 showNotifications,
-                setMenu,
                 setOpenModal,
                 setShowSidebar,
             }}>

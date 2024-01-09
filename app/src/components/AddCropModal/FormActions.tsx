@@ -1,28 +1,31 @@
-import { Component } from 'solid-js'
+import type { Component } from 'solid-js'
+import { Button } from '@components/ui/button'
+import { Flex } from '@components/ui/flex'
+import { Label } from '@components/ui/label'
 
 const FormActions: Component<{
-    onRestoreDefaults: () => void
-    onSubmit: (e: any) => void
+    onCancel: () => void
+    onSubmit: () => void
 }> = (props) => {
-    const handleSubmit = (e) => {
+    const handleSubmit = () => {
         console.log('submitting')
-        props.onSubmit(e)
+        props.onSubmit()
     }
 
-    const handleRestoreDefaults = (e) => {
-        e.stopPropagation()
-        props.onRestoreDefaults()
+    const handleCancel = (e) => {
+        //e.stopPropagation()
+        props.onCancel()
     }
 
     return (
-        <div class="form-actions">
-            <button type="button" onClick={handleRestoreDefaults}>
-                Restore defaults
-            </button>
-            <button type="submit" onClick={handleSubmit}>
-                Schedule
-            </button>
-        </div>
+        <Flex class="gap-4" alignItems="end" justifyContent="end" flexDirection="row">
+            <Button variant="ghost" type="button" onClick={handleCancel}>
+                <Label styles="pointer">Cancel</Label>
+            </Button>
+            <Button variant="accent" type="submit" onClick={handleSubmit}>
+                <Label styles="pointer">Schedule</Label>
+            </Button>
+        </Flex>
     )
 }
 

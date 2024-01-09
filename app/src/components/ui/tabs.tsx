@@ -6,12 +6,12 @@ import { cn } from '@src/lib/utils'
 
 const Tabs = TabsPrimitive.Root
 
-const TabsList: Component<TabsPrimitive.TabsListProps & { zone: string }> = (props) => {
+const TabsList: Component<TabsPrimitive.TabsListProps> = (props) => {
     const [, rest] = splitProps(props, ['class'])
     return (
         <TabsPrimitive.List
             role="tablist"
-            class={cn('tabs tabs-lifted space-x-2', props.class)}
+            class={cn('tabs tabs-bordered space-x-2', props.class)}
             {...rest}
         />
     )

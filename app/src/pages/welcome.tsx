@@ -1,5 +1,5 @@
-/* eslint-disable quotes */
 import { createEffect, onCleanup } from 'solid-js'
+import { Label } from '@components/ui/label'
 
 const Welcome = () => {
     const backgroundImageClasses = []
@@ -17,15 +17,21 @@ const Welcome = () => {
 
     return (
         <div
-            class="flex flex-col justify-between artboard-demo w-screen h-screen z-100 overflow-hidden bg-no-repeat bg-center bg-cover"
+            class=" flex flex-col justify-between artboard-demo w-screen h-screen z-100 overflow-hidden"
             style={{
-                background: "url('/images/welcome.png') no-repeat center center fixed",
+                background: 'url(\'/images/welcome.png\') no-repeat center center fixed',
                 'background-size': 'cover',
             }}>
-            <div class="text-center pt-10">
-                <h5 class="text-base-300">A</h5>
-                <h5 class="text-blue-500">GARDEN</h5>
-                <h1 class="font-bold text-purple-600">ALMANAC</h1>
+            <div class="flex flex-col flex-1 text-center pt-10">
+                <Label size="3xl" class="text-base-300">
+                    A
+                </Label>
+                <Label size="3xl" class="text-blue-500">
+                    GARDEN
+                </Label>
+                <Label size="3xl" class="font-bold text-purple-600">
+                    ALMANAC
+                </Label>
             </div>
 
             <div class="flex justify-center pb-10 p-10 z-10 shadow-md">

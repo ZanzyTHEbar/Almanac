@@ -1,10 +1,27 @@
-import { Component, createSignal } from 'solid-js'
-import { useCalendarContext } from '@src/store/context/calendar'
+import { type Component, createSignal } from 'solid-js'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs'
+import { useAppUIContext } from '@src/store/context/ui'
 
-const labelsClasses = ['indigo', 'gray', 'green', 'blue', 'red', 'purple']
+// TODO: Map through varieties and labels
 
 const CropSettingsSection: Component = (props) => {
-    const { setLabels, selectedEvent, savedEvents, setSavedEvents } = useCalendarContext()
+    const { openModalStatus } = useAppUIContext()
+    return (
+        <Tabs defaultValue="account" class="w-[400px]">
+            <TabsList class="grid w-full grid-cols-2">
+                <TabsTrigger value="account">Account</TabsTrigger>
+            </TabsList>
+            <TabsContent value="account"></TabsContent>
+        </Tabs>
+    )
+}
+
+export default CropSettingsSection
+
+/* 
+
+const labelsClasses = ['indigo', 'gray', 'green', 'blue', 'red', 'purple']
+const { setLabels, selectedEvent, savedEvents, setSavedEvents } = useCalendarContext()
 
     const [selectedLabel, setSelectedLabel] = createSignal(
         selectedEvent()
@@ -27,9 +44,7 @@ const CropSettingsSection: Component = (props) => {
             },
         }
     }
-
-    return (
-        <div class="form-section">
+<div class="form-section">
             <h3>Crop settings</h3>
             <div class="form-group">
                 <label for="cropVariety">Crop variety (optional)</label>
@@ -39,7 +54,6 @@ const CropSettingsSection: Component = (props) => {
                     value={cropVariety()}
                     onChange={(e) => setCropVariety(e.target.value)}>
                     <option value="">Select variety</option>
-                    {/* TODO: Map through varieties here */}
                 </select>
             </div>
 
@@ -70,7 +84,5 @@ const CropSettingsSection: Component = (props) => {
                 </div>
             </div>
         </div>
-    )
-}
 
-export default CropSettingsSection
+*/

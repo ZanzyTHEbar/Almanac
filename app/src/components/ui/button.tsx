@@ -5,25 +5,25 @@ import type { Component, ComponentProps } from 'solid-js'
 import { cn } from '@src/lib/utils'
 
 //ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50
-const buttonVariants = cva('', {
+const buttonVariants = cva('btn cursor-pointer', {
     variants: {
         variant: {
-            default: 'btn',
-            destructive: 'btn bg-destructive text-destructive-foreground hover:bg-destructive/90',
-            outline: 'btn btn-outline',
-            disabled: 'btn btn-disabled',
-            glass: 'btn glass',
-            active: 'btn btn-active',
-            primary: 'btn btn-primary',
-            secondary: 'btn btn-secondary',
-            ghost: 'btn btn-ghost',
-            neutral: 'btn btn-neutral',
-            accent: 'btn btn-accent',
-            link: 'btn btn-link',
-            success: 'btn btn-success',
-            warning: 'btn btn-warning',
-            info: 'btn btn-info',
-            error: 'btn btn-error',
+            default: '',
+            destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+            outline: 'btn-outline',
+            disabled: 'btn-disabled',
+            glass: 'glass',
+            active: 'btn-active',
+            primary: 'btn-primary',
+            secondary: 'btn-secondary',
+            ghost: 'btn-ghost',
+            neutral: 'btn-neutral',
+            accent: 'btn-accent',
+            link: 'btn-link',
+            success: 'btn-success',
+            warning: 'btn-warning',
+            info: 'btn-info',
+            error: 'btn-error',
         },
         size: {
             default: '',

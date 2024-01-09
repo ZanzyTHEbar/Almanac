@@ -1,5 +1,6 @@
 import { Button } from '@components/ui/button'
 import { Icons } from '@components/ui/icon'
+import { Label } from '@components/ui/label'
 
 const AddCrop = () => {
     return (
@@ -11,11 +12,13 @@ const AddCrop = () => {
                 styles="default">
                 <Icons.plus
                     color="primary"
-                    viewBox='0 0 50 50'
+                    viewBox="0 0 50 50"
                     size={30}
                     class="text-center justify-around content-center"
                 />
-                Add Crop
+                <Label styles="pointer" size="lg">
+                    Add Crop
+                </Label>
             </Button>
         </div>
     )

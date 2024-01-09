@@ -131,7 +131,10 @@ export interface AppStoreNotifications {
 export interface UiStore {
     showSidebar: boolean
     loggedIn: boolean
-    openModal?: boolean
+    modalStatus?: {
+        openModal: boolean
+        editingMode: boolean
+    }
     showNotifications?: boolean
 }
 
