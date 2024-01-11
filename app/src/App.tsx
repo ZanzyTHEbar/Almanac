@@ -1,5 +1,6 @@
 import { appDataDir } from '@tauri-apps/api/path'
 import { ParentComponent, Suspense, lazy, onMount } from 'solid-js'
+import SideBarMenu from '@components/Menu'
 import { useAppContextMain } from '@store/context/main'
 //import GlobalStyles from '@styles/globalstyles'
 
@@ -29,6 +30,7 @@ const App: ParentComponent = (props) => {
             {/* <GlobalStyles /> */}
             <div class="overflow-hidden">
                 <Suspense>
+                    <SideBarMenu />
                     {props.children}
                     <ToastNotificationWindow />
                 </Suspense>

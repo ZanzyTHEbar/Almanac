@@ -1,6 +1,5 @@
 import dayjs from 'dayjs'
 import type { ENotificationType, ENotificationAction } from '@static/enums'
-import type { WebviewWindow } from '@tauri-apps/api/window'
 import type { JSXElement } from 'solid-js'
 import type { ToasterStore } from 'terracotta'
 
@@ -55,10 +54,31 @@ export interface Notifications {
     type: ENotificationType
 }
 
-export interface IWindow {
-    label: string
-    window: WebviewWindow
+type TabEvent = 'add' | 'hide' | 'show' | 'active' | DropZoneName
+export type DropZoneName = 'left' | 'right' | 'bottom'
+
+/**
+ * @description Business logic for the application
+ * @interface UITabs
+ * @property {string} id - The id of the UI element
+ * @property {string} label - The label of the UI element
+ * @property {string} icon - The icon of the UI element
+ * @property {JSXElement | null} content - The content of the UI element
+ * @property {boolean} enabled - The enabled state of the UI element
+ * @property {boolean} visible - The visible state of the UI element
+ * @property {DropZoneName} dropZone - The position of the UI element
+ * @property {TabEvent} event - The event to trigger on the UI element
+ */
+export interface UITab {
+    id: string
+    icon: string
+    content: JSXElement | null
+    dropZone: DropZoneName
+    visible: boolean
+    label?: string
+    event?: TabEvent
 }
+
 
 //**********************************************************************************************************************************************************************/
 //*                                                                                                                                                                    */
@@ -128,8 +148,10 @@ export interface AppStoreNotifications {
     globalNotificationsType: ENotificationAction
 }
 
-export interface UiStore {
+export interface UIStore {
     showSidebar: boolean
+    tabs: UITab[]
+    selectedTab: UITab | null
     loggedIn: boolean
     modalStatus?: {
         openModal: boolean

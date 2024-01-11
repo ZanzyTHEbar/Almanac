@@ -1,18 +1,81 @@
-import { type Component, createSignal } from 'solid-js'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs'
-import { useAppUIContext } from '@src/store/context/ui'
+import { createSignal, type Component, onMount, JSXElement } from 'solid-js'
+import type { UITab } from '@static/types'
+import CropModalTabs from '@components/AddCropModal/CropModalTabs'
+import { useAppUIContext } from '@store/context/ui'
 
 // TODO: Map through varieties and labels
 
-const CropSettingsSection: Component = (props) => {
-    const { openModalStatus } = useAppUIContext()
+const activeTabClasses = [
+    'tab-active',
+    'drop-shadow-2xl',
+    'shadow-2xl',
+    '[--tab-bg:var(--fallback-a,oklch(var(--p)/var(--tw-bg-opacity)))]',
+    '[--tab-border-color:var(--fallback-a,oklch(var(--p)/var(--tw-bg-opacity)))]',
+    'text-primary',
+]
+
+export type CropSettingsSectionProps = {
+    icon: string | JSXElement
+    id: string
+    tab: UITab
+    style?: string
+    tabindex?: number
+    dataIndex?: number
+}
+
+export interface CropSettingsSectionTab extends Component<CropSettingsSectionProps> {}
+
+const CropSettingsSection: CropSettingsSectionTab = (props) => {
+    const [tabRef, setTabRef] = createSignal<Element | null>(null)
+    const { handleTab, defaultTab } = useAppUIContext()
+
+    /**
+     * @description Set the default tab
+     */
+    onMount(() => {
+        handleActiveTab()
+    })
+
+    /**
+     * @description Handle the click event
+     * @param {PointerEvent & { currentTarget: HTMLButtonElement; target: Element }} e - The click event
+     */
+    const handleClick = (
+        e: PointerEvent & {
+            currentTarget: HTMLButtonElement
+            target: Element
+        },
+    ) => {
+        handleTab(props.tab, 'active')
+        setTabRef(e.currentTarget)
+        handleActiveTab()
+    }
+
+    /**
+     * @description Set the selected tab element
+     * @returns {void}
+     */
+    const handleActiveTab = () => {
+        if (!tabRef()) {
+            handleTab(defaultTab(), 'active')
+            const defaultTabElement = document.querySelector(`#${defaultTab().id}`)
+            setTabRef(defaultTabElement)
+            defaultTabElement!.classList.add(...activeTabClasses)
+        }
+
+        const tabs = document.querySelectorAll('.tab')
+        tabs.forEach((tab) => {
+            if (tab.classList.contains('tab-active')) {
+                tab.classList.remove(...activeTabClasses)
+            }
+        })
+        tabRef()!.classList.add(...activeTabClasses)
+    }
+
     return (
-        <Tabs defaultValue="account" class="w-[400px]">
-            <TabsList class="grid w-full grid-cols-2">
-                <TabsTrigger value="account">Account</TabsTrigger>
-            </TabsList>
-            <TabsContent value="account"></TabsContent>
-        </Tabs>
+        <CropModalTabs onClick={handleClick}>
+
+        </CropModalTabs>
     )
 }
 
