@@ -1,16 +1,14 @@
-.lotus-button {
-    @apply bg-[url('images/lotus.png')] bg-center bg-cover object-cover bg-no-repeat;
-    @apply p-5 rounded-full shadow-md;
-    @apply hover:shadow-2xl transition duration-200 ease-in focus:shadow-inner cursor-pointer;
-    @apply w-14 h-14;
-    @apply bg-neutral-400;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+.burger-fade-enter-active,
+.burger-fade-exit-active {
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
 }
-
-.lotus-button:hover, .lotus-button:focus {
-    transform: scale(1.1);
+.burger-fade-enter,
+.burger-fade-exit-to {
+    transform: translateX(-10px);
+    opacity: 0;
 }
-
-.lotus-button:active {
-    transform: scale(0.9);
+.burger-fade-enter {
+    transform: translateX(10px);
 }

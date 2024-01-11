@@ -1,5 +1,5 @@
-import { ParentComponent, Show, createSignal } from 'solid-js'
-//import { Transition } from 'solid-transition-group'
+import { ParentComponent, createSignal, Show } from 'solid-js'
+import { Transition } from 'solid-transition-group'
 import { CardContent } from '@components/ui/card'
 import Resizer from '@components/ui/resize'
 import { useAppUIContext } from '@src/store/context/ui'
@@ -27,19 +27,32 @@ const Sidebar: ParentComponent<{
     }
 
     return (
-        <Show when={showSidebar()}>
-            <div class="overflow-y-auto overflow-x-hidden relative flex flex-row mt-2 mb-2 mr-1 ml-1">
-                <aside
-                    style={{
-                        width: `${width()}px`,
-                    }}
-                    class="sidebar">
-                    <Resizer ref={resizer} side="right" onResize={changeWidth}>
-                        <CardContent class="items-center text-center">{props.children}</CardContent>
-                    </Resizer>
-                </aside>
-            </div>
-        </Show>
+        <Transition
+            mode="outin"
+            name="slide-fade"
+            /*  enterActiveClass="delay-100 transition ease-out duration-300"
+            enterClass="transform -translate-x-full"
+            enterToClass="transform translate-x-0"
+            exitActiveClass="delay-100 transition ease-in duration-300"
+            exitClass="transform -translate-x-full"
+            exitToClass="transform translate-x-0" */
+        >
+            <Show when={showSidebar()}>
+                <div class="overflow-y-auto overflow-x-hidden relative flex flex-row mt-2 mb-2 mr-1 ml-1">
+                    <aside
+                        style={{
+                            width: `${width()}px`,
+                        }}
+                        class="sidebar">
+                        <Resizer ref={resizer} side="right" onResize={changeWidth}>
+                            <CardContent class="items-center text-center">
+                                {props.children}
+                            </CardContent>
+                        </Resizer>
+                    </aside>
+                </div>
+            </Show>
+        </Transition>
     )
 }
 

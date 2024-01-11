@@ -9,6 +9,7 @@
 /* Custom Imports */
 @import 'index.css';
 @import 'scrollbar.css';
+@import 'buttons.css';
 @import 'calendar.css';
 @import 'components/sidebar.css';
 

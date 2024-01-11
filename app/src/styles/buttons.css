@@ -1,4 +1,21 @@
-.close_button {
+.lotus-button {
+    @apply bg-[url('images/lotus.png')] bg-center bg-cover object-cover bg-no-repeat;
+    @apply p-5 rounded-full shadow-md;
+    @apply hover:shadow-2xl transition duration-200 ease-in focus:shadow-inner cursor-pointer;
+    @apply w-14 h-14;
+    @apply bg-neutral-400;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.lotus-button:hover, .lotus-button:focus {
+    transform: scale(1.1);
+}
+
+.lotus-button:active {
+    transform: scale(0.9);
+}
+
+/* .close_button {
     @apply bg-gray-300 hover:bg-gray-400 focus:bg-gray-600 flex-none w-6 h-6 p-1 text-gray-50;
     @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75;
 }
@@ -7,4 +24,4 @@
     @apply bg-blue-500 px-6 py-2 rounded text-white;
     @apply hover:shadow-xl hover:bg-blue-600 focus:bg-blue-700 focus:shadow-inner;
     @apply transition duration-200 ease-in;
-}
+} */

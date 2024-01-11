@@ -2,18 +2,22 @@
     height: calc(97vh); /* Default for larger screens */
 }
 
-/* .slide-fade-enter-active,
+.slide-fade-enter-active,
 .slide-fade-exit-active {
-  transition: opacity 0.3s, transform 0.3s;
+    transition:
+        opacity 0.6s ease,
+        transform 0.4s ease-in-out 100ms;
 }
 .slide-fade-enter,
 .slide-fade-exit-to {
-  transform: translateX(10px);
-  opacity: 0;
+    transform: translateX(-100%);
+    opacity: 0;
 }
-.slide-fade-enter {
-  transform: translateX(-10px);
-} */
+
+.slide-fade-enter-to,
+.slide-fade-exit {
+    transform: translateX(0);
+}
 
 /* Smaller screens: less than 600px */
 @media screen and (max-height: 600px) {
