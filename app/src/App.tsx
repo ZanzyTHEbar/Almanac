@@ -1,5 +1,6 @@
+import { useLocation } from '@solidjs/router'
 import { appDataDir } from '@tauri-apps/api/path'
-import { ParentComponent, Suspense, lazy, onMount } from 'solid-js'
+import { ParentComponent, Suspense, lazy, onMount, Show } from 'solid-js'
 import SideBarMenu from '@components/Menu'
 import { useAppContextMain } from '@store/context/main'
 //import GlobalStyles from '@styles/globalstyles'
@@ -12,6 +13,7 @@ const ToastNotificationWindow = lazy(() => import('@components/Notifications'))
 const App: ParentComponent = (props) => {
     const { handleTitlebar, handleAppBoot } = useAppContextMain()
     //const ref = document.getElementById('titlebar')
+    const path = useLocation()
 
     onMount(() => {
         handleTitlebar(true)
@@ -30,7 +32,9 @@ const App: ParentComponent = (props) => {
             {/* <GlobalStyles /> */}
             <div class="overflow-hidden">
                 <Suspense>
-                    <SideBarMenu />
+                    <Show when={path.pathname !== '/'}>
+                        <SideBarMenu />
+                    </Show>
                     {props.children}
                     <ToastNotificationWindow />
                 </Suspense>

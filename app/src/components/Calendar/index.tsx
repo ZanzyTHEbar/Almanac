@@ -1,44 +1,32 @@
-import { For, type Component, createSignal, onMount } from 'solid-js'
-import Day, { dayjs } from '@components/Calendar/Day'
+import { type Component, Show } from 'solid-js'
+import { BurgerMenu } from '@components/BurgerMenu'
+import Calendar, { type MonthProps } from '@components/Calendar/CalendarHandler'
+import CalendarHeader from '@components/Calendar/CalendarHeader'
+import { Card } from '@components/ui/card'
+import { Grid } from '@components/ui/grid'
+import { useAppUIContext } from '@src/store/context/ui'
 
-// TODO: Implement timeline and year calendars
-// TOdO: Implement printable and pdf export of calendar
-// TODO: Implement ical and other format exports of calendar
+const Month: Component<MonthProps> = (props) => {
+    const cols = 7
 
-export interface MonthProps {
-    month: dayjs.Dayjs[][]
-}
-
-const Calendar: Component<MonthProps> = (props) => {
-    // check the number of days in the month and create a new array with the correct number of days
-    const [days, setDays] = createSignal<dayjs.Dayjs[]>()
-
-    const handleDay = () => {
-        props.month.map((row) =>
-            row.map((day) => {
-                //check if it's the end of the month and if so clear extra days
-                if (day.date() === day.daysInMonth()) {
-                    console.debug('Last day of the month')
-                    setDays([...row.slice(0, day.date())])
-                }
-            }),
-        )
-    }
-
-    onMount(() => {
-        handleDay()
-        console.debug('[Days]: ', days())
-    })
+    const { showSidebar, setShowSidebar } = useAppUIContext()
 
     return (
-        <For each={props.month}>
-            {(row, index) => (
-                <For data-index={index()} each={row}>
-                    {(day, j) => <Day data-index={j()} day={day} rowIdx={index()} />}
-                </For>
-            )}
-        </For>
+        <Card
+            
+            class="flex-grow transform transition-transform delay-300 duration-400 w-full rounded-box overflow-x-hidden mt-2 mb-2 mr-2 ml-1">
+            <Show when={!showSidebar()}>
+                <BurgerMenu
+                    onClick={() => setShowSidebar(true)}
+                    class="p-2 justify-start items-start"
+                />
+            </Show>
+            <CalendarHeader id="calendar" />
+            <Grid cols={cols} class="w-full h-full">
+                <Calendar month={props.month} />
+            </Grid>
+        </Card>
     )
 }
 
-export { Calendar, type MonthProps }
+export default Month

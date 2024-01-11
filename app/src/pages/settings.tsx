@@ -1,7 +1,7 @@
 import type { Component } from 'solid-js'
 import PageWrapper from '@src/pages/PageWrapper'
 
-const JournalPage: Component = () => {
+const SettingsPage: Component = () => {
     return (
         <PageWrapper>
             <div class="flex flex-col items-center justify-center h-screen">
@@ -11,4 +11,4 @@ const JournalPage: Component = () => {
     )
 }
 
-export default JournalPage
+export default SettingsPage

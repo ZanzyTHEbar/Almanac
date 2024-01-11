@@ -2,6 +2,19 @@
     height: calc(97vh); /* Default for larger screens */
 }
 
+/* .slide-fade-enter-active,
+.slide-fade-exit-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+.slide-fade-enter,
+.slide-fade-exit-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.slide-fade-enter {
+  transform: translateX(-10px);
+} */
+
 /* Smaller screens: less than 600px */
 @media screen and (max-height: 600px) {
     .sidebar {

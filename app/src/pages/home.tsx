@@ -1,4 +1,4 @@
-import Month from '@components/Calendar/Month'
+import Month from '@components/Calendar'
 import SidebarContent from '@components/Sidebar/Content'
 import Sidebar from '@components/Sidebar/index'
 import { Card, CardContent } from '@components/ui/card'

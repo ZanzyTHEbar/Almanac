@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import { Component, createEffect, createSignal } from 'solid-js'
-import { Calendar, type MonthProps } from '@components/Calendar'
+import { Calendar, type MonthProps } from '@components/Calendar/Calendar'
 import CalendarHeader from '@components/Calendar/CalendarHeader'
 import { Card, CardHeader, CardContent, CardTitle } from '@components/ui/card'
 import { Grid } from '@components/ui/grid'

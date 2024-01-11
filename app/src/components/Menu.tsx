@@ -1,5 +1,4 @@
 import { type Component, createSignal } from 'solid-js'
-import { Transition, TransitionChild } from 'terracotta'
 import { CardContent } from '@components/ui/card'
 
 // TODO: Create a onHover menu that lists the pages in vertical order.
@@ -16,8 +15,8 @@ const SideBarMenu: Component = () => {
     const [isHovered, setIsHovered] = createSignal(false)
     return (
         <aside
-            class="fixed top-0 left-0 h-screen bg-base-100 z-50 transition-width duration-300"
-            classList={{ 'w-[50px]': !isHovered(), 'w-[175px]': isHovered() }}
+            class="fixed top-0 left-0 h-screen bg-base-100 z-50 transition-all duration-500"
+            classList={{ 'w-[90px]': !isHovered(), 'w-[175px]': isHovered() }}
             onPointerEnter={() => setIsHovered(true)}
             onPointerLeave={() => setIsHovered(false)}>
             <div class="overflow-x-hidden mt-2 mb-2 mr-1 ml-1">
