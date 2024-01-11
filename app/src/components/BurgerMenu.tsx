@@ -8,7 +8,7 @@ import { useAppUIContext } from '@store/context/ui'
 const BurgerMenuIcon: Component<ComponentProps<'div'>> = (props) => {
     const [, rest] = splitProps(props, ['class'])
     return (
-        <div class={props.class} {...rest}>
+        <div class={cn('m-3', props.class)} {...rest}>
             <Transition
                 show={true}
                 class={cn(props.class)}
@@ -30,7 +30,7 @@ const BurgerMenu: Component<ComponentProps<'div'>> = (props) => {
     return (
         <div class={cn('flex flex-1 mb-5', props.class)} {...rest}>
             <Show when={showSidebar()}>
-                <Label for="burger-icon" weight="bold" size="lg">
+                <Label for="burger-icon" weight="bold" size="4xl">
                     My Crops
                 </Label>
             </Show>

@@ -13,14 +13,14 @@ const Sidebar: ParentComponent<{
     const { showSidebar } = useAppUIContext()
 
     //const [sidebar, setSidebar] = createSignal<HTMLDivElement | null>(null)
-    const [width, setWidth] = createSignal<number>(225)
+    const [width, setWidth] = createSignal<number>(325)
     let resizer!: HTMLDivElement
 
     const changeWidth = (clientY: number, clientX: number) => {
         console.debug('[Resize]: ', clientY, clientX)
         if (clientY < 0 || clientX < 0) return
-        if (clientY < 225) {
-            setWidth(225)
+        if (clientY < 325) {
+            setWidth(325)
             return
         }
         setWidth(clientY)
