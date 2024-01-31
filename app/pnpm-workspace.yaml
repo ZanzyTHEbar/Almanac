@@ -1,3 +1,2 @@
 packages:
-  - "./src-tauri/src/lib/auth"
   - "./src-tauri/src/lib/splashscreen"
