@@ -65,6 +65,8 @@
     },
     "cSpell.words": [
       "aichat",
+      "APPCONFIG",
+      "APPDATA",
       "artboard",
       "chrono",
       "Clothoid",
@@ -79,6 +81,7 @@
       "eyetrack",
       "eyetrackvrfft",
       "flashtool",
+      "formulahendry",
       "Frontyard",
       "fullcalendar",
       "globalstyles",
@@ -93,10 +96,12 @@
       "luxon",
       "manifestfile",
       "msvc",
+      "mtxr",
       "nanos",
       "nord",
       "notif",
       "notifs",
+      "octref",
       "outin",
       "Pkce",
       "Posterize",
@@ -111,6 +116,7 @@
       "reqwest",
       "solidjs",
       "specta",
+      "sqltools",
       "squircle",
       "stackoverflow",
       "Swatinem",
@@ -122,6 +128,7 @@
       "Tindie",
       "typecheck",
       "Unlisten",
+      "vetur",
       "vnode",
       "Waveshare",
       "webserial",
@@ -129,5 +136,15 @@
       "Xsts"
     ],
     "rust-analyzer.showUnlinkedFileNotification": false
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "wix.vscode-import-cost",
+      "tauri-apps.tauri-vscode",
+      "rust-lang.rust-analyzer",
+      "tamasfe.even-better-toml"
+    ]
   }
 }

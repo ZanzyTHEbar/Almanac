@@ -49,7 +49,7 @@
                 "scope": [
                     "http://127.0.0.1:8000/*",
                     "http://localhost:8000/*",
-                    "https://api.github.com/repos/EyeTrackVR/OpenIris/*"
+                    "https://api.github.com/repos/ZanzyTHEbar/Almanac/*"
                 ]
             },
             "notification": {
@@ -112,10 +112,10 @@
                 "depends": []
             },
             "icon": [
-                "../public/images/icons/icon-48x48.png",
-                "../public/images/icons/icon-128x128.png",
-                "../public/images/icons/144x144.png",
-                "../public/images/icons/icon.ico"
+                "../src/assets/images/icons/icon-48x48.png",
+                "../src/assets/images/icons/icon-128x128.png",
+                "../src/assets/images/icons/144x144.png",
+                "../src/assets/images/icons/icon.ico"
             ],
             "identifier": "com.almanac.dev",
             "longDescription": "",
@@ -176,7 +176,7 @@
             }
         ],
         "systemTray": {
-            "iconPath": "../public/images/icons/32x32.png",
+            "iconPath": "../src/assets/images/icons/32x32.png",
             "iconAsTemplate": true
         }
     }
