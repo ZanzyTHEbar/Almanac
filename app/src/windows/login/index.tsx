@@ -1,5 +1,4 @@
 /* @refresh reload */
-import { Router } from '@solidjs/router'
 //import { TiVendorMicrosoft } from 'solid-icons/ti'
 import { onMount, createSignal, Show } from 'solid-js'
 import { render } from 'solid-js/web'
@@ -37,7 +36,7 @@ const Login = () => {
     }
 
     return (
-        <section class="pb-20 flex flex-col items-center justify-center w-full h-screen text-center bg-gray-200 rounded-sm">
+        <section class="overflow-hidden pb-20 flex flex-col items-center justify-center w-full h-screen text-center bg-gray-200 rounded-sm">
             <div class="container px-6 py-24">
                 <div class="g-6 flex flex-wrap items-center justify-center lg:justify-between">
                     <div class="mb-6 md:mb-0 md:w-8/12 lg:w-6/12">
@@ -75,11 +74,9 @@ const Login = () => {
 
 render(
     () => (
-        <Router>
-            <AppContextMainProvider>
-                <Login />
-            </AppContextMainProvider>
-        </Router>
+        <AppContextMainProvider>
+            <Login />
+        </AppContextMainProvider>
     ),
     document.getElementById('root') as HTMLElement,
 )
