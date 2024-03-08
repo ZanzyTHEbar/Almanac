@@ -42,7 +42,6 @@
       "**/src/utils"
     ],
     "rust-analyzer.files.watcher": "client",
-    "rust-analyzer.showUnlinkedFileNotification": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[toml]": {
       "editor.defaultFormatter": "tamasfe.even-better-toml"
@@ -136,19 +135,17 @@
       "webserial",
       "wireframe",
       "Xsts"
-    ]
+    ],
+    "rust-analyzer.showUnlinkedFileNotification": false
   },
-  "rust-analyzer.showUnlinkedFileNotification": false
   "extensions": {
     "recommendations": [
-      "tauri-apps.tauri-vscode",
-      "rust-lang.rust-analyzer",
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",
       "wix.vscode-import-cost",
-      "gruntfuggly.todo-tree",
-      "wayou.vscode-todo-highlight",
-      "eamodio.gitlens"
+      "tauri-apps.tauri-vscode",
+      "rust-lang.rust-analyzer",
+      "tamasfe.even-better-toml"
     ]
   }
 }
