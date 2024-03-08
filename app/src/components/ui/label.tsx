@@ -5,6 +5,8 @@ import type { Component, ComponentProps } from 'solid-js'
 
 import { cn } from '@src/lib/utils'
 
+export type LabelSize = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl'
+
 const labelVariants = cva(
     'leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
     {

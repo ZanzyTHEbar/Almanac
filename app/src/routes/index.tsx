@@ -1,5 +1,6 @@
 import { lazy } from 'solid-js'
 import type { RouteDefinition } from '@solidjs/router'
+import { capitalizeFirstLetter } from '@src/utils'
 
 const Main = lazy(() => import('@pages/home'))
 const Welcome = lazy(() => import('@pages/welcome'))
@@ -13,7 +14,7 @@ const page404 = lazy(() => import('@pages/page404'))
 
 export const routes: RouteDefinition[] = [
     { path: '/', component: Welcome },
-    { path: '/home', component: Main },
+    { path: '/calendar', component: Main },
     { path: '/journal', component: Journal },
     { path: '/tasks', component: Tasks },
     { path: '/aichat', component: AIChat },
@@ -21,3 +22,17 @@ export const routes: RouteDefinition[] = [
     //{ path: '/settings/:flag', component: Settings },
     { path: '*404', component: page404 },
 ]
+
+const getRoutes = () => routes.filter((route) => route.path !== '*404' && route.path !== '/')
+// create a function that returns an array of objects with label, path, and component
+
+export const createRoutes = () => {
+    return getRoutes().map((route) => {
+        const label = capitalizeFirstLetter(route.path.replace('/', ''))
+
+        return {
+            label: label,
+            path: route.path,
+        }
+    })
+}

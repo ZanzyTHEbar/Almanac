@@ -5,7 +5,7 @@ import { render } from 'solid-js/web'
 import { Transition } from 'solid-transition-group'
 import { Button } from '@components/ui/button'
 import { useAppContextMain, AppContextMainProvider } from '@src/store/context/main'
-import { supabase } from '@store/supabaseClient'
+//import { supabase } from '@store/supabaseClient'
 import '@styles/login-imports.css'
 
 const Login = () => {
@@ -18,7 +18,7 @@ const Login = () => {
         handleTitlebar()
     })
 
-    const handleLogin = async (e: SubmitEvent) => {
+    /* const handleLogin = async (e: SubmitEvent) => {
         e.preventDefault()
 
         try {
@@ -33,7 +33,7 @@ const Login = () => {
         } finally {
             setLoading(false)
         }
-    }
+    } */
 
     return (
         <section class="overflow-hidden pb-20 flex flex-col items-center justify-center w-full h-screen text-center bg-gray-200 rounded-sm">
@@ -43,7 +43,7 @@ const Login = () => {
                         <img src="./login.svg" class="w-full" alt="Phone image" />
                     </div>
                     <div class="md:w-8/12 lg:ml-6 lg:w-5/12" aria-live="polite">
-                        <form onSubmit={handleLogin}>
+                        <form /* onSubmit={handleLogin} */>
                             <div>
                                 <label for="email">Email</label>
                                 <input

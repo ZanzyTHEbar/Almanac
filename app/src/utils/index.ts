@@ -19,7 +19,7 @@ export function getMonthDays(month: number = dayjs().month()): Dayjs[][] {
     return daysMatrix
 }
 
-export const CapitalizeFirstLetter = (letter: string) => {
+export const capitalizeFirstLetter = (letter: string) => {
     return letter.charAt(0).toUpperCase() + letter.slice(1)
 }
 

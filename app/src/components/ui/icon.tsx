@@ -1,6 +1,9 @@
+import { FiCheckCircle } from 'solid-icons/fi'
+import { HiSolidPencilSquare } from 'solid-icons/hi'
+import { IoCalendarOutline, IoChatbubbles, IoSettingsSharp } from 'solid-icons/io'
 import { type ComponentProps, type Component, splitProps } from 'solid-js'
 
-type IconProps = ComponentProps<'svg'> & {
+export type IconProps = ComponentProps<'svg'> & {
     class?: string
     color?: string
     size: number
@@ -223,6 +226,21 @@ const Icons = {
         <Icon {...props}>
             <path d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 24 13 L 24 24 L 13 24 L 13 26 L 24 26 L 24 37 L 26 37 L 26 26 L 37 26 L 37 24 L 26 24 L 26 13 L 24 13 z" />
         </Icon>
+    ),
+    calendar: (props: IconProps) => (
+        <IoCalendarOutline class={props.class} size={props.size} color={props.color} />
+    ),
+    journal: (props: IconProps) => (
+        <HiSolidPencilSquare class={props.class} size={props.size} color={props.color} />
+    ),
+    tasks: (props: IconProps) => (
+        <FiCheckCircle class={props.class} size={props.size} color={props.color} />
+    ),
+    chat: (props: IconProps) => (
+        <IoChatbubbles class={props.class} size={props.size} color={props.color} />
+    ),
+    gear: (props: IconProps) => (
+        <IoSettingsSharp class={props.class} size={props.size} color={props.color} />
     ),
 }
 

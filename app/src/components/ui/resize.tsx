@@ -42,7 +42,7 @@ const Resizer: Component<ResizeProps> = (props) => {
 
     const setRef = (el: HTMLDivElement) => {
         if (!el) return
-        ;(props.ref as SolidRef)(el)
+        (props.ref as SolidRef)(el)
         onCleanup(() => {
             el.removeEventListener('pointerdown', onResizeStart)
         })
