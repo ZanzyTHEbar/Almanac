@@ -8,11 +8,11 @@
         "allowSyntheticDefaultImports": true,
         "skipLibCheck": true,
         "allowJs": true,
-        
+
         /* Bundler Mode */
         "jsx": "preserve",
         "esModuleInterop": true,
-        "moduleResolution": "bundler",
+        "moduleResolution": "node",
         "resolveJsonModule": true,
         "jsxImportSource": "solid-js",
         "types": ["vite/client"],
@@ -38,16 +38,9 @@
         /* Linting */
         "strict": true,
         "forceConsistentCasingInFileNames": true,
-        "noImplicitAny": false,
+        "noImplicitAny": false
     },
-    "include": [
-        "src",
-        "types",
-        "tailwind.config.ts",
-        "**/*.ts",
-        "**/*.tsx",
-        "**/*.js",
-    ],
+    "include": ["src", "types", "tailwind.config.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
     "references": [
         {
             "path": "./tsconfig.node.json"

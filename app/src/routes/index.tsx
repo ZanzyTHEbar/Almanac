@@ -24,8 +24,6 @@ export const routes: RouteDefinition[] = [
 ]
 
 const getRoutes = () => routes.filter((route) => route.path !== '*404' && route.path !== '/')
-// create a function that returns an array of objects with label, path, and component
-
 export const createRoutes = () => {
     return getRoutes().map((route) => {
         const label = capitalizeFirstLetter(route.path.replace('/', ''))
