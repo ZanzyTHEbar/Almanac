@@ -17,15 +17,17 @@ const Welcome = () => {
 
     return (
         <div
-            class=" flex flex-col justify-between artboard-demo w-screen h-screen z-100 overflow-hidden"
+            class="flex flex-col justify-between artboard-demo w-screen h-screen z-100 overflow-hidden"
             style={{
-                background: 'url(\'/images/welcome.png\') no-repeat center center fixed',
+                
+                background: 'url(\'images/welcome.png\') no-repeat center center fixed',
                 'background-size': 'cover',
             }}>
             <div class="flex flex-col flex-1 text-center pt-10">
                 <Label size="3xl" class="text-base-300">
                     A
                 </Label>
+                
                 <Label size="3xl" class="text-blue-500">
                     GARDEN
                 </Label>

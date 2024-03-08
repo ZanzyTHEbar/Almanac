@@ -66,6 +66,8 @@
     },
     "cSpell.words": [
       "aichat",
+      "APPCONFIG",
+      "APPDATA",
       "artboard",
       "chrono",
       "Clothoid",
@@ -80,6 +82,7 @@
       "eyetrack",
       "eyetrackvrfft",
       "flashtool",
+      "formulahendry",
       "Frontyard",
       "fullcalendar",
       "globalstyles",
@@ -94,10 +97,12 @@
       "luxon",
       "manifestfile",
       "msvc",
+      "mtxr",
       "nanos",
       "nord",
       "notif",
       "notifs",
+      "octref",
       "outin",
       "Pkce",
       "Posterize",
@@ -112,8 +117,10 @@
       "reqwest",
       "solidjs",
       "specta",
+      "sqltools",
       "squircle",
       "stackoverflow",
+      "supabase",
       "Swatinem",
       "synthwave",
       "tamasfe",
@@ -123,6 +130,7 @@
       "Tindie",
       "typecheck",
       "Unlisten",
+      "vetur",
       "vnode",
       "Waveshare",
       "webserial",
@@ -130,6 +138,7 @@
       "Xsts"
     ]
   },
+  "rust-analyzer.showUnlinkedFileNotification": false
   "extensions": {
     "recommendations": [
       "tauri-apps.tauri-vscode",
