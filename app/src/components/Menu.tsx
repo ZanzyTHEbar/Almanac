@@ -1,5 +1,16 @@
-import { type Component, createSignal } from 'solid-js'
+import {
+    type Component,
+    type Accessor,
+    type JSXElement,
+    createSignal,
+    Show,
+    For,
+} from 'solid-js'
+import { Transition } from 'solid-transition-group'
+import { Button } from '@components/ui/button'
 import { CardContent } from '@components/ui/card'
+import { Flex } from '@components/ui/flex'
+import { Label } from '@components/ui/label'
 
 // TODO: Create a onHover menu that lists the pages in vertical order.
 // The menu has this structure:
@@ -11,6 +22,36 @@ import { CardContent } from '@components/ui/card'
 // - help docs
 // - my profile
 
+const OnHoverContentHandler: Component<{
+    isHovered: Accessor<boolean>
+    label: string
+    icon?: JSXElement
+}> = (props) => {
+    return (
+        <Flex alignItems="start" flexDirection="row">
+            <Button
+                variant={props.icon ? 'accent' : 'ghost'}
+                styles={props.icon ? 'square' : 'circle'}
+                classList={{
+                    'bg-base-200': !props.icon,
+                }}>
+                <Show
+                    when={props.icon}
+                    fallback={<img src="images/logo.png" class="mask mask-circle w-12 h-12" />}>
+                    {props.icon}
+                </Show>
+                <Transition name="burger-fade">
+                    <Show when={props.isHovered()}>
+                        <Label size="lg" weight="bold">
+                            {props.label}
+                        </Label>
+                    </Show>
+                </Transition>
+            </Button>
+        </Flex>
+    )
+}
+
 const SideBarMenu: Component = () => {
     const [isHovered, setIsHovered] = createSignal(false)
     return (
@@ -20,9 +61,25 @@ const SideBarMenu: Component = () => {
             onPointerEnter={() => setIsHovered(true)}
             onPointerLeave={() => setIsHovered(false)}>
             <div class="overflow-x-hidden mt-2 mb-2 mr-1 ml-1">
-                <CardContent class="items-center text-center">
-                    {/* for loop over menu  items */}
-                    hello world
+                <CardContent class="navbar items-center text-center">
+                    <Flex class="gap-6" alignItems="start" flexDirection="col">
+                        {/* logo - label only on hover */}
+                        <OnHoverContentHandler label="Almanac" isHovered={isHovered} />
+                        {/* Separator */}
+                        <For each={[]}>
+                            {(item, index) => (
+                                <OnHoverContentHandler
+                                    label={item.label}
+                                    data-index={index()}
+                                    isHovered={isHovered}
+                                />
+                            )}
+                        </For>
+                        {/* for loop over menu  items */}
+                        {/* Separator */}
+                        {/* How-to docs */}
+                        {/* your profile */}
+                    </Flex>
                 </CardContent>
             </div>
         </aside>
@@ -30,15 +87,3 @@ const SideBarMenu: Component = () => {
 }
 
 export default SideBarMenu
-
-/* <Transition show={isHovered()} appear={true}>
-    <TransitionChild
-        enter="transform transition ease-out duration-400"
-        enterFrom="opacity-0 -translate-x-full"
-        enterTo="opacity-100 translate-x-0"
-        leave="transform transition ease-in duration-400"
-        leaveFrom="opacity-100 translate-x-0"
-        leaveTo="opacity-0 -translate-x-full">
-        
-    </TransitionChild>
-</Transition> */

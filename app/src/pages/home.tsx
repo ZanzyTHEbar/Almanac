@@ -11,7 +11,7 @@ import { useCalendarContext } from '@store/context/calendar'
 export default function Main() {
     const { getMonth } = useCalendarContext()
 
-    const Main = () => (
+    return (
         <PageWrapper>
             <Card class="overflow-auto border-none w-auto rounded-none bg-primary-300 h-screen">
                 <CardContent class="flex flex-1">
@@ -23,6 +23,4 @@ export default function Main() {
             </Card>
         </PageWrapper>
     )
-
-    return <Main />
 }
