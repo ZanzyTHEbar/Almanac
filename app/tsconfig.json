@@ -1,25 +1,24 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "strict": true,
         "target": "ESNext",
         "module": "ESNext",
-        "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "jsx": "preserve",
+        "useDefineForClassFields": true,
         "allowImportingTsExtensions": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "allowJs": true,
+        
+        /* Bundler Mode */
+        "jsx": "preserve",
+        "esModuleInterop": true,
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
         "jsxImportSource": "solid-js",
         "types": ["vite/client"],
-        "useDefineForClassFields": true,
-        "noImplicitAny": false,
         "isolatedModules": true,
         "noEmit": true,
         "lib": ["DOM", "DOM.Iterable", "ESNext"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "resolveJsonModule": true,
         "paths": {
             "@interfaces/*": ["src/interfaces/*"],
             "@components/*": ["src/components/*"],
@@ -35,7 +34,11 @@
             "@static/*": ["src/static/*"],
             "@utils/*": ["src/utils/*"],
             "@src": ["./src/*"]
-        }
+        },
+        /* Linting */
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitAny": false,
     },
     "include": [
         "src",

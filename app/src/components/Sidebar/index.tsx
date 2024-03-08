@@ -27,16 +27,7 @@ const Sidebar: ParentComponent<{
     }
 
     return (
-        <Transition
-            mode="outin"
-            name="slide-fade"
-            /*  enterActiveClass="delay-100 transition ease-out duration-300"
-            enterClass="transform -translate-x-full"
-            enterToClass="transform translate-x-0"
-            exitActiveClass="delay-100 transition ease-in duration-300"
-            exitClass="transform -translate-x-full"
-            exitToClass="transform translate-x-0" */
-        >
+        <Transition mode="outin" name="slide-fade">
             <Show when={showSidebar()}>
                 <div class="overflow-y-auto overflow-x-hidden relative flex flex-row mt-2 mb-2 mr-1 ml-1">
                     <aside
