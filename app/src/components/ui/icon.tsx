@@ -1,6 +1,8 @@
+import { FaSolidQuestion } from 'solid-icons/fa'
 import { FiCheckCircle } from 'solid-icons/fi'
 import { HiSolidPencilSquare } from 'solid-icons/hi'
 import { IoCalendarOutline, IoChatbubbles, IoSettingsSharp } from 'solid-icons/io'
+import { TbGardenCart } from 'solid-icons/tb'
 import { type ComponentProps, type Component, splitProps } from 'solid-js'
 
 export type IconProps = ComponentProps<'svg'> & {
@@ -241,6 +243,12 @@ const Icons = {
     ),
     gear: (props: IconProps) => (
         <IoSettingsSharp class={props.class} size={props.size} color={props.color} />
+    ),
+    question: (props: IconProps) => (
+        <FaSolidQuestion class={props.class} size={props.size} color={props.color} />
+    ),
+    profile: (props: IconProps) => (
+        <TbGardenCart class={props.class} size={props.size} color={props.color} />
     ),
 }
 

@@ -1,6 +1,6 @@
 import { throttle } from '@solid-primitives/scheduled'
 import { useNavigate } from '@solidjs/router'
-import { type Component, createSignal, Show, For, Switch, Match } from 'solid-js'
+import { type Component, createSignal, Show, For, Switch, Match, JSXElement } from 'solid-js'
 import { Separator } from './ui/separator'
 import { Button } from '@components/ui/button'
 import { CardContent } from '@components/ui/card'
@@ -19,6 +19,13 @@ import { createRoutes } from '@routes/index'
 // - help docs
 // - my profile
 
+const color = '#7b716a'
+
+const handleClass = () => {
+    const constant = 'hover:opacity-100 opacity-80 transition-opacity duration-300 ease-in-out'
+    return `${constant} text-[#615b56] text-pretty hover:text-[${color}] hover:bg-base-200`
+}
+
 const MenuItem: Component<{
     isHovered: boolean
     label: string
@@ -26,11 +33,6 @@ const MenuItem: Component<{
     onClick: (e: PointerEvent) => void
 }> = (props) => {
     const color = '#7b716a'
-
-    const handleClass = () => {
-        const constant = 'hover:opacity-100 opacity-80 transition-opacity duration-300 ease-in-out'
-        return `${constant} text-[#615b56] text-pretty hover:text-[${color}] hover:bg-base-200`
-    }
 
     const Icon = () => {
         const options = {
@@ -55,6 +57,12 @@ const MenuItem: Component<{
                 </Match>
                 <Match when={props.label === 'Settings'}>
                     <Icons.gear {...options} />
+                </Match>
+                <Match when={props.label === 'Help Docs'}>
+                    <Icons.question {...options} />
+                </Match>
+                <Match when={props.label === 'Profile'}>
+                    <Icons.profile {...options} />
                 </Match>
             </Switch>
         )
@@ -181,37 +189,25 @@ const FooterContent: Component<{
     return (
         <>
             <MenuSeparator isHovered={props.isHovered} />
-            <Flex class="gap-6" alignItems="baseline" justifyContent="center" flexDirection="col">
-                <Button
-                    class="w-full"
-                    size="default"
-                    variant="ghost"
-                    styles="square"
-                    onClick={(e) => {
-                        e.preventDefault()
-                        props.navigate('/profile')
-                    }}>
-                    {/* Add Icon and Text for Profile Button */}
-                    <Flex alignItems="center" justifyContent="center">
-                        {/* <Icons.user size={30} color="#7b716a" /> */}
-                        <Label class="ml-2">Profile</Label>
-                    </Flex>
-                </Button>
-                <Button
-                    class="w-full"
-                    size="default"
-                    variant="ghost"
-                    styles="square"
+            <Flex class="gap-2 pb-4" alignItems="baseline" justifyContent="center" flexDirection="col">
+                <MenuItem
+                    label="Help Docs"
+                    isHovered={props.isHovered}
+                    labelSize="2xl"
                     onClick={(e) => {
                         e.preventDefault()
                         // TODO: Open the help docs
-                    }}>
-                    {/* Add Icon and Text for Profile Button */}
-                    <Flex alignItems="center" justifyContent="center">
-                        {/* <Icons.user size={30} color="#7b716a" /> */}
-                        <Label class="ml-2">Profile</Label>
-                    </Flex>
-                </Button>
+                    }}
+                />
+                <MenuItem
+                    label="Profile"
+                    isHovered={props.isHovered}
+                    labelSize="2xl"
+                    onClick={(e) => {
+                        e.preventDefault()
+                        props.navigate('/profile')
+                    }}
+                />
             </Flex>
         </>
     )
