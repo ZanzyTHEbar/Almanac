@@ -1,6 +1,6 @@
 import { throttle } from '@solid-primitives/scheduled'
 import { useNavigate } from '@solidjs/router'
-import { type Component, createSignal, Show, For, Switch, Match, JSXElement } from 'solid-js'
+import { type Component, createSignal, Show, For, Switch, Match, createEffect } from 'solid-js'
 import { Separator } from './ui/separator'
 import { Button } from '@components/ui/button'
 import { CardContent } from '@components/ui/card'
@@ -8,16 +8,6 @@ import { Flex } from '@components/ui/flex'
 import { Icons } from '@components/ui/icon'
 import { Label, LabelSize } from '@components/ui/label'
 import { createRoutes } from '@routes/index'
-
-// TODO: Create a onHover menu that lists the pages in vertical order.
-// The menu has this structure:
-// - logo and name
-// - horizontal line
-// - calendar selection dropdown
-// - menu items
-// - horizontal line
-// - help docs
-// - my profile
 
 const color = '#7b716a'
 
@@ -102,9 +92,10 @@ const MenuSeparator: Component<{
 }> = (props) => {
     return (
         <Separator
+            class="w-[70%] opacity-20 transition-opacity duration-300 ease-in-out"
             classList={{
-                'w-[70%] opacity-20': !props.isHovered,
-                'w-[95%] opacity-20': props.isHovered,
+                'w-[70%]': !props.isHovered,
+                'w-[95%]': props.isHovered,
             }}
             variant="accent"
         />
@@ -189,7 +180,11 @@ const FooterContent: Component<{
     return (
         <>
             <MenuSeparator isHovered={props.isHovered} />
-            <Flex class="gap-2 pb-4" alignItems="baseline" justifyContent="center" flexDirection="col">
+            <Flex
+                class="gap-2 pb-4"
+                alignItems="baseline"
+                justifyContent="center"
+                flexDirection="col">
                 <MenuItem
                     label="Help Docs"
                     isHovered={props.isHovered}

@@ -1,6 +1,6 @@
 import { useLocation } from '@solidjs/router'
 import { appDataDir } from '@tauri-apps/api/path'
-import { ParentComponent, Suspense, lazy, onMount, Show } from 'solid-js'
+import { ParentComponent, lazy, onMount, Show } from 'solid-js'
 import { Transition } from 'solid-transition-group'
 import SideBarMenu from '@components/Menu'
 import { useAppContextMain } from '@store/context/main'
@@ -19,9 +19,6 @@ const App: ParentComponent = (props) => {
     onMount(() => {
         handleTitlebar(true)
         handleAppBoot()
-        //startAuth().then((res) => {
-        //    console.log(res)
-        //})
 
         appDataDir().then((res) => {
             console.log(res)
