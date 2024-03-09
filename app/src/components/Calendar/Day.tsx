@@ -23,7 +23,7 @@ const Day: Component<DayProps> = (props) => {
         useCalendarContext()
 
     createEffect(() => {
-        console.log('[Day Events]: ', props.day.format('DD-MM-YY'), ' - ', filteredEvents().length)
+        console.log('[Day Events]: ', props.day.format('DD-MM-YY'), ' - ', filteredEvents()?.length)
         /* const events = filteredEvents().filter((evt) => {
             console.log('[Event Debug]: ', evt.payload.date)
             return dayjs(evt.payload.date).format('DD-MM-YY') === props.day.format('DD-MM-YY')

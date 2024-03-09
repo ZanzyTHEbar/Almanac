@@ -10,71 +10,98 @@ import {
     onMount,
 } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
+// eslint-disable-next-line import/named
+import { v4 as uuidv4 } from 'uuid'
 import {
     Calendar,
     CalendarDate,
     CalendarEvent,
     CalendarEventModify,
     CalendarLabel,
-    DateUtilityObject,
+    CalendarState,
 } from '@static/types'
 
 interface CalendarContext {
     /* Get */
-    filteredEvents: Accessor<CalendarEvent[]>
-    smallCalendarWidget: Accessor<DateUtilityObject | null>
-    daySelected: Accessor<CalendarDate | undefined>
-    showEventModal: Accessor<boolean>
-    selectedEvent: Accessor<CalendarEvent | null>
-    labels: Accessor<CalendarLabel[]>
+    calendars: Accessor<Calendar[]>
+    selectedCalendar: Accessor<Calendar | null>
+    filteredEvents: Accessor<CalendarEvent[] | undefined>
     /* Utilities */
     getMonth: (month?: number) => dayjs.Dayjs[][]
+    filterEvents: () => void
+    createNewCalendar: (name: string) => void
     /* Set */
-    setDate: (date: CalendarDate, smallCalendar?: boolean, selectedDay?: boolean) => void
-    savedEvents: Accessor<CalendarEvent[]>
-    setSavedEvents: (event: CalendarEvent, handle: CalendarEventModify) => void
+    setSelectedCalendar: (calendar: CalendarState['selectedCalendar']) => void
+    setDate: (date: CalendarDate) => void
+    setEvents: (event: CalendarEvent, handle: CalendarEventModify) => void
     setDaySelected: (day: CalendarDate) => void
     setShowEventModal: (state: boolean) => void
+    setCurrentMonthIndex: (idx: number) => void
     setSelectedEvent: (state: CalendarEvent | null) => void
     setLabels: (label: CalendarLabel[]) => void
     setLabel: (label: CalendarLabel) => void
-    filterEvents: () => void
 }
 
 const CalendarContext = createContext<CalendarContext>()
 export const CalendarProvider: ParentComponent = (props) => {
-    const defaultState: Calendar = {
-        daySelected: dayjs().day(),
-        showEventModal: false,
-        selectedEvent: null,
-        labels: [],
-        savedEvents: [],
-        filteredEvents: [],
-        smallCalendarWidget: {
-            daySelected: dayjs().day(),
-        },
+    const defaultState: CalendarState = {
+        calendars: [],
+        selectedCalendar: null,
     }
 
-    const [state, setState] = createStore<Calendar>(defaultState)
+    const [state, setState] = createStore<CalendarState>(defaultState)
     const appState = createMemo(() => state)
 
     //#region events
 
-    const setDate = (date: CalendarDate | undefined, smallCalendar: boolean = false) => {
+    const createNewCalendar = (name: string) => {
         setState(
             produce((s) => {
+                const calendar: Calendar = {
+                    id: uuidv4(),
+                    name,
+                    currentMonthIdx: 0,
+                    events: [],
+                    showEventModal: false,
+                    daySelected: dayjs().toLocaleString(),
+                    selectedEvent: null,
+                    labels: [],
+                    filteredEvents: [],
+                }
+
+                if (s.calendars.find((cal) => cal.id === calendar.id)) return
+                if (s.selectedCalendar?.id === calendar?.id) return
+                if (s.calendars.find((cal) => cal.name === calendar.name)) {
+                    s.selectedCalendar = calendar
+                    return
+                }
+
+                s.calendars.push(calendar)
+            }),
+        )
+    }
+
+    const setSelectedCalendar = (calendar: CalendarState['selectedCalendar']) => {
+        setState(
+            produce((s) => {
+                if (calendar?.id === s.selectedCalendar?.id) return
+                s.selectedCalendar = calendar
+            }),
+        )
+    }
+
+    const setDate = (date: CalendarDate) => {
+        setState(
+            produce((s) => {
+                if (!s.selectedCalendar) return
+
                 if (typeof date === 'number') {
                     date = date.toString()
                 } else if (date instanceof Date) {
                     date = date.toLocaleString()
                 }
 
-                if (smallCalendar) {
-                    s.smallCalendarWidget.date = date
-                    return
-                }
-
-                s.daySelected = date
+                s.selectedCalendar.daySelected = date
             }),
         )
     }
@@ -82,7 +109,8 @@ export const CalendarProvider: ParentComponent = (props) => {
     const setDaySelected = (day: CalendarDate) => {
         setState(
             produce((s) => {
-                s.daySelected = day
+                if (!s.selectedCalendar) return
+                s.selectedCalendar.daySelected = day
             }),
         )
     }
@@ -90,7 +118,8 @@ export const CalendarProvider: ParentComponent = (props) => {
     const setCurrentMonthIndex = (idx: number) => {
         setState(
             produce((s) => {
-                s.currentMonthIdx = idx
+                if (!s.selectedCalendar) return
+                s.selectedCalendar.currentMonthIdx = idx
             }),
         )
     }
@@ -98,7 +127,8 @@ export const CalendarProvider: ParentComponent = (props) => {
     const setShowEventModal = (state: boolean) => {
         setState(
             produce((s) => {
-                s.showEventModal = state
+                if (!s.selectedCalendar) return
+                s.selectedCalendar.showEventModal = state
             }),
         )
     }
@@ -106,7 +136,8 @@ export const CalendarProvider: ParentComponent = (props) => {
     const setSelectedEvent = (state: CalendarEvent | null) => {
         setState(
             produce((s) => {
-                s.selectedEvent = state
+                if (!s.selectedCalendar) return
+                s.selectedCalendar.selectedEvent = state
             }),
         )
     }
@@ -114,16 +145,19 @@ export const CalendarProvider: ParentComponent = (props) => {
     const setLabels = (label: CalendarLabel[]) => {
         setState(
             produce((s) => {
+                if (!s.selectedCalendar) return
                 const new_labels = [...new Set(label.map((evt) => evt.label))].map((_label) => {
-                    const currentLabel = s.labels.find((lbl) => lbl.label === _label)
+                    const currentLabel = s.selectedCalendar?.labels.find(
+                        (lbl) => lbl.label === _label,
+                    )
                     return {
                         _label,
                         checked: currentLabel ? currentLabel.checked : true,
                     }
                 })
-                console.log('[Calendar.tsx]:', new_labels)
+                console.debug('[Calendar.tsx]:', new_labels)
 
-                s.labels = label
+                s.selectedCalendar.labels = label
             }),
         )
     }
@@ -131,7 +165,8 @@ export const CalendarProvider: ParentComponent = (props) => {
     const setLabel = (label: CalendarLabel) => {
         setState(
             produce((s) => {
-                s.labels.map((lbl) => (lbl.label === label.label ? lbl : label))
+                if (!s.selectedCalendar) return
+                s.selectedCalendar.labels.map((lbl) => (lbl.label === label.label ? lbl : label))
             }),
         )
     }
@@ -139,44 +174,39 @@ export const CalendarProvider: ParentComponent = (props) => {
     const filterEvents = () => {
         setState(
             produce((s) => {
-                s.filteredEvents = s.savedEvents.filter((evt) =>
-                    s.labels
-                        .filter((lbl) => lbl.checked)
-                        .map((lbl) => lbl.label)
-                        .includes(evt.label),
+                if (!s.selectedCalendar) return
+                s.selectedCalendar.filteredEvents = s.selectedCalendar.events.filter(
+                    (evt) =>
+                        s.selectedCalendar?.labels
+                            .filter((lbl) => lbl.checked)
+                            .map((lbl) => lbl.label)
+                            .includes(evt.label),
                 )
             }),
         )
     }
 
-    /* const filteredEvents = createMemo(() => {
-        return appState().savedEvents.filter((evt) =>
-            appState()
-                .labels.filter((lbl) => lbl.checked)
-                .map((lbl) => lbl.label)
-                .includes(evt.label),
-        )
-    }) */
-
-    const setSavedEvents = (event: CalendarEvent, handle: CalendarEventModify) => {
+    const setEvents = (event: CalendarEvent, handle: CalendarEventModify) => {
         console.debug('[Calendar.tsx]:', event)
-        console.debug(appState().savedEvents)
+        console.debug(appState().selectedCalendar?.events)
 
         setState(
             produce((s) => {
                 switch (handle) {
                     case 'push':
-                        return s.savedEvents.push(event)
+                        return s.selectedCalendar?.events.push(event)
                     case 'update':
-                        return s.savedEvents.map((evt) => (evt.uuid === event.uuid ? evt : event))
+                        return s.selectedCalendar?.events.map((evt) =>
+                            evt.uuid === event.uuid ? evt : event,
+                        )
                     case 'delete':
-                        return s.savedEvents.filter((evt) => evt.uuid !== event.uuid)
+                        return s.selectedCalendar?.events.filter((evt) => evt.uuid !== event.uuid)
                     default:
                         return s
                 }
             }),
         )
-        console.log(appState().savedEvents)
+        console.debug(appState().selectedCalendar?.events)
     }
 
     //#endregion
@@ -186,10 +216,10 @@ export const CalendarProvider: ParentComponent = (props) => {
     const year = dayjs().year()
     const month = dayjs().month()
     const today = dayjs().set('year', year)
-    const startWeek = today.startOf('isoWeek')
-    const weekDays = Array.from(new Array(7).keys()).map((index) => {
+    /*const startWeek = today.startOf('isoWeek')
+     const weekDays = Array.from(new Array(7).keys()).map((index) => {
         return startWeek.add(index, 'day')
-    })
+    }) */
 
     const startOfMonth = today.set('month', month).startOf('month')
     const startOfFirstWeek = startOfMonth.startOf('isoWeek')
@@ -228,33 +258,30 @@ export const CalendarProvider: ParentComponent = (props) => {
     createEffect(() => {
         setState(
             produce((s) => {
-                if (s.smallCalendarWidget !== null) {
-                    setDate(s.smallCalendarWidget.date, true)
-                }
-            }),
-        )
-    })
-
-    createEffect(() => {
-        setState(
-            produce((s) => {
-                if (!s.showEventModal) {
+                if (!s.selectedCalendar) return
+                if (!s.selectedCalendar.showEventModal) {
                     setSelectedEvent(null)
                 }
             }),
         )
     })
+
     //#endregion
 
     //#region Getters
 
-    const smallCalendarWidget = createMemo(() => appState().smallCalendarWidget)
-    const daySelected = createMemo(() => appState().daySelected)
-    const showEventModal = createMemo(() => appState().showEventModal)
-    const selectedEvent = createMemo(() => appState().selectedEvent)
-    const labels = createMemo(() => appState().labels)
-    const savedEvents = createMemo(() => appState().savedEvents)
-    const filteredEvents = createMemo(() => appState().filteredEvents)
+    const filteredEvents = createMemo(() => {
+        return appState().selectedCalendar?.events.filter(
+            (evt) =>
+                appState()
+                    .selectedCalendar?.labels.filter((lbl) => lbl.checked)
+                    .map((lbl) => lbl.label)
+                    .includes(evt.label),
+        )
+    })
+
+    const calendars = createMemo(() => appState().calendars)
+    const selectedCalendar = createMemo(() => appState().selectedCalendar)
 
     //#endregion
 
@@ -263,7 +290,7 @@ export const CalendarProvider: ParentComponent = (props) => {
         const storageEvents = localStorage.getItem('savedEvents')
         console.log('[Load Store]:', JSON.parse(storageEvents!))
         const parsedEvents: CalendarEvent = storageEvents ? JSON.parse(storageEvents) : []
-        setSavedEvents(parsedEvents, 'push')
+        setEvents(parsedEvents, 'push')
     })
 
     createEffect(() => {
@@ -273,16 +300,15 @@ export const CalendarProvider: ParentComponent = (props) => {
     return (
         <CalendarContext.Provider
             value={{
+                calendars,
+                selectedCalendar,
                 filteredEvents,
-                smallCalendarWidget,
-                daySelected,
-                showEventModal,
-                selectedEvent,
-                labels,
                 getMonth,
-                savedEvents,
-                setSavedEvents,
+                createNewCalendar,
+                setEvents,
                 setDate,
+                setSelectedCalendar,
+                setCurrentMonthIndex,
                 setDaySelected,
                 setShowEventModal,
                 setSelectedEvent,

@@ -3,6 +3,7 @@ import { buttonVariants, type ButtonProps } from './button'
 import type { Component, ComponentProps } from 'solid-js'
 import { cn } from '@src/lib/utils'
 
+
 const Input: Component<ComponentProps<'input'> & ButtonProps> = (props) => {
     const [, rest] = splitProps(props, ['type', 'class'])
     return (

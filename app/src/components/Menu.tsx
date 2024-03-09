@@ -1,6 +1,6 @@
 import { throttle } from '@solid-primitives/scheduled'
 import { useNavigate } from '@solidjs/router'
-import { type Component, createSignal, Show, For, Switch, Match, createEffect } from 'solid-js'
+import { type Component, createSignal, Show, For, Switch, Match } from 'solid-js'
 import { Separator } from './ui/separator'
 import { Button } from '@components/ui/button'
 import { CardContent } from '@components/ui/card'

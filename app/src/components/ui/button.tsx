@@ -48,7 +48,7 @@ const buttonVariants = cva('btn cursor-pointer', {
 })
 
 export interface ButtonProps extends ComponentProps<'button'>, VariantProps<typeof buttonVariants> {
-    children: JSXElement
+    children?: JSXElement
 }
 
 const Button: Component<ButtonProps> = (props) => {

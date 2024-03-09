@@ -3,6 +3,142 @@ import type { ENotificationType, ENotificationAction } from '@static/enums'
 import type { JSXElement } from 'solid-js'
 import type { ToasterStore } from 'terracotta'
 
+export interface MainApp {
+    loggedIn: boolean
+}
+
+//**********************************************************************************************************************************************************************/
+//*                                                                                                                                                                    */
+//*                                                                  Calendar Interfaces                                                                               */
+//*                                                                                                                                                                    */
+//**********************************************************************************************************************************************************************/
+
+export interface CalendarState {
+    calendars: Calendar[]
+    selectedCalendar: Calendar | null
+}
+
+export type CropsContextMenu = 'delete' | 'hide'
+export type CropContextMenu = 'duplicate' | 'edit' | 'succession' | CropsContextMenu
+export type CalendarDate = Date | string | number | dayjs.Dayjs
+export type CalendarEventTType = 'event' | 'task' | 'reminder'
+export type CalendarEventModify = 'push' | 'update' | 'delete'
+export type CalendarEventTasks =
+    | 'Seeding'
+    | 'Direct Seed'
+    | 'Transplanting'
+    | 'Cultivating'
+    | 'Harvesting'
+    | 'Bed Preparation'
+
+export interface DateUtilityObject {
+    date?: CalendarDate
+    daySelected?: CalendarDate
+}
+
+export interface CalendarLabel {
+    label: string
+    checked: boolean
+}
+
+export interface CalendarEvent {
+    type: CalendarEventTType
+    task: CalendarEventTasks
+    label: string
+    uuid: string
+    payload: CalendarEventContent
+}
+
+export interface CalendarEventContent extends DateUtilityObject {
+    title: string
+    description: string
+    start: CalendarDate
+    end: CalendarDate
+    color?: string
+}
+
+export interface Calendar extends DateUtilityObject {
+    //smallCalendarWidget: DateUtilityObject
+    id: string
+    name: string
+    currentMonthIdx: number
+    daySelected: CalendarDate
+    events: CalendarEvent[]
+    selectedEvent: CalendarEvent | null
+    labels: CalendarLabel[]
+    filteredEvents: CalendarEvent[]
+    showEventModal: boolean
+}
+
+//*  App Store Interfaces  */
+
+export interface AppStore {
+    debugMode: DebugMode
+}
+
+export interface AppStoreNotifications {
+    notifications?: ToasterStore<Notifications>
+    enableNotificationsSounds: boolean
+    enableNotifications: boolean
+    globalNotificationsType: ENotificationAction
+}
+
+export interface UIStore {
+    showSidebar: boolean
+    tabs: UITab[]
+    selectedTab: UITab | null
+    loggedIn: boolean
+    modalStatus?: {
+        openModal: boolean
+        editingMode: boolean
+    }
+    showNotifications?: boolean
+}
+
+//********************************* Config *************************************/
+
+/**
+ * @description Debug mode levels
+ * @export typedef {string} DebugMode
+ * @property {'off'} off
+ * @property {'error'} error
+ * @property {'warn'} warn
+ * @property {'info'} info
+ * @property {'debug'} debug
+ * @property {'trace'} trace
+ */
+export type DebugMode = 'off' | 'error' | 'warn' | 'info' | 'debug' | 'trace'
+
+/**
+ * @description This is the export type that is passed to the Tauri Store instance to handle persistent data within the app.
+ * @export typedef {Object} PersistentSettings
+ * @property {boolean} enableNotificationsSounds
+ * @property {boolean} enableNotifications
+ * @property {ENotificationAction} globalNotificationsType
+ * @property {boolean} enableMDNS
+ * @property {boolean} scanForCamerasOnStartup
+ * @property {CameraSettings} cameraSettings
+ * @property {AlgorithmSettings} algorithmSettings
+ * @property {FilterParams} filterParams
+ * @property {OSCSettings} oscSettings
+ */
+export type PersistentSettings = {
+    user?: string
+    enableNotificationsSounds?: boolean
+    enableNotifications?: boolean
+    globalNotificationsType?: ENotificationAction
+    enableMDNS?: boolean
+    debugMode?: DebugMode
+}
+
+/**
+ * @description Backend Config
+ */
+export type BackendConfig = {
+    version?: number | string
+    debug?: DebugMode
+}
+
 //********************************* Settings *************************************/
 
 //* Utility Interfaces
@@ -77,129 +213,4 @@ export interface UITab {
     visible: boolean
     label?: string
     event?: TabEvent
-}
-
-
-//**********************************************************************************************************************************************************************/
-//*                                                                                                                                                                    */
-//*                                                                  Calendar Interfaces                                                                               */
-//*                                                                                                                                                                    */
-//**********************************************************************************************************************************************************************/
-
-export type CropsContextMenu = 'delete' | 'hide'
-export type CropContextMenu = 'duplicate' | 'edit' | 'succession' | CropsContextMenu
-export type CalendarDate = Date | string | number | dayjs.Dayjs
-export type CalendarEventTType = 'event' | 'task' | 'reminder'
-export type CalendarEventModify = 'push' | 'update' | 'delete'
-export type CalendarEventTasks =
-    | 'Seeding'
-    | 'Direct Seed'
-    | 'Transplanting'
-    | 'Cultivating'
-    | 'Harvesting'
-    | 'Bed Preparation'
-
-export interface DateUtilityObject {
-    date?: CalendarDate
-    daySelected?: CalendarDate
-}
-
-export interface CalendarLabel {
-    label: string
-    checked: boolean
-}
-
-export interface CalendarEvent {
-    type: CalendarEventTType
-    task: CalendarEventTasks
-    label: string
-    uuid: string | number
-    payload: CalendarEventContent
-}
-
-export interface CalendarEventContent extends DateUtilityObject {
-    title: string
-    description: string
-    start: CalendarDate
-    end: CalendarDate
-    color?: string
-}
-
-export interface Calendar extends DateUtilityObject {
-    //smallCalendarWidget: DateUtilityObject
-    showEventModal: boolean
-    savedEvents: CalendarEvent[]
-    selectedEvent: CalendarEvent | null
-    labels: CalendarLabel[]
-    filteredEvents: CalendarEvent[]
-    name: string
-}
-
-//*  App Store Interfaces  */
-
-export interface AppStore {
-    debugMode: DebugMode
-}
-
-export interface AppStoreNotifications {
-    notifications?: ToasterStore<Notifications>
-    enableNotificationsSounds: boolean
-    enableNotifications: boolean
-    globalNotificationsType: ENotificationAction
-}
-
-export interface UIStore {
-    showSidebar: boolean
-    tabs: UITab[]
-    selectedTab: UITab | null
-    loggedIn: boolean
-    modalStatus?: {
-        openModal: boolean
-        editingMode: boolean
-    }
-    showNotifications?: boolean
-}
-
-//********************************* Config *************************************/
-
-/**
- * @description Debug mode levels
- * @export typedef {string} DebugMode
- * @property {'off'} off
- * @property {'error'} error
- * @property {'warn'} warn
- * @property {'info'} info
- * @property {'debug'} debug
- * @property {'trace'} trace
- */
-export type DebugMode = 'off' | 'error' | 'warn' | 'info' | 'debug' | 'trace'
-
-/**
- * @description This is the export type that is passed to the Tauri Store instance to handle persistent data within the app.
- * @export typedef {Object} PersistentSettings
- * @property {boolean} enableNotificationsSounds
- * @property {boolean} enableNotifications
- * @property {ENotificationAction} globalNotificationsType
- * @property {boolean} enableMDNS
- * @property {boolean} scanForCamerasOnStartup
- * @property {CameraSettings} cameraSettings
- * @property {AlgorithmSettings} algorithmSettings
- * @property {FilterParams} filterParams
- * @property {OSCSettings} oscSettings
- */
-export type PersistentSettings = {
-    user?: string
-    enableNotificationsSounds?: boolean
-    enableNotifications?: boolean
-    globalNotificationsType?: ENotificationAction
-    enableMDNS?: boolean
-    debugMode?: DebugMode
-}
-
-/**
- * @description Backend Config
- */
-export type BackendConfig = {
-    version?: number | string
-    debug?: DebugMode
 }

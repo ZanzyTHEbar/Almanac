@@ -6,9 +6,8 @@ import { useCalendarContext } from '@store/context/calendar'
 
 // TODO: Add button to group by year
 
-
 const Crops = () => {
-    const { labels, setLabel } = useCalendarContext()
+    const { selectedCalendar, setLabel } = useCalendarContext()
     return (
         <Card class="h-full">
             <CardHeader class="p-2">
@@ -21,7 +20,7 @@ const Crops = () => {
                 </Show>
             </CardHeader>
             <CardContent class="p-2">
-                <For each={labels()}>
+                <For each={selectedCalendar()?.labels}>
                     {(label, index) => (
                         <Label data-index={index()} class="items-center mt-3 block">
                             <Input
