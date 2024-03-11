@@ -4,7 +4,7 @@ import { Input } from '@components/ui/input'
 import { Label } from '@components/ui/label'
 import { useCalendarContext } from '@store/context/calendar'
 
-const CalendarModalContent: Component = () => {
+const CalendarHeaderModalContent: Component = () => {
     const { selectedCalendar, editCalendarName } = useCalendarContext()
 
     return (
@@ -22,4 +22,4 @@ const CalendarModalContent: Component = () => {
     )
 }
 
-export default CalendarModalContent
+export default CalendarHeaderModalContent

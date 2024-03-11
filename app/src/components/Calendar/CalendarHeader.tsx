@@ -1,8 +1,8 @@
 import { Show, Component } from 'solid-js'
 import { Transition } from 'solid-transition-group'
-import { BurgerMenu } from '@components/BurgerMenu'
 import AddCropModal from '@components/Modal/AddCropModal'
-import CalendarModal from '@components/Modal/CalendarModal'
+import CalendarModal from '@components/Modal/CalendarModals'
+import { BurgerMenu } from '@components/ui/burger_menu'
 import { Button } from '@components/ui/button'
 import { Card, CardHeader } from '@components/ui/card'
 import { Flex } from '@components/ui/flex'
@@ -19,23 +19,21 @@ const CalendarHeader: Component<{
 
     return (
         <>
-            <Card class="card rounded-none shadow-none">
-                <Flex
-                    class="w-full"
-                    flexDirection="row"
-                    alignItems="center"
-                    justifyContent="between">
+            <div class="border border-gray-500 border-opacity-25">
+                <Flex class="w-full" flexDirection="row" alignItems="center" justifyContent="start">
                     <Transition name="burger-fade">
                         <Show when={!showSidebar()}>
                             <BurgerMenu
-                                onClick={() => setShowSidebar(true)}
-                                class="p-2 justify-start items-start"
+                                onPointerDown={() => setShowSidebar(true)}
+                                label="My Crops"
+                                show={showSidebar()}
+                                class="pl-2 justify-start items-start"
                             />
                         </Show>
                     </Transition>
 
                     {/* Editable Calendar title */}
-                    <CardHeader>
+                    <CardHeader class="justify-start items-start">
                         <Flex
                             class="w-full"
                             flexDirection="row"
@@ -44,15 +42,17 @@ const CalendarHeader: Component<{
                             <Label size="2xl" weight="semiBold">
                                 {selectedCalendar()?.name}
                             </Label>
-                            <CalendarModal />
+                            <CalendarModal location="header" />
                         </Flex>
                     </CardHeader>
-                    <AddCropModal location="calendarHeader" />
+                    <div class="ml-auto">
+                        <AddCropModal location="calendarHeader" />
+                    </div>
                 </Flex>
-            </Card>
-            <Card class="rounded-none shadow-none gap-4 p-2">
+            </div>
+            <div class="border border-gray-500 border-opacity-25">
                 <Flex
-                    class="w-full p-4"
+                    class="w-full p-2"
                     flexDirection="row"
                     alignItems="center"
                     justifyContent="between">
@@ -68,20 +68,9 @@ const CalendarHeader: Component<{
                     {/* month, timeline, year calendar picker */}
                     {/* customize button */}
                 </Flex>
-            </Card>
+            </div>
         </>
     )
 }
 
 export default CalendarHeader
-
-/* <Show when={props.id === 'calendar'}>
-    <CardHeader class="flex w-full justify-start items-center">
-        <img
-            src="images/sprout.png"
-            alt="calendar"
-            class="mr-2"
-        />
-        <h1 class="mr-10 text-xl text-gray-500 fond-bold">Almanac</h1>
-    </CardHeader>
-</Show> */

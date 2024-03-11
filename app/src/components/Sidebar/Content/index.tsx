@@ -1,7 +1,7 @@
 import { Component, ComponentProps, Show, splitProps } from 'solid-js'
-import { BurgerMenu } from '@components/BurgerMenu'
 import AppCropModal from '@components/Modal/AddCropModal'
 import Crops from '@components/Sidebar/Content/Crops'
+import { BurgerMenu } from '@components/ui/burger_menu'
 import { Label } from '@components/ui/label'
 import { cn } from '@src/lib/utils'
 import { useAppUIContext } from '@store/context/ui'
@@ -12,14 +12,16 @@ import { useAppUIContext } from '@store/context/ui'
 
 const SidebarContent: Component<ComponentProps<'div'>> = (props) => {
     const [, rest] = splitProps(props, ['class'])
-    const { setShowSidebar } = useAppUIContext()
-    //const { getMonth } = useCalendarContext()
+    const { setShowSidebar, showSidebar } = useAppUIContext()
+
     return (
         <div class={cn('', props.class)} {...rest}>
             <div class="p-3">
                 <BurgerMenu
-                    onClick={() => setShowSidebar(false)}
-                    class="justify-between items-start"
+                    class="mt-1 mr-1 mb-5 justify-between items-start"
+                    label="My Crops"
+                    show={showSidebar()}
+                    onPointerDown={() => setShowSidebar(false)}
                 />
             </div>
             <div class="flex flex-col justify-center items-center content-center mt-3">
@@ -33,7 +35,7 @@ const SidebarContent: Component<ComponentProps<'div'>> = (props) => {
                     <Label class="text-gray-500" size="lg">
                         You haven't added any crops yet
                     </Label>
-                    <AppCropModal location='sidebar' />
+                    <AppCropModal location="sidebar" />
                 </Show>
             </div>
             <div class="h-full p-2 flex flex-col grow justify-evenly">

@@ -3,12 +3,16 @@ import { Component, ComponentProps, Show, splitProps } from 'solid-js'
 import { Transition } from 'terracotta'
 import { Label } from '@components/ui/label'
 import { cn } from '@src/lib/utils'
-import { useAppUIContext } from '@store/context/ui'
+
+interface BurgerMenuProps extends ComponentProps<'div'> {
+    label: string
+    show: boolean
+}
 
 const BurgerMenuIcon: Component<ComponentProps<'div'>> = (props) => {
     const [, rest] = splitProps(props, ['class'])
     return (
-        <div class={cn('m-3', props.class)} {...rest}>
+        <div class={cn('', props.class)} {...rest}>
             <Transition
                 show={true}
                 class={cn(props.class)}
@@ -24,14 +28,13 @@ const BurgerMenuIcon: Component<ComponentProps<'div'>> = (props) => {
     )
 }
 
-const BurgerMenu: Component<ComponentProps<'div'>> = (props) => {
-    const [, rest] = splitProps(props, ['class'])
-    const { showSidebar } = useAppUIContext()
+const BurgerMenu: Component<BurgerMenuProps> = (props) => {
+    const [, rest] = splitProps(props, ['class', 'label', 'show'])
     return (
-        <div class={cn('flex flex-1 mb-5', props.class)} {...rest}>
-            <Show when={showSidebar()}>
+        <div class={cn('flex', props.class)} {...rest}>
+            <Show when={props.show}>
                 <Label for="burger-icon" weight="bold" size="4xl">
-                    My Crops
+                    {props.label}
                 </Label>
             </Show>
             <BurgerMenuIcon id="burger-icon" class={props.class} />

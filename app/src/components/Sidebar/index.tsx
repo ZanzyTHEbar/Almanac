@@ -36,7 +36,7 @@ const Sidebar: ParentComponent<{
                         }}
                         class="sidebar">
                         <Resizer ref={resizer} side="right" onResize={changeWidth}>
-                            <CardContent class="items-center text-center">
+                            <CardContent class="pt-2.5 items-center text-center">
                                 {props.children}
                             </CardContent>
                         </Resizer>

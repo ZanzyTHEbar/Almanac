@@ -16,7 +16,10 @@ const CalendarEvents: Component<{
     const { setSelectedEvent } = useCalendarContext()
     return (
         <Card
-            onClick={() => setSelectedEvent(props.evt)}
+            onPointerDown={(e) => {
+                e.stopPropagation()
+                setSelectedEvent(props.evt)
+            }}
             class={`bg-${props.evt.label}-200 p-1 mr-3 text-base-content text-pretty text-sm rounded mb-1 truncate`}>
             <CardContent>{props.evt.payload.title}</CardContent>
         </Card>

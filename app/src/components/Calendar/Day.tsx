@@ -19,17 +19,12 @@ export interface DayProps {
 
 const Day: Component<DayProps> = (props) => {
     const [dayEvents, setDayEvents] = createSignal<CalendarEvent[]>([])
-    const { setDaySelected, setShowEventModal, filteredEvents, setSelectedEvent, filterEvents } =
-        useCalendarContext()
+    const { setDaySelected, setShowEventModal, filteredEvents } = useCalendarContext()
 
     createEffect(() => {
         console.log('[Day Events]: ', props.day.format('DD-MM-YY'), ' - ', filteredEvents()?.length)
-        /* const events = filteredEvents().filter((evt) => {
-            console.log('[Event Debug]: ', evt.payload.date)
-            return dayjs(evt.payload.date).format('DD-MM-YY') === props.day.format('DD-MM-YY')
-        })
-        console.log(events)
-        setDayEvents(events) */
+        console.log('[Day Events]: ', filteredEvents())
+        setDayEvents(filteredEvents() || [])
     })
 
     const getCurrentDayClass = () => {
@@ -68,10 +63,6 @@ const Day: Component<DayProps> = (props) => {
             </div>
             <CardContent
                 class="flex-1 cursor-pointer"
-                onDblClick={() => {
-                    setDaySelected(props.day)
-                    setShowEventModal(true)
-                }}
                 onClick={() => {}}>
                 <For each={dayEvents()}>{(evt) => <CalendarEvents evt={evt} />}</For>
             </CardContent>

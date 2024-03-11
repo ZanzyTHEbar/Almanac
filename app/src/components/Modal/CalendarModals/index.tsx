@@ -1,10 +1,14 @@
-import { createSignal, type Component } from 'solid-js'
-import CalendarModalContent from './CalendarModalContent'
+import { Switch, Match, createSignal, type Component } from 'solid-js'
+import CalendarHeaderModalContent from './CalendarHeaderModalContent'
 import Modal from '@components/Modal'
 import { Icons } from '@components/ui/icon'
 import { useCalendarContext } from '@store/context/calendar'
 
-const CalendarModal: Component = () => {
+type Locations = 'header' | 'day'
+
+const CalendarModal: Component<{
+    location: Locations
+}> = (props) => {
     const [open, setOpen] = createSignal(false)
     const { setShowEventModal } = useCalendarContext()
 
@@ -19,6 +23,16 @@ const CalendarModal: Component = () => {
         e.preventDefault()
         e.stopPropagation()
         setShowEventModal(true)
+    }
+
+    const handleContent = () => {
+        return (
+            <Switch>
+                <Match when={props.location === 'header'}>
+                    <CalendarHeaderModalContent />
+                </Match>
+            </Switch>
+        )
     }
 
     return (
@@ -38,7 +52,7 @@ const CalendarModal: Component = () => {
                     class="cursor-pointer text-gray-600 pb-2"
                 />
             }>
-            <CalendarModalContent />
+            {handleContent()}
         </Modal>
     )
 }
