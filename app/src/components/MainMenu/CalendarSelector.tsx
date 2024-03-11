@@ -19,7 +19,6 @@ const CalendarSelector: Component<{
 }> = (props) => {
     const { calendars, setSelectedCalendar, selectedCalendar } = useCalendarContext()
     const [firstLetter, setFirstLetter] = createSignal<string>('')
-    const [isSelecting, setIsSelecting] = createSignal(false)
     const [calendarDropDown, setCalendarDropDown] = createSignal('')
 
     const handleSelectCalendar = () => {
@@ -58,14 +57,12 @@ const CalendarSelector: Component<{
 
     createEffect(() => {
         handleSelectCalendar()
-        if (props.isHovered) setIsSelecting(true)
-        if (!props.isHovered) setIsSelecting(false)
     })
 
     return (
         <Flex flexDirection="col">
             <Show
-                when={isSelecting()}
+                when={props.isHovered}
                 fallback={
                     <div class="bg-secondary-300/95 border border-accent/25 w-[50px] shadow-none rounded-md mr-6">
                         <MenuItem
@@ -79,32 +76,43 @@ const CalendarSelector: Component<{
                         />
                     </div>
                 }>
-                <Select
-                    value={calendarDropDown()}
-                    onChange={(e) => {
-                        setCalendarDropDown(e)
-                        debounce(props.onHover, 200)(false)
-                        debounce(setIsSelecting, 200)(false)
-                    }}
-                    defaultValue={selectedCalendar()?.name}
-                    options={[...calendars().map((calendar) => calendar.name)]}
-                    placeholder={handlePlaceholder()}
-                    itemComponent={(props) => (
-                        <SelectItem class="z-[60]" item={props.item}>
-                            {props.item.rawValue}
-                        </SelectItem>
-                    )}>
-                    <SelectTrigger
-                        aria-label="calendars"
-                        class="border-none focus:ring-0 enabled:border-none">
-                        <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
-                    </SelectTrigger>
-                    <SelectContent
-                        onPointerEnter={() => props.onHover(true)}
-                        onPointerLeave={() => props.onHover(false)}
-                        class="bg-base-100/75 hover:bg-base-200 overflow-y-scroll h-[400px]"
-                    />
-                </Select>
+                <div class="w-full h-full grow flex-1">
+                    <Select
+                        value={calendarDropDown()}
+                        onChange={(e) => {
+                            setCalendarDropDown(e)
+                            debounce(props.onHover, 200)(false)
+                        }}
+                        defaultValue={selectedCalendar()?.name}
+                        options={[...calendars().map((calendar) => calendar.name)]}
+                        placeholder={handlePlaceholder()}
+                        itemComponent={(props) => (
+                            <SelectItem class="z-[60]" item={props.item}>
+                                {props.item.rawValue}
+                            </SelectItem>
+                        )}>
+                        <SelectTrigger
+                            aria-label="calendars"
+                            class="border-none focus:ring-0 enabled:border-none">
+                            <SelectValue<string>>
+                                {(state) => (
+                                    <Label
+                                        class={handleClass()}
+                                        styles="pointer"
+                                        size="2xl"
+                                        weight="bold">
+                                        {state.selectedOption()}
+                                    </Label>
+                                )}
+                            </SelectValue>
+                        </SelectTrigger>
+                        <SelectContent
+                            onPointerEnter={() => props.onHover(true)}
+                            onPointerLeave={() => props.onHover(false)}
+                            class="bg-base-100/75 hover:bg-base-200 overflow-y-scroll h-[400px]"
+                        />
+                    </Select>
+                </div>
             </Show>
         </Flex>
     )
