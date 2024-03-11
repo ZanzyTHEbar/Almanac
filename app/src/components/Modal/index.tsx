@@ -1,4 +1,4 @@
-import { /* createEffect, */ createSignal, onMount, ParentComponent } from 'solid-js'
+import { JSXElement, ParentComponent } from 'solid-js'
 import ModalContent from './ModalContent'
 import {
     Dialog,
@@ -12,8 +12,8 @@ import {
 import { Label } from '@components/ui/label'
 
 export interface ModalEvents {
-    onCancel: () => void
-    onSubmit: () => void
+    onCancel: (e: PointerEvent) => void
+    onSubmit: (e: PointerEvent) => void
 }
 
 interface ModalProps extends ModalEvents {
@@ -21,18 +21,19 @@ interface ModalProps extends ModalEvents {
     ariaLabel: string
     title: string
     description: string
+    trigger: JSXElement
+    open: boolean
+    setOpen: (value: boolean) => void
 }
 
 const Modal: ParentComponent<ModalProps> = (props) => {
-    const [open, setOpen] = createSignal(false)
-    onMount(() => {})
-    /* createEffect(() => {
-        console.debug(open())
-    }) */
-
     return (
-        <Dialog id={props.id} open={open()} onOpenChange={setOpen} aria-label={props.ariaLabel}>
-            <DialogTrigger>{props.children}</DialogTrigger>
+        <Dialog
+            id={props.id}
+            open={props.open}
+            onOpenChange={props.setOpen}
+            aria-label={props.ariaLabel}>
+            <DialogTrigger>{props.trigger}</DialogTrigger>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>
@@ -40,7 +41,9 @@ const Modal: ParentComponent<ModalProps> = (props) => {
                     </DialogTitle>
                     <DialogDescription>{props.description}</DialogDescription>
                 </DialogHeader>
-                <ModalContent onCancel={props.onCancel} onSubmit={props.onSubmit} />
+                <ModalContent onCancel={props.onCancel} onSubmit={props.onSubmit}>
+                    {props.children}
+                </ModalContent>
                 <DialogFooter />
             </DialogContent>
         </Dialog>

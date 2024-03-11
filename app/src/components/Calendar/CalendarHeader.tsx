@@ -1,8 +1,8 @@
 import { Show, Component } from 'solid-js'
 import { Transition } from 'solid-transition-group'
-import AppCropModal from '@components/Modal/AddCropModal'
 import { BurgerMenu } from '@components/BurgerMenu'
-import AddCrop from '@components/AddCropButton'
+import AddCropModal from '@components/Modal/AddCropModal'
+import CalendarModal from '@components/Modal/CalendarModal'
 import { Button } from '@components/ui/button'
 import { Card, CardHeader } from '@components/ui/card'
 import { Flex } from '@components/ui/flex'
@@ -16,12 +16,6 @@ const CalendarHeader: Component<{
 }> = (props) => {
     const { showSidebar, setShowSidebar } = useAppUIContext()
     const { selectedCalendar, setCurrentMonthIndex, setShowEventModal } = useCalendarContext()
-
-    const handleEditCalendarName = (e: PointerEvent) => {
-        e.preventDefault()
-        e.stopPropagation()
-        setShowEventModal(true)
-    }
 
     return (
         <>
@@ -50,25 +44,10 @@ const CalendarHeader: Component<{
                             <Label size="2xl" weight="semiBold">
                                 {selectedCalendar()?.name}
                             </Label>
-                            <Icons.journal
-                                onPointerDown={handleEditCalendarName}
-                                size={25}
-                                class="cursor-pointer text-gray-600 pb-2"
-                            />
+                            <CalendarModal />
                         </Flex>
                     </CardHeader>
-
-                    {/* Export Calendar icon */}
-
-                    <AppCropModal id="sidebar-modal">
-                        <div
-                            classList={{
-                                'p-4': showSidebar(),
-                            }}
-                            class="pr-2">
-                            <AddCrop />
-                        </div>
-                    </AppCropModal>
+                    <AddCropModal location="calendarHeader" />
                 </Flex>
             </Card>
             <Card class="rounded-none shadow-none gap-4 p-2">

@@ -34,7 +34,7 @@ import CropCategory from '@components/Modal/AddCropModal/CropCategory'
  *  - Crop covering (no cover | one cover | two covers)
  *  - Date for winter gardening (seeding | transplanting)
  */
-const ModalContent = () => {
+const AddCropModalContent = () => {
     const [cropCategory, setCropCategory] = createSignal<Crop | null>(null)
 
     const handleCropCategoryChange = (crop: Crop) => {
@@ -52,4 +52,4 @@ const ModalContent = () => {
     )
 }
 
-export default ModalContent
+export default AddCropModalContent

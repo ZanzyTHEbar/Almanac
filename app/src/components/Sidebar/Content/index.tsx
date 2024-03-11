@@ -33,7 +33,7 @@ const SidebarContent: Component<ComponentProps<'div'>> = (props) => {
                     <Label class="text-gray-500" size="lg">
                         You haven't added any crops yet
                     </Label>
-                    <AppCropModal />
+                    <AppCropModal location='sidebar' />
                 </Show>
             </div>
             <div class="h-full p-2 flex flex-col grow justify-evenly">
