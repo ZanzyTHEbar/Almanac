@@ -1,7 +1,6 @@
 import { Component, ComponentProps, Show, splitProps } from 'solid-js'
-import AppCropModal from '@components/AddCropModal'
 import { BurgerMenu } from '@components/BurgerMenu'
-import AddCrop from '@components/Sidebar/Content/AddCropButton'
+import AppCropModal from '@components/Modal/AddCropModal'
 import Crops from '@components/Sidebar/Content/Crops'
 import { Label } from '@components/ui/label'
 import { cn } from '@src/lib/utils'
@@ -34,9 +33,7 @@ const SidebarContent: Component<ComponentProps<'div'>> = (props) => {
                     <Label class="text-gray-500" size="lg">
                         You haven't added any crops yet
                     </Label>
-                    <AppCropModal id="sidebar-modal">
-                        <AddCrop />
-                    </AppCropModal>
+                    <AppCropModal />
                 </Show>
             </div>
             <div class="h-full p-2 flex flex-col grow justify-evenly">

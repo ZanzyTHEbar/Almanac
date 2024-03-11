@@ -1,6 +1,6 @@
 import { lazy } from 'solid-js'
 import type { RouteDefinition } from '@solidjs/router'
-import { capitalizeFirstLetter } from '@src/utils'
+import { capitalizeFirstLetter } from '@src/lib/utils'
 
 const Main = lazy(() => import('@pages/home'))
 const Welcome = lazy(() => import('@pages/welcome'))

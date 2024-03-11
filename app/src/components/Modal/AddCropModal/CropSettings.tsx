@@ -1,6 +1,6 @@
 import { createSignal, type Component, onMount, JSXElement } from 'solid-js'
 import type { UITab } from '@static/types'
-import CropModalTabs from '@components/AddCropModal/CropModalTabs'
+import CropModalTabs from '@components/Modal/AddCropModal/CropModalTabs'
 import { useAppUIContext } from '@store/context/ui'
 
 // TODO: Map through varieties and labels
@@ -72,11 +72,7 @@ const CropSettingsSection: CropSettingsSectionTab = (props) => {
         tabRef()!.classList.add(...activeTabClasses)
     }
 
-    return (
-        <CropModalTabs onClick={handleClick}>
-
-        </CropModalTabs>
-    )
+    return <CropModalTabs onClick={handleClick}></CropModalTabs>
 }
 
 export default CropSettingsSection

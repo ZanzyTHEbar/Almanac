@@ -1,9 +1,7 @@
 import { Show, createSignal } from 'solid-js'
 import CropSettingsSection from './CropSettings'
-import type { Crop } from '@components/AddCropModal/CropCategory'
-import CropCategory from '@components/AddCropModal/CropCategory'
-import FormActions from '@components/AddCropModal/FormActions'
-import { DialogAction } from '@components/ui/dialog'
+import type { Crop } from '@components/Modal/AddCropModal/CropCategory'
+import CropCategory from '@components/Modal/AddCropModal/CropCategory'
 
 /**
  * Content for the Add Crop Modal
@@ -39,29 +37,18 @@ import { DialogAction } from '@components/ui/dialog'
 const ModalContent = () => {
     const [cropCategory, setCropCategory] = createSignal<Crop | null>(null)
 
-    const handleSubmit = () => {
-        //e.preventDefault()
-    }
-
-    const handleCancel = () => {
-        // Logic to restore defaults
-    }
-
     const handleCropCategoryChange = (crop: Crop) => {
         // Logic to update crop settings
         setCropCategory(crop)
     }
 
     return (
-        <DialogAction>
-            <form class="p-2" method="dialog">
-                <CropCategory onChange={handleCropCategoryChange} />
-                <Show when={cropCategory() !== null}>
-                    <CropSettingsSection />
-                </Show>
-                <FormActions onCancel={handleCancel} onSubmit={handleSubmit} />
-            </form>
-        </DialogAction>
+        <>
+            <CropCategory onChange={handleCropCategoryChange} />
+            <Show when={cropCategory() !== null}>
+                <CropSettingsSection />
+            </Show>
+        </>
     )
 }
 

@@ -1,5 +1,5 @@
-import { createEffect, createSignal, onMount, ParentComponent } from 'solid-js'
-import ModalContent from '@components/AddCropModal/ModalContent'
+import { /* createEffect, */ createSignal, onMount, ParentComponent } from 'solid-js'
+import ModalContent from './ModalContent'
 import {
     Dialog,
     DialogTrigger,
@@ -11,37 +11,43 @@ import {
 } from '@components/ui/dialog'
 import { Label } from '@components/ui/label'
 
-const EventModal: ParentComponent<{
+export interface ModalEvents {
+    onCancel: () => void
+    onSubmit: () => void
+}
+
+interface ModalProps extends ModalEvents {
     id: string
-}> = (props) => {
+    ariaLabel: string
+    title: string
+    description: string
+}
+
+const Modal: ParentComponent<ModalProps> = (props) => {
     const [open, setOpen] = createSignal(false)
     onMount(() => {})
-    createEffect(() => {
+    /* createEffect(() => {
         console.debug(open())
-    })
+    }) */
 
     return (
-        <Dialog id={props.id} open={open()} onOpenChange={setOpen} aria-label="Add Crop Modal">
+        <Dialog id={props.id} open={open()} onOpenChange={setOpen} aria-label={props.ariaLabel}>
             <DialogTrigger>{props.children}</DialogTrigger>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>
-                        <Label size="2xl">
-                            Add a new crop
-                        </Label>
+                        <Label size="2xl">{props.title}</Label>
                     </DialogTitle>
-                    <DialogDescription>
-                        Select an existing crop or create a new crop
-                    </DialogDescription>
+                    <DialogDescription>{props.description}</DialogDescription>
                 </DialogHeader>
-                <ModalContent />
+                <ModalContent onCancel={props.onCancel} onSubmit={props.onSubmit} />
                 <DialogFooter />
             </DialogContent>
         </Dialog>
     )
 }
 
-export default EventModal
+export default Modal
 
 /* 
 

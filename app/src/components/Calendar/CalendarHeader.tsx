@@ -1,8 +1,8 @@
 import { Show, Component } from 'solid-js'
 import { Transition } from 'solid-transition-group'
-import AppCropModal from '@components/AddCropModal'
+import AppCropModal from '@components/Modal/AddCropModal'
 import { BurgerMenu } from '@components/BurgerMenu'
-import AddCrop from '@components/Sidebar/Content/AddCropButton'
+import AddCrop from '@components/AddCropButton'
 import { Button } from '@components/ui/button'
 import { Card, CardHeader } from '@components/ui/card'
 import { Flex } from '@components/ui/flex'
@@ -15,11 +15,13 @@ const CalendarHeader: Component<{
     id: 'calendar' | 'widget'
 }> = (props) => {
     const { showSidebar, setShowSidebar } = useAppUIContext()
-    //const { currentMonthIdx, setCurrentMonthIdx } = useCalendarContext()
+    const { selectedCalendar, setCurrentMonthIndex, setShowEventModal } = useCalendarContext()
 
-    /* const handleMonthIndex = (idx: number) => {
-        setCurrentMonthIdx(idx)
-    } */
+    const handleEditCalendarName = (e: PointerEvent) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setShowEventModal(true)
+    }
 
     return (
         <>
@@ -46,9 +48,13 @@ const CalendarHeader: Component<{
                             alignItems="center"
                             justifyContent="between">
                             <Label size="2xl" weight="semiBold">
-                                Almanac
+                                {selectedCalendar()?.name}
                             </Label>
-                            <Icons.journal size={25} class="cursor-pointer text-gray-600 pb-2" />
+                            <Icons.journal
+                                onPointerDown={handleEditCalendarName}
+                                size={25}
+                                class="cursor-pointer text-gray-600 pb-2"
+                            />
                         </Flex>
                     </CardHeader>
 

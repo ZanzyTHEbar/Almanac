@@ -30,6 +30,7 @@ interface CalendarContext {
     getMonth: (month?: number) => dayjs.Dayjs[][]
     filterEvents: () => void
     createNewCalendar: (name: string) => void
+    editCalendarName: (name: string) => void
     /* Set */
     setSelectedCalendar: (calendar: CalendarState['selectedCalendar']) => void
     setDate: (date: CalendarDate) => void
@@ -77,6 +78,15 @@ export const CalendarProvider: ParentComponent = (props) => {
                 }
 
                 s.calendars.push(calendar)
+            }),
+        )
+    }
+
+    const editCalendarName = (name: string) => {
+        setState(
+            produce((s) => {
+                if (!s.selectedCalendar) return
+                s.selectedCalendar.name = name
             }),
         )
     }
@@ -208,7 +218,7 @@ export const CalendarProvider: ParentComponent = (props) => {
         )
         console.debug(appState().selectedCalendar?.events)
     }
-    
+
     // TODO: setup a way to increment the month index
 
     //#endregion
@@ -307,6 +317,7 @@ export const CalendarProvider: ParentComponent = (props) => {
                 filteredEvents,
                 getMonth,
                 createNewCalendar,
+                editCalendarName,
                 setEvents,
                 setDate,
                 setSelectedCalendar,
