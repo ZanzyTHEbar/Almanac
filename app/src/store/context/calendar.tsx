@@ -208,6 +208,8 @@ export const CalendarProvider: ParentComponent = (props) => {
         )
         console.debug(appState().selectedCalendar?.events)
     }
+    
+    // TODO: setup a way to increment the month index
 
     //#endregion
 

@@ -59,12 +59,14 @@ const SelectTheme: Component = (): JSXElement => {
                 options={themes}
                 placeholder="Select a theme…"
                 itemComponent={(props) => (
-                    <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
+                    <SelectItem class="" item={props.item}>
+                        {props.item.rawValue}
+                    </SelectItem>
                 )}>
                 <SelectTrigger aria-label="themes" class="w-[150px]">
                     <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
                 </SelectTrigger>
-                <SelectContent class="overflow-y-scroll text-primary h-[400px]" />
+                <SelectContent class="bg-base-100/75 hover:bg-base-200 overflow-y-scroll h-[400px]" />
             </Select>
         </div>
     )

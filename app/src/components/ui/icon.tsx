@@ -2,7 +2,7 @@ import { FaSolidQuestion } from 'solid-icons/fa'
 import { FiCheckCircle } from 'solid-icons/fi'
 import { HiSolidPencilSquare } from 'solid-icons/hi'
 import { IoCalendarOutline, IoChatbubbles, IoSettingsSharp } from 'solid-icons/io'
-import { TbGardenCart } from 'solid-icons/tb'
+import { TbGardenCart, TbSelector } from 'solid-icons/tb'
 import { type ComponentProps, type Component, splitProps } from 'solid-js'
 
 export type IconProps = ComponentProps<'svg'> & {
@@ -109,10 +109,7 @@ const Icons = {
         </Icon>
     ),
     chevronsUpDown: (props: IconProps) => (
-        <Icon {...props}>
-            <path d="m7 15 5 5 5-5" />
-            <path d="m7 9 5-5 5 5" />
-        </Icon>
+        <TbSelector class={props.class} size={props.size} color={props.color} />
     ),
     circle: (props: IconProps) => (
         <Icon {...props}>
