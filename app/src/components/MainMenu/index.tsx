@@ -38,7 +38,7 @@ const MainMenu: Component = () => {
             classList={{ 'w-[90px]': !isHovered(), 'w-[225px]': isHovered() }}
             onPointerEnter={() => debounce(handleHover, 200)(true)}
             onPointerLeave={() => debounce(handleHover, 200)(false)}>
-            <div class="w-full h-full overflow-x-hidden mt-2 mb-2 mr-1 ml-1">
+            <div class="pt-3 w-full h-full overflow-x-hidden mt-2 mb-2 mr-1 ml-1">
                 <CardContent class="w-full h-full navbar-start items-center text-center pb-4 pr-2 pl-2 pt-2">
                     <Flex
                         class="w-full h-full gap-6"
