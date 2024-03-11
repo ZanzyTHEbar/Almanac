@@ -2,7 +2,7 @@ import { useLocation } from '@solidjs/router'
 import { appDataDir } from '@tauri-apps/api/path'
 import { ParentComponent, lazy, onMount, Show } from 'solid-js'
 import { Transition } from 'solid-transition-group'
-import SideBarMenu from '@components/Menu'
+import MainMenu from '@components/MainMenu'
 import { useCalendarContext } from '@store/context/calendar'
 import { useAppContextMain } from '@store/context/main'
 //import GlobalStyles from '@styles/globalstyles'
@@ -76,7 +76,7 @@ const App: ParentComponent = (props) => {
                     {props.children}
                 </Transition>
                 <Show when={path.pathname !== '/'}>
-                    <SideBarMenu />
+                    <MainMenu />
                 </Show>
                 <ToastNotificationWindow />
             </div>
