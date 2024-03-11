@@ -1,16 +1,14 @@
 import { splitProps } from 'solid-js'
-import { buttonVariants, type ButtonProps } from './button'
 import type { Component, ComponentProps } from 'solid-js'
 import { cn } from '@src/lib/utils'
 
-
-const Input: Component<ComponentProps<'input'> & ButtonProps> = (props) => {
+const Input: Component<ComponentProps<'input'>> = (props) => {
     const [, rest] = splitProps(props, ['type', 'class'])
     return (
         <input
             type={props.type}
             class={cn(
-                buttonVariants({ variant: props.variant, size: props.size, styles: props.styles }),
+                'flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
                 props.class,
             )}
             {...rest}

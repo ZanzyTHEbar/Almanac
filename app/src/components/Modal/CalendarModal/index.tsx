@@ -1,4 +1,5 @@
 import { createSignal, type Component } from 'solid-js'
+import CalendarModalContent from './CalendarModalContent'
 import Modal from '@components/Modal'
 import { Icons } from '@components/ui/icon'
 import { useCalendarContext } from '@store/context/calendar'
@@ -7,8 +8,12 @@ const CalendarModal: Component = () => {
     const [open, setOpen] = createSignal(false)
     const { setShowEventModal } = useCalendarContext()
 
-    const onCancel = () => {}
-    const onSubmit = () => {}
+    const onCancel = () => setOpen(false)
+
+    const onSubmit = () => {
+        // TODO: implement call to save to store
+        setOpen(false)
+    }
 
     const handleEditCalendarName = (e: PointerEvent) => {
         e.preventDefault()
@@ -33,7 +38,7 @@ const CalendarModal: Component = () => {
                     class="cursor-pointer text-gray-600 pb-2"
                 />
             }>
-            {/* <AddCropModalContent /> */}
+            <CalendarModalContent />
         </Modal>
     )
 }
