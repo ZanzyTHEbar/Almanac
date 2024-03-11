@@ -1,5 +1,6 @@
 import { Show, Component } from 'solid-js'
 import { Transition } from 'solid-transition-group'
+import MonthSelector from './MonthSelector'
 import AddCropModal from '@components/Modal/AddCropModal'
 import CalendarModal from '@components/Modal/CalendarModals'
 import { BurgerMenu } from '@components/ui/burger_menu'
@@ -10,6 +11,7 @@ import { Icons } from '@components/ui/icon'
 import { Label } from '@components/ui/label'
 import { useCalendarContext } from '@store/context/calendar'
 import { useAppUIContext } from '@store/context/ui'
+import TaskFilter from './TaskFilter'
 
 const CalendarHeader: Component<{
     id: 'calendar' | 'widget'
@@ -31,8 +33,6 @@ const CalendarHeader: Component<{
                             />
                         </Show>
                     </Transition>
-
-                    {/* Editable Calendar title */}
                     <CardHeader class="justify-start items-start">
                         <Flex
                             class="w-full"
@@ -52,19 +52,37 @@ const CalendarHeader: Component<{
             </div>
             <div class="border border-gray-500 border-opacity-25">
                 <Flex
-                    class="w-full p-2"
+                    class="w-full gap-2 p-2"
                     flexDirection="row"
                     alignItems="center"
-                    justifyContent="between">
+                    justifyContent="start">
                     {/* Today button */}
-                    <Button /* onClick={() => handleMonthIndex(currentMonthIdx() - 1)} */>
-                        <Icons.chevronLeft size={25} class="text-gray-600 mx-2" />
+
+                    <Button variant="ghost">
+                        <Label size="2xl" weight="semiBold" class="text-gray-600">
+                            Today
+                        </Label>
                     </Button>
-                    <Button /* onClick={() => handleMonthIndex(currentMonthIdx() + 1)} */>
-                        <Icons.chevronRight size={25} class="text-gray-600 mx-2" />
-                    </Button>
-                    {/* Dropdown to select month and year, one year back and one year forward from current year - from march to march*/}
-                    {/* task filter */}
+                    <Flex
+                        class="pl-15 w-1/4 gap-2"
+                        flexDirection="row"
+                        alignItems="center"
+                        justifyContent="center">
+                        <Button
+                            variant="ghost"
+                            /* onClick={() => handleMonthIndex(currentMonthIdx() - 1)} */
+                        >
+                            <Icons.chevronLeft size={25} class="text-gray-600 mx-2" />
+                        </Button>
+                        <Button
+                            variant="ghost"
+                            /* onClick={() => handleMonthIndex(currentMonthIdx() + 1)} */
+                        >
+                            <Icons.chevronRight size={25} class="text-gray-600 mx-2" />
+                        </Button>
+                    </Flex>
+                    <MonthSelector />
+                    <TaskFilter />
                     {/* month, timeline, year calendar picker */}
                     {/* customize button */}
                 </Flex>

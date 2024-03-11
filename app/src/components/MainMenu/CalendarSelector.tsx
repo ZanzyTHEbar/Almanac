@@ -57,6 +57,7 @@ const CalendarSelector: Component<{
 
     createEffect(() => {
         handleSelectCalendar()
+        setFirstLetter(selectedCalendar()!.name.charAt(0).toUpperCase())
     })
 
     return (

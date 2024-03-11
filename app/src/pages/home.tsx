@@ -1,3 +1,4 @@
+import { createEffect } from 'solid-js'
 import Month from '@components/Calendar'
 import SidebarContent from '@components/Sidebar/Content'
 import Sidebar from '@components/Sidebar/index'
@@ -9,7 +10,13 @@ import { useCalendarContext } from '@store/context/calendar'
 // TODO: Add Tasks with Todo list
 
 export default function Main() {
-    const { getMonth } = useCalendarContext()
+    const { getMonth, selectedCalendar, setCurrentMonthIndex } = useCalendarContext()
+
+    createEffect(() => {
+        if (!selectedCalendar()) return
+
+        
+    })
 
     return (
         <PageWrapper>

@@ -12,6 +12,7 @@ import {
 import { createStore, produce } from 'solid-js/store'
 // eslint-disable-next-line import/named
 import { v4 as uuidv4 } from 'uuid'
+import { isEmpty } from '../../lib/utils'
 import {
     Calendar,
     CalendarDate,
@@ -298,6 +299,12 @@ export const CalendarProvider: ParentComponent = (props) => {
     //#endregion
 
     onMount(() => {
+        
+        if (isEmpty(calendars)) return
+        calendars().map((cal) => {
+            cal.currentMonthIdx = dayjs().month()
+        })
+
         // TODO: Change this to localForage or Tauri Store  when it's available
         const storageEvents = localStorage.getItem('savedEvents')
         console.log('[Load Store]:', JSON.parse(storageEvents!))

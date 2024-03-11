@@ -28,11 +28,7 @@ const Day: Component<DayProps> = (props) => {
     })
 
     const getCurrentDayClass = () => {
-        let today
-        props.day.format('DD-MM-YY') === dayjs().format('DD-MM-YY')
-            ? (today = true)
-            : (today = false)
-        return today
+        return props.day.format('DD-MM-YY') === dayjs().format('DD-MM-YY')
     }
 
     const handleDaysInCurrentMonth = () => {
@@ -61,9 +57,7 @@ const Day: Component<DayProps> = (props) => {
                     {props.day.format('DD')}
                 </p>
             </div>
-            <CardContent
-                class="flex-1 cursor-pointer"
-                onClick={() => {}}>
+            <CardContent class="flex-1 cursor-pointer" onClick={() => {}}>
                 <For each={dayEvents()}>{(evt) => <CalendarEvents evt={evt} />}</For>
             </CardContent>
         </Col>
