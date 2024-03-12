@@ -1,17 +1,17 @@
 import { Show, Component } from 'solid-js'
 import { Transition } from 'solid-transition-group'
 import MonthSelector from './MonthSelector'
+import TaskFilter from './TaskFilter'
 import AddCropModal from '@components/Modal/AddCropModal'
 import CalendarModal from '@components/Modal/CalendarModals'
 import { BurgerMenu } from '@components/ui/burger_menu'
 import { Button } from '@components/ui/button'
-import { Card, CardHeader } from '@components/ui/card'
+import { CardHeader } from '@components/ui/card'
 import { Flex } from '@components/ui/flex'
 import { Icons } from '@components/ui/icon'
 import { Label } from '@components/ui/label'
 import { useCalendarContext } from '@store/context/calendar'
 import { useAppUIContext } from '@store/context/ui'
-import TaskFilter from './TaskFilter'
 
 const CalendarHeader: Component<{
     id: 'calendar' | 'widget'
@@ -56,8 +56,6 @@ const CalendarHeader: Component<{
                     flexDirection="row"
                     alignItems="center"
                     justifyContent="start">
-                    {/* Today button */}
-
                     <Button variant="ghost">
                         <Label size="2xl" weight="semiBold" class="text-gray-600">
                             Today
@@ -70,20 +68,22 @@ const CalendarHeader: Component<{
                         justifyContent="center">
                         <Button
                             variant="ghost"
-                            /* onClick={() => handleMonthIndex(currentMonthIdx() - 1)} */
-                        >
+                            onPointerDown={() =>
+                                setCurrentMonthIndex(selectedCalendar()!.currentMonthIdx - 1)
+                            }>
                             <Icons.chevronLeft size={25} class="text-gray-600 mx-2" />
                         </Button>
                         <Button
                             variant="ghost"
-                            /* onClick={() => handleMonthIndex(currentMonthIdx() + 1)} */
-                        >
+                            onPointerDown={() =>
+                                setCurrentMonthIndex(selectedCalendar()!.currentMonthIdx + 1)
+                            }>
                             <Icons.chevronRight size={25} class="text-gray-600 mx-2" />
                         </Button>
                     </Flex>
                     <MonthSelector />
                     <TaskFilter />
-                    {/* month, timeline, year calendar picker */}
+                    {/* TODO: month, timeline, year calendar picker */}
                     {/* customize button */}
                 </Flex>
             </div>

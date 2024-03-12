@@ -1,7 +1,5 @@
-import { For, JSXElement, Show } from 'solid-js'
+import { For, Show } from 'solid-js'
 import { Transition } from 'solid-transition-group'
-import { type, Icons } from '../ui/icon'
-import { Button } from '@components/ui/button'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -9,11 +7,9 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '@components/ui/dropdown-menu'
-
 import { Flex } from '@components/ui/flex'
-import { Input } from '@components/ui/input'
+import { Icons } from '@components/ui/icon'
 import { Label } from '@components/ui/label'
-import { RadioGroup, RadioGroupItem, RadioGroupItemLabel } from '@components/ui/radio-group'
 import { Toggle } from '@components/ui/toggle'
 import { CalendarEventTasks } from '@src/static/types'
 

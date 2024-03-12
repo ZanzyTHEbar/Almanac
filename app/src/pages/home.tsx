@@ -1,5 +1,5 @@
-import { createEffect } from 'solid-js'
-import Month from '@components/Calendar'
+import { createEffect, createSignal } from 'solid-js'
+import MonthCalendar from '@components/Calendar/MonthCalendar'
 import SidebarContent from '@components/Sidebar/Content'
 import Sidebar from '@components/Sidebar/index'
 import { Card, CardContent } from '@components/ui/card'
@@ -10,12 +10,12 @@ import { useCalendarContext } from '@store/context/calendar'
 // TODO: Add Tasks with Todo list
 
 export default function Main() {
-    const { getMonth, selectedCalendar, setCurrentMonthIndex } = useCalendarContext()
+    const { getMonth, selectedCalendar } = useCalendarContext()
+    const [currentMonth, setCurrentMonth] = createSignal(getMonth())
 
     createEffect(() => {
         if (!selectedCalendar()) return
-
-        
+        setCurrentMonth(getMonth(selectedCalendar()!.currentMonthIdx))
     })
 
     return (
@@ -25,7 +25,7 @@ export default function Main() {
                     <Sidebar>
                         <SidebarContent />
                     </Sidebar>
-                    <Month month={getMonth()} />
+                    <MonthCalendar month={currentMonth()} />
                 </CardContent>
             </Card>
         </PageWrapper>

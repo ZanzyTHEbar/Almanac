@@ -14,22 +14,15 @@ import { useCalendarContext } from '@store/context/calendar'
 const MonthSelector: Component = () => {
     const { getMonth, selectedCalendar } = useCalendarContext()
     const [monthDropDown, setMonthDropDown] = createSignal('')
+    const [currentMonth, setCurrentMonth] = createSignal(getMonth())
 
     const handleSelectMonth = () => {}
 
     const handlePlaceholder = () => {
-        const dates = getMonth().map((month) =>
-            month[selectedCalendar()!.currentMonthIdx].format('MMMM YYYY'),
-        )
+        // grab the current month and year from the currentMonth signal
+        currentMonth().forEach((month) => console.log('[MonthSelector]: ', month))
 
-        // grab the current month and year from the dates
-        const date = dates[selectedCalendar()!.currentMonthIdx + 1]
-
-        return (
-            <Label class={handleClass()} styles="pointer" size="2xl" weight="bold">
-                {date}
-            </Label>
-        )
+        return <Label class={handleClass()} styles="pointer" size="2xl" weight="bold" />
     }
 
     const selectOptions = (): string[] => {
@@ -58,6 +51,11 @@ const MonthSelector: Component = () => {
 
         return monthArray
     }
+
+    createEffect(() => {
+        if (!selectedCalendar()) return
+        setCurrentMonth(getMonth(selectedCalendar()!.currentMonthIdx))
+    })
 
     createEffect(() => {
         handleSelectMonth()
