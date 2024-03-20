@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import { createEffect, createSignal, type Component } from 'solid-js'
 import { handleClass } from '@components/MainMenu/utils'
 import { Flex } from '@components/ui/flex'
@@ -12,17 +13,39 @@ import {
 import { useCalendarContext } from '@store/context/calendar'
 
 const MonthSelector: Component = () => {
-    const { getMonth, selectedCalendar } = useCalendarContext()
+    const { getMonth, selectedCalendar, setCurrentMonthIndex } = useCalendarContext()
     const [monthDropDown, setMonthDropDown] = createSignal('')
-    const [currentMonth, setCurrentMonth] = createSignal(getMonth())
+    const [currentMonth, setCurrentMonth] = createSignal<dayjs.Dayjs>()
 
-    const handleSelectMonth = () => {}
+    const handleSelectMonth = () => {
+        if (!selectedCalendar()) return
+
+        const selectedMonthDayjs = dayjs(monthDropDown(), 'MMMM YYYY')
+        // Assuming getMonth() requires a month and year argument
+        const monthMatrix = getMonth(selectedMonthDayjs.month())
+
+        // You might need to adjust this logic based on how you intend to use `findIndex`
+        // This is a placeholder as the original intent wasn't fully clear
+        const idx = monthMatrix.findIndex((week) =>
+            week.some(
+                (day) =>
+                    day.month() === selectedMonthDayjs.month() &&
+                    day.year() === selectedMonthDayjs.year(),
+            ),
+        )
+        // Assuming you're doing something with idx after this
+
+        setCurrentMonthIndex(idx)
+    }
 
     const handlePlaceholder = () => {
         // grab the current month and year from the currentMonth signal
-        currentMonth().forEach((month) => console.log('[MonthSelector]: ', month))
 
-        return <Label class={handleClass()} styles="pointer" size="2xl" weight="bold" />
+        return (
+            <Label class={handleClass()} styles="pointer" size="2xl" weight="bold">
+                {currentMonth()?.format('MMMM YYYY')}
+            </Label>
+        )
     }
 
     const selectOptions = (): string[] => {
@@ -54,7 +77,7 @@ const MonthSelector: Component = () => {
 
     createEffect(() => {
         if (!selectedCalendar()) return
-        setCurrentMonth(getMonth(selectedCalendar()!.currentMonthIdx))
+        setCurrentMonth(dayjs(new Date(dayjs().year(), selectedCalendar()!.currentMonthIdx)))
     })
 
     createEffect(() => {

@@ -56,7 +56,7 @@ const CalendarHeader: Component<{
                     flexDirection="row"
                     alignItems="center"
                     justifyContent="start">
-                    <Button variant="ghost">
+                    <Button variant="ghost" onPointerDown={() => {}}>
                         <Label size="2xl" weight="semiBold" class="text-gray-600">
                             Today
                         </Label>

@@ -3,24 +3,38 @@ import { FiCheckCircle } from 'solid-icons/fi'
 import { HiSolidPencilSquare } from 'solid-icons/hi'
 import { IoCalendarOutline, IoChatbubbles, IoSettingsSharp } from 'solid-icons/io'
 import { TbGardenCart, TbSelector } from 'solid-icons/tb'
-import { type ComponentProps, type Component, splitProps } from 'solid-js'
+import { type ComponentProps, type Component, splitProps, onMount, createSignal } from 'solid-js'
 
 export type IconProps = ComponentProps<'svg'> & {
     class?: string
     color?: string
-    size: number
+    size: number | { width: number; height: number }
     viewBox?: string
 }
 
 const Icon: Component<IconProps> = (props) => {
     const [, rest] = splitProps(props, ['class'])
-    const handleSize = (): string => {
-        return props.size + 'px'
+    const [size, setSize] = createSignal<{
+        width: number
+        height: number
+    }>({ width: 0, height: 0 })
+
+    const handleSize = () => {
+        if (typeof props.size === 'object') {
+            setSize({ width: props.size.width, height: props.size.height })
+        } else if (typeof props.size === 'number') {
+            return setSize({ width: props.size, height: props.size })
+        }
     }
+
+    onMount(() => {
+        handleSize()
+    })
+
     return (
         <svg
-            width={handleSize()}
-            height={handleSize()}
+            width={size().width + 'px'}
+            height={size().height + 'px'}
             viewBox={props.viewBox ? props.viewBox : '0 0 24 24'}
             fill={props.color ? props.color : 'none'}
             stroke="currentColor"
@@ -109,7 +123,7 @@ const Icons = {
         </Icon>
     ),
     chevronsUpDown: (props: IconProps) => (
-        <TbSelector class={props.class} size={props.size} color={props.color} />
+        <TbSelector class={props.class} size={props.size as number} color={props.color} />
     ),
     circle: (props: IconProps) => (
         <Icon {...props}>
@@ -227,25 +241,25 @@ const Icons = {
         </Icon>
     ),
     calendar: (props: IconProps) => (
-        <IoCalendarOutline class={props.class} size={props.size} color={props.color} />
+        <IoCalendarOutline class={props.class} size={props.size as number} color={props.color} />
     ),
     journal: (props: IconProps) => (
-        <HiSolidPencilSquare class={props.class} size={props.size} color={props.color} />
+        <HiSolidPencilSquare class={props.class} size={props.size as number} color={props.color} />
     ),
     tasks: (props: IconProps) => (
-        <FiCheckCircle class={props.class} size={props.size} color={props.color} />
+        <FiCheckCircle class={props.class} size={props.size as number} color={props.color} />
     ),
     chat: (props: IconProps) => (
-        <IoChatbubbles class={props.class} size={props.size} color={props.color} />
+        <IoChatbubbles class={props.class} size={props.size as number} color={props.color} />
     ),
     gear: (props: IconProps) => (
-        <IoSettingsSharp class={props.class} size={props.size} color={props.color} />
+        <IoSettingsSharp class={props.class} size={props.size as number} color={props.color} />
     ),
     question: (props: IconProps) => (
-        <FaSolidQuestion class={props.class} size={props.size} color={props.color} />
+        <FaSolidQuestion class={props.class} size={props.size as number} color={props.color} />
     ),
     profile: (props: IconProps) => (
-        <TbGardenCart class={props.class} size={props.size} color={props.color} />
+        <TbGardenCart class={props.class} size={props.size as number} color={props.color} />
     ),
 }
 
