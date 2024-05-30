@@ -25,13 +25,10 @@ Below is a list of project goals, _completed_ goals are marked with a check.
 
 ### Hardware
 
-- [ ] Any Server-cable Machine - Raspberrypi Zero WH preferred - Header pins are needed to connect to a display
-- [ ] Battery-Pack or permanent plugin point
-- [ ] Integrate a BOM parts list
-- [ ] Integrate SD Card Image for easy setup
-- [ ] Preferred Waveshare 12.48" Tri-color E-Ink Display
-- [ ] PiSugar2 for Raspberry Pi Zero (Tindie) - Provides the RTC and battery for this project
-- [ ] Implement option for Presence Detection via a choice of sensors or phone GPS
+> [!IMPORTANT]\
+> TODO
+
+Most likely Golang with Encore running in a distributed cloud.
 
 ### Software
 
